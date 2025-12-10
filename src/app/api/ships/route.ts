@@ -1,36 +1,49 @@
-import { readGameDataFile, GameDataPaths } from "@/lib/game-data";
+import { getShips } from "@/lib/game-data";
+import { logger } from "@/lib/logger";
 import { NextResponse } from "next/server";
 
 /**
- * Example API route showing how to serve game data server-side.
+ * API route to serve ships data.
  *
- * This keeps all game data on the server and only sends filtered/parsed
- * data to the client. The raw game files never reach the browser.
+ * This loads pre-generated JSON data files and returns structured data.
  *
  * Usage:
- * - GET /api/ships - Get all ships (you'd parse and filter here)
- * - GET /api/ships?name=Argosy - Get specific ship
+ * - GET /api/ships - Get all ships
+ * - GET /api/ships?name=Argosy - Get specific ship (TODO: implement filtering)
  */
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    // Read game data file (server-side only, not bundled)
-    const shipsData = readGameDataFile(GameDataPaths.SHIPS);
+    logger.debug("Loading ships data", { url: request.url });
+    const ships = getShips();
 
-    // TODO: Parse the ships.txt format and extract ship data
     // TODO: Filter/search based on query parameters
-    // TODO: Return only the data needed by the client
+    const { searchParams } = new URL(request.url);
+    const name = searchParams.get("name");
 
-    // For now, return a placeholder response
-    // In production, you'd parse the file format and return structured JSON
-    return NextResponse.json({
-      message: "Ships data endpoint",
-      note: "Parse ships.txt format and return structured data here",
-      dataSize: shipsData.length,
-      // Don't send the raw file content - parse it first!
+    let result = ships;
+    if (name) {
+      logger.debug("Filtering ships by name", { name });
+      result = ships.filter((ship) =>
+        ship.name.toLowerCase().includes(name.toLowerCase())
+      );
+    }
+
+    logger.info("Ships data loaded successfully", {
+      total: ships.length,
+      filtered: result.length,
     });
-  } catch {
+
+    return NextResponse.json({
+      count: result.length,
+      ships: result,
+    });
+  } catch (error) {
+    logger.error("Failed to load ships data", error, { url: request.url });
     return NextResponse.json(
-      { error: "Failed to read game data" },
+      {
+        error: "Failed to load ships data",
+        details: error instanceof Error ? error.message : String(error),
+      },
       { status: 500 }
     );
   }

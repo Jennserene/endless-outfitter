@@ -26,26 +26,6 @@ const ShipAttributeSchema = z.object({
     .optional(),
 });
 
-const ShipPositionSchema = z.object({
-  type: z.enum([
-    "engine",
-    "gun",
-    "turret",
-    "bay",
-    "leak",
-    "explode",
-    "final explode",
-  ]),
-  x: z.number(),
-  y: z.number(),
-  z: z.number().optional(), // For engine thrust
-  outfit: z.string().optional(), // For gun/turret/bay
-  bayType: z.string().optional(), // For bay
-  launchEffect: z.string().optional(), // For bay
-  effect: z.string().optional(), // For leak/explode
-  count: z.number().optional(), // For explode
-});
-
 const ShipSchema = z.object({
   name: z.string(),
   plural: z.string().optional(),
@@ -58,7 +38,6 @@ const ShipSchema = z.object({
       quantity: z.number().default(1),
     })
   ),
-  positions: z.array(ShipPositionSchema),
   descriptions: z.array(z.string()).default([]),
 });
 

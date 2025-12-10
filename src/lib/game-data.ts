@@ -1,6 +1,6 @@
-import { GAME_REPO_PATH } from "@/config/game-version";
-import { readFileSync, existsSync } from "fs";
-import { join } from "path";
+import { loadShips, loadOutfits } from "@/lib/loaders/data-loader";
+import type { Ship } from "@/lib/schemas/ship";
+import type { Outfit } from "@/lib/schemas/outfit";
 
 /**
  * SERVER-ONLY utilities for accessing game data files.
@@ -17,63 +17,20 @@ import { join } from "path";
  * - Static generation at build time (unless you want to bundle the data)
  */
 
-const GAME_DATA_ROOT = join(process.cwd(), GAME_REPO_PATH);
-
-export function getGameDataPath(relativePath: string): string {
-  return join(GAME_DATA_ROOT, relativePath);
+/**
+ * Get all ships from generated data files.
+ * In production, uses pre-generated JSON files from src/data/.
+ * In development, can optionally use submodule (fallback not implemented).
+ */
+export function getShips(): Ship[] {
+  return loadShips();
 }
 
 /**
- * Read a game data file from the submodule.
- * This runs server-side only and does NOT bundle data into the client.
- *
- * @param relativePath - Path relative to the game repo root (e.g., "data/ships.txt")
- * @returns File contents as string
- * @throws Error if file doesn't exist or submodule is not available
+ * Get all outfits from generated data files.
+ * In production, uses pre-generated JSON files from src/data/.
+ * In development, can optionally use submodule (fallback not implemented).
  */
-export function readGameDataFile(relativePath: string): string {
-  const fullPath = getGameDataPath(relativePath);
-
-  if (!existsSync(fullPath)) {
-    // In production, submodule should not be available
-    if (process.env.NODE_ENV === "production") {
-      throw new Error(
-        `Game data file not available in production: ${relativePath}. ` +
-          `Game data submodule is only available in local development.`
-      );
-    }
-    throw new Error(`Game data file not found: ${relativePath}`);
-  }
-
-  return readFileSync(fullPath, "utf-8");
-}
-
-export const GameDataPaths = {
-  SHIPS: "data/ships.txt",
-  OUTFITS: "data/outfits.txt",
-  COMMODITIES: "data/commodities.txt",
-  SYSTEMS: "data/systems.txt",
-} as const;
-
-// Re-export conversion functions
-import { convertShipsToZod } from "@/lib/converters/ship-converter";
-import { convertOutfitsToZod } from "@/lib/converters/outfit-converter";
-export { convertShipsToZod, convertOutfitsToZod };
-export type { Ship } from "@/lib/schemas/ship";
-export type { Outfit } from "@/lib/schemas/outfit";
-
-/**
- * Get all ships from game data, parsed and validated with Zod.
- */
-export function getShips() {
-  const content = readGameDataFile(GameDataPaths.SHIPS);
-  return convertShipsToZod(content);
-}
-
-/**
- * Get all outfits from game data, parsed and validated with Zod.
- */
-export function getOutfits() {
-  const content = readGameDataFile(GameDataPaths.OUTFITS);
-  return convertOutfitsToZod(content);
+export function getOutfits(): Outfit[] {
+  return loadOutfits();
 }

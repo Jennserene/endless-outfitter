@@ -42,3 +42,9 @@ next-env.d.ts
 
 # Git submodules (local development only)
 /vendor/endless-sky
+
+# Raw parsed data (intermediate step, not committed)
+/scripts/.data
+
+# Context for local LLM development
+/llmContext

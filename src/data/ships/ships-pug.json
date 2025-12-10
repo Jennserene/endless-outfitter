@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "pug",
+    "generatedAt": "2025-12-10T22:51:12.940Z",
+    "itemCount": 4
+  },
+  "data": [
+    {
+      "name": "Pug Zibruka",
+      "sprite": "ship/pug zibruka",
+      "thumbnail": "thumbnail/pug zibruka",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 1900000,
+        "shields": 4000,
+        "hull": 1000,
+        "required crew": 4,
+        "bunks": 6,
+        "mass": 324,
+        "drag": 3.7,
+        "heat dissipation": 0.67,
+        "fuel capacity": 600,
+        "cargo space": 20,
+        "outfit space": 180,
+        "weapon capacity": 68,
+        "engine capacity": 76,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 400,
+          "hull damage": 200,
+          "hit force": 600
+        }
+      },
+      "outfits": [
+        {
+          "name": "Pug Zapper",
+          "quantity": 2
+        },
+        {
+          "name": "Pug Biodefenses",
+          "quantity": 4
+        },
+        {
+          "name": "Pug Peacekeeping Staff",
+          "quantity": 4
+        },
+        {
+          "name": "Pug Akfar Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Pug Akfar Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Jump Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Zibruka is the smallest Pug warship that you know of. Despite having only two gun ports, its two advanced guns combined with its fast and efficient engine systems make it a fearsome ship to face off against, especially in swarms."
+      ]
+    },
+    {
+      "name": "Pug Enfolta",
+      "sprite": "ship/pug enfolta",
+      "thumbnail": "thumbnail/pug enfolta",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 6300000,
+        "shields": 6800,
+        "hull": 1700,
+        "required crew": 19,
+        "bunks": 27,
+        "mass": 760,
+        "drag": 7.1,
+        "heat dissipation": 0.49,
+        "fuel capacity": 600,
+        "cargo space": 40,
+        "outfit space": 360,
+        "weapon capacity": 184,
+        "engine capacity": 106,
+        "weapon": {
+          "blast radius": 180,
+          "shield damage": 720,
+          "hull damage": 360,
+          "hit force": 1080
+        }
+      },
+      "outfits": [
+        {
+          "name": "Pug Zapper",
+          "quantity": 2
+        },
+        {
+          "name": "Pug Seeker",
+          "quantity": 2
+        },
+        {
+          "name": "Pug Zapper Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Pug Biodefenses",
+          "quantity": 6
+        },
+        {
+          "name": "Pug Peacekeeping Staff",
+          "quantity": 19
+        },
+        {
+          "name": "Pug Cormet Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Pug Cormet Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Jump Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Enfolta is a medium-sized Pug warship. It has a formidable armament of advanced weaponry supported by powerful integrated energy generation. A single Enfolta can take on multiple smaller human ships."
+      ]
+    },
+    {
+      "name": "Pug Maboro",
+      "sprite": "ship/pug maboro",
+      "thumbnail": "thumbnail/pug maboro",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 9500000,
+        "shields": 12600,
+        "hull": 2700,
+        "required crew": 54,
+        "bunks": 87,
+        "mass": 1990,
+        "drag": 16.7,
+        "heat dissipation": 0.36,
+        "fuel capacity": 600,
+        "cargo space": 70,
+        "outfit space": 560,
+        "weapon capacity": 309,
+        "engine capacity": 148,
+        "weapon": {
+          "blast radius": 300,
+          "shield damage": 1200,
+          "hull damage": 600,
+          "hit force": 1800
+        }
+      },
+      "outfits": [
+        {
+          "name": "Pug Seeker",
+          "quantity": 4
+        },
+        {
+          "name": "Pug Zapper Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Pug Anti-Missile",
+          "quantity": 1
+        },
+        {
+          "name": "Pug Biodefenses",
+          "quantity": 8
+        },
+        {
+          "name": "Pug Peacekeeping Staff",
+          "quantity": 54
+        },
+        {
+          "name": "Pug Lohmar Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Pug Lohmar Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Jump Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Maboro appears to be the Pug's capital warship. Its shield matrix and hull are much weaker than human capital ships; however, it is able to regenerate its shields quickly. Its fearsome ordnance and advanced anti-missile defenses make it a ship that only the strongest human capital ships are able to oppose."
+      ]
+    },
+    {
+      "name": "Pug Arfecta",
+      "sprite": "ship/pug arfecta",
+      "thumbnail": "thumbnail/pug arfecta",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 90000000,
+        "shields": 98000,
+        "hull": 80000,
+        "required crew": 36,
+        "bunks": 46,
+        "mass": 1325,
+        "drag": 11.25,
+        "heat dissipation": 0.54,
+        "fuel capacity": 1200,
+        "cargo space": 64,
+        "outfit space": 640,
+        "weapon capacity": 390,
+        "engine capacity": 220,
+        "weapon": {
+          "blast radius": 320,
+          "shield damage": 9000,
+          "hull damage": 4500,
+          "hit force": 7000
+        }
+      },
+      "outfits": [
+        {
+          "name": "Tier 3 Anti-Missile",
+          "quantity": 2
+        },
+        {
+          "name": "Pug Gridfire Turret",
+          "quantity": 3
+        },
+        {
+          "name": "Cloaking Device",
+          "quantity": 1
+        },
+        {
+          "name": "Pug Biodefenses",
+          "quantity": 12
+        },
+        {
+          "name": "Pug Peacekeeping Staff",
+          "quantity": 36
+        },
+        {
+          "name": "Pug Lohmar Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Pug Lohmar Steering",
+          "quantity": 2
+        },
+        {
+          "name": "Jump Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "This is a Pug \"tier 3\" warship, intended for use in combat against either a species on par with the Quarg, or a lesser species that has decided to be particularly meddlesome."
+      ]
+    }
+  ]
+}

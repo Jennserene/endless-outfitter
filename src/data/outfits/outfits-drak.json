@@ -1,0 +1,402 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "drak",
+    "generatedAt": "2025-12-10T22:51:12.968Z",
+    "itemCount": 11
+  },
+  "data": [
+    {
+      "name": "Drak Distancer",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 99020,
+      "cost": 1000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 64,
+      "outfit space": -64,
+      "descriptions": [
+        "This is a thruster that can produce force in any direction, allowing a Drak ship to keep a safe distance away from its target."
+      ],
+      "attributes": {
+        "weapon capacity": -64,
+        "turret mounts": -1,
+        "energy capacity": 6400,
+        "weapon": {
+          "fire effect": "distancer flare",
+          "turret turn": 4,
+          "velocity": 2000,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 15,
+          "firing heat": 10,
+          "firing force": 112.5
+        }
+      }
+    },
+    {
+      "name": "Drak Draining Field",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 99030,
+      "cost": 10000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 84,
+      "outfit space": -84,
+      "descriptions": [
+        "This device is the Archon's primary defensive tool: not only does it disrupt the shields and energy supplies of all hostile ships within it, it also exerts a powerful repelling force that keeps ships from closing in with the Archon."
+      ],
+      "attributes": {
+        "weapon capacity": -84,
+        "turret mounts": -1,
+        "energy capacity": 8400,
+        "weapon": {
+          "turret turn": 180,
+          "velocity": 1,
+          "lifetime": 1,
+          "range override": 1200,
+          "velocity override": 1200,
+          "blast radius": 1200,
+          "trigger radius": 1200,
+          "reload": 1,
+          "firing energy": -15,
+          "firing heat": 5,
+          "firing force": 45,
+          "hit force": 150,
+          "shield damage": 50,
+          "ion damage": 0.5,
+          "scrambling damage": 0.5,
+          "disruption damage": 1,
+          "safe": true
+        }
+      }
+    },
+    {
+      "name": "Drak Draining Field (Augmented)",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 99031,
+      "cost": 100000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 84,
+      "outfit space": -84,
+      "descriptions": [
+        "This device is the Archon's primary defensive tool: not only does it disrupt the shields and energy supplies of all hostile ships within it, it also exerts a powerful repelling force that keeps ships from closing in with the Archon.",
+        "\tWhile normally kept at minimal strength, the Archons have demonstrated the ability to ramp up the field to be vastly stronger when faced with a serious threat."
+      ],
+      "attributes": {
+        "weapon capacity": -84,
+        "turret mounts": -1,
+        "energy capacity": 8400,
+        "weapon": {
+          "ammo": {
+            "_value": "Jump Drive"
+          },
+          "turret turn": 180,
+          "velocity": 1,
+          "lifetime": 1,
+          "range override": 1100,
+          "velocity override": 1100,
+          "blast radius": 1100,
+          "trigger radius": 1100,
+          "reload": 1,
+          "firing energy": -25,
+          "firing heat": 5,
+          "firing force": 45,
+          "hit force": 1500,
+          "shield damage": 500,
+          "ion damage": 1,
+          "scrambling damage": 1,
+          "disruption damage": 2,
+          "safe": true
+        }
+      }
+    },
+    {
+      "name": "Drak Anti-Missile Field",
+      "category": "Turrets",
+      "series": "Anti-Missile",
+      "index": 99010,
+      "cost": 1000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 66,
+      "outfit space": -66,
+      "descriptions": [
+        "This device produces a field that destroys any missiles that come within it."
+      ],
+      "attributes": {
+        "weapon capacity": -66,
+        "turret mounts": -1,
+        "energy capacity": 6600,
+        "weapon": {
+          "velocity": 400,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 10,
+          "firing heat": 1,
+          "anti-missile": 100
+        }
+      }
+    },
+    {
+      "name": "Drak Anti-Missile Field (Augmented)",
+      "category": "Turrets",
+      "series": "Anti-Missile",
+      "index": 99011,
+      "cost": 10000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 66,
+      "outfit space": -66,
+      "descriptions": [
+        "This device produces a field that destroys any missiles that come within it.",
+        "\tThis level of anti-missile effectiveness is required only when dealing with the most powerful of threats."
+      ],
+      "attributes": {
+        "weapon capacity": -66,
+        "turret mounts": -1,
+        "energy capacity": 6600,
+        "weapon": {
+          "ammo": {
+            "_value": "Jump Drive"
+          },
+          "velocity": 400,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 10,
+          "firing heat": 1,
+          "anti-missile": 500
+        }
+      }
+    },
+    {
+      "name": "Drak Turret",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 99010,
+      "cost": 1000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 48,
+      "outfit space": -48,
+      "descriptions": [
+        "This is a turret-based cannon with significant range and accuracy."
+      ],
+      "attributes": {
+        "weapon capacity": -48,
+        "turret mounts": -1,
+        "energy capacity": 4800,
+        "weapon": {
+          "sprite": {
+            "frame rate": 13.318,
+            "random start frame": true,
+            "_value": "projectile/drak bolt"
+          },
+          "hit effect": "drak bolt impact",
+          "inaccuracy": 1,
+          "turret turn": 4,
+          "velocity": 30,
+          "lifetime": 36,
+          "reload": 16,
+          "firing energy": 160,
+          "firing heat": 160,
+          "shield damage": 256,
+          "hull damage": 256,
+          "hit force": 180
+        }
+      }
+    },
+    {
+      "name": "Drak Turret (Augmented)",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 99011,
+      "cost": 10000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 48,
+      "outfit space": -48,
+      "descriptions": [
+        "This is a turret-based cannon with significant range and accuracy.",
+        "\tAgainst most threats, Archons respond with their weapons set to very low levels. They are, however, more than capable of dealing much more damage when the situation requires it."
+      ],
+      "attributes": {
+        "weapon capacity": -48,
+        "turret mounts": -1,
+        "energy capacity": 4800,
+        "weapon": {
+          "ammo": {
+            "_value": "Jump Drive"
+          },
+          "sprite": {
+            "frame rate": 13.318,
+            "random start frame": true,
+            "_value": "projectile/drak bolt"
+          },
+          "hit effect": "drak bolt impact",
+          "inaccuracy": 1,
+          "turret turn": 8,
+          "velocity": 30,
+          "lifetime": 36,
+          "reload": 16,
+          "firing energy": 160,
+          "firing heat": 160,
+          "shield damage": 2560,
+          "hull damage": 2560,
+          "hit force": 180
+        }
+      }
+    },
+    {
+      "name": "Drak Antimatter Cannon",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 99010,
+      "cost": 10000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 96,
+      "outfit space": -96,
+      "descriptions": [
+        "This is the most powerful weapon that the Archons deign to utilize in the presence of the younger races."
+      ],
+      "attributes": {
+        "weapon capacity": -96,
+        "gun ports": -1,
+        "energy capacity": 9600,
+        "inscrutable": 1,
+        "weapon": {
+          "inaccuracy": 0,
+          "velocity": 20,
+          "lifetime": 1,
+          "submunition": {
+            "_value": "Drak Antimatter Fragment"
+          },
+          "hit effect": [
+            {
+              "_value": "antimatter dust"
+            },
+            "nuke explosion"
+          ],
+          "safe": true,
+          "reload": 187,
+          "firing energy": 5610,
+          "firing heat": 1870,
+          "blast radius": 100,
+          "hit force": 1500
+        }
+      }
+    },
+    {
+      "name": "Drak Antimatter Cannon (Augmented)",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 99011,
+      "cost": 100000000,
+      "thumbnail": "outfit/unknown",
+      "mass": 96,
+      "outfit space": -96,
+      "descriptions": [
+        "This is the most powerful weapon that the Archons deign to utilize in the presence of the younger races. Hitherto unknown as Archons are rarely pushed to the point of needing to use more than their minimum abilities, the Antimatter Cannon is capable of far more damage than originally thought."
+      ],
+      "attributes": {
+        "weapon capacity": -96,
+        "gun ports": -1,
+        "energy capacity": 9600,
+        "inscrutable": 1,
+        "weapon": {
+          "ammo": {
+            "_value": "Jump Drive"
+          },
+          "inaccuracy": 0,
+          "velocity": 20,
+          "lifetime": 1,
+          "submunition": {
+            "_value": "Drak Antimatter Fragment (Augmented)"
+          },
+          "hit effect": [
+            {
+              "_value": "antimatter dust"
+            },
+            "nuke explosion"
+          ],
+          "safe": true,
+          "reload": 187,
+          "firing energy": 5610,
+          "firing heat": 1870,
+          "blast radius": 250,
+          "hit force": 1500
+        }
+      }
+    },
+    {
+      "name": "Drak Antimatter Fragment",
+      "descriptions": [],
+      "attributes": {
+        "weapon": {
+          "sprite": {
+            "frame rate": 9.835,
+            "random start frame": true,
+            "_value": "projectile/drak bolt"
+          },
+          "live effect": [
+            {
+              "_value": "antimatter spark"
+            },
+            {
+              "_value": "antimatter dust"
+            }
+          ],
+          "hit effect": [
+            {
+              "_value": "antimatter dust"
+            },
+            "nuke explosion"
+          ],
+          "safe": true,
+          "inaccuracy": 1,
+          "lifetime": 499,
+          "hit force": 1500,
+          "disruption damage": 300,
+          "heat damage": 500,
+          "shield damage": 5610,
+          "hull damage": 5610,
+          "blast radius": 100
+        }
+      }
+    },
+    {
+      "name": "Drak Antimatter Fragment (Augmented)",
+      "descriptions": [],
+      "attributes": {
+        "weapon": {
+          "sprite": {
+            "frame rate": 9.835,
+            "random start frame": true,
+            "_value": "projectile/drak bolt"
+          },
+          "live effect": [
+            {
+              "_value": "antimatter spark"
+            },
+            {
+              "_value": "antimatter dust"
+            }
+          ],
+          "hit effect": [
+            {
+              "_value": "antimatter dust"
+            },
+            "nuke explosion"
+          ],
+          "safe": true,
+          "inaccuracy": 1,
+          "lifetime": 1000,
+          "hit force": 1500,
+          "disruption damage": 1000,
+          "heat damage": 2500,
+          "shield damage": 56100,
+          "hull damage": 56100,
+          "blast radius": 250
+        }
+      }
+    }
+  ]
+}

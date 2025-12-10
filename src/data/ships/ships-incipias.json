@@ -1,0 +1,352 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "incipias",
+    "generatedAt": "2025-12-10T22:51:12.923Z",
+    "itemCount": 7
+  },
+  "data": [
+    {
+      "name": "Venta",
+      "plural": "Ventae",
+      "sprite": "ship/venta",
+      "thumbnail": "thumbnail/venta",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 25000000,
+        "shields": 12800,
+        "hull": 9600,
+        "required crew": 40,
+        "bunks": 45,
+        "mass": 2400,
+        "drag": 10.2,
+        "heat dissipation": 0.42,
+        "fuel capacity": 200,
+        "cargo space": 20,
+        "outfit space": 552,
+        "weapon capacity": 240,
+        "engine capacity": 130,
+        "weapon": {
+          "blast radius": 224,
+          "shield damage": 2240,
+          "hull damage": 1120,
+          "hit force": 3360
+        }
+      },
+      "outfits": [
+        {
+          "name": "Liquid-Class Shield",
+          "quantity": 1
+        },
+        {
+          "name": "Metallic Hydrogen Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Plasma Discharger",
+          "quantity": 2
+        },
+        {
+          "name": "Star Tail",
+          "quantity": 4
+        },
+        {
+          "name": "Star Tail Cell",
+          "quantity": 120
+        },
+        {
+          "name": "Star Tail Storage",
+          "quantity": 2
+        },
+        {
+          "name": "Cloud Piercer",
+          "quantity": 40
+        },
+        {
+          "name": "MH Red-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "MH Red-Class Steering",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "When the Hicemus came to power they needed a ship to symbolize their strength. With six guns, the Venta is the most powerful ship in the Incipias' history. Thanks to its sleek and aerodynamic design it is as comfortable hunting down outlaws in space as in the clouds of a gas giant."
+      ]
+    },
+    {
+      "name": "Nimbus",
+      "plural": "Nimbi",
+      "sprite": "ship/nimbus",
+      "thumbnail": "thumbnail/nimbus",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 3250000,
+        "shields": 6000,
+        "hull": 4000,
+        "required crew": 20,
+        "bunks": 40,
+        "mass": 1640,
+        "drag": 10.8,
+        "heat dissipation": 0.46,
+        "fuel capacity": 200,
+        "cargo space": 75,
+        "outfit space": 450,
+        "weapon capacity": 120,
+        "engine capacity": 85,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "Liquid-Class Shield",
+          "quantity": 1
+        },
+        {
+          "name": "Metallic Hydrogen Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Plasma Discharger",
+          "quantity": 4
+        },
+        {
+          "name": "Stagnation Beam",
+          "quantity": 1
+        },
+        {
+          "name": "Cloud Piercer",
+          "quantity": 20
+        },
+        {
+          "name": "MH Red-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "MH Red-Class Steering",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Nimbus is the first spaceship that the Incipias built that was truly able to navigate through a system. Since it was first manufactured it has been cherished among wealthier captains and a dream of captains just starting out.",
+        "\tAlthough the Nimbus is labeled as a medium warship, it is multipurpose; whether one uses it for mining, passenger transport or cargo, it will perform its job nicely. It is only occasionally used in combat because the Incipias are not currently fighting open wars."
+      ]
+    },
+    {
+      "name": "Nimbus",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Liquid-Class Shield",
+          "quantity": 1
+        },
+        {
+          "name": "Metallic Hydrogen Cell",
+          "quantity": 1
+        },
+        {
+          "name": "MH Red-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "MH Red-Class Steering",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Nimbus",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Liquid-Class Shield",
+          "quantity": 1
+        },
+        {
+          "name": "Metallic Hydrogen Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Plasma Discharger",
+          "quantity": 4
+        },
+        {
+          "name": "Horizon Grappler",
+          "quantity": 1
+        },
+        {
+          "name": "Cloud Piercer",
+          "quantity": 20
+        },
+        {
+          "name": "MH Red-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "MH Red-Class Steering",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Nimbo Stratus",
+      "plural": "Nimbo Strati",
+      "sprite": "ship/stratus",
+      "thumbnail": "thumbnail/stratus",
+      "attributes": {
+        "category": "Utility",
+        "cost": 460000,
+        "shields": 700,
+        "hull": 500,
+        "required crew": 5,
+        "bunks": 10,
+        "mass": 534,
+        "drag": 8.4,
+        "heat dissipation": 0.67,
+        "fuel capacity": 200,
+        "cargo space": 50,
+        "outfit space": 270,
+        "weapon capacity": 50,
+        "engine capacity": 60,
+        "weapon": {
+          "blast radius": 12,
+          "shield damage": 120,
+          "hull damage": 60,
+          "hit force": 180
+        }
+      },
+      "outfits": [
+        {
+          "name": "Gas-Class Shield",
+          "quantity": 1
+        },
+        {
+          "name": "Metallic Hydrogen Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Plasma Discharger",
+          "quantity": 2
+        },
+        {
+          "name": "MH Blue-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "MH Blue-Class Steering",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "Mining has always been a big business in Incipias society, which is why the Nimbo Stratus is the most common ship for beginning captains. Its cheap price tag and ability to bring money in quickly ensure its continuing popularity. While the Stratus could theoretically be used in combat, it stands no chance against the Nimbus and therefore has never been used by the Hicemus military forces."
+      ]
+    },
+    {
+      "name": "Nimbo Cirrus",
+      "plural": "Nimbo Cirri",
+      "sprite": "ship/cirrus",
+      "thumbnail": "thumbnail/cirrus",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 330000,
+        "shields": 1500,
+        "hull": 750,
+        "required crew": 7,
+        "bunks": 14,
+        "mass": 800,
+        "drag": 8.7,
+        "heat dissipation": 0.6,
+        "fuel capacity": 200,
+        "cargo space": 200,
+        "outfit space": 160,
+        "engine capacity": 60,
+        "weapon": {
+          "blast radius": 22.5,
+          "shield damage": 225,
+          "hull damage": 113,
+          "hit force": 350
+        }
+      },
+      "outfits": [
+        {
+          "name": "Gas-Class Shield",
+          "quantity": 1
+        },
+        {
+          "name": "Metallic Hydrogen Cell",
+          "quantity": 1
+        },
+        {
+          "name": "MH Green-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "MH Green-Class Steering",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "When Pon'tes was built, the need arose for a ship that could carry large amounts of material and supplies into orbit. When the Nimbus proved insufficient at this task, the Nimbo Cirrus, a specialized cargo ship, was built. The inhabitants of Pon'tes rely on its regular deliveries for basic goods and equipment."
+      ]
+    },
+    {
+      "name": "Gero",
+      "sprite": "ship/gero",
+      "thumbnail": "thumbnail/gero",
+      "attributes": {
+        "category": "Transport",
+        "cost": 985000,
+        "shields": 1700,
+        "hull": 850,
+        "required crew": 10,
+        "bunks": 72,
+        "mass": 760,
+        "drag": 8.4,
+        "heat dissipation": 0.58,
+        "fuel capacity": 200,
+        "cargo space": 20,
+        "outfit space": 158,
+        "engine capacity": 54,
+        "weapon": {
+          "blast radius": 26.5,
+          "shield damage": 265,
+          "hull damage": 133,
+          "hit force": 400
+        }
+      },
+      "outfits": [
+        {
+          "name": "Gas-Class Shield",
+          "quantity": 1
+        },
+        {
+          "name": "Metallic Hydrogen Cell",
+          "quantity": 1
+        },
+        {
+          "name": "MH Blue-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "MH Blue-Class Steering",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The completion of Pon'tes caused a huge increase in travel between the station and Redias. Designers from Alto Shipyards quickly saw an opportunity and so the Incipias' first transport ship was built."
+      ]
+    }
+  ]
+}
