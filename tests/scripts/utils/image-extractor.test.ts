@@ -2,6 +2,8 @@ import { extractImagePaths } from "@scripts/utils/image-extractor";
 import { createMockShip } from "../__fixtures__/ships";
 import { createMockOutfit } from "../__fixtures__/outfits";
 import { TEST_IMAGE_PATHS } from "../__fixtures__/images";
+import type { Ship } from "@/lib/schemas/ship";
+import type { Outfit } from "@/lib/schemas/outfit";
 
 describe("image-extractor", () => {
   describe("extractImagePaths", () => {
@@ -16,7 +18,7 @@ describe("image-extractor", () => {
       const outfits: unknown[] = [];
 
       // Act
-      const result = extractImagePaths(ships, outfits);
+      const result = extractImagePaths(ships as Ship[], outfits as Outfit[]);
 
       // Assert
       expect(result.size).toBe(2);
@@ -34,7 +36,7 @@ describe("image-extractor", () => {
       ];
 
       // Act
-      const result = extractImagePaths(ships, outfits);
+      const result = extractImagePaths(ships as Ship[], outfits as Outfit[]);
 
       // Assert
       expect(result.size).toBe(1);
@@ -56,7 +58,7 @@ describe("image-extractor", () => {
       ];
 
       // Act
-      const result = extractImagePaths(ships, outfits);
+      const result = extractImagePaths(ships as Ship[], outfits as Outfit[]);
 
       // Assert
       expect(result.size).toBe(3);
@@ -71,7 +73,7 @@ describe("image-extractor", () => {
       const outfits = [createMockOutfit()];
 
       // Act
-      const result = extractImagePaths(ships, outfits);
+      const result = extractImagePaths(ships as Ship[], outfits as Outfit[]);
 
       // Assert
       expect(result.size).toBe(0);
@@ -96,7 +98,7 @@ describe("image-extractor", () => {
       ];
 
       // Act
-      const result = extractImagePaths(ships, outfits);
+      const result = extractImagePaths(ships as Ship[], outfits as Outfit[]);
 
       // Assert
       expect(result.size).toBe(3);
@@ -123,7 +125,7 @@ describe("image-extractor", () => {
       const outfits: unknown[] = [];
 
       // Act
-      const result = extractImagePaths(ships, outfits);
+      const result = extractImagePaths(ships as Ship[], outfits as Outfit[]);
 
       // Assert
       expect(result.size).toBe(1);
@@ -140,7 +142,7 @@ describe("image-extractor", () => {
       const outfits: unknown[] = [];
 
       // Act
-      const result = extractImagePaths(ships, outfits);
+      const result = extractImagePaths(ships as Ship[], outfits as Outfit[]);
 
       // Assert
       expect(result.size).toBe(1);

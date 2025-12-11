@@ -2,7 +2,11 @@ import type { GeneratedDataFile, Converter } from "../types";
 import type { Logger } from "@/lib/logger";
 import { logger as defaultLogger } from "@/lib/logger";
 import { createMetadata } from "../utils/metadata";
-import { writeJsonFile, getSpeciesFilePath } from "../utils/file-io";
+import {
+  writeJsonFile,
+  getSpeciesFilePath,
+  type FileContentCache,
+} from "../utils/file-io";
 import { readFileSync, readdirSync, existsSync } from "fs";
 import { join } from "path";
 
@@ -11,6 +15,8 @@ import { join } from "path";
  * Handles common file I/O, species extraction, and output writing logic.
  */
 export abstract class BaseGenerator<T> {
+  protected existingFileCache?: FileContentCache;
+
   constructor(
     protected readonly converter: Converter<T>,
     protected readonly rawDir: string,
@@ -19,6 +25,13 @@ export abstract class BaseGenerator<T> {
     protected readonly itemType: string,
     protected readonly logger: Logger = defaultLogger
   ) {}
+
+  /**
+   * Set the cache of existing file contents for comparison
+   */
+  setExistingFileCache(cache: FileContentCache): void {
+    this.existingFileCache = cache;
+  }
 
   /**
    * Extract species name from filename
@@ -39,8 +52,9 @@ export abstract class BaseGenerator<T> {
 
   /**
    * Write validated data to output file
+   * Returns true if file was written, false if skipped due to identical content
    */
-  protected writeOutput(species: string, items: T[]): void {
+  protected writeOutput(species: string, items: T[]): boolean {
     const metadata = createMetadata(species, items.length);
     const data: GeneratedDataFile<T> = {
       metadata,
@@ -48,7 +62,7 @@ export abstract class BaseGenerator<T> {
     };
 
     const outputPath = getSpeciesFilePath(this.outputDir, this.prefix, species);
-    writeJsonFile(outputPath, data);
+    return writeJsonFile(outputPath, data, this.existingFileCache);
   }
 
   /**

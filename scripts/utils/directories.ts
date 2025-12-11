@@ -1,14 +1,11 @@
 import { logger } from "@/lib/logger";
-import { existsSync, mkdirSync, readdirSync, rmSync } from "fs";
-import { relative } from "path";
+import { existsSync, mkdirSync, readdirSync, rmSync, renameSync } from "fs";
+import { join } from "path";
 import {
   SHIPS_DIR,
   OUTFITS_DIR,
   DATA_DIR,
   IMAGES_DIR,
-  OUTFIT_IMAGES_DIR,
-  SHIP_IMAGES_DIR,
-  THUMBNAIL_IMAGES_DIR,
   RAW_DATA_DIR,
   RAW_SHIP_DIR,
   RAW_OUTFIT_DIR,
@@ -78,32 +75,176 @@ export function wipeRawDataDirectory(): void {
 }
 
 /**
- * Remove all existing data and image files before generation.
- * Cleans src/assets/data, src/assets/images/outfit, src/assets/images/ship, and src/assets/images/thumbnail
+ * Check if a filename is a backup file (has .old extension)
+ */
+function isBackupFile(filename: string): boolean {
+  return filename.endsWith(".old");
+}
+
+/**
+ * Backup existing JSON files by renaming them with .old extension.
+ * Only backs up .json files (not .old files) in SHIPS_DIR and OUTFITS_DIR.
+ * Image files are not backed up - the image copier checks file contents before overwriting.
+ * Returns a map of original paths to backup paths for tracking.
+ */
+export function backupExistingFiles(): Map<string, string> {
+  logger.info("Backing up existing JSON files...");
+  const backupMap = new Map<string, string>();
+
+  // Backup JSON files in ships directory
+  if (existsSync(SHIPS_DIR)) {
+    const files = readdirSync(SHIPS_DIR).filter(
+      (f) => f.endsWith(".json") && !isBackupFile(f)
+    );
+    for (const filename of files) {
+      const originalPath = join(SHIPS_DIR, filename);
+      const backupPath = `${originalPath}.old`;
+      try {
+        renameSync(originalPath, backupPath);
+        backupMap.set(originalPath, backupPath);
+        logger.debug(`Backed up ${filename} → ${filename}.old`);
+      } catch (error) {
+        logger.warn(`Failed to backup ${filename}: ${error}`);
+      }
+    }
+  }
+
+  // Backup JSON files in outfits directory
+  if (existsSync(OUTFITS_DIR)) {
+    const files = readdirSync(OUTFITS_DIR).filter(
+      (f) => f.endsWith(".json") && !isBackupFile(f)
+    );
+    for (const filename of files) {
+      const originalPath = join(OUTFITS_DIR, filename);
+      const backupPath = `${originalPath}.old`;
+      try {
+        renameSync(originalPath, backupPath);
+        backupMap.set(originalPath, backupPath);
+        logger.debug(`Backed up ${filename} → ${filename}.old`);
+      } catch (error) {
+        logger.warn(`Failed to backup ${filename}: ${error}`);
+      }
+    }
+  }
+
+  if (backupMap.size > 0) {
+    logger.info(`Backed up ${backupMap.size} file(s)`);
+  } else {
+    logger.info("No existing files to backup");
+  }
+
+  return backupMap;
+}
+
+/**
+ * Delete all .old backup files from SHIPS_DIR and OUTFITS_DIR.
+ * Image files are not backed up, so there are no image backup files to delete.
+ */
+export function deleteBackupFiles(): void {
+  logger.info("Deleting backup files...");
+  let deletedCount = 0;
+
+  // Delete .old files in ships directory
+  if (existsSync(SHIPS_DIR)) {
+    const files = readdirSync(SHIPS_DIR).filter((f) => isBackupFile(f));
+    for (const filename of files) {
+      const filePath = join(SHIPS_DIR, filename);
+      try {
+        rmSync(filePath, { force: true });
+        deletedCount++;
+        logger.debug(`Deleted backup ${filename}`);
+      } catch (error) {
+        logger.warn(`Failed to delete backup ${filename}: ${error}`);
+      }
+    }
+  }
+
+  // Delete .old files in outfits directory
+  if (existsSync(OUTFITS_DIR)) {
+    const files = readdirSync(OUTFITS_DIR).filter((f) => isBackupFile(f));
+    for (const filename of files) {
+      const filePath = join(OUTFITS_DIR, filename);
+      try {
+        rmSync(filePath, { force: true });
+        deletedCount++;
+        logger.debug(`Deleted backup ${filename}`);
+      } catch (error) {
+        logger.warn(`Failed to delete backup ${filename}: ${error}`);
+      }
+    }
+  }
+
+  if (deletedCount > 0) {
+    logger.success(`Deleted ${deletedCount} backup file(s)`);
+  } else {
+    logger.info("No backup files to delete");
+  }
+}
+
+/**
+ * Restore all .old backup files by renaming them back to their original names.
+ * This will overwrite any newly generated files with the same name.
+ * Only restores JSON files - image files are not backed up.
+ */
+export function restoreBackupFiles(): void {
+  logger.info("Restoring backup files...");
+  let restoredCount = 0;
+
+  // Restore .old files in ships directory
+  if (existsSync(SHIPS_DIR)) {
+    const files = readdirSync(SHIPS_DIR).filter((f) => isBackupFile(f));
+    for (const filename of files) {
+      const backupPath = join(SHIPS_DIR, filename);
+      const originalPath = backupPath.replace(/\.old$/, "");
+      try {
+        renameSync(backupPath, originalPath);
+        restoredCount++;
+        logger.debug(
+          `Restored ${filename} → ${filename.replace(/\.old$/, "")}`
+        );
+      } catch (error) {
+        logger.warn(`Failed to restore ${filename}: ${error}`);
+      }
+    }
+  }
+
+  // Restore .old files in outfits directory
+  if (existsSync(OUTFITS_DIR)) {
+    const files = readdirSync(OUTFITS_DIR).filter((f) => isBackupFile(f));
+    for (const filename of files) {
+      const backupPath = join(OUTFITS_DIR, filename);
+      const originalPath = backupPath.replace(/\.old$/, "");
+      try {
+        renameSync(backupPath, originalPath);
+        restoredCount++;
+        logger.debug(
+          `Restored ${filename} → ${filename.replace(/\.old$/, "")}`
+        );
+      } catch (error) {
+        logger.warn(`Failed to restore ${filename}: ${error}`);
+      }
+    }
+  }
+
+  if (restoredCount > 0) {
+    logger.success(`Restored ${restoredCount} backup file(s)`);
+  } else {
+    logger.info("No backup files to restore");
+  }
+}
+
+/**
+ * Prepare output directories for generation.
+ * For JSON files, they are backed up instead of deleted (see backupExistingFiles).
+ * Image files are not deleted - the image copier checks file contents before overwriting,
+ * so existing images are preserved if they're identical.
  */
 export function cleanOutputDirectories(): void {
   logger.info("Cleaning output directories...");
 
-  // Clean data directory
-  if (existsSync(DATA_DIR)) {
-    const relativeDataDir = relative(process.cwd(), DATA_DIR);
-    logger.info(`Removing contents of ${relativeDataDir}`);
-    rmSync(DATA_DIR, { recursive: true, force: true });
-  }
+  // Note: JSON files in SHIPS_DIR and OUTFITS_DIR are backed up via backupExistingFiles()
+  // Image files in image directories are not deleted - the image copier will check
+  // file contents and only overwrite if different
 
-  // Clean image subdirectories
-  const imageDirs = [
-    { path: OUTFIT_IMAGES_DIR, name: "outfit images" },
-    { path: SHIP_IMAGES_DIR, name: "ship images" },
-    { path: THUMBNAIL_IMAGES_DIR, name: "thumbnail images" },
-  ];
-
-  for (const { path, name } of imageDirs) {
-    if (existsSync(path)) {
-      logger.info(`Removing contents of ${name} directory`);
-      rmSync(path, { recursive: true, force: true });
-    }
-  }
-
-  logger.success("Output directories cleaned successfully");
+  logger.success("Output directories prepared for generation");
 }

@@ -7,7 +7,7 @@
  */
 export function createMockTransformer<TInput = unknown, TOutput = unknown>() {
   return {
-    transform: jest.fn<TInput, TOutput>(),
+    transform: jest.fn<TOutput, [TInput]>(),
   };
 }
 

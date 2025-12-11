@@ -55,6 +55,7 @@ describe("git", () => {
         {
           cwd: paths.SUBMODULE_PATH,
           encoding: "utf-8",
+          shell: true,
         }
       );
     });
@@ -79,11 +80,13 @@ describe("git", () => {
         {
           cwd: paths.SUBMODULE_PATH,
           encoding: "utf-8",
+          shell: true,
         }
       );
       expect(execSync).toHaveBeenNthCalledWith(2, "git rev-parse HEAD", {
         cwd: paths.SUBMODULE_PATH,
         encoding: "utf-8",
+        shell: true,
       });
     });
 

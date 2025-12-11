@@ -49,7 +49,7 @@ class TestGenerator extends BaseGenerator<string> {
     return super.readRawData(filePath);
   }
 
-  writeOutput(species: string, data: string[]): void {
+  writeOutput(species: string, data: string[]): boolean {
     return super.writeOutput(species, data);
   }
 
@@ -151,7 +151,8 @@ describe("BaseGenerator", () => {
         {
           metadata: mockMetadata,
           data: ["item1", "item2"],
-        }
+        },
+        undefined
       );
     });
   });

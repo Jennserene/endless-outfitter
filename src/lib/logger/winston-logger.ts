@@ -71,12 +71,32 @@ export class WinstonLogger implements Logger {
     error?: Error | unknown,
     context?: Record<string, unknown>
   ): void {
-    // Winston handles Error objects natively when passed as metadata
+    // Extract error details into a plain object for proper serialization
     const metadata: Record<string, unknown> = { ...context };
     if (error instanceof Error) {
-      metadata.error = error;
-    } else if (error !== undefined) {
-      metadata.error = String(error);
+      // Extract Error properties into a plain object to avoid [object Object] serialization
+      metadata.error = {
+        name: error.name,
+        message: error.message,
+        stack: error.stack,
+      };
+    } else if (error !== undefined && error !== null) {
+      // For non-Error objects, try to extract useful information
+      if (typeof error === "object") {
+        try {
+          // Try to extract properties from the error object
+          const errorObj = error as Record<string, unknown>;
+          metadata.error = {
+            ...errorObj,
+            // Ensure we have at least a string representation
+            toString: String(error),
+          };
+        } catch {
+          metadata.error = String(error);
+        }
+      } else {
+        metadata.error = String(error);
+      }
     }
     this.winston.error(message, metadata);
   }

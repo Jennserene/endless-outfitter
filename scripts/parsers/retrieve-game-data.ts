@@ -1,5 +1,4 @@
 import { readFileSync } from "fs";
-import { join } from "path";
 import { getGameDataPath, GameDataPaths } from "../utils/paths";
 import { findDataFiles } from "../utils/file-io";
 

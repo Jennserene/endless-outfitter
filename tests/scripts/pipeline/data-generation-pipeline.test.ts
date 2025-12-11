@@ -24,6 +24,9 @@ jest.mock("@scripts/parsers/retrieve-raw-data", () => ({
 jest.mock("@scripts/utils/directories", () => ({
   ensureDataDirectories: jest.fn(),
   cleanOutputDirectories: jest.fn(),
+  backupExistingFiles: jest.fn(),
+  deleteBackupFiles: jest.fn(),
+  restoreBackupFiles: jest.fn(),
 }));
 
 jest.mock("@scripts/generators/ship-generator", () => ({
@@ -48,6 +51,18 @@ jest.mock("@scripts/services/image-retrieval-service", () => ({
 describe("DataGenerationPipeline", () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    // Set up default mocks for successful pipeline execution
+    (dataLoader.loadShips as jest.Mock).mockReturnValue([]);
+    (dataLoader.loadOutfits as jest.Mock).mockReturnValue([]);
+    (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
+    (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
+      undefined
+    );
+    (directories.deleteBackupFiles as jest.Mock).mockReturnValue(undefined);
+    // Reset ImageRetrievalService mock to default successful behavior
+    (ImageRetrievalService as jest.Mock).mockImplementation(() => ({
+      retrieveImages: jest.fn(),
+    }));
   });
 
   describe("constructor", () => {
@@ -57,13 +72,16 @@ describe("DataGenerationPipeline", () => {
       const steps = pipeline.getSteps();
 
       // Assert
-      expect(steps).toHaveLength(6);
+      expect(steps).toHaveLength(9);
       expect(steps[0].name).toBe(TEST_STEP_NAMES[0]);
       expect(steps[1].name).toBe(TEST_STEP_NAMES[1]);
       expect(steps[2].name).toBe(TEST_STEP_NAMES[2]);
       expect(steps[3].name).toBe(TEST_STEP_NAMES[3]);
       expect(steps[4].name).toBe(TEST_STEP_NAMES[4]);
       expect(steps[5].name).toBe(TEST_STEP_NAMES[5]);
+      expect(steps[6].name).toBe(TEST_STEP_NAMES[6]);
+      expect(steps[7].name).toBe(TEST_STEP_NAMES[7]);
+      expect(steps[8].name).toBe(TEST_STEP_NAMES[8]);
     });
 
     it("When creating pipeline with custom logger, Then should use custom logger for logging", () => {
@@ -81,7 +99,7 @@ describe("DataGenerationPipeline", () => {
       pipeline.execute();
 
       // Assert
-      expect(pipeline.getSteps()).toHaveLength(6);
+      expect(pipeline.getSteps()).toHaveLength(9);
       expect(customLogger.info).toHaveBeenCalledWith(
         "Starting data generation pipeline...\n"
       );
@@ -106,7 +124,7 @@ describe("DataGenerationPipeline", () => {
       const steps = pipeline.getSteps();
 
       // Assert
-      expect(steps).toHaveLength(6);
+      expect(steps).toHaveLength(9);
       steps.forEach((step) => {
         expect(step).toHaveProperty("name");
         expect(step).toHaveProperty("execute");
@@ -131,29 +149,40 @@ describe("DataGenerationPipeline", () => {
       expect(logger.info).toHaveBeenCalledWith(
         `Executing step: ${TEST_STEP_NAMES[0]}...`
       );
-      expect(directories.cleanOutputDirectories).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
         `Executing step: ${TEST_STEP_NAMES[1]}...`
       );
-      expect(retrieveRawData.retrieveRawData).toHaveBeenCalled();
+      expect(directories.backupExistingFiles).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
         `Executing step: ${TEST_STEP_NAMES[2]}...`
       );
-      expect(directories.ensureDataDirectories).toHaveBeenCalled();
+      expect(directories.cleanOutputDirectories).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
         `Executing step: ${TEST_STEP_NAMES[3]}...`
       );
-      expect(shipGenerator.generateShips).toHaveBeenCalled();
+      expect(retrieveRawData.retrieveRawData).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
         `Executing step: ${TEST_STEP_NAMES[4]}...`
       );
-      expect(outfitGenerator.generateOutfits).toHaveBeenCalled();
+      expect(directories.ensureDataDirectories).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
         `Executing step: ${TEST_STEP_NAMES[5]}...`
+      );
+      expect(shipGenerator.generateShips).toHaveBeenCalled();
+      expect(logger.info).toHaveBeenCalledWith(
+        `Executing step: ${TEST_STEP_NAMES[6]}...`
+      );
+      expect(outfitGenerator.generateOutfits).toHaveBeenCalled();
+      expect(logger.info).toHaveBeenCalledWith(
+        `Executing step: ${TEST_STEP_NAMES[7]}...`
       );
       expect(dataLoader.loadShips).toHaveBeenCalled();
       expect(dataLoader.loadOutfits).toHaveBeenCalled();
       expect(ImageRetrievalService).toHaveBeenCalled();
+      expect(logger.info).toHaveBeenCalledWith(
+        `Executing step: ${TEST_STEP_NAMES[8]}...`
+      );
+      expect(directories.deleteBackupFiles).toHaveBeenCalled();
       expect(logger.success).toHaveBeenCalledWith(
         "Data generation pipeline completed successfully!"
       );
@@ -163,21 +192,22 @@ describe("DataGenerationPipeline", () => {
       // Arrange
       const pipeline = new DataGenerationPipeline();
       const error = new Error(TEST_ERROR_MESSAGES.STEP_FAILED);
-      (directories.cleanOutputDirectories as jest.Mock).mockImplementation(
-        () => {
-          throw error;
-        }
-      );
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
+      (directories.backupExistingFiles as jest.Mock).mockImplementation(() => {
+        throw error;
+      });
 
       // Act & Assert
       expect(() => {
         pipeline.execute();
-      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[0]}"`);
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[1]}"`);
 
       expect(logger.error).toHaveBeenCalledWith(
-        `Step "${TEST_STEP_NAMES[0]}" failed`,
+        `Step "${TEST_STEP_NAMES[1]}" failed`,
         error
       );
+      expect(directories.restoreBackupFiles).toHaveBeenCalled();
+      expect(directories.cleanOutputDirectories).not.toHaveBeenCalled();
       expect(retrieveRawData.retrieveRawData).not.toHaveBeenCalled();
       expect(directories.ensureDataDirectories).not.toHaveBeenCalled();
       expect(shipGenerator.generateShips).not.toHaveBeenCalled();
@@ -189,6 +219,7 @@ describe("DataGenerationPipeline", () => {
       // Arrange
       const pipeline = new DataGenerationPipeline();
       const error = new Error(TEST_ERROR_MESSAGES.DIRECTORY_ERROR);
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
       (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
         undefined
       );
@@ -202,12 +233,14 @@ describe("DataGenerationPipeline", () => {
       // Act & Assert
       expect(() => {
         pipeline.execute();
-      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[2]}"`);
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[4]}"`);
 
       expect(logger.error).toHaveBeenCalledWith(
-        `Step "${TEST_STEP_NAMES[2]}" failed`,
+        `Step "${TEST_STEP_NAMES[4]}" failed`,
         error
       );
+      expect(directories.restoreBackupFiles).toHaveBeenCalled();
+      expect(directories.backupExistingFiles).toHaveBeenCalled();
       expect(directories.cleanOutputDirectories).toHaveBeenCalled();
       expect(retrieveRawData.retrieveRawData).toHaveBeenCalled();
       expect(shipGenerator.generateShips).not.toHaveBeenCalled();
@@ -218,6 +251,7 @@ describe("DataGenerationPipeline", () => {
       // Arrange
       const pipeline = new DataGenerationPipeline();
       const error = new Error(TEST_ERROR_MESSAGES.IMAGE_RETRIEVAL_ERROR);
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
       (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
         undefined
       );
@@ -241,12 +275,48 @@ describe("DataGenerationPipeline", () => {
       // Act & Assert
       expect(() => {
         pipeline.execute();
-      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[5]}"`);
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[7]}"`);
 
       expect(logger.error).toHaveBeenCalledWith(
-        `Step "${TEST_STEP_NAMES[5]}" failed`,
+        `Step "${TEST_STEP_NAMES[7]}" failed`,
         error
       );
+      expect(directories.restoreBackupFiles).toHaveBeenCalled();
+    });
+
+    it("When pipeline executes successfully, Then should delete backup files", () => {
+      // Arrange
+      const pipeline = new DataGenerationPipeline();
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
+
+      // Act
+      pipeline.execute();
+
+      // Assert
+      expect(directories.backupExistingFiles).toHaveBeenCalled();
+      expect(directories.deleteBackupFiles).toHaveBeenCalled();
+      expect(directories.restoreBackupFiles).not.toHaveBeenCalled();
+    });
+
+    it("When pipeline fails, Then should restore backup files", () => {
+      // Arrange
+      const pipeline = new DataGenerationPipeline();
+      const error = new Error(TEST_ERROR_MESSAGES.STEP_FAILED);
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
+      (directories.cleanOutputDirectories as jest.Mock).mockImplementation(
+        () => {
+          throw error;
+        }
+      );
+
+      // Act & Assert
+      expect(() => {
+        pipeline.execute();
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[2]}"`);
+
+      expect(directories.backupExistingFiles).toHaveBeenCalled();
+      expect(directories.restoreBackupFiles).toHaveBeenCalled();
+      expect(directories.deleteBackupFiles).not.toHaveBeenCalled();
     });
   });
 });

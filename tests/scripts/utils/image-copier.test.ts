@@ -13,6 +13,7 @@ jest.mock("fs", () => ({
   copyFileSync: jest.fn(),
   mkdirSync: jest.fn(),
   existsSync: jest.fn(),
+  readFileSync: jest.fn(),
 }));
 
 // Mock image-resolver
@@ -96,6 +97,66 @@ describe("image-copier", () => {
         copyImageFile(sourcePath, destPath);
       }).toThrow(`Failed to copy image from ${sourcePath} to ${destPath}`);
     });
+
+    it("When destination file exists with same contents, Then should skip copying and return false", () => {
+      // Arrange
+      const sourcePath = "/source/image.png";
+      const destPath = "/dest/image.png";
+      const sameContent = Buffer.from("same image content");
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        return path === sourcePath || path === destPath;
+      });
+      (fs.readFileSync as jest.Mock).mockReturnValue(sameContent);
+
+      // Act
+      const result = copyImageFile(sourcePath, destPath);
+
+      // Assert
+      expect(result).toBe(false);
+      expect(fs.readFileSync).toHaveBeenCalledWith(sourcePath);
+      expect(fs.readFileSync).toHaveBeenCalledWith(destPath);
+      expect(fs.copyFileSync).not.toHaveBeenCalled();
+    });
+
+    it("When destination file exists with different contents, Then should overwrite and return true", () => {
+      // Arrange
+      const sourcePath = "/source/image.png";
+      const destPath = "/dest/image.png";
+      const sourceContent = Buffer.from("new image content");
+      const destContent = Buffer.from("old image content");
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        return path === sourcePath || path === destPath;
+      });
+      (fs.readFileSync as jest.Mock).mockImplementation((path: string) => {
+        return path === sourcePath ? sourceContent : destContent;
+      });
+
+      // Act
+      const result = copyImageFile(sourcePath, destPath);
+
+      // Assert
+      expect(result).toBe(true);
+      expect(fs.readFileSync).toHaveBeenCalledWith(sourcePath);
+      expect(fs.readFileSync).toHaveBeenCalledWith(destPath);
+      expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath, destPath);
+    });
+
+    it("When destination file doesn't exist, Then should copy and return true", () => {
+      // Arrange
+      const sourcePath = "/source/image.png";
+      const destPath = "/dest/image.png";
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        return path === sourcePath; // Only source exists
+      });
+
+      // Act
+      const result = copyImageFile(sourcePath, destPath);
+
+      // Assert
+      expect(result).toBe(true);
+      expect(fs.readFileSync).not.toHaveBeenCalled();
+      expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath, destPath);
+    });
   });
 
   describe("copyImagesToAssets", () => {
@@ -134,6 +195,8 @@ describe("image-copier", () => {
       // Assert
       expect(result.copied).toBe(2);
       expect(result.failed).toBe(0);
+      // copyImageFile is called, which may skip if files are identical
+      // But in this test, destination files don't exist, so they should be copied
       expect(fs.copyFileSync).toHaveBeenCalledTimes(2);
       expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath1, destPath1);
       expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath2, destPath2);
@@ -223,6 +286,61 @@ describe("image-copier", () => {
       // Assert
       expect(result.copied).toBe(0);
       expect(result.failed).toBe(0);
+    });
+
+    it("When destination image exists with same contents, Then should skip copying", () => {
+      // Arrange
+      const imagePaths = new Set([TEST_IMAGE_PATHS.SHIP_SPRITE]);
+      const sourcePath = `${TEST_GAME_REPO_PATH}/images/${TEST_IMAGE_PATHS.SHIP_SPRITE}.png`;
+      const destPath = `${TEST_ASSETS_DIR}/${TEST_IMAGE_PATHS.SHIP_SPRITE}.png`;
+      const sameContent = Buffer.from("same image content");
+
+      (imageResolver.resolveImagePath as jest.Mock).mockReturnValue(sourcePath);
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        return path === sourcePath || path === destPath;
+      });
+      (fs.readFileSync as jest.Mock).mockReturnValue(sameContent);
+
+      // Act
+      const result = copyImagesToAssets(
+        imagePaths,
+        TEST_GAME_REPO_PATH,
+        TEST_ASSETS_DIR
+      );
+
+      // Assert
+      expect(result.copied).toBe(0);
+      expect(result.failed).toBe(0);
+      expect(fs.copyFileSync).not.toHaveBeenCalled();
+    });
+
+    it("When destination image exists with different contents, Then should overwrite", () => {
+      // Arrange
+      const imagePaths = new Set([TEST_IMAGE_PATHS.SHIP_SPRITE]);
+      const sourcePath = `${TEST_GAME_REPO_PATH}/images/${TEST_IMAGE_PATHS.SHIP_SPRITE}.png`;
+      const destPath = `${TEST_ASSETS_DIR}/${TEST_IMAGE_PATHS.SHIP_SPRITE}.png`;
+      const sourceContent = Buffer.from("new image content");
+      const destContent = Buffer.from("old image content");
+
+      (imageResolver.resolveImagePath as jest.Mock).mockReturnValue(sourcePath);
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        return path === sourcePath || path === destPath;
+      });
+      (fs.readFileSync as jest.Mock).mockImplementation((path: string) => {
+        return path === sourcePath ? sourceContent : destContent;
+      });
+
+      // Act
+      const result = copyImagesToAssets(
+        imagePaths,
+        TEST_GAME_REPO_PATH,
+        TEST_ASSETS_DIR
+      );
+
+      // Assert
+      expect(result.copied).toBe(1);
+      expect(result.failed).toBe(0);
+      expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath, destPath);
     });
   });
 });

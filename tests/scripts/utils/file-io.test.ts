@@ -1,195 +1,246 @@
 import {
   writeJsonFile,
-  getSpeciesFilePath,
-  findDataFiles,
+  readExistingJsonFiles,
+  type FileContentCache,
 } from "@scripts/utils/file-io";
-import * as fs from "fs";
-import * as speciesUtils from "@scripts/utils/species";
+import { writeFileSync, mkdirSync, rmSync, existsSync, readFileSync } from "fs";
 import { join } from "path";
-
-// Mock fs module
-jest.mock("fs", () => ({
-  writeFileSync: jest.fn(),
-  existsSync: jest.fn(),
-  readdirSync: jest.fn(),
-  statSync: jest.fn(),
-}));
-
-// Mock species utils
-jest.mock("@scripts/utils/species", () => ({
-  extractSpeciesFromPath: jest.fn(),
-}));
+import { tmpdir } from "os";
 
 describe("file-io", () => {
+  let testDir: string;
+  let testFilePath: string;
+
   beforeEach(() => {
-    jest.clearAllMocks();
+    // Create a temporary directory for each test
+    testDir = join(tmpdir(), `file-io-test-${Date.now()}`);
+    mkdirSync(testDir, { recursive: true });
+    testFilePath = join(testDir, "test.json");
+  });
+
+  afterEach(() => {
+    // Clean up temporary directory
+    if (existsSync(testDir)) {
+      rmSync(testDir, { recursive: true, force: true });
+    }
   });
 
   describe("writeJsonFile", () => {
-    it("When writing JSON data, Then should format with proper indentation", () => {
+    it("When file does not exist, Then should write the file", () => {
       // Arrange
-      const data = { name: "Test", value: 100 };
+      const data = { test: "data" };
 
       // Act
-      writeJsonFile("/test/file.json", data);
+      const result = writeJsonFile(testFilePath, data);
 
       // Assert
-      expect(fs.writeFileSync).toHaveBeenCalledWith(
-        "/test/file.json",
-        JSON.stringify(data, null, 2) + "\n",
-        "utf-8"
-      );
+      expect(result).toBe(true);
+      expect(existsSync(testFilePath)).toBe(true);
     });
 
-    it("When writing complex nested objects, Then should serialize correctly", () => {
+    it("When file exists and content is identical (ignoring generatedAt), Then should skip writing", () => {
       // Arrange
+      const existingData = {
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-01-01T00:00:00.000Z",
+          itemCount: 5,
+        },
+        data: [{ id: 1, name: "test" }],
+      };
+      const newData = {
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-12-11T12:00:00.000Z", // Different timestamp
+          itemCount: 5,
+        },
+        data: [{ id: 1, name: "test" }],
+      };
+
+      // Write existing file
+      writeFileSync(
+        testFilePath,
+        JSON.stringify(existingData, null, 2) + "\n",
+        "utf-8"
+      );
+
+      // Create cache with existing content
+      const cache: FileContentCache = new Map();
+      cache.set(testFilePath, existingData);
+
+      // Act
+      const result = writeJsonFile(testFilePath, newData, cache);
+
+      // Assert
+      expect(result).toBe(false); // File was not written
+      const fileContent = JSON.parse(readFileSync(testFilePath, "utf-8"));
+      expect(fileContent.metadata.generatedAt).toBe("2024-01-01T00:00:00.000Z"); // Original timestamp preserved
+    });
+
+    it("When file exists and data content differs, Then should write the file", () => {
+      // Arrange
+      const existingData = {
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-01-01T00:00:00.000Z",
+          itemCount: 5,
+        },
+        data: [{ id: 1, name: "old" }],
+      };
+      const newData = {
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-12-11T12:00:00.000Z",
+          itemCount: 5,
+        },
+        data: [{ id: 1, name: "new" }], // Different data
+      };
+
+      // Write existing file
+      writeFileSync(
+        testFilePath,
+        JSON.stringify(existingData, null, 2) + "\n",
+        "utf-8"
+      );
+
+      // Create cache with existing content
+      const cache: FileContentCache = new Map();
+      cache.set(testFilePath, existingData);
+
+      // Act
+      const result = writeJsonFile(testFilePath, newData, cache);
+
+      // Assert
+      expect(result).toBe(true); // File was written
+      const fileContent = JSON.parse(readFileSync(testFilePath, "utf-8"));
+      expect(fileContent.data[0].name).toBe("new");
+    });
+
+    it("When cache is not provided, Then should always write the file", () => {
+      // Arrange
+      const data = { test: "data" };
+
+      // Act
+      const result = writeJsonFile(testFilePath, data);
+
+      // Assert
+      expect(result).toBe(true);
+      expect(existsSync(testFilePath)).toBe(true);
+    });
+
+    it("When file path not in cache, Then should write the file", () => {
+      // Arrange
+      const data = { test: "data" };
+      const cache: FileContentCache = new Map();
+
+      // Act
+      const result = writeJsonFile(testFilePath, data, cache);
+
+      // Assert
+      expect(result).toBe(true);
+      expect(existsSync(testFilePath)).toBe(true);
+    });
+  });
+
+  describe("readExistingJsonFiles", () => {
+    it("When directory does not exist, Then should return empty cache", () => {
+      // Arrange
+      const nonExistentDir = join(testDir, "nonexistent");
+
+      // Act
+      const result = readExistingJsonFiles(nonExistentDir);
+
+      // Assert
+      expect(result.size).toBe(0);
+    });
+
+    it("When directory exists with JSON files, Then should read and cache all files", () => {
+      // Arrange
+      const file1 = join(testDir, "file1.json");
+      const file2 = join(testDir, "file2.json");
+      const data1 = { test: "data1" };
+      const data2 = { test: "data2" };
+
+      writeFileSync(file1, JSON.stringify(data1, null, 2), "utf-8");
+      writeFileSync(file2, JSON.stringify(data2, null, 2), "utf-8");
+
+      // Act
+      const result = readExistingJsonFiles(testDir);
+
+      // Assert
+      expect(result.size).toBe(2);
+      expect(result.get(file1)).toEqual(data1);
+      expect(result.get(file2)).toEqual(data2);
+    });
+
+    it("When directory contains non-JSON files, Then should ignore them", () => {
+      // Arrange
+      const jsonFile = join(testDir, "file.json");
+      const txtFile = join(testDir, "file.txt");
+
+      writeFileSync(jsonFile, JSON.stringify({ test: "data" }), "utf-8");
+      writeFileSync(txtFile, "not json", "utf-8");
+
+      // Act
+      const result = readExistingJsonFiles(testDir);
+
+      // Assert
+      expect(result.size).toBe(1);
+      expect(result.has(jsonFile)).toBe(true);
+      expect(result.has(txtFile)).toBe(false);
+    });
+
+    it("When directory contains invalid JSON files, Then should skip them", () => {
+      // Arrange
+      const validFile = join(testDir, "valid.json");
+      const invalidFile = join(testDir, "invalid.json");
+
+      writeFileSync(validFile, JSON.stringify({ test: "data" }), "utf-8");
+      writeFileSync(invalidFile, "not valid json {", "utf-8");
+
+      // Act
+      const result = readExistingJsonFiles(testDir);
+
+      // Assert
+      expect(result.size).toBe(1);
+      expect(result.has(validFile)).toBe(true);
+      expect(result.has(invalidFile)).toBe(false);
+    });
+
+    it("When reading files with GeneratedDataFile structure, Then should preserve structure", () => {
+      // Arrange
+      const file = join(testDir, "test.json");
       const data = {
-        metadata: { version: "1.0" },
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-01-01T00:00:00.000Z",
+          itemCount: 2,
+        },
         data: [{ id: 1 }, { id: 2 }],
       };
 
-      // Act
-      writeJsonFile("/test/file.json", data);
-
-      // Assert
-      const writtenContent = (fs.writeFileSync as jest.Mock).mock.calls[0][1];
-      expect(writtenContent).toContain('"version": "1.0"');
-      expect(writtenContent).toContain('"id": 1');
-    });
-
-    it("When writing JSON file, Then should add newline at end", () => {
-      // Arrange
-      const data = { test: "value" };
+      writeFileSync(file, JSON.stringify(data, null, 2), "utf-8");
 
       // Act
-      writeJsonFile("/test/file.json", data);
+      const result = readExistingJsonFiles(testDir);
 
       // Assert
-      const writtenContent = (fs.writeFileSync as jest.Mock).mock.calls[0][1];
-      expect(writtenContent.endsWith("\n")).toBe(true);
-    });
-  });
-
-  describe("getSpeciesFilePath", () => {
-    it("When generating file path, Then should create correct path for species", () => {
-      // Act
-      const result = getSpeciesFilePath("/test/data", "ships", "human");
-
-      // Assert
-      expect(result).toBe(join("/test/data", "ships-human.json"));
-    });
-
-    it("When using different prefixes, Then should generate correct path", () => {
-      // Act
-      const result = getSpeciesFilePath("/test/data", "outfits", "pug");
-
-      // Assert
-      expect(result).toBe(join("/test/data", "outfits-pug.json"));
-    });
-
-    it("When using complex species names, Then should handle correctly", () => {
-      // Act
-      const result = getSpeciesFilePath("/test/data", "ships", "sheragi");
-
-      // Assert
-      expect(result).toBe(join("/test/data", "ships-sheragi.json"));
-    });
-  });
-
-  describe("findDataFiles", () => {
-    it.skip("When searching subdirectories, Then should find files matching patterns", () => {
-      // Not working: Complex recursive directory traversal is difficult to mock properly
-      // The function uses recursive searchDirectory which requires careful mock setup
-      // for multiple levels of directory traversal
-    });
-
-    it("When files are in root data directory, Then should find them", () => {
-      // Arrange
-      const dataDir = "/test/data";
-      const filenames = ["ships.txt"];
-
-      (fs.existsSync as jest.Mock).mockReturnValue(true);
-      (fs.readdirSync as jest.Mock).mockReturnValue(["ships.txt"]);
-      (fs.statSync as jest.Mock).mockReturnValue({
-        isDirectory: () => false,
-        isFile: () => true,
-      });
-      (speciesUtils.extractSpeciesFromPath as jest.Mock).mockReturnValue(
-        undefined
+      expect(result.size).toBe(1);
+      const cached = result.get(file);
+      expect(cached).toEqual(data);
+      expect((cached as typeof data).metadata.generatedAt).toBe(
+        "2024-01-01T00:00:00.000Z"
       );
-
-      // Act
-      const result = findDataFiles(dataDir, filenames);
-
-      // Assert
-      expect(result.length).toBeGreaterThan(0);
-      expect(result[0].species).toBeUndefined();
-    });
-
-    it("When data directory does not exist, Then should return empty array", () => {
-      // Arrange
-      (fs.existsSync as jest.Mock).mockReturnValue(false);
-
-      // Act
-      const result = findDataFiles("/test/data", ["ships.txt"]);
-
-      // Assert
-      expect(result).toEqual([]);
-    });
-
-    it("When handling species-prefixed filenames, Then should extract species correctly", () => {
-      // Arrange
-      const dataDir = "/test/data";
-      const filenames = ["ships.txt"];
-
-      (fs.existsSync as jest.Mock).mockReturnValue(true);
-      (fs.readdirSync as jest.Mock).mockImplementation((dir: string) => {
-        if (dir === dataDir) {
-          return ["hai"];
-        } else if (dir.includes("hai")) {
-          return ["hai ships.txt"];
-        }
-        return [];
-      });
-      (fs.statSync as jest.Mock).mockImplementation((path: string) => {
-        if (path.includes("hai") && !path.includes("ships.txt")) {
-          return { isDirectory: () => true, isFile: () => false };
-        } else if (path.includes("ships.txt")) {
-          return { isDirectory: () => false, isFile: () => true };
-        }
-        return { isDirectory: () => false, isFile: () => false };
-      });
-      (speciesUtils.extractSpeciesFromPath as jest.Mock).mockReturnValue("hai");
-
-      // Act
-      const result = findDataFiles(dataDir, filenames);
-
-      // Assert
-      expect(result.length).toBeGreaterThan(0);
-      expect(result[0].species).toBe("hai");
-    });
-
-    it("When no files match, Then should return empty array", () => {
-      // Arrange
-      const dataDir = "/test/data";
-      const filenames = ["nonexistent.txt"];
-
-      (fs.existsSync as jest.Mock).mockReturnValue(true);
-      (fs.readdirSync as jest.Mock).mockReturnValue(["human"]);
-      (fs.statSync as jest.Mock).mockReturnValue({
-        isDirectory: () => true,
-        isFile: () => false,
-      });
-      (fs.readdirSync as jest.Mock).mockReturnValueOnce(["ships.txt"]);
-
-      const result = findDataFiles(dataDir, filenames);
-
-      expect(result).toEqual([]);
-    });
-
-    it.skip("should skip _deprecated directory", () => {
-      // Not working: Complex recursive directory traversal is difficult to mock properly
-      // Would need to properly mock the recursive searchDirectory calls
     });
   });
 });

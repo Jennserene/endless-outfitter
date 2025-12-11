@@ -15,11 +15,23 @@ export interface MockShip {
 
 /**
  * Create a basic mock ship
+ * By default, includes attributes with category "Unknown" for type compatibility.
+ * To test cases without attributes, explicitly pass { attributes: undefined }
  */
 export function createMockShip(overrides: Partial<MockShip> = {}): MockShip {
+  // If attributes is explicitly set (including undefined), use it
+  // Otherwise, provide default attributes for type compatibility
+  const hasAttributesKey = "attributes" in overrides;
+  const defaultAttributes = hasAttributesKey
+    ? undefined
+    : { category: "Unknown" };
+
   return {
     name: "Test Ship",
+    ...(defaultAttributes && { attributes: defaultAttributes }),
     ...overrides,
+    // If attributes was explicitly provided (even as undefined), use it
+    ...(hasAttributesKey && { attributes: overrides.attributes }),
   };
 }
 

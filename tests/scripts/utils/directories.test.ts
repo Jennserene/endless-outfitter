@@ -22,6 +22,8 @@ jest.mock("@/lib/logger", () => ({
   logger: {
     info: jest.fn(),
     success: jest.fn(),
+    warn: jest.fn(),
+    debug: jest.fn(),
   },
 }));
 
@@ -309,13 +311,9 @@ describe("directories", () => {
       });
     });
 
-    it("When all directories exist, Then should clean all directories", () => {
+    it("When all directories exist, Then should not clean image directories", () => {
       // Arrange
-      (fs.existsSync as jest.Mock)
-        .mockReturnValueOnce(true) // DATA_DIR exists
-        .mockReturnValueOnce(true) // OUTFIT_IMAGES_DIR exists
-        .mockReturnValueOnce(true) // SHIP_IMAGES_DIR exists
-        .mockReturnValueOnce(true); // THUMBNAIL_IMAGES_DIR exists
+      // No setup needed - function doesn't access directories anymore
 
       // Act
       cleanOutputDirectories();
@@ -324,66 +322,18 @@ describe("directories", () => {
       expect(logger.info).toHaveBeenCalledWith(
         "Cleaning output directories..."
       );
-      expect(path.relative).toHaveBeenCalledWith(process.cwd(), paths.DATA_DIR);
-      expect(logger.info).toHaveBeenCalledWith("Removing contents of data");
-      expect(fs.rmSync).toHaveBeenCalledWith(paths.DATA_DIR, {
-        recursive: true,
-        force: true,
-      });
-      expect(logger.info).toHaveBeenCalledWith(
-        "Removing contents of outfit images directory"
-      );
-      expect(fs.rmSync).toHaveBeenCalledWith(paths.OUTFIT_IMAGES_DIR, {
-        recursive: true,
-        force: true,
-      });
-      expect(logger.info).toHaveBeenCalledWith(
-        "Removing contents of ship images directory"
-      );
-      expect(fs.rmSync).toHaveBeenCalledWith(paths.SHIP_IMAGES_DIR, {
-        recursive: true,
-        force: true,
-      });
-      expect(logger.info).toHaveBeenCalledWith(
-        "Removing contents of thumbnail images directory"
-      );
-      expect(fs.rmSync).toHaveBeenCalledWith(paths.THUMBNAIL_IMAGES_DIR, {
-        recursive: true,
-        force: true,
-      });
-      expect(logger.success).toHaveBeenCalledWith(
-        "Output directories cleaned successfully"
-      );
-    });
-
-    it("When directories do not exist, Then should skip cleaning and log success", () => {
-      // Arrange
-      (fs.existsSync as jest.Mock)
-        .mockReturnValueOnce(false) // DATA_DIR doesn't exist
-        .mockReturnValueOnce(false) // OUTFIT_IMAGES_DIR doesn't exist
-        .mockReturnValueOnce(false) // SHIP_IMAGES_DIR doesn't exist
-        .mockReturnValueOnce(false); // THUMBNAIL_IMAGES_DIR doesn't exist
-
-      // Act
-      cleanOutputDirectories();
-
-      // Assert
-      expect(logger.info).toHaveBeenCalledWith(
-        "Cleaning output directories..."
-      );
+      // Note: Image directories are no longer cleaned - the image copier
+      // checks file contents before overwriting
+      expect(fs.readdirSync).not.toHaveBeenCalled();
       expect(fs.rmSync).not.toHaveBeenCalled();
       expect(logger.success).toHaveBeenCalledWith(
-        "Output directories cleaned successfully"
+        "Output directories prepared for generation"
       );
     });
 
-    it("When some directories exist, Then should clean only existing directories", () => {
+    it("When directories do not exist, Then should log success without cleaning", () => {
       // Arrange
-      (fs.existsSync as jest.Mock)
-        .mockReturnValueOnce(true) // DATA_DIR exists
-        .mockReturnValueOnce(false) // OUTFIT_IMAGES_DIR doesn't exist
-        .mockReturnValueOnce(true) // SHIP_IMAGES_DIR exists
-        .mockReturnValueOnce(false); // THUMBNAIL_IMAGES_DIR doesn't exist
+      // No setup needed - function doesn't access directories anymore
 
       // Act
       cleanOutputDirectories();
@@ -392,49 +342,50 @@ describe("directories", () => {
       expect(logger.info).toHaveBeenCalledWith(
         "Cleaning output directories..."
       );
-      expect(path.relative).toHaveBeenCalledWith(process.cwd(), paths.DATA_DIR);
-      expect(logger.info).toHaveBeenCalledWith("Removing contents of data");
-      expect(fs.rmSync).toHaveBeenCalledWith(paths.DATA_DIR, {
-        recursive: true,
-        force: true,
-      });
-      expect(logger.info).toHaveBeenCalledWith(
-        "Removing contents of ship images directory"
-      );
-      expect(fs.rmSync).toHaveBeenCalledWith(paths.SHIP_IMAGES_DIR, {
-        recursive: true,
-        force: true,
-      });
-      expect(fs.rmSync).not.toHaveBeenCalledWith(
-        paths.OUTFIT_IMAGES_DIR,
-        expect.any(Object)
-      );
-      expect(fs.rmSync).not.toHaveBeenCalledWith(
-        paths.THUMBNAIL_IMAGES_DIR,
-        expect.any(Object)
-      );
+      expect(fs.readdirSync).not.toHaveBeenCalled();
+      expect(fs.rmSync).not.toHaveBeenCalled();
       expect(logger.success).toHaveBeenCalledWith(
-        "Output directories cleaned successfully"
+        "Output directories prepared for generation"
       );
     });
 
-    it("When cleaning data directory, Then should log relative path", () => {
+    it("When some directories exist, Then should not clean any directories", () => {
       // Arrange
-      (fs.existsSync as jest.Mock)
-        .mockReturnValueOnce(true) // DATA_DIR exists
-        .mockReturnValueOnce(false) // OUTFIT_IMAGES_DIR doesn't exist
-        .mockReturnValueOnce(false) // SHIP_IMAGES_DIR doesn't exist
-        .mockReturnValueOnce(false); // THUMBNAIL_IMAGES_DIR doesn't exist
-
-      (path.relative as jest.Mock).mockReturnValue("src/assets/data");
+      // No setup needed - function doesn't access directories anymore
 
       // Act
       cleanOutputDirectories();
 
       // Assert
-      expect(path.relative).toHaveBeenCalledWith(process.cwd(), paths.DATA_DIR);
       expect(logger.info).toHaveBeenCalledWith(
-        "Removing contents of src/assets/data"
+        "Cleaning output directories..."
+      );
+      // Note: Image directories are no longer cleaned - the image copier
+      // checks file contents before overwriting
+      expect(fs.readdirSync).not.toHaveBeenCalled();
+      expect(fs.rmSync).not.toHaveBeenCalled();
+      expect(logger.success).toHaveBeenCalledWith(
+        "Output directories prepared for generation"
+      );
+    });
+
+    it("When image directories exist, Then should not clean them", () => {
+      // Arrange
+      // No setup needed - function doesn't access directories anymore
+
+      // Act
+      cleanOutputDirectories();
+
+      // Assert
+      // Note: Image directories are no longer cleaned - the image copier
+      // checks file contents before overwriting, so existing images are preserved
+      expect(logger.info).toHaveBeenCalledWith(
+        "Cleaning output directories..."
+      );
+      expect(fs.readdirSync).not.toHaveBeenCalled();
+      expect(fs.rmSync).not.toHaveBeenCalled();
+      expect(logger.success).toHaveBeenCalledWith(
+        "Output directories prepared for generation"
       );
     });
   });

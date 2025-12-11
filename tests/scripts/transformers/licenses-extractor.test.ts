@@ -58,7 +58,7 @@ describe("LicensesExtractor", () => {
 
     it("When item has no attributes, Then should return item unchanged", () => {
       // Arrange
-      const input = createMockShip();
+      const input = createMockShip({ attributes: undefined });
 
       // Act
       const result = extractor.transform(input);

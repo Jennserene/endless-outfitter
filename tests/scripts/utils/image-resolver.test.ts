@@ -79,6 +79,57 @@ describe("image-resolver", () => {
       // Assert
       expect(result).toBe(basePath);
     });
+
+    it("When no file found, Then should check for animation frames", () => {
+      // Arrange
+      const basePath = "images/ship/archon";
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        // Return true for directory and animation frame, false for everything else
+        if (path === "images/ship") return true; // Directory exists
+        if (path === "images/ship/archon-0.png") return true; // Animation frame exists
+        return false;
+      });
+
+      // Act
+      const result = findImageFile(basePath);
+
+      // Assert
+      expect(result).toBe("images/ship/archon-0.png");
+    });
+
+    it("When checking animation frames, Then should try both single and double digit patterns", () => {
+      // Arrange
+      const basePath = "images/ship/koryfi";
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        // Return true for directory and double-digit animation frame, false for everything else
+        if (path === "images/ship") return true; // Directory exists
+        if (path === "images/ship/koryfi-00.png") return true; // Double-digit animation frame exists
+        return false;
+      });
+
+      // Act
+      const result = findImageFile(basePath);
+
+      // Assert
+      expect(result).toBe("images/ship/koryfi-00.png");
+    });
+
+    it("When checking animation frames, Then should try both - and = separators", () => {
+      // Arrange
+      const basePath = "images/ship/shuttle";
+      (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
+        // Return true for directory and = separator animation frame, false for everything else
+        if (path === "images/ship") return true; // Directory exists
+        if (path === "images/ship/shuttle=0.png") return true; // = separator animation frame exists
+        return false;
+      });
+
+      // Act
+      const result = findImageFile(basePath);
+
+      // Assert
+      expect(result).toBe("images/ship/shuttle=0.png");
+    });
   });
 
   describe("resolveImagePath", () => {

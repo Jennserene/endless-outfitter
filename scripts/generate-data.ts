@@ -11,7 +11,7 @@ import {
   isMainModule,
   type CliOptions,
 } from "./utils/cli-args";
-import { logger } from "@/lib/logger";
+import { setupSignalHandling } from "./utils/signal-handling";
 
 /**
  * Pipeline execution result
@@ -21,6 +21,51 @@ export interface PipelineResult {
   errorCode?: string;
   message: string;
   steps?: Array<{ name: string; status: "success" | "failed" }>;
+}
+
+/**
+ * Pipeline step type for error handling
+ */
+type PipelineStep = { name: string; status: "success" | "failed" };
+
+/**
+ * Determine which pipeline step failed from the error message
+ * @param error - The error that was thrown
+ * @param steps - Array of pipeline steps
+ * @returns Index of the failed step, or -1 if unable to determine
+ */
+function determineFailedStep(error: unknown, steps: PipelineStep[]): number {
+  if (
+    error instanceof ScriptError &&
+    error.message.includes("Pipeline failed at step")
+  ) {
+    const stepNameMatch = error.message.match(/"([^"]+)"/);
+    if (stepNameMatch) {
+      const failedStepName = stepNameMatch[1];
+      return steps.findIndex((s) => s.name === failedStepName);
+    }
+  }
+  return -1;
+}
+
+/**
+ * Mark a step and all subsequent steps as failed
+ * @param steps - Array of pipeline steps to modify
+ * @param failedIndex - Index of the step that failed
+ */
+function markStepsAsFailed(steps: PipelineStep[], failedIndex: number): void {
+  if (failedIndex >= 0 && failedIndex < steps.length) {
+    steps[failedIndex].status = "failed";
+    // Mark subsequent steps as failed (not executed)
+    for (let i = failedIndex + 1; i < steps.length; i++) {
+      steps[i].status = "failed";
+    }
+  } else {
+    // If we can't determine the step, mark all as failed
+    steps.forEach((step) => {
+      step.status = "failed";
+    });
+  }
 }
 
 /**
@@ -41,11 +86,10 @@ export async function executePipeline(
 
   const pipeline = new DataGenerationPipeline();
   const pipelineSteps = pipeline.getSteps();
-  const steps: Array<{ name: string; status: "success" | "failed" }> =
-    pipelineSteps.map((step) => ({
-      name: step.name,
-      status: "success" as const,
-    }));
+  const steps: PipelineStep[] = pipelineSteps.map((step) => ({
+    name: step.name,
+    status: "success" as const,
+  }));
 
   try {
     pipeline.execute();
@@ -56,32 +100,8 @@ export async function executePipeline(
       steps,
     };
   } catch (error) {
-    // Determine which step failed from error message
-    let failedStepIndex = -1;
-    if (
-      error instanceof ScriptError &&
-      error.message.includes("Pipeline failed at step")
-    ) {
-      const stepNameMatch = error.message.match(/"([^"]+)"/);
-      if (stepNameMatch) {
-        const failedStepName = stepNameMatch[1];
-        failedStepIndex = steps.findIndex((s) => s.name === failedStepName);
-      }
-    }
-
-    // Mark failed step and subsequent steps
-    if (failedStepIndex >= 0) {
-      steps[failedStepIndex].status = "failed";
-      // Mark subsequent steps as failed (not executed)
-      for (let i = failedStepIndex + 1; i < steps.length; i++) {
-        steps[i].status = "failed";
-      }
-    } else {
-      // If we can't determine the step, mark all as failed
-      steps.forEach((step) => {
-        step.status = "failed";
-      });
-    }
+    const failedStepIndex = determineFailedStep(error, steps);
+    markStepsAsFailed(steps, failedStepIndex);
 
     if (error instanceof ScriptError) {
       return {
@@ -111,13 +131,13 @@ export async function main(): Promise<number> {
 
   // Handle version flag
   if (options.version) {
-    displayVersion();
+    displayVersion("generate-data");
     return 0;
   }
 
   // Handle help flag
   if (options.help) {
-    displayHelp();
+    displayHelp("generate-data");
     return 0;
   }
 
@@ -146,36 +166,9 @@ export async function main(): Promise<number> {
   }
 }
 
-/**
- * Setup graceful signal handling
- */
-function setupSignalHandling(): void {
-  let isShuttingDown = false;
-
-  const gracefulShutdown = (signal: string) => {
-    if (isShuttingDown) {
-      logger.error("Force shutdown requested");
-      process.exit(1);
-    }
-
-    isShuttingDown = true;
-    logger.info(`\nReceived ${signal}, shutting down gracefully...`);
-    logger.info("Press Ctrl+C again to force shutdown");
-
-    // Give a moment for cleanup, then exit
-    setTimeout(() => {
-      logger.error("Shutdown timeout, forcing exit");
-      process.exit(1);
-    }, 5000);
-  };
-
-  process.on("SIGINT", () => gracefulShutdown("SIGINT"));
-  process.on("SIGTERM", () => gracefulShutdown("SIGTERM"));
-}
-
 // Only execute if this file is run directly (allows for testing)
-if (isMainModule()) {
-  setupSignalHandling();
+if (isMainModule(["generate-data"])) {
+  setupSignalHandling("Data generation");
   main()
     .then((exitCode) => {
       process.exit(exitCode);

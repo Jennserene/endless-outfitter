@@ -1,8 +1,4 @@
-import {
-  main,
-  executePipeline,
-  type PipelineResult,
-} from "@scripts/generate-data";
+import { main, executePipeline } from "@scripts/generate-data";
 import {
   parseCliArgs,
   displayHelp,
@@ -17,7 +13,6 @@ import * as directories from "@scripts/utils/directories";
 import * as shipGenerator from "@scripts/generators/ship-generator";
 import * as outfitGenerator from "@scripts/generators/outfit-generator";
 import * as dataLoader from "@/lib/loaders/data-loader";
-import { ImageRetrievalService } from "@scripts/services/image-retrieval-service";
 import { TEST_STEP_NAMES, TEST_ERROR_MESSAGES } from "./__fixtures__";
 
 // Mock dependencies
@@ -39,6 +34,9 @@ jest.mock("@scripts/parsers/retrieve-raw-data", () => ({
 jest.mock("@scripts/utils/directories", () => ({
   ensureDataDirectories: jest.fn(),
   cleanOutputDirectories: jest.fn(),
+  backupExistingFiles: jest.fn(),
+  deleteBackupFiles: jest.fn(),
+  restoreBackupFiles: jest.fn(),
 }));
 
 jest.mock("@scripts/generators/ship-generator", () => ({
@@ -198,6 +196,32 @@ describe("generate-data CLI", () => {
       expect(options.json).toBe(true);
       expect(options.debug).toBe(true);
     });
+
+    it("When grouped short flags are provided (e.g., -vh), Then should parse all flags correctly", () => {
+      // Arrange
+      process.argv = ["node", "generate-data.ts", "-vh"];
+
+      // Act
+      const options = parseCliArgs();
+
+      // Assert
+      expect(options.version).toBe(true);
+      expect(options.help).toBe(true);
+    });
+
+    it("When invalid flag syntax is used, Then should handle gracefully", () => {
+      // Arrange
+      process.argv = ["node", "generate-data.ts", "--json=true"];
+
+      // Act
+      const options = parseCliArgs();
+
+      // Assert
+      // Commander may throw for invalid syntax, but we handle it gracefully
+      // The options object should still be defined
+      expect(options).toBeDefined();
+      expect(typeof options.json).toBe("boolean");
+    });
   });
 
   describe("displayVersion", () => {
@@ -206,7 +230,7 @@ describe("generate-data CLI", () => {
       const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
       // Act
-      displayVersion();
+      displayVersion("generate-data");
 
       // Assert
       expect(consoleSpy).toHaveBeenCalledWith(
@@ -222,7 +246,7 @@ describe("generate-data CLI", () => {
       const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
       // Act
-      displayHelp();
+      displayHelp("generate-data");
 
       // Assert
       expect(consoleSpy).toHaveBeenCalledWith(
@@ -260,9 +284,11 @@ describe("generate-data CLI", () => {
       (DataGenerationPipeline as jest.Mock).mockImplementation(
         () => mockPipeline
       );
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
       (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
         undefined
       );
+      (directories.deleteBackupFiles as jest.Mock).mockReturnValue(undefined);
       (retrieveRawData.retrieveRawData as jest.Mock).mockReturnValue(undefined);
       (directories.ensureDataDirectories as jest.Mock).mockReturnValue(
         undefined
@@ -280,7 +306,7 @@ describe("generate-data CLI", () => {
       // Assert
       expect(result.success).toBe(true);
       expect(result.message).toContain("successfully");
-      expect(result.steps).toHaveLength(6);
+      expect(result.steps).toHaveLength(9);
       result.steps?.forEach((step) => {
         expect(step.status).toBe("success");
       });
@@ -306,7 +332,7 @@ describe("generate-data CLI", () => {
       // Arrange
       const error = new ScriptError(
         ScriptErrorCode.PIPELINE_STEP_FAILED,
-        'Pipeline failed at step "Clean output directories"'
+        'Pipeline failed at step "Backup existing files"'
       );
       mockPipeline.execute.mockImplementation(() => {
         throw error;
@@ -318,8 +344,14 @@ describe("generate-data CLI", () => {
       // Assert
       expect(result.success).toBe(false);
       expect(result.errorCode).toBe(ScriptErrorCode.PIPELINE_STEP_FAILED);
-      expect(result.message).toContain("Clean output directories");
-      expect(result.steps?.[0].status).toBe("failed");
+      expect(result.message).toContain("Backup existing files");
+      const failedIndex = result.steps?.findIndex(
+        (s) => s.name === "Backup existing files"
+      );
+      expect(failedIndex).toBeGreaterThanOrEqual(0);
+      if (failedIndex !== undefined && failedIndex >= 0) {
+        expect(result.steps?.[failedIndex].status).toBe("failed");
+      }
     });
 
     it("When a pipeline step fails, Then should mark subsequent steps as failed", async () => {
@@ -380,9 +412,11 @@ describe("generate-data CLI", () => {
       (DataGenerationPipeline as jest.Mock).mockImplementation(
         () => mockPipeline
       );
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
       (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
         undefined
       );
+      (directories.deleteBackupFiles as jest.Mock).mockReturnValue(undefined);
       (retrieveRawData.retrieveRawData as jest.Mock).mockReturnValue(undefined);
       (directories.ensureDataDirectories as jest.Mock).mockReturnValue(
         undefined
@@ -484,6 +518,115 @@ describe("generate-data CLI", () => {
       expect(parsed.errorCode).toBeDefined();
 
       consoleErrorSpy.mockRestore();
+    });
+  });
+
+  describe("backup and restore functionality", () => {
+    let mockPipeline: jest.Mocked<DataGenerationPipeline>;
+
+    beforeEach(() => {
+      // Set up all mocks first
+      (directories.backupExistingFiles as jest.Mock).mockReturnValue(new Map());
+      (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
+        undefined
+      );
+      (directories.deleteBackupFiles as jest.Mock).mockReturnValue(undefined);
+      (directories.restoreBackupFiles as jest.Mock).mockReturnValue(undefined);
+      (retrieveRawData.retrieveRawData as jest.Mock).mockReturnValue(undefined);
+      (directories.ensureDataDirectories as jest.Mock).mockReturnValue(
+        undefined
+      );
+      (shipGenerator.generateShips as jest.Mock).mockReturnValue(undefined);
+      (outfitGenerator.generateOutfits as jest.Mock).mockReturnValue(undefined);
+      (dataLoader.loadShips as jest.Mock).mockReturnValue([]);
+      (dataLoader.loadOutfits as jest.Mock).mockReturnValue([]);
+
+      // Create a mock pipeline that actually executes the steps
+      // by calling the real directory functions
+      mockPipeline = {
+        execute: jest.fn(() => {
+          try {
+            // Simulate pipeline execution by calling the mocked functions
+            directories.backupExistingFiles();
+            directories.cleanOutputDirectories();
+            retrieveRawData.retrieveRawData();
+            directories.ensureDataDirectories();
+            shipGenerator.generateShips(undefined);
+            outfitGenerator.generateOutfits(undefined);
+            dataLoader.loadShips();
+            dataLoader.loadOutfits();
+            // Image retrieval step
+            const ImageRetrievalService = jest.requireMock<
+              typeof import("@scripts/services/image-retrieval-service")
+            >(
+              "@scripts/services/image-retrieval-service"
+            ).ImageRetrievalService;
+            const service = new ImageRetrievalService();
+            service.retrieveImages([], []);
+            directories.deleteBackupFiles();
+          } catch (error) {
+            // Simulate error handling - restore backups on error
+            directories.restoreBackupFiles();
+            throw error;
+          }
+        }),
+        getSteps: jest.fn(() =>
+          TEST_STEP_NAMES.map((name) => ({ name, execute: jest.fn() }))
+        ),
+      } as unknown as jest.Mocked<DataGenerationPipeline>;
+
+      (DataGenerationPipeline as jest.Mock).mockImplementation(
+        () => mockPipeline
+      );
+    });
+
+    it("When pipeline executes successfully, Then should call deleteBackupFiles", async () => {
+      // Act
+      await executePipeline();
+
+      // Assert
+      expect(directories.backupExistingFiles).toHaveBeenCalled();
+      expect(directories.deleteBackupFiles).toHaveBeenCalled();
+      expect(directories.restoreBackupFiles).not.toHaveBeenCalled();
+    });
+
+    it("When pipeline fails, Then should call restoreBackupFiles", async () => {
+      // Arrange
+      const error = new ScriptError(
+        ScriptErrorCode.PIPELINE_STEP_FAILED,
+        'Pipeline failed at step "Generate ships"'
+      );
+      (shipGenerator.generateShips as jest.Mock).mockImplementation(() => {
+        throw error;
+      });
+
+      // Act
+      await executePipeline();
+
+      // Assert
+      expect(directories.backupExistingFiles).toHaveBeenCalled();
+      expect(directories.restoreBackupFiles).toHaveBeenCalled();
+      expect(directories.deleteBackupFiles).not.toHaveBeenCalled();
+    });
+
+    it("When backup step fails, Then should still call restoreBackupFiles as safety measure", async () => {
+      // Arrange
+      const error = new ScriptError(
+        ScriptErrorCode.PIPELINE_STEP_FAILED,
+        'Pipeline failed at step "Backup existing files"'
+      );
+      (directories.backupExistingFiles as jest.Mock).mockImplementation(() => {
+        throw error;
+      });
+
+      // Act
+      await executePipeline();
+
+      // Assert
+      // Even if backup fails, the pipeline should attempt to restore as a safety measure
+      expect(directories.backupExistingFiles).toHaveBeenCalled();
+      expect(directories.restoreBackupFiles).toHaveBeenCalled();
+      expect(directories.deleteBackupFiles).not.toHaveBeenCalled();
     });
   });
 });

@@ -87,9 +87,9 @@ describe("species", () => {
     it("When grouping files by species, Then should create map with species as keys", () => {
       // Arrange
       const files: GameDataFile[] = [
-        { path: "/test/data/human/ships.txt", species: "human" },
-        { path: "/test/data/pug/ships.txt", species: "pug" },
-        { path: "/test/data/human/outfits.txt", species: "human" },
+        { content: "ship content 1", species: "human" },
+        { content: "ship content 2", species: "pug" },
+        { content: "outfit content 1", species: "human" },
       ];
 
       // Act
@@ -105,14 +105,12 @@ describe("species", () => {
       // Arrange
       const files: GameDataFile[] = [
         {
-          path: "/test/data/ships.txt",
-          species: undefined,
           content: "content1",
+          species: undefined,
         },
         {
-          path: "/test/data/human/ships.txt",
-          species: "human",
           content: "content2",
+          species: "human",
         },
       ];
 
@@ -137,7 +135,7 @@ describe("species", () => {
     it("When grouping single file, Then should create map with one entry", () => {
       // Arrange
       const files: GameDataFile[] = [
-        { path: "/test/data/human/ships.txt", species: "human" },
+        { content: "ship content", species: "human" },
       ];
 
       // Act
@@ -151,9 +149,9 @@ describe("species", () => {
     it("When grouping multiple files for same species, Then should group together", () => {
       // Arrange
       const files: GameDataFile[] = [
-        { path: "/test/data/human/ships.txt", species: "human" },
-        { path: "/test/data/human/kestrel.txt", species: "human" },
-        { path: "/test/data/human/variants.txt", species: "human" },
+        { content: "ships content", species: "human" },
+        { content: "kestrel content", species: "human" },
+        { content: "variants content", species: "human" },
       ];
 
       // Act

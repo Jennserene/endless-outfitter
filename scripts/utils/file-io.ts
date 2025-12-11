@@ -1,12 +1,125 @@
-import { writeFileSync, existsSync, readdirSync, statSync } from "fs";
+import {
+  writeFileSync,
+  readFileSync,
+  existsSync,
+  readdirSync,
+  statSync,
+} from "fs";
 import { join } from "path";
 import { extractSpeciesFromPath } from "./species";
 
 /**
- * Write JSON data to a file with consistent formatting
+ * Cache of existing file contents, keyed by file path
  */
-export function writeJsonFile<T>(filePath: string, data: T): void {
-  writeFileSync(filePath, JSON.stringify(data, null, 2) + "\n", "utf-8");
+export type FileContentCache = Map<string, unknown>;
+
+/**
+ * Normalize JSON data by removing the generatedAt field from metadata for comparison
+ */
+function normalizeForComparison<T>(data: T): T {
+  if (typeof data !== "object" || data === null) {
+    return data;
+  }
+
+  if (Array.isArray(data)) {
+    return data.map(normalizeForComparison) as T;
+  }
+
+  const normalized = { ...data } as Record<string, unknown>;
+
+  // If this is a GeneratedDataFile structure, remove generatedAt from metadata
+  if (
+    "metadata" in normalized &&
+    typeof normalized.metadata === "object" &&
+    normalized.metadata !== null
+  ) {
+    const metadata = { ...normalized.metadata } as Record<string, unknown>;
+    delete metadata.generatedAt;
+    normalized.metadata = metadata;
+  }
+
+  // Recursively normalize nested objects
+  for (const [key, value] of Object.entries(normalized)) {
+    if (typeof value === "object" && value !== null) {
+      normalized[key] = normalizeForComparison(value);
+    }
+  }
+
+  return normalized as T;
+}
+
+/**
+ * Compare two JSON objects for equality, ignoring generatedAt in metadata
+ */
+function areEqualIgnoringGeneratedAt<T>(a: T, b: T): boolean {
+  const normalizedA = normalizeForComparison(a);
+  const normalizedB = normalizeForComparison(b);
+  return JSON.stringify(normalizedA) === JSON.stringify(normalizedB);
+}
+
+/**
+ * Write JSON data to a file with consistent formatting.
+ * Skips writing if the file content is identical (ignoring generatedAt).
+ *
+ * @param filePath - Path to the file to write
+ * @param data - Data to write
+ * @param existingFileCache - Optional cache of existing file contents to compare against
+ * @returns true if file was written, false if skipped due to identical content
+ */
+export function writeJsonFile<T>(
+  filePath: string,
+  data: T,
+  existingFileCache?: FileContentCache
+): boolean {
+  const formattedData = JSON.stringify(data, null, 2) + "\n";
+
+  // If we have a cache, compare with existing content
+  // BUT: only skip writing if the file actually exists on disk
+  // (after backup, files are renamed to .old, so we must write even if cache matches)
+  if (existingFileCache?.has(filePath) && existsSync(filePath)) {
+    const existingData = existingFileCache.get(filePath);
+    if (areEqualIgnoringGeneratedAt(data, existingData)) {
+      // Content is identical (ignoring generatedAt) AND file exists, skip writing
+      return false;
+    }
+  }
+
+  // Write the file (either cache doesn't match, or file doesn't exist on disk)
+  writeFileSync(filePath, formattedData, "utf-8");
+  return true;
+}
+
+/**
+ * Read all JSON files from a directory and cache their contents
+ *
+ * @param directory - Directory to read files from
+ * @returns Map of file paths to parsed JSON content
+ */
+export function readExistingJsonFiles(directory: string): FileContentCache {
+  const cache = new Map<string, unknown>();
+
+  if (!existsSync(directory)) {
+    return cache;
+  }
+
+  try {
+    const files = readdirSync(directory).filter((f) => f.endsWith(".json"));
+
+    for (const filename of files) {
+      const filePath = join(directory, filename);
+      try {
+        const fileContent = readFileSync(filePath, "utf-8");
+        const parsed = JSON.parse(fileContent);
+        cache.set(filePath, parsed);
+      } catch {
+        // Skip files that can't be read or parsed
+      }
+    }
+  } catch {
+    // If directory can't be read, return empty cache
+  }
+
+  return cache;
 }
 
 /**

@@ -7,6 +7,103 @@ import { join, extname, dirname } from "path";
 const IMAGE_EXTENSIONS = [".png", ".jpg", ".jpeg", ".gif", ".webp"] as const;
 
 /**
+ * Check if a file exists with a specific extension
+ * @param path - Base path without extension
+ * @param ext - Extension to check (e.g., ".png")
+ * @returns Full path to the file if found, null otherwise
+ */
+function checkFileWithExtension(path: string, ext: string): string | null {
+  const pathWithExt = `${path}${ext}`;
+  if (existsSync(pathWithExt)) {
+    return pathWithExt;
+  }
+  return null;
+}
+
+/**
+ * Find a specific animation frame by frame number, separator, extension, and padding
+ * @param baseDir - Directory containing the image
+ * @param baseName - Base filename without extension
+ * @param frame - Frame number (0-2)
+ * @param separator - Separator character ("-" or "=")
+ * @param ext - File extension (e.g., ".png")
+ * @param padding - Padding style: "single" for single-digit (0), "double" for double-digit (00)
+ * @returns Full path to the animation frame if found, null otherwise
+ */
+function findAnimationFrame(
+  baseDir: string,
+  baseName: string,
+  frame: number,
+  separator: string,
+  ext: string,
+  padding: "single" | "double"
+): string | null {
+  const frameNumber =
+    padding === "double" ? frame.toString().padStart(2, "0") : frame.toString();
+  const numberedPath = join(
+    baseDir,
+    `${baseName}${separator}${frameNumber}${ext}`
+  );
+  if (existsSync(numberedPath)) {
+    return numberedPath;
+  }
+  return null;
+}
+
+/**
+ * Find animation frames by checking various patterns
+ * Checks both single-digit and double-digit patterns with different separators
+ * @param basePath - Base path without extension
+ * @returns Full path to an animation frame if found, null otherwise
+ */
+function findAnimationFrames(basePath: string): string | null {
+  const baseDir = dirname(basePath);
+  const baseName = basePath.substring(baseDir.length + 1);
+  const separators = ["-", "="];
+  const MAX_FRAMES = 3;
+
+  if (!existsSync(baseDir)) {
+    return null;
+  }
+
+  for (const ext of IMAGE_EXTENSIONS) {
+    for (const sep of separators) {
+      // Try single-digit pattern (e.g., archon-0.png, shuttle=0.png)
+      for (let i = 0; i < MAX_FRAMES; i++) {
+        const found = findAnimationFrame(
+          baseDir,
+          baseName,
+          i,
+          sep,
+          ext,
+          "single"
+        );
+        if (found) {
+          return found;
+        }
+      }
+
+      // Try double-digit pattern (e.g., koryfi-00.png)
+      for (let i = 0; i < MAX_FRAMES; i++) {
+        const found = findAnimationFrame(
+          baseDir,
+          baseName,
+          i,
+          sep,
+          ext,
+          "double"
+        );
+        if (found) {
+          return found;
+        }
+      }
+    }
+  }
+
+  return null;
+}
+
+/**
  * Find an image file by checking various possible locations and extensions.
  * Checks if the file exists with different extensions.
  *
@@ -27,9 +124,9 @@ export function findImageFile(basePath: string): string | null {
 
   // Try with each extension
   for (const ext of IMAGE_EXTENSIONS) {
-    const pathWithExt = `${basePath}${ext}`;
-    if (existsSync(pathWithExt)) {
-      return pathWithExt;
+    const found = checkFileWithExtension(basePath, ext);
+    if (found) {
+      return found;
     }
   }
 
@@ -38,41 +135,8 @@ export function findImageFile(basePath: string): string | null {
     return basePath;
   }
 
-  // Check for numbered animation frames (e.g., archon-0.png, koryfi-00.png, shuttle=0.png)
-  // Try both single-digit (-0, -1, =0, =1) and double-digit (-00, -01, =00, =01) patterns
-  // We check the first few frames (0-2) to find a representative image
-  // Support both `-` and `=` separators
-  const baseDir = dirname(basePath);
-  const baseName = basePath.substring(baseDir.length + 1);
-  const separators = ["-", "="];
-
-  if (existsSync(baseDir)) {
-    for (const ext of IMAGE_EXTENSIONS) {
-      for (const sep of separators) {
-        // Try single-digit pattern (e.g., archon-0.png, shuttle=0.png) - check first 3 frames
-        for (let i = 0; i < 3; i++) {
-          const numberedPath = join(baseDir, `${baseName}${sep}${i}${ext}`);
-          if (existsSync(numberedPath)) {
-            return numberedPath;
-          }
-        }
-
-        // Try double-digit pattern (e.g., koryfi-00.png) - check first 3 frames
-        for (let i = 0; i < 3; i++) {
-          const paddedNum = i.toString().padStart(2, "0");
-          const numberedPath = join(
-            baseDir,
-            `${baseName}${sep}${paddedNum}${ext}`
-          );
-          if (existsSync(numberedPath)) {
-            return numberedPath;
-          }
-        }
-      }
-    }
-  }
-
-  return null;
+  // Check for numbered animation frames
+  return findAnimationFrames(basePath);
 }
 
 /**

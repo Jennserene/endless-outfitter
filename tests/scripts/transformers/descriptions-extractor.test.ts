@@ -33,6 +33,9 @@ describe("DescriptionsExtractor", () => {
       );
       expect(result).toEqual({
         name: "Test Ship",
+        attributes: {
+          category: "Unknown",
+        },
         description: "A test ship",
         descriptions: ["A test ship"],
       });

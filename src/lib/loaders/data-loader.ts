@@ -49,6 +49,12 @@ export function loadShips(): Ship[] {
     const files = readdirSync(SHIPS_DIR);
     const shipFiles = files.filter((f) => f.endsWith(".json"));
 
+    if (shipFiles.length === 0) {
+      throw new Error(
+        `No ships data files found in ${SHIPS_DIR}. Directory contains: ${files.length === 0 ? "no files" : files.join(", ")}`
+      );
+    }
+
     for (const filename of shipFiles) {
       const filePath = join(SHIPS_DIR, filename);
       const fileContent = readFileSync(filePath, "utf-8");
@@ -71,7 +77,9 @@ export function loadShips(): Ship[] {
     }
 
     if (allShips.length === 0) {
-      throw new Error(`No ships data files found in ${SHIPS_DIR}`);
+      throw new Error(
+        `No valid ships data found in ${SHIPS_DIR}. Found ${shipFiles.length} file(s) but all were empty or invalid: ${shipFiles.join(", ")}`
+      );
     }
 
     return allShips;
@@ -97,6 +105,12 @@ export function loadOutfits(): Outfit[] {
     const files = readdirSync(OUTFITS_DIR);
     const outfitFiles = files.filter((f) => f.endsWith(".json"));
 
+    if (outfitFiles.length === 0) {
+      throw new Error(
+        `No outfits data files found in ${OUTFITS_DIR}. Directory contains: ${files.length === 0 ? "no files" : files.join(", ")}`
+      );
+    }
+
     for (const filename of outfitFiles) {
       const filePath = join(OUTFITS_DIR, filename);
       const fileContent = readFileSync(filePath, "utf-8");
@@ -119,7 +133,9 @@ export function loadOutfits(): Outfit[] {
     }
 
     if (allOutfits.length === 0) {
-      throw new Error(`No outfits data files found in ${OUTFITS_DIR}`);
+      throw new Error(
+        `No valid outfits data found in ${OUTFITS_DIR}. Found ${outfitFiles.length} file(s) but all were empty or invalid: ${outfitFiles.join(", ")}`
+      );
     }
 
     return allOutfits;

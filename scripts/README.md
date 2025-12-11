@@ -1,3 +1,5 @@
+Ensure you update tests for any changes
+
 # nodejs-testing-best-practices
 
 Copied from: https://github.com/lirantal/nodejs-cli-apps-best-practices/blob/main/README.md

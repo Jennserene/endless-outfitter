@@ -50,7 +50,7 @@ describe("NumericNormalizer", () => {
 
     it("When ship has no attributes, Then should return ship unchanged", () => {
       // Arrange
-      const input = createMockShip();
+      const input = createMockShip({ attributes: undefined });
 
       // Act
       const result = normalizer.transform(input);

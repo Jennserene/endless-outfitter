@@ -7,3 +7,15 @@ try {
 } catch {
   // Ignore if not available (e.g., in node environment for scripts tests)
 }
+
+// Mock global fetch for agent log calls in scripts
+// These are non-critical logging calls that should not fail tests
+if (typeof global.fetch === "undefined") {
+  global.fetch = (() =>
+    Promise.resolve({
+      ok: true,
+      status: 200,
+      json: async () => ({}),
+      text: async () => "",
+    } as Response)) as typeof fetch;
+}

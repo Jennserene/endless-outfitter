@@ -22,13 +22,21 @@ export function createMockZodError(
   }
 
   // Fallback: create a basic ZodError
+  // Note: Zod v4+ structure may differ, so we use a type assertion
   return new z.ZodError([
     {
       code: z.ZodIssueCode.invalid_type,
-      expected,
-      received,
+      expected: expected as
+        | "string"
+        | "number"
+        | "bigint"
+        | "boolean"
+        | "symbol"
+        | "undefined"
+        | "object"
+        | "function",
       path: [field],
       message: `Expected ${expected}, received ${received}`,
-    },
+    } as z.ZodIssue,
   ]);
 }
