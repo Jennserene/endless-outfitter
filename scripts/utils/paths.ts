@@ -4,7 +4,7 @@ import { GAME_REPO_PATH } from "@config/game-version";
 /**
  * Path constants for data generation and validation scripts
  */
-export const DATA_DIR = join(process.cwd(), "src/data");
+export const DATA_DIR = join(process.cwd(), "src/assets/data");
 export const SHIPS_DIR = join(DATA_DIR, "ships");
 export const OUTFITS_DIR = join(DATA_DIR, "outfits");
 export const SUBMODULE_PATH = join(process.cwd(), GAME_REPO_PATH);

@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "rulei",
+    "generatedAt": "2025-12-11T01:30:18.497Z",
+    "itemCount": 1
+  },
+  "data": [
+    {
+      "name": "vyu-Ir",
+      "sprite": "ship/vyuir/vyuir",
+      "thumbnail": "thumbnail/vyuir",
+      "attributes": {
+        "category": "Unclassified",
+        "cost": 77777777,
+        "shields": 68000,
+        "hull": 49000,
+        "required crew": 1,
+        "bunks": 100,
+        "mass": 1400,
+        "drag": 30,
+        "heat dissipation": 6.7,
+        "fuel capacity": 1000,
+        "cargo space": 1000,
+        "outfit space": 1000,
+        "weapon capacity": 1000,
+        "engine capacity": 1000,
+        "weapon": {
+          "blast radius": 200,
+          "shield damage": 20000,
+          "hull damage": 10000,
+          "hit force": 30000
+        }
+      },
+      "outfits": [
+        {
+          "name": "Abyssal Composer",
+          "quantity": 1
+        },
+        {
+          "name": "Fate Sealer",
+          "quantity": 2
+        },
+        {
+          "name": "Fate Divider",
+          "quantity": 2
+        }
+      ],
+      "descriptions": [
+        "The vyu-Ir is an ancient ship of the Vyu, one of several chambers of the Rulei. It is not known whether or not this was their final ship-class, or one of many, but the technology found on it may represent the height of the Rulei's advancements, as well as the cause of their downfall."
+      ]
+    }
+  ]
+}

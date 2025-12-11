@@ -40,6 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# IDE
+.vscode/
+.cursor/
+
 # Git submodules (local development only)
 /vendor/endless-sky
 

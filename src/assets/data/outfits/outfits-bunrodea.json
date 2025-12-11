@@ -1,0 +1,783 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "bunrodea",
+    "generatedAt": "2025-12-11T01:30:18.503Z",
+    "itemCount": 32
+  },
+  "data": [
+    {
+      "name": "Shield Relay Booster",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 10098,
+      "cost": 59000,
+      "thumbnail": "outfit/shield booster",
+      "mass": 2,
+      "outfit space": -2,
+      "descriptions": [
+        "The Shield Relay Booster is a component that can be installed into a Bunrodean shield relay in order to modify its effectiveness. Boosters increase the shield generation strength of a relay, but at the cost of reduced energy efficiency."
+      ],
+      "attributes": {
+        "shield generation": 0.4,
+        "shield energy": 1.2,
+        "relay upgrades": -1
+      }
+    },
+    {
+      "name": "Shield Relay Limiter",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 10099,
+      "cost": 12000,
+      "thumbnail": "outfit/shield limiter",
+      "mass": 1,
+      "outfit space": -1,
+      "descriptions": [
+        "The Shield Relay Limiter is a component that can be installed into a Bunrodean shield relay in order to modify its effectiveness. Limiters increase the energy efficiency of a relay, but at the cost of reducing the strength of its shield generation."
+      ],
+      "attributes": {
+        "shield generation": -0.02,
+        "shield energy": -0.1,
+        "relay upgrades": -1
+      }
+    },
+    {
+      "name": "Small Shield Relay",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 10010,
+      "cost": 172000,
+      "thumbnail": "outfit/small shield relay",
+      "mass": 21,
+      "outfit space": -21,
+      "descriptions": [
+        "Bunrodean shield relays are impressively efficient; while a similarly sized shield generator from another faction might be capable of providing more shield generation, Bunrodean shield relays provide a modest amount of shield generation for only a small amount of energy.",
+        "\tShield relays are able to be upgraded by installing shield boosters or limiters, which alter the performance of the shield relay. Each relay only has a limited number of slots for these upgrades, though."
+      ],
+      "attributes": {
+        "shield generation": 0.65,
+        "shield energy": 0.6,
+        "relay upgrades": 6
+      }
+    },
+    {
+      "name": "Large Shield Relay",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 10020,
+      "cost": 593000,
+      "thumbnail": "outfit/large shield relay",
+      "mass": 56,
+      "outfit space": -56,
+      "descriptions": [
+        "Some Bunrodean military captains argued that trading shield generation for energy efficiency is a foolish trade, while merchant captains looking to get the most out of their reactors argued that they could be more energy efficient. As such, shield relays are able to be customized to the owner's liking using external components.",
+        "\tShield relays are able to be upgraded by installing shield boosters or limiters, which alter the performance of the shield relay. Each relay only has a limited number of slots for these upgrades, though."
+      ],
+      "attributes": {
+        "shield generation": 2,
+        "shield energy": 1.6,
+        "relay upgrades": 16
+      }
+    },
+    {
+      "name": "Nanite Enhancer",
+      "category": "Systems",
+      "series": "Repair",
+      "index": 10098,
+      "cost": 76000,
+      "thumbnail": "outfit/nanite enhancer",
+      "mass": 5,
+      "outfit space": -5,
+      "descriptions": [
+        "The Nanite Enhancer is a component that can be installed into a Bunrodean nanite fabricator in order to modify its effectiveness. Enhancers increase the strength of the hull repair of a fabricator, but at the cost of reduced energy efficiency."
+      ],
+      "attributes": {
+        "hull repair rate": 0.25,
+        "hull energy": 0.75,
+        "nanite upgrades": -2
+      }
+    },
+    {
+      "name": "Nanite Limiter",
+      "category": "Systems",
+      "series": "Repair",
+      "index": 10099,
+      "cost": 21000,
+      "thumbnail": "outfit/nanite limiter",
+      "mass": 2,
+      "outfit space": -2,
+      "descriptions": [
+        "The Nanite Limiter is a component that can be installed into a Bunrodean nanite fabricator in order to modify its effectiveness. Limiters increase the energy and heat efficiency of a fabricator, but at the cost of reducing the strength of its hull repair."
+      ],
+      "attributes": {
+        "hull repair rate": -0.025,
+        "hull energy": -0.2,
+        "nanite upgrades": -1
+      }
+    },
+    {
+      "name": "Small Nanite Fabricator",
+      "category": "Systems",
+      "series": "Repair",
+      "index": 10010,
+      "cost": 650000,
+      "thumbnail": "outfit/small nanite fabricator",
+      "mass": 23,
+      "outfit space": -23,
+      "descriptions": [
+        "Although Bunrodea ships tend to rely on their shields for defense, some pilots will opt to install a nanite fabricator. These fabricators produce a steady stream of nanites that travel across the hull of the ship and repair any damage that they find.",
+        "\tNanite fabricators are able to be upgraded by installing nanite enhancers or limiters, which alter the performance of the fabricator. Each fabricator only has a limited number of slots for these upgrades, though."
+      ],
+      "attributes": {
+        "hull repair rate": 0.72,
+        "hull energy": 1.08,
+        "nanite upgrades": 4
+      }
+    },
+    {
+      "name": "Large Nanite Fabricator",
+      "category": "Systems",
+      "series": "Repair",
+      "index": 10020,
+      "cost": 1940000,
+      "thumbnail": "outfit/large nanite fabricator",
+      "mass": 58,
+      "outfit space": -58,
+      "descriptions": [
+        "The creation of nanite fabricators was spurred on by early contact between the Bunrodea and Korath. The hull-walking microbots of Korath System Cores allowed Korath ships to make repairs without the need of a spaceport, a trait that the Bunrodea favored for use in their scout vessels.",
+        "\tNanite fabricators are able to be upgraded by installing nanite enhancers or limiters, which alter the performance of the fabricator. Each fabricator only has a limited number of slots for these upgrades, however."
+      ],
+      "attributes": {
+        "hull repair rate": 2.12,
+        "hull energy": 3.18,
+        "nanite upgrades": 10
+      }
+    },
+    {
+      "name": "Solar Battery",
+      "plural": "Solar Batteries",
+      "category": "Power",
+      "series": "Batteries",
+      "index": 10010,
+      "cost": 49000,
+      "thumbnail": "outfit/solar battery",
+      "mass": 7,
+      "outfit space": -7,
+      "descriptions": [
+        "Bunrodean solar batteries are required for the installation of solar cells, but solar batteries are perfectly capable of going without solar cells. Many captains will install batteries to store energy gained from normal reactors without ever installing solar cells."
+      ],
+      "attributes": {
+        "energy capacity": 6000,
+        "solar cell": 36
+      }
+    },
+    {
+      "name": "Solar Cell",
+      "category": "Power",
+      "series": "Batteries",
+      "index": 10020,
+      "cost": 17000,
+      "thumbnail": "outfit/solar cell",
+      "mass": 1,
+      "outfit space": -1,
+      "descriptions": [
+        "Bunrodean solar panels are extremely efficient, and are even capable of powering smaller or less powerful warships. But be warned: while these solar cells can provide significant energy, that is not without the drawback of also generating waste heat that scales with the energy generated, which can be especially hazardous when near bright stars.",
+        "\tThese cells must be installed on the mounting platform that comes with a solar battery to be used."
+      ],
+      "attributes": {
+        "solar collection": 0.145,
+        "solar heat": 0.07,
+        "solar cell": -1
+      }
+    },
+    {
+      "name": "Reactor Overclocker",
+      "category": "Power",
+      "series": "Generators",
+      "index": 10098,
+      "cost": 142000,
+      "thumbnail": "outfit/reactor overclocker",
+      "mass": 4,
+      "outfit space": -4,
+      "descriptions": [
+        "The Reactor Overclocker is a component that can be installed into a Bunrodea reactor in order to modify its effectiveness. Overclockers increase the strength of the energy generation of a reactor, but at the cost of reduced heat efficiency."
+      ],
+      "attributes": {
+        "energy generation": 0.9,
+        "heat generation": 3.15,
+        "reactor upgrades": -3
+      }
+    },
+    {
+      "name": "Reactor Limiter",
+      "category": "Power",
+      "series": "Generators",
+      "index": 10099,
+      "cost": 26000,
+      "thumbnail": "outfit/reactor limiter",
+      "mass": 2,
+      "outfit space": -2,
+      "descriptions": [
+        "The Reactor Limiter is a component that can be installed into a Bunrodea reactor in order to modify its effectiveness. Limiters increase the heat efficiency of a reactor, but at the cost of reducing the strength of its energy generation."
+      ],
+      "attributes": {
+        "energy generation": -0.55,
+        "heat generation": -6.6,
+        "reactor upgrades": -2
+      }
+    },
+    {
+      "name": "Quark Reactor",
+      "category": "Power",
+      "series": "Generators",
+      "index": 10010,
+      "cost": 3367000,
+      "thumbnail": "outfit/quark reactor",
+      "mass": 61,
+      "outfit space": -61,
+      "descriptions": [
+        "Bunrodean reactors appear to be named after types of exotic stars that either once were or still are considered theoretical to humanity. A quark star was first discovered by humanity near the Shangri-La system during the 28th century, a star with core temperatures and pressures so extreme that quark matter is produced.",
+        "\tBunrodean reactors are able to be upgraded by installing Reactor Overclockers or Limiters, which alter the performance of the reactor. Each reactor only has a limited number of slots for these upgrades, though."
+      ],
+      "attributes": {
+        "energy generation": 8.35,
+        "heat generation": 10.9,
+        "reactor upgrades": 6
+      }
+    },
+    {
+      "name": "Electroweak Reactor",
+      "category": "Power",
+      "series": "Generators",
+      "index": 10020,
+      "cost": 8393000,
+      "thumbnail": "outfit/electroweak reactor",
+      "mass": 106,
+      "outfit space": -106,
+      "descriptions": [
+        "The existence of the exotic stars that this Bunrodean reactor bears the name of is still unknown to humanity. An electroweak star is an exotic star that would be prevented from collapsing by the electroweak force as quarks are converted to leptons in the star's core.",
+        "\tBunrodean reactors are able to be upgraded by installing Reactor Overclockers or Limiters, which alter the performance of the reactor. Each reactor only has a limited number of slots for these upgrades, though."
+      ],
+      "attributes": {
+        "energy generation": 17.25,
+        "heat generation": 20.5,
+        "reactor upgrades": 18
+      }
+    },
+    {
+      "name": "Dark Reactor",
+      "category": "Power",
+      "series": "Generators",
+      "index": 10030,
+      "cost": 15022000,
+      "thumbnail": "outfit/dark reactor",
+      "mass": 142,
+      "outfit space": -142,
+      "descriptions": [
+        "The term \"dark star\" can have different meanings, but one definition of it is a star whose core is formed around a large amount of dark matter. Such exotic stars are theorized by humanity to have possibly existed among the first generations of stars in the universe, with concentrations of dark matter acting as nucleation sites.",
+        "\tBunrodean reactors are able to be upgraded by installing Reactor Overclockers or Limiters, which alter the performance of the reactor. Each reactor only has a limited number of slots for these upgrades, though."
+      ],
+      "attributes": {
+        "energy generation": 24.7,
+        "heat generation": 28.6,
+        "reactor upgrades": 30
+      }
+    },
+    {
+      "name": "Lasher Pistol",
+      "category": "Hand to Hand",
+      "series": "H2H",
+      "index": 10010,
+      "cost": 47000,
+      "thumbnail": "outfit/lasher pistol",
+      "descriptions": [
+        "During their wars with the Korath, it was not uncommon for Bunrodean vessels to be boarded by Korath raiders looking for technology and supplies to steal. As such, effective small arms weapons became an essential part of every Bunrodean crew that may need to fight off any boarding parties."
+      ],
+      "attributes": {
+        "capture attack": 1.1,
+        "capture defense": 2.8,
+        "unplunderable": 1
+      }
+    },
+    {
+      "name": "Chiisana Rift Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10011,
+      "cost": 130000,
+      "thumbnail": "outfit/chiisana rift thruster",
+      "mass": 11,
+      "outfit space": -11,
+      "descriptions": [
+        "While the Korath favor raw power in their engines, the Bunrodea favor efficiency, opting to make use of engines that produce less thrust for significantly less heat produced."
+      ],
+      "attributes": {
+        "engine capacity": -11,
+        "thrust": 11.6625,
+        "thrusting energy": 1.15,
+        "thrusting heat": 0.65,
+        "flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "scale": 0.3,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "flare sound": "ion tiny"
+      }
+    },
+    {
+      "name": "Nami Rift Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10021,
+      "cost": 262000,
+      "thumbnail": "outfit/nami rift thruster",
+      "mass": 19,
+      "outfit space": -19,
+      "descriptions": [
+        "Although rift engines are extremely heat efficient, their energy requirement is rather high compared to the thrust they produce, even next to terribly inefficient Korath engines."
+      ],
+      "attributes": {
+        "engine capacity": -19,
+        "thrust": 21.135,
+        "thrusting energy": 2.3,
+        "thrusting heat": 1.3,
+        "flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "scale": 0.6,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "flare sound": "ion small"
+      }
+    },
+    {
+      "name": "Ookii Rift Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10031,
+      "cost": 512000,
+      "thumbnail": "outfit/ookii rift thruster",
+      "mass": 32,
+      "outfit space": -32,
+      "descriptions": [
+        "Even though the energy drawn per unit thrust of rift engines is poorer than that of Korath engines, the overall energy requirement of rift engines is still far lesser by comparison."
+      ],
+      "attributes": {
+        "engine capacity": -32,
+        "thrust": 37.455,
+        "thrusting energy": 4.4,
+        "thrusting heat": 2.5,
+        "flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "scale": 0.8,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "flare sound": "ion medium"
+      }
+    },
+    {
+      "name": "Subarashii Rift Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10041,
+      "cost": 1004000,
+      "thumbnail": "outfit/subarashii rift thruster",
+      "mass": 55,
+      "outfit space": -55,
+      "descriptions": [
+        "Given the lower size and thrust of rift engines, Bunrodean ships aren't well known for their pursuit capabilities. But there are rumors among some Bunrodea of an ancient cache of engines, more powerful than even those of the Korath, that would allow any ship to zip across the stars like a comet and chase down any potential target."
+      ],
+      "attributes": {
+        "engine capacity": -55,
+        "thrust": 69.75,
+        "thrusting energy": 8.6,
+        "thrusting heat": 4.9,
+        "flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "flare sound": "ion large"
+      }
+    },
+    {
+      "name": "Chiisana Rift Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10010,
+      "cost": 201000,
+      "thumbnail": "outfit/chiisana rift steering",
+      "mass": 17,
+      "outfit space": -17,
+      "descriptions": [
+        "Given that Bunrodean ships are typically focused on making heavy use of their forward facing guns, the Bunrodea favor high turn rates much more than high speeds. As such, rift steering systems are larger than the respective thruster systems of the same size category."
+      ],
+      "attributes": {
+        "engine capacity": -17,
+        "turn": 808.5,
+        "turning energy": 2.6,
+        "turning heat": 1,
+        "steering flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "scale": 0.3,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "steering flare sound": "ion tiny"
+      }
+    },
+    {
+      "name": "Nami Rift Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10020,
+      "cost": 442000,
+      "thumbnail": "outfit/nami rift steering",
+      "mass": 31,
+      "outfit space": -31,
+      "descriptions": [
+        "As with many Bunrodean systems, rift engines produce very little heat. This allows their ships to forgo the use of any significant cooling systems, leaving more room for other systems, be they defensive or offensive."
+      ],
+      "attributes": {
+        "engine capacity": -31,
+        "turn": 1705.5,
+        "turning energy": 5.3,
+        "turning heat": 2.1,
+        "steering flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "scale": 0.6,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "steering flare sound": "ion small"
+      }
+    },
+    {
+      "name": "Ookii Rift Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10030,
+      "cost": 940000,
+      "thumbnail": "outfit/ookii rift steering",
+      "mass": 53,
+      "outfit space": -53,
+      "descriptions": [
+        "Although the focus on steering over thrust makes Bunrodean ships easy targets to track, the power of their weapons systems would leave anyone foolish to believe that they are sitting ducks."
+      ],
+      "attributes": {
+        "engine capacity": -53,
+        "turn": 3148.5,
+        "turning energy": 9.2,
+        "turning heat": 3.65,
+        "steering flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "scale": 0.8,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "steering flare sound": "ion medium"
+      }
+    },
+    {
+      "name": "Subarashii Rift Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 10040,
+      "cost": 1577000,
+      "thumbnail": "outfit/subarashii rift steering",
+      "mass": 90,
+      "outfit space": -90,
+      "descriptions": [
+        "The largest of the rift steering systems, these engines are what allow the Bunrodea's heavy gunships to bear their many guns toward their unfortunate target."
+      ],
+      "attributes": {
+        "engine capacity": -90,
+        "turn": 5850,
+        "turning energy": 17.1,
+        "turning heat": 6.5,
+        "steering flare sprite": {
+          "frame rate": 1,
+          "rewind": true,
+          "_value": "effect/bunrodea flare/large"
+        },
+        "steering flare sound": "ion large"
+      }
+    },
+    {
+      "name": "Locust Blaster",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 10010,
+      "cost": 284000,
+      "thumbnail": "outfit/locust blaster",
+      "mass": 7,
+      "outfit space": -7,
+      "descriptions": [
+        "The Locust Blaster might look small, but its destructive potential for its size is nothing to scoff at. A single blaster is capable of sustaining 1,200 rounds per minute. While each individual projectile from the blaster deals rather insignificant damage, the sheer deluge of projectiles can rip even the largest of ships to shreds in due time."
+      ],
+      "attributes": {
+        "weapon capacity": -7,
+        "gun ports": -1,
+        "weapon": {
+          "sprite": "projectile/locust blaster",
+          "sound": "locust blaster",
+          "hit effect": "bullet impact",
+          "hardpoint offset": 20,
+          "inaccuracy": 5,
+          "velocity": 10,
+          "random velocity": 2,
+          "lifetime": 40,
+          "reload": 3,
+          "firing energy": 4,
+          "firing heat": 3,
+          "shield damage": 5,
+          "hull damage": 4
+        }
+      }
+    },
+    {
+      "name": "Locust Turret",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 10010,
+      "cost": 1265000,
+      "thumbnail": "outfit/locust turret",
+      "mass": 28,
+      "outfit space": -28,
+      "descriptions": [
+        "Although Bunrodean ships typically rely on the power of their forward facing guns and fill any turret mounts with anti-missile systems, they have developed a turret mount for the Locust Blaster. This turret carries three Locust Blasters that all fire at once, resulting in an astonishing 3,600 projectiles per minute being thrown at the target."
+      ],
+      "attributes": {
+        "weapon capacity": -28,
+        "turret mounts": -1,
+        "weapon": {
+          "sprite": "projectile/locust blaster",
+          "hardpoint sprite": "hardpoint/locust turret",
+          "hardpoint offset": 40,
+          "sound": "locust blaster",
+          "hit effect": "bullet impact",
+          "inaccuracy": 5,
+          "turret turn": 3.7,
+          "velocity": 10,
+          "random velocity": 2,
+          "lifetime": 40,
+          "reload": 1,
+          "firing energy": 4,
+          "firing heat": 3,
+          "shield damage": 5,
+          "hull damage": 4
+        }
+      }
+    },
+    {
+      "name": "Mandible Cannon",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 10020,
+      "cost": 1170000,
+      "thumbnail": "outfit/mandible cannon",
+      "mass": 29,
+      "outfit space": -29,
+      "descriptions": [
+        "The Mandible Cannon is a significant part of the Bunrodean arsenal due to its versatility. Its range exceeds that of smaller weapons, and its size allows it to be used in numbers on most Bunrodean ships. However, the energy draw required to fire is rather significant, particularly for Bunrodean ships that rely on solar cells."
+      ],
+      "attributes": {
+        "weapon capacity": -29,
+        "gun ports": -1,
+        "weapon": {
+          "sprite": {
+            "frame rate": 10,
+            "random start frame": true,
+            "_value": "projectile/mandible cannon"
+          },
+          "sound": "mandible cannon",
+          "hit effect": "proton impact",
+          "inaccuracy": 0.1,
+          "velocity": 34,
+          "lifetime": 25,
+          "reload": 30,
+          "burst reload": 5,
+          "burst count": 2,
+          "firing energy": 111,
+          "firing force": 30,
+          "firing heat": 60,
+          "hit force": 210,
+          "shield damage": 152,
+          "hull damage": 98
+        }
+      }
+    },
+    {
+      "name": "Thorax Cannon",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 10030,
+      "cost": 3484000,
+      "thumbnail": "outfit/thorax cannon",
+      "mass": 105,
+      "outfit space": -105,
+      "descriptions": [
+        "The Thorax Cannon is a massive, slow-firing weapon that few ships can even support, not only because of its size but also because of the energy needed to fire it. It comes with its own energy capacitors to help alleviate the steep energy cost."
+      ],
+      "attributes": {
+        "weapon capacity": -105,
+        "gun ports": -1,
+        "energy capacity": 7000,
+        "weapon": {
+          "sprite": {
+            "frame rate": 15,
+            "rewind": true,
+            "_value": "projectile/thorax cannon"
+          },
+          "sound": "thorax cannon",
+          "fire effect": "torpedo fire",
+          "live effect": [
+            {
+              "_value": "yellow spark"
+            },
+            {
+              "_value": "yellow spark trail"
+            },
+            {
+              "_value": "yellow spark twinkle"
+            }
+          ],
+          "hit effect": [
+            {
+              "_value": "finisher impact"
+            },
+            {
+              "_value": "yellow spark"
+            },
+            {
+              "_value": "yellow spark fragment"
+            }
+          ],
+          "inaccuracy": 0,
+          "velocity": 15,
+          "lifetime": 120,
+          "reload": 240,
+          "firing energy": 3150,
+          "firing force": 1875,
+          "firing heat": 1905,
+          "hit force": 3750,
+          "shield damage": 2870,
+          "hull damage": 3430
+        }
+      }
+    },
+    {
+      "name": "Swarm Clip",
+      "category": "Ammunition",
+      "series": "Ammunition",
+      "index": 10011,
+      "cost": 24000,
+      "thumbnail": "outfit/swarm storage",
+      "mass": 2,
+      "outfit space": -10,
+      "descriptions": [
+        "Swarm Clips provide a sizable increase in ammo capacity for Swarm Pods, holding a respectable 200 missiles able to be swiftly loaded into a launcher after its current clip is empty."
+      ],
+      "attributes": {
+        "swarm capacity": 200,
+        "ammo": "Swarm Missile"
+      }
+    },
+    {
+      "name": "Swarm Missile",
+      "category": "Ammunition",
+      "series": "Ammunition",
+      "index": 10010,
+      "cost": 250,
+      "thumbnail": "outfit/swarm missile",
+      "mass": 0.04,
+      "descriptions": [
+        "Swarm missiles are small, fast moving munitions for the Swarm Pod."
+      ],
+      "attributes": {
+        "swarm capacity": -1
+      }
+    },
+    {
+      "name": "Swarm Pod",
+      "category": "Secondary Weapons",
+      "series": "Secondary Weapons",
+      "index": 10010,
+      "cost": 363000,
+      "thumbnail": "outfit/swarm pod",
+      "mass": 5,
+      "outfit space": -21,
+      "descriptions": [
+        "The Swarm Pod proved to be an effective weapon in early conflicts with the Korath by overpowering early Korath anti-missile defenses. But just as the Bunrodea developed technology to combat Korath weaponry, the Korath did the same, prompting them to create their own rapid-fire anti-missile turret that limited the usefulness of the Swarm Pod against some Korath targets.",
+        "\tAmmunition for this weapon can be restocked at any outfitter."
+      ],
+      "attributes": {
+        "weapon capacity": -21,
+        "gun ports": -1,
+        "swarm capacity": 400,
+        "weapon": {
+          "sprite": {
+            "frame rate": 0.01,
+            "_value": "effect/swarm"
+          },
+          "sound": "swarm missile",
+          "ammo": "Swarm Missile",
+          "icon": "icon/swarm",
+          "die effect": "missile death",
+          "hit effect": "particle impact",
+          "live effect": {
+            "_value": "swarm flare"
+          },
+          "inaccuracy": 90,
+          "velocity": 13,
+          "lifetime": 460,
+          "reload": 10,
+          "firing energy": 2,
+          "firing heat": 1,
+          "acceleration": 1.3,
+          "drag": 0.1,
+          "turn": 5.35,
+          "homing": true,
+          "radar tracking": 0.5,
+          "optical tracking": 0.5,
+          "shield damage": 46,
+          "hull damage": 24,
+          "missile strength": 8,
+          "stream": true
+        }
+      }
+    },
+    {
+      "name": "Buzzer Anti-Missile",
+      "category": "Turrets",
+      "series": "Anti-Missile",
+      "index": 10010,
+      "cost": 1195000,
+      "thumbnail": "outfit/buzzer",
+      "mass": 19,
+      "outfit space": -19,
+      "descriptions": [
+        "As the Korath began to saturate systems with mines, the effectiveness of Bunrodean fighters dropped substantially. In response, the Bunrodea developed this rapid-fire anti-missile turret, able to clear sections of a system of Korath mines at blinding speed."
+      ],
+      "attributes": {
+        "weapon capacity": -19,
+        "turret mounts": -1,
+        "weapon": {
+          "hardpoint sprite": "hardpoint/buzzer am",
+          "hardpoint offset": 5,
+          "hit effect": "buzzer",
+          "anti-missile": 4,
+          "velocity": 300,
+          "lifetime": 1,
+          "reload": 2.5,
+          "firing energy": 16,
+          "firing heat": 1
+        }
+      }
+    }
+  ]
+}

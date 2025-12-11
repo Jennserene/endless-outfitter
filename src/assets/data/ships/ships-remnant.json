@@ -1,0 +1,2418 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "remnant",
+    "generatedAt": "2025-12-11T01:30:18.496Z",
+    "itemCount": 38
+  },
+  "data": [
+    {
+      "name": "Albatross",
+      "plural": "Albatrosses",
+      "sprite": "ship/albatross",
+      "thumbnail": "thumbnail/albatross",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 20250000,
+        "shields": 34200,
+        "hull": 12600,
+        "required crew": 44,
+        "bunks": 75,
+        "mass": 1443,
+        "drag": 14.2,
+        "heat dissipation": 0.37,
+        "fuel capacity": 600,
+        "cargo space": 124,
+        "outfit space": 672,
+        "weapon capacity": 236,
+        "engine capacity": 142,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 3600,
+          "hull damage": 1800,
+          "hit force": 5400
+        }
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 6
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 3
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "Once they left human space, it became apparent to the Remnant that they would need to build their own shipyards in order to defend themselves if they were discovered by the Alphas or any other unfriendly faction. Using new composite materials that they discovered, they built ships very different from anything seen in human space."
+      ]
+    },
+    {
+      "name": "Albatross",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 5
+        },
+        {
+          "name": "EMP Torpedo Bay",
+          "quantity": 2
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 3
+        },
+        {
+          "name": "EMP Torpedo",
+          "quantity": 39
+        },
+        {
+          "name": "EMP Torpedo Storage Bay",
+          "quantity": 3
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 3
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 57
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Turret",
+          "quantity": 4
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 2
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 49
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 3
+        },
+        {
+          "name": "Thrasher Cannon",
+          "quantity": 4
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 3
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 3
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 4
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 65
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Point Defense Turret",
+          "quantity": 4
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 2
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 6
+        },
+        {
+          "name": "Systems Core (Large)",
+          "quantity": 3
+        },
+        {
+          "name": "Small Heat Shunt",
+          "quantity": 1
+        },
+        {
+          "name": "Large Heat Shunt",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 75
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 6
+        },
+        {
+          "name": "Systems Core (Large)",
+          "quantity": 4
+        },
+        {
+          "name": "Large Heat Shunt",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 47
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 5
+        },
+        {
+          "name": "Teciimach Bay",
+          "quantity": 2
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 3
+        },
+        {
+          "name": "Teciimach Canister",
+          "quantity": 45
+        },
+        {
+          "name": "Teciimach Canister Rack",
+          "quantity": 3
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 3
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 57
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Modified Dromedary",
+      "plural": "Modified Dromedaries",
+      "sprite": "ship/modified dromedary",
+      "thumbnail": "thumbnail/modified dromedary",
+      "attributes": {
+        "category": "Utility",
+        "cost": 57600000,
+        "shields": 15100,
+        "hull": 9600,
+        "required crew": 95,
+        "bunks": 300,
+        "mass": 2366,
+        "drag": 28.7,
+        "heat dissipation": 0.22,
+        "fuel capacity": 900,
+        "cargo space": 550,
+        "outfit space": 740,
+        "weapon capacity": 270,
+        "engine capacity": 195,
+        "weapon": {
+          "blast radius": 260,
+          "shield damage": 2600,
+          "hull damage": 1300,
+          "hit force": 3900
+        }
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 3
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 95
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Tycho Crater Cooperative's Dromedary was one of the foremost colonization ships during the early era before piracy became rampant and triggered the necessity for city-ships to be more combat-oriented. These ships incorporate extensive hydroponics, large construction equipment installations, and hundreds of densely packed \"dream cells\" built to transport people in bulk.",
+        "\tSince the Remnant do not have schematics for the Dromedary, just the highly-modified example of the Shattered Light, this ship is actually a commemorative replica of that specific ship. As such, it combines the original's odd mix of eclectic modifications with new Remnant systems.",
+        "\tUnfortunately, since they lack the manufacturing facilities that would normally support a large construction project, it will cost massively more than it would have originally back on Luna."
+      ]
+    },
+    {
+      "name": "Modified Dromedary",
+      "sprite": "ship/modified dromedary ghost",
+      "thumbnail": "thumbnail/modified dromedary wreck",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Fusion Reactor",
+          "quantity": 1
+        },
+        {
+          "name": "LP144a Battery Pack",
+          "quantity": 1
+        },
+        {
+          "name": "D94-YV Shield Generator",
+          "quantity": 1
+        },
+        {
+          "name": "Large Radar Jammer",
+          "quantity": 1
+        },
+        {
+          "name": "Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "NDR-114 Android",
+          "quantity": 100
+        },
+        {
+          "name": "Laser Rifle",
+          "quantity": 100
+        },
+        {
+          "name": "X4700 Ion Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "X5200 Ion Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Modified Dromedary",
+      "sprite": "ship/modified dromedary specter",
+      "thumbnail": "thumbnail/modified dromedary wreck",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Fusion Reactor",
+          "quantity": 1
+        },
+        {
+          "name": "LP144a Battery Pack",
+          "quantity": 1
+        },
+        {
+          "name": "D94-YV Shield Generator",
+          "quantity": 1
+        },
+        {
+          "name": "Large Radar Jammer",
+          "quantity": 1
+        },
+        {
+          "name": "Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "NDR-114 Android",
+          "quantity": 100
+        },
+        {
+          "name": "Laser Rifle",
+          "quantity": 15
+        },
+        {
+          "name": "X4700 Ion Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "X5200 Ion Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Modified Dromedary",
+      "sprite": "ship/modified dromedary wreck",
+      "thumbnail": "thumbnail/modified dromedary wreck",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Laser Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Quad Blaster Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Anti-Missile Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Fusion Reactor",
+          "quantity": 1
+        },
+        {
+          "name": "LP144a Battery Pack",
+          "quantity": 1
+        },
+        {
+          "name": "D94-YV Shield Generator",
+          "quantity": 1
+        },
+        {
+          "name": "Large Radar Jammer",
+          "quantity": 1
+        },
+        {
+          "name": "Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "NDR-114 Android",
+          "quantity": 100
+        },
+        {
+          "name": "Laser Rifle",
+          "quantity": 150
+        },
+        {
+          "name": "X4700 Ion Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "X5200 Ion Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Tycho Crater Cooperative's Dromedary was one of the foremost colonization ships during the early era before piracy became rampant and triggered the necessity for city-ships to be more combat-oriented. These ships incorporate extensive hydroponics, large construction equipment installations, and hundreds of densely packed \"dream cells\" built to transport people in bulk.",
+        "\tThis is a wreck. A ship that once might have held hundreds of people has no functional environmental system, the once verdant hydroponics domes are shattered, and much of the ship appears to be destroyed. Burns, strange scrapes, and twists to structural elements abound. Only a smattering of droids persistently continuing their work manage to maintain any degree of functionality."
+      ]
+    },
+    {
+      "name": "Gull",
+      "sprite": "ship/gull",
+      "thumbnail": "thumbnail/gull",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 9500000,
+        "shields": 6500,
+        "hull": 2500,
+        "required crew": 3,
+        "bunks": 20,
+        "mass": 416,
+        "drag": 7.5,
+        "heat dissipation": 0.56,
+        "fuel capacity": 600,
+        "cargo space": 175,
+        "outfit space": 311,
+        "weapon capacity": 83,
+        "engine capacity": 101,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 1
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 2
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 3
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "While the Starling was the first successful ship to use technology derived from alien ruins, the Gull is the most recent. The current increase in Korath activities has caused foraging for resources to become a risky endeavor, forcing the Remnant to develop a specialized freighter for hauling cargo from remote sites without revealing their presence to hostile aliens.",
+        "\tThe Gull has quickly proven its worth, allowing the Starling fleets to return to riskier activities while the Gull takes over the hazardous convoy routes. It is now the primary element of the Remnant's extra-territorial resource operations.",
+        "\tThe cloaking technology is built into the Gull's hull; it cannot be removed or transferred to another ship."
+      ]
+    },
+    {
+      "name": "Gull",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 3
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 2
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 4
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "EMP Torpedo Bay",
+          "quantity": 1
+        },
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 2
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "EMP Torpedo",
+          "quantity": 16
+        },
+        {
+          "name": "EMP Torpedo Storage Bay",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 2
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 2
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 3
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Teciimach Bay",
+          "quantity": 1
+        },
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 2
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Teciimach Canister",
+          "quantity": 18
+        },
+        {
+          "name": "Teciimach Canister Rack",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 2
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 2
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 3
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Cargo Expansion",
+          "quantity": 4
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 3
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Bunk Room",
+          "quantity": 4
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 3
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Heron",
+      "sprite": "ship/heron",
+      "attributes": {
+        "category": "Superheavy",
+        "cost": 256375000,
+        "shields": 250500,
+        "hull": 250500,
+        "required crew": 1000,
+        "bunks": 3000,
+        "mass": 15725,
+        "drag": 62.5,
+        "heat dissipation": 0.32,
+        "fuel capacity": 2500,
+        "cargo space": 1110,
+        "outfit space": 2150,
+        "weapon capacity": 470,
+        "engine capacity": 800,
+        "weapon": {
+          "blast radius": 140,
+          "shield damage": 1400,
+          "hull damage": 700,
+          "hit force": 2100
+        }
+      },
+      "outfits": [
+        {
+          "name": "Ember Tear",
+          "quantity": 1
+        },
+        {
+          "name": "Inhibitor Turret",
+          "quantity": 6
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 3
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 4
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 10
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 10
+        },
+        {
+          "name": "Large Heat Shunt",
+          "quantity": 5
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 5
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 5
+        },
+        {
+          "name": "Bellows-Class Afterburner",
+          "quantity": 3
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 4
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 5
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        },
+        {
+          "name": "Jump Drive",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Heron is the Remnant's ultimate last resort: Flight. These mobile starports are built to serve as the core elements of evacuation fleets when the Remnant are ultimately pushed to the brink of destruction in their home systems. These massive ships are capable of lifting enormous amounts of resources and operate both in space and on land, and are continuously updated to make full use of the latest technological innovations.",
+        "\tThe few Herons in existence are carefully guarded secrets that embody the Remnant's core tactics of speed, stealth, and survival. Given the tiny number that exist, they are never available for discretionary use by Remnant captains and are always operated under the authority and direction of a prefect."
+      ]
+    },
+    {
+      "name": "Ibis",
+      "plural": "Ibises",
+      "sprite": "ship/ibis",
+      "thumbnail": "thumbnail/ibis",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 11627000,
+        "shields": 14400,
+        "hull": 6200,
+        "required crew": 16,
+        "bunks": 36,
+        "mass": 700,
+        "drag": 7.4,
+        "heat dissipation": 0.49,
+        "fuel capacity": 700,
+        "cargo space": 103,
+        "outfit space": 427,
+        "weapon capacity": 147,
+        "engine capacity": 109,
+        "weapon": {
+          "blast radius": 240,
+          "shield damage": 2400,
+          "hull damage": 1200,
+          "hit force": 3000
+        }
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 3
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 2
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 20
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 2
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Ibis is a multipurpose carrier that serves as a mobile mining platform, an escort ship for Pelican fleets, and a combat platform using Terns for screening. It is capable of fielding a single wing of support craft, consisting of two Petrels and four Terns.",
+        "\tThe Ibis was designed shortly after the Albatross as a means of extending the range of resource collection efforts after the Remnant realized that an Alpha invasion might not be as imminent as originally believed."
+      ]
+    },
+    {
+      "name": "Merganser",
+      "sprite": "ship/merganser",
+      "thumbnail": "thumbnail/merganser",
+      "attributes": {
+        "category": "Interceptor",
+        "cost": 4830000,
+        "shields": 3500,
+        "hull": 3000,
+        "required crew": 1,
+        "bunks": 3,
+        "mass": 130,
+        "drag": 1.7,
+        "heat dissipation": 0.75,
+        "fuel capacity": 600,
+        "cargo space": 11,
+        "outfit space": 181,
+        "weapon capacity": 60,
+        "engine capacity": 64,
+        "weapon": {
+          "blast radius": 10,
+          "shield damage": 100,
+          "hull damage": 150,
+          "hit force": 250
+        }
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 2
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 2
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Small Heat Shunt",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Bellows-Class Afterburner",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Merganser is the first production ship the Remnant deem to be truly alive, and are considered to be equivalent to dolphins in reasoning tests. These interceptors, deemed for short range operations by Remnant standards, are designed to patrol the upper atmosphere of gas giants and use their decisive speed advantage to conduct hit-and-run attacks on threats in nearby systems.",
+        "\tThe cloaking technology is built into the Merganser's hull; it cannot be removed or transferred to another ship."
+      ]
+    },
+    {
+      "name": "Merganser",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 2
+        },
+        {
+          "name": "Teciimach Pod",
+          "quantity": 1
+        },
+        {
+          "name": "Teciimach Canister",
+          "quantity": 3
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 2
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Small Heat Shunt",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Bellows-Class Afterburner",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Pelican",
+      "sprite": "ship/pelican",
+      "thumbnail": "thumbnail/pelican",
+      "attributes": {
+        "category": "Heavy Freighter",
+        "cost": 9900000,
+        "shields": 11300,
+        "hull": 5700,
+        "required crew": 14,
+        "bunks": 35,
+        "mass": 640,
+        "drag": 10.1,
+        "heat dissipation": 0.5,
+        "fuel capacity": 600,
+        "cargo space": 302,
+        "outfit space": 480,
+        "weapon capacity": 157,
+        "engine capacity": 144,
+        "weapon": {
+          "blast radius": 160,
+          "shield damage": 1600,
+          "hull damage": 800,
+          "hit force": 2400
+        }
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 2
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 3
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 15
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Pelican is closely based on the original semi-organic materials the Remnant found in the Ember Waste. While they are not technically alive, their internal mechanisms and method of construction bear such a close resemblance to living organisms that they are often considered as such. One key feature of this living resemblance is the innate sensory capabilities they possess, akin to sensor suites less advanced ships require for detailed scanning. These ships serve as the backbone of Remnant bulk salvage efforts, as well as their fast-logistics distribution network."
+      ]
+    },
+    {
+      "name": "Pelican",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Small Heat Shunt",
+          "quantity": 2
+        },
+        {
+          "name": "Cargo Expansion",
+          "quantity": 5
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 15
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 5
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Penguin",
+      "sprite": "ship/penguin/penguin",
+      "thumbnail": "thumbnail/penguin",
+      "attributes": {
+        "category": "Transport",
+        "cost": 2530000,
+        "shields": 3000,
+        "hull": 1500,
+        "required crew": 1,
+        "bunks": 3,
+        "mass": 89,
+        "drag": 1.37,
+        "heat dissipation": 0.88,
+        "fuel capacity": 800,
+        "cargo space": 19,
+        "outfit space": 109,
+        "weapon capacity": 33,
+        "engine capacity": 54,
+        "weapon": {
+          "blast radius": 20,
+          "shield damage": 260,
+          "hull damage": 160,
+          "hit force": 800
+        }
+      },
+      "outfits": [
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "Inspired by close contact with void sprites and the reinvigoration of xenobiology, the Penguin is a prototype designed to serve the dual roles of testing new starship technology while exploring hostile planets throughout the Ember Waste. One of this ship's distinguishing features is that it is truly alive and has a mind that approaches self-awareness.",
+        "\tThe cloaking technology is built into the Penguin's hull; it cannot be removed or transferred to another ship."
+      ]
+    },
+    {
+      "name": "Peregrine",
+      "sprite": "ship/peregrine/peregrine",
+      "thumbnail": "thumbnail/peregrine",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 41627000,
+        "shields": 15400,
+        "hull": 8600,
+        "required crew": 9,
+        "bunks": 25,
+        "mass": 801,
+        "drag": 6.5,
+        "heat dissipation": 0.57,
+        "fuel capacity": 900,
+        "cargo space": 59,
+        "outfit space": 522,
+        "weapon capacity": 220,
+        "engine capacity": 171,
+        "weapon": {
+          "blast radius": 240,
+          "shield damage": 2400,
+          "hull damage": 1200,
+          "hit force": 3000
+        }
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Cannon",
+          "quantity": 4
+        },
+        {
+          "name": "EMP Torpedo Bay",
+          "quantity": 1
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 1
+        },
+        {
+          "name": "EMP Torpedo",
+          "quantity": 9
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 2
+        },
+        {
+          "name": "Small Heat Shunt",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 11
+        },
+        {
+          "name": "Bellows-Class Afterburner",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Peregrine is the first capital warship designed by Taely using fresh insights garnered from recent experimentation as well as renewed studies of the void sprites. Encompassing over a century of development since the last generation of warships was built, it is the forerunner of a new breed of Remnant ships.",
+        "\tThe Peregrine was designed along the lines of old-earth's fast-attack cruisers. Drawing on inspiration from its namesake, famed for being the fastest self-propelled lifeform on Earth, it is designed to strike hard and fast. It closes quickly with enemies to unleash devastating barrages in the opening seconds of combat.",
+        "\tThe cloaking technology is built into the Peregrine's hull; it cannot be removed or transferred to another ship."
+      ]
+    },
+    {
+      "name": "Peregrine",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Cannon",
+          "quantity": 4
+        },
+        {
+          "name": "Teciimach Bay",
+          "quantity": 1
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Teciimach Canister",
+          "quantity": 9
+        },
+        {
+          "name": "Aeon Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 2
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 2
+        },
+        {
+          "name": "Small Heat Shunt",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 11
+        },
+        {
+          "name": "Bellows-Class Afterburner",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Scram Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Petrel",
+      "sprite": "ship/petrel",
+      "thumbnail": "thumbnail/petrel",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 1141000,
+        "shields": 1000,
+        "hull": 2500,
+        "required crew": 2,
+        "bunks": 3,
+        "mass": 68,
+        "drag": 1.7,
+        "heat dissipation": 0.73,
+        "fuel capacity": 100,
+        "cargo space": 15,
+        "outfit space": 133,
+        "weapon capacity": 33,
+        "engine capacity": 34,
+        "weapon": {
+          "blast radius": 15,
+          "shield damage": 150,
+          "hull damage": 200,
+          "hit force": 350
+        }
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 2
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 2
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Anvil-Class Engine",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Petrel is a multi-role mining/wing leader fightercraft designed to provide support for flights of lighter Terns in high-risk environments. The ship's design originated as an urban mobile gun platform that flitted around structures and natural terrain, but proved easy to adapt into a spacecraft.",
+        "\tThe Remnant are loath to sacrifice pilots and crew from the comparatively small pool they are drawn from. As such, their fighters are equipped with medium-range weaponry designed to strike enemies from afar.",
+        "\tFighters do not come equipped with a hyperdrive. You cannot carry a fighter unless you have a ship in your fleet with a fighter bay."
+      ]
+    },
+    {
+      "name": "Puffin",
+      "sprite": "ship/puffin",
+      "thumbnail": "thumbnail/puffin",
+      "attributes": {
+        "category": "Transport",
+        "cost": 530000,
+        "shields": 800,
+        "hull": 1500,
+        "required crew": 1,
+        "bunks": 2,
+        "mass": 46,
+        "drag": 1.33,
+        "heat dissipation": 0.86,
+        "fuel capacity": 700,
+        "cargo space": 8,
+        "outfit space": 80,
+        "engine capacity": 26
+      },
+      "outfits": [
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Anvil-Class Engine",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "Centuries ago, the Remnant built these ships in order to explore the upper atmosphere of nearby gas giants. The Archons took issue with the Remnant's research methods, and the studies were unable to be completed. The remaining Puffins have been gathering dust in storage for centuries while the Remnant wait to see if the anger of the Archons will subside."
+      ]
+    },
+    {
+      "name": "Smew",
+      "sprite": "ship/smew",
+      "thumbnail": "thumbnail/smew",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 971000,
+        "shields": 1200,
+        "hull": 2800,
+        "required crew": 1,
+        "bunks": 8,
+        "mass": 56.5,
+        "drag": 1.84,
+        "heat dissipation": 0.62,
+        "fuel capacity": 100,
+        "cargo space": 70,
+        "outfit space": 80,
+        "weapon capacity": 10,
+        "engine capacity": 46,
+        "weapon": {
+          "blast radius": 24,
+          "shield damage": 130,
+          "hull damage": 175,
+          "hit force": 315
+        }
+      },
+      "outfits": [
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Anvil-Class Engine",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Remnant have long favored turns of action that avoid putting crew directly at risk; though their Terns are a rather effective result of this ideology, the Remnant still had to face the fact that, eventually, one of their manned ships was going to end up too crippled to escape to safety. To that end, the Smew was developed; though quite lightly armed, Smews are capable of carrying a considerable quantity of cargo and passengers for a ship of their size, and are durable enough to absorb some fire from enemies while doing so.",
+        "\tThough originally designed as lifeboats, the surprisingly mobile freighter-fighter hybrid has seen a remarkable amount of usage in mining fleets, as a way to supplement the otherwise poor cargo capacity of the Ibis. Because their purpose can vary from fleet to fleet, Smews are traditionally sold with a fair amount of free space: enough for a small weapon, upgraded engines, or additional support systems.",
+        "\tFighters do not come equipped with a hyperdrive. You cannot carry a fighter unless you have a ship in your fleet with a fighter bay."
+      ]
+    },
+    {
+      "name": "Smew",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Cannon",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Anvil-Class Engine",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Smew",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Anvil-Class Engine",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Smew",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Teciimach Canister",
+          "quantity": 3
+        },
+        {
+          "name": "Teciimach Pod",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Anvil-Class Engine",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling",
+      "sprite": "ship/starling",
+      "thumbnail": "thumbnail/starling",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 8800000,
+        "shields": 8800,
+        "hull": 4900,
+        "required crew": 6,
+        "bunks": 15,
+        "mass": 387,
+        "drag": 4.6,
+        "heat dissipation": 0.59,
+        "fuel capacity": 900,
+        "cargo space": 36,
+        "outfit space": 316,
+        "weapon capacity": 83,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 3
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 2
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Salvage Scanner",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Crucible-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "One of the strangest and most useful things that the Remnant have discovered in the abandoned worlds of the Ember Waste is alien cloaking technology. They have designed their scout ships to cloak when needed in order to explore alien territory without being seen... or to escape in a hurry after stealing something particularly valuable from those aliens.",
+        "\tThe cloaking technology is built into the Starling's hull; it cannot be removed or transferred to another ship."
+      ]
+    },
+    {
+      "name": "Starling",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Cannon",
+          "quantity": 5
+        },
+        {
+          "name": "Point Defense Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 10
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "EMP Torpedo Bay",
+          "quantity": 1
+        },
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 4
+        },
+        {
+          "name": "EMP Torpedo",
+          "quantity": 16
+        },
+        {
+          "name": "EMP Torpedo Storage Bay",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 2
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 9
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Smelter-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 2
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Emergency Ramscoop",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 11
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Thrasher Cannon",
+          "quantity": 3
+        },
+        {
+          "name": "Thrasher Turret",
+          "quantity": 1
+        },
+        {
+          "name": "Epoch Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Crystal Capacitor",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Tuning Rifle",
+          "quantity": 8
+        },
+        {
+          "name": "Forge-Class Thruster",
+          "quantity": 1
+        },
+        {
+          "name": "Forge-Class Steering",
+          "quantity": 1
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Tern",
+      "sprite": "ship/tern",
+      "thumbnail": "thumbnail/tern",
+      "attributes": {
+        "category": "Drone",
+        "cost": 860000,
+        "shields": 500,
+        "hull": 2500,
+        "mass": 32,
+        "drag": 1,
+        "heat dissipation": 0.9,
+        "fuel capacity": 50,
+        "cargo space": 5,
+        "outfit space": 76,
+        "weapon capacity": 16,
+        "engine capacity": 26,
+        "weapon": {
+          "blast radius": 10,
+          "shield damage": 100,
+          "hull damage": 150,
+          "hit force": 250
+        }
+      },
+      "outfits": [
+        {
+          "name": "Inhibitor Cannon",
+          "quantity": 1
+        },
+        {
+          "name": "Millennium Cell",
+          "quantity": 1
+        },
+        {
+          "name": "Quantum Key Stone",
+          "quantity": 1
+        },
+        {
+          "name": "Thermoelectric Cooler",
+          "quantity": 1
+        },
+        {
+          "name": "Anvil-Class Engine",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Tern is a small, hardy drone developed to plunge into the atmosphere of nearby gas giants for collecting valuable resources. These thick-shelled craft are also surprisingly effective when pressed into service as screening ships when enemies intrude into Remnant space.",
+        "\tUnlike most spacefaring nations, the Remnant do not have enough people to pilot fighter wings in waves likely to sustain significant casualties. As such, they frequently use these hardy drones to fulfill similar screening roles in their home systems, allowing manned craft to focus on more specialized tasks.",
+        "\tDrones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
+      ]
+    }
+  ]
+}

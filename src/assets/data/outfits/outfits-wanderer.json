@@ -1,0 +1,751 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "wanderer",
+    "generatedAt": "2025-12-11T01:30:18.518Z",
+    "itemCount": 31
+  },
+  "data": [
+    {
+      "name": "Sunbeam",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 9020,
+      "cost": 1390000,
+      "thumbnail": "outfit/sunbeam",
+      "mass": 34,
+      "outfit space": -34,
+      "descriptions": [
+        "The Wanderers do not devote much time to developing weapon technology, preferring to focus their attention on more constructive endeavors. However, the few weapons they have created are efficient and deadly."
+      ],
+      "attributes": {
+        "weapon capacity": -34,
+        "gun ports": -1,
+        "weapon": {
+          "sprite": {
+            "frame rate": 30,
+            "_value": "projectile/sunbeam/sunbeam"
+          },
+          "sound": "sunbeam",
+          "hit effect": "sunbeam impact",
+          "inaccuracy": 0.2,
+          "velocity": 540,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 5.2,
+          "firing heat": 6.2,
+          "shield damage": 7.2,
+          "hull damage": 3,
+          "heat damage": 12.1
+        }
+      }
+    },
+    {
+      "name": "Sunbeam Turret",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 9020,
+      "cost": 1970000,
+      "thumbnail": "outfit/sunbeam turret",
+      "mass": 46,
+      "outfit space": -46,
+      "descriptions": [
+        "As the Wanderers slowly cope with the transition from peacetime to the growing conflict with the Unfettered Hai, they have begun building ships that are capable of carrying turret-mounted weapons. Because of the sheer size of the Sunbeam, this turret only carries one of them."
+      ],
+      "attributes": {
+        "weapon capacity": -46,
+        "turret mounts": -1,
+        "required crew": 1,
+        "weapon": {
+          "sprite": {
+            "frame rate": 30,
+            "_value": "projectile/sunbeam/sunbeam"
+          },
+          "hardpoint sprite": "hardpoint/sunbeam turret",
+          "hardpoint offset": {
+            "_value": -2
+          },
+          "sound": "sunbeam",
+          "hit effect": "sunbeam impact",
+          "inaccuracy": 0.2,
+          "turret turn": 1.8,
+          "velocity": 540,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 5.2,
+          "firing heat": 6.2,
+          "shield damage": 7.2,
+          "hull damage": 3,
+          "heat damage": 12.1
+        }
+      }
+    },
+    {
+      "name": "Dual Sunbeam Turret",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 9030,
+      "cost": 3720000,
+      "thumbnail": "outfit/dual sunbeam turret",
+      "mass": 83,
+      "outfit space": -83,
+      "descriptions": [
+        "This turret carries a pair of Wanderer Sunbeams. For any ship that can support its energy requirements, it is an immensely powerful weapon."
+      ],
+      "attributes": {
+        "weapon capacity": -83,
+        "turret mounts": -1,
+        "required crew": 2,
+        "weapon": {
+          "sprite": {
+            "frame rate": 30,
+            "_value": "projectile/sunbeam/2x sunbeam"
+          },
+          "hardpoint sprite": "hardpoint/dual sunbeam turret",
+          "hardpoint offset": 12,
+          "sound": "sunbeam",
+          "hit effect": {
+            "_value": "sunbeam impact"
+          },
+          "inaccuracy": 0.2,
+          "turret turn": 1,
+          "velocity": 540,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 10.4,
+          "firing heat": 12.4,
+          "shield damage": 14.4,
+          "hull damage": 6,
+          "heat damage": 24.2
+        }
+      }
+    },
+    {
+      "name": "Moonbeam",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 9010,
+      "cost": 760000,
+      "thumbnail": "outfit/moonbeam",
+      "mass": 19,
+      "outfit space": -19,
+      "descriptions": [
+        "Because their Sunbeams are not very effective against the heavy plating of the Korath drones, the Wanderers have developed a new beam weapon that is considerably more effective against hull armor."
+      ],
+      "attributes": {
+        "weapon capacity": -19,
+        "gun ports": -1,
+        "weapon": {
+          "sprite": {
+            "random start frame": true,
+            "_value": "projectile/moonbeam"
+          },
+          "sound": "moonbeam",
+          "fire effect": "moonbeam fleck",
+          "hit effect": "moonbeam impact",
+          "inaccuracy": 2,
+          "velocity": 490,
+          "lifetime": 1,
+          "reload": 1.8,
+          "burst count": 25,
+          "burst reload": 1,
+          "firing energy": 5.4,
+          "firing heat": 1.8,
+          "shield damage": 4.8,
+          "hull damage": 8.4
+        }
+      }
+    },
+    {
+      "name": "Moonbeam Turret",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 9010,
+      "cost": 1730000,
+      "thumbnail": "outfit/moonbeam turret",
+      "mass": 35,
+      "outfit space": -35,
+      "descriptions": [
+        "This turret only carries a single Moonbeam weapon, but with its duty cycle increased so it can do 50% more damage than the non-turreted version."
+      ],
+      "attributes": {
+        "weapon capacity": -35,
+        "turret mounts": -1,
+        "required crew": 1,
+        "weapon": {
+          "sprite": {
+            "random start frame": true,
+            "_value": "projectile/moonbeam"
+          },
+          "hardpoint sprite": "hardpoint/moonbeam turret",
+          "hardpoint offset": 9,
+          "sound": "moonbeam",
+          "fire effect": "moonbeam fleck",
+          "hit effect": "moonbeam impact",
+          "inaccuracy": 2,
+          "turret turn": 2.2,
+          "velocity": 490,
+          "lifetime": 1,
+          "reload": 1.2,
+          "burst count": 30,
+          "burst reload": 1,
+          "firing energy": 5.4,
+          "firing heat": 1.8,
+          "shield damage": 4.8,
+          "hull damage": 8.4
+        }
+      }
+    },
+    {
+      "name": "Wanderer Anti-Missile",
+      "category": "Turrets",
+      "series": "Anti-Missile",
+      "index": 9010,
+      "cost": 850000,
+      "thumbnail": "outfit/wanderer anti-missile",
+      "mass": 24,
+      "outfit space": -24,
+      "descriptions": [
+        "As a defense against the tracker pods used by the Unfettered Hai, the Wanderers have developed a hard-hitting anti-missile system that can knock almost any missile out of the sky with a single shot."
+      ],
+      "attributes": {
+        "weapon capacity": -24,
+        "turret mounts": -1,
+        "weapon": {
+          "hardpoint sprite": "hardpoint/wanderer anti-missile",
+          "hardpoint offset": 6,
+          "hit effect": "wanderer anti-missile",
+          "anti-missile": 40,
+          "velocity": 360,
+          "lifetime": 1,
+          "reload": 20,
+          "firing energy": 50,
+          "firing heat": 12
+        }
+      }
+    },
+    {
+      "name": "Thunderhead Launcher",
+      "category": "Secondary Weapons",
+      "series": "Secondary Weapons",
+      "index": 9010,
+      "cost": 450000,
+      "thumbnail": "outfit/thunderhead launcher",
+      "mass": 14,
+      "outfit space": -26,
+      "descriptions": [
+        "A prime example of Wanderer ingenuity, Thunderhead Missiles each carry five submunitions that are capable of independent tracking. Even if the target is able to shoot down or evade a few of them, the remaining missile fragments will still find their mark.",
+        "\tAmmunition for this weapon can be restocked at any outfitter."
+      ],
+      "attributes": {
+        "weapon capacity": -26,
+        "gun ports": -1,
+        "thunderhead capacity": 40,
+        "weapon": {
+          "sprite": {
+            "no repeat": true,
+            "frame rate": 0.1,
+            "_value": "projectile/thunderhead"
+          },
+          "sound": "thunderhead",
+          "ammo": "Thunderhead Missile",
+          "icon": "icon/thunderhead",
+          "submunition": {
+            "_value": "Thunderhead"
+          },
+          "split range": 600,
+          "fire effect": "meteor fire",
+          "die effect": "missile death",
+          "hit effect": "medium explosion",
+          "inaccuracy": 10,
+          "velocity": 4,
+          "lifetime": 400,
+          "reload": 75,
+          "firing energy": 18,
+          "firing heat": 36,
+          "acceleration": 1.1,
+          "drag": 0.1,
+          "turn": 2,
+          "homing": {
+            "leading": true,
+            "throttle control": true
+          },
+          "infrared tracking": 0.9,
+          "radar tracking": 0.6,
+          "missile strength": 12
+        }
+      }
+    },
+    {
+      "name": "Thunderhead Missile",
+      "category": "Ammunition",
+      "series": "Ammunition",
+      "index": 9010,
+      "cost": 1800,
+      "thumbnail": "outfit/thunderhead",
+      "mass": 0.3,
+      "descriptions": [
+        "Thunderhead cluster munitions are long-range Wanderer missiles that split into five fast and agile submunitions when they are close to their target. Each launcher can hold up to 40 of these."
+      ],
+      "attributes": {
+        "thunderhead capacity": -1
+      }
+    },
+    {
+      "name": "Thunderhead",
+      "descriptions": [],
+      "attributes": {
+        "weapon": {
+          "sprite": {
+            "no repeat": true,
+            "frame rate": 0.1,
+            "_value": "projectile/thunderhead fragment"
+          },
+          "die effect": "missile death",
+          "hit effect": "small explosion",
+          "inaccuracy": 90,
+          "velocity": 2,
+          "lifetime": 400,
+          "acceleration": 1.4,
+          "drag": 0.1,
+          "turn": 3,
+          "homing": {
+            "leading": true,
+            "throttle control": true
+          },
+          "optical tracking": 0.9,
+          "radar tracking": 0.6,
+          "shield damage": 110,
+          "hull damage": 80,
+          "hit force": 225,
+          "missile strength": 3
+        }
+      }
+    },
+    {
+      "name": "Thunderhead Storage Array",
+      "category": "Ammunition",
+      "series": "Ammunition",
+      "index": 9011,
+      "cost": 36000,
+      "thumbnail": "outfit/thunderhead storage",
+      "mass": 2,
+      "outfit space": -8,
+      "descriptions": [
+        "The Thunderhead Storage Array is used to store extra ammunition for Thunderhead Launchers."
+      ],
+      "attributes": {
+        "thunderhead capacity": 20,
+        "ammo": "Thunderhead Missile"
+      }
+    },
+    {
+      "name": "Small Biochemical Cell",
+      "category": "Power",
+      "series": "Generators",
+      "index": 9010,
+      "cost": 230000,
+      "thumbnail": "outfit/small biochemical",
+      "mass": 17,
+      "outfit space": -17,
+      "descriptions": [
+        "This tiny generator draws energy from the metabolic byproducts of a collection of microorganisms that have been engineered by the Wanderers specifically for this purpose."
+      ],
+      "attributes": {
+        "energy generation": 1.28,
+        "heat generation": 1.12,
+        "energy capacity": 7500
+      }
+    },
+    {
+      "name": "Large Biochemical Cell",
+      "category": "Power",
+      "series": "Generators",
+      "index": 9020,
+      "cost": 940000,
+      "thumbnail": "outfit/large biochemical",
+      "mass": 63,
+      "outfit space": -63,
+      "descriptions": [
+        "The Wanderers are masters of unusual and efficient technology. This bioreactor is fueled by a culture of microorganisms that produce a small electric charge."
+      ],
+      "attributes": {
+        "energy generation": 4.96,
+        "heat generation": 3.92,
+        "energy capacity": 30000
+      }
+    },
+    {
+      "name": "Red Sun Reactor",
+      "category": "Power",
+      "series": "Generators",
+      "index": 9030,
+      "cost": 3800000,
+      "thumbnail": "outfit/red sun",
+      "mass": 47,
+      "outfit space": -47,
+      "descriptions": [
+        "The Wanderers have recently begun producing this tiny reactor as a way to squeeze a bit more energy production into their warships."
+      ],
+      "attributes": {
+        "energy generation": 8.3,
+        "heat generation": 13,
+        "energy capacity": 1100
+      }
+    },
+    {
+      "name": "Yellow Sun Reactor",
+      "category": "Power",
+      "series": "Generators",
+      "index": 9040,
+      "cost": 7500000,
+      "thumbnail": "outfit/yellow sun",
+      "mass": 82,
+      "outfit space": -82,
+      "descriptions": [
+        "This is a compact nuclear reactor designed by the Wanderers. In addition to generating power, it is able to store a small amount of energy."
+      ],
+      "attributes": {
+        "energy generation": 15.2,
+        "heat generation": 21,
+        "energy capacity": 2600
+      }
+    },
+    {
+      "name": "White Sun Reactor",
+      "category": "Power",
+      "series": "Generators",
+      "index": 9050,
+      "cost": 13900000,
+      "thumbnail": "outfit/white sun",
+      "mass": 127,
+      "outfit space": -127,
+      "descriptions": [
+        "The White Sun is a large nuclear reactor that the Wanderers use for powering their Strong Wind warships."
+      ],
+      "attributes": {
+        "energy generation": 24.85,
+        "heat generation": 32,
+        "energy capacity": 6700
+      }
+    },
+    {
+      "name": "Blue Sun Reactor",
+      "category": "Power",
+      "series": "Generators",
+      "index": 9060,
+      "cost": 21500000,
+      "thumbnail": "outfit/blue sun",
+      "mass": 152,
+      "outfit space": -152,
+      "descriptions": [
+        "As the Wanderers have begun producing heavy warships, a need has arisen for larger and larger reactor cores to power them."
+      ],
+      "attributes": {
+        "energy generation": 31.3,
+        "heat generation": 39,
+        "energy capacity": 8900
+      }
+    },
+    {
+      "name": "Bright Cloud Shielding",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 9010,
+      "cost": 220000,
+      "thumbnail": "outfit/bright cloud",
+      "mass": 19,
+      "outfit space": -19,
+      "descriptions": [
+        "This small Wanderer shield generator is able to recharge a ship's shields at a considerable rate, but it also consumes more energy than some other shield generators do."
+      ],
+      "attributes": {
+        "shield generation": 1.5,
+        "shield energy": 3
+      }
+    },
+    {
+      "name": "Dark Storm Shielding",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 9020,
+      "cost": 800000,
+      "thumbnail": "outfit/dark storm",
+      "mass": 41,
+      "outfit space": -41,
+      "descriptions": [
+        "This Wanderer shield generator can restore a ship's shield strength more quickly than any human shielding technology, but while recharging shields it also draws a much larger amount of power."
+      ],
+      "attributes": {
+        "shield generation": 3.5,
+        "shield energy": 7
+      }
+    },
+    {
+      "name": "Wanderer Ramscoop",
+      "category": "Systems",
+      "series": "Ramscoops",
+      "index": 9010,
+      "cost": 460000,
+      "thumbnail": "outfit/wanderer ramscoop",
+      "mass": 7,
+      "outfit space": -7,
+      "descriptions": [
+        "Wanderer ships are designed to be self-sufficient even when traveling through uninhabited space, and their compact and efficient ramscoops are a key part of that self-sufficiency."
+      ],
+      "attributes": {
+        "ramscoop": 4
+      }
+    },
+    {
+      "name": "Wanderer Heat Sink",
+      "category": "Systems",
+      "series": "Cooling",
+      "index": 9010,
+      "cost": 94000,
+      "thumbnail": "outfit/wanderer heat sink",
+      "mass": 12,
+      "outfit space": -12,
+      "descriptions": [
+        "Most Wanderer systems are so efficient that ancillary cooling is unnecessary. As a result, their recent attempts to add cooling to their heavy warships are somewhat rudimentary."
+      ],
+      "attributes": {
+        "cooling": 19
+      }
+    },
+    {
+      "name": "Type 1 Radiant Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9011,
+      "cost": 135000,
+      "thumbnail": "outfit/tiny radiant thruster",
+      "mass": 12,
+      "outfit space": -12,
+      "descriptions": [
+        "This is the tiniest Wanderer engine. Like all their engines, it works in part by radiating excess heat, and as a result it doubles as a cooler for your ship."
+      ],
+      "attributes": {
+        "engine capacity": -12,
+        "thrust": 13.2,
+        "thrusting energy": 0.55,
+        "thrusting heat": 0.85,
+        "cooling": 1.5,
+        "flare sprite": {
+          "frame rate": 12,
+          "_value": "effect/wanderer flare/tiny"
+        },
+        "flare sound": "plasma tiny"
+      }
+    },
+    {
+      "name": "Type 2 Radiant Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9021,
+      "cost": 390000,
+      "thumbnail": "outfit/small radiant thruster",
+      "mass": 27,
+      "outfit space": -27,
+      "descriptions": [
+        "Wanderer engines work by transferring excess heat from the ship into the exhaust plasma. When not providing thrust, the engines still serve as a cooling system."
+      ],
+      "attributes": {
+        "engine capacity": -27,
+        "thrust": 31.95,
+        "thrusting energy": 1.3,
+        "thrusting heat": 2.4,
+        "cooling": 3.6,
+        "flare sprite": {
+          "frame rate": 14,
+          "_value": "effect/wanderer flare/small"
+        },
+        "flare sound": "plasma small"
+      }
+    },
+    {
+      "name": "Type 3 Radiant Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9031,
+      "cost": 750000,
+      "thumbnail": "outfit/medium radiant thruster",
+      "mass": 42,
+      "outfit space": -42,
+      "descriptions": [
+        "Most engines this size generate a considerable amount of heat, but the Wanderers have developed a way of using the engine itself to vent extra heat from a ship, generating extra propulsive force in the process."
+      ],
+      "attributes": {
+        "engine capacity": -42,
+        "thrust": 52.92,
+        "thrusting energy": 2.2,
+        "thrusting heat": 4.3,
+        "cooling": 6.5,
+        "flare sprite": {
+          "frame rate": 16,
+          "_value": "effect/wanderer flare/medium"
+        },
+        "flare sound": "plasma medium"
+      }
+    },
+    {
+      "name": "Type 4 Radiant Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9041,
+      "cost": 1370000,
+      "thumbnail": "outfit/large radiant thruster",
+      "mass": 65,
+      "outfit space": -65,
+      "descriptions": [
+        "This is the largest engine that the Wanderers have developed. Its incredibly efficient design allows it to cool your ship even while it is firing."
+      ],
+      "attributes": {
+        "engine capacity": -65,
+        "thrust": 87,
+        "thrusting energy": 3.7,
+        "thrusting heat": 7.6,
+        "cooling": 11.7,
+        "flare sprite": {
+          "frame rate": 18,
+          "_value": "effect/wanderer flare/large"
+        },
+        "flare sound": "plasma large"
+      }
+    },
+    {
+      "name": "Type 1 Radiant Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9010,
+      "cost": 115000,
+      "thumbnail": "outfit/tiny radiant steering",
+      "mass": 9,
+      "outfit space": -9,
+      "descriptions": [
+        "This tiny steering system is used by the Wanderers to power their unpiloted mining and surveying drones."
+      ],
+      "attributes": {
+        "engine capacity": -9,
+        "turn": 271.5,
+        "turning energy": 0.3,
+        "turning heat": 0.6,
+        "cooling": 1,
+        "steering flare sprite": {
+          "frame rate": 12,
+          "_value": "effect/wanderer flare/tiny"
+        },
+        "steering flare sound": "plasma tiny"
+      }
+    },
+    {
+      "name": "Type 2 Radiant Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9020,
+      "cost": 325000,
+      "thumbnail": "outfit/small radiant steering",
+      "mass": 20,
+      "outfit space": -20,
+      "descriptions": [
+        "This small Wanderer steering system vents excess heat from your ship even when it is not in use, allowing it to double as a cooling system."
+      ],
+      "attributes": {
+        "engine capacity": -20,
+        "turn": 714,
+        "turning energy": 0.7,
+        "turning heat": 1.5,
+        "cooling": 2.1,
+        "steering flare sprite": {
+          "frame rate": 14,
+          "_value": "effect/wanderer flare/small"
+        },
+        "steering flare sound": "plasma small"
+      }
+    },
+    {
+      "name": "Type 3 Radiant Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9030,
+      "cost": 590000,
+      "thumbnail": "outfit/medium radiant steering",
+      "mass": 30,
+      "outfit space": -30,
+      "descriptions": [
+        "This steering system is used by the Wanderers in their mid-sized ships. In addition to turning your ship, it is able to vent a considerable amount of heat."
+      ],
+      "attributes": {
+        "engine capacity": -30,
+        "turn": 1237.5,
+        "turning energy": 1.2,
+        "turning heat": 2.6,
+        "cooling": 3.9,
+        "steering flare sprite": {
+          "frame rate": 16,
+          "_value": "effect/wanderer flare/medium"
+        },
+        "steering flare sound": "plasma medium"
+      }
+    },
+    {
+      "name": "Type 4 Radiant Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 9040,
+      "cost": 1100000,
+      "thumbnail": "outfit/large radiant steering",
+      "mass": 47,
+      "outfit space": -47,
+      "descriptions": [
+        "This is the largest steering system that the Wanderers sell."
+      ],
+      "attributes": {
+        "engine capacity": -47,
+        "turn": 2199,
+        "turning energy": 2,
+        "turning heat": 4.5,
+        "cooling": 6.7,
+        "steering flare sprite": {
+          "frame rate": 18,
+          "_value": "effect/wanderer flare/large"
+        },
+        "steering flare sound": "plasma large"
+      }
+    },
+    {
+      "name": "Wanderer Outfits License",
+      "category": "Licenses",
+      "series": "Licenses",
+      "index": 9010,
+      "thumbnail": "outfit/wanderer outfits license",
+      "descriptions": [
+        "This oddly shaped dish holds a collection of perfectly preserved seeds of one Sentinel Skirtgrass, a sensitive yet robust species the Wanderers use during their initial terraforming efforts to gauge how well a world is responding to their methods. Each seed carries a built-in generational limit, ensuring the grass disappears after a few lifecycles so that it doesn't compete with native flora. These seeds symbolize the beginning of both terraforming and goodwill, granting their owner the right to acquire Wanderer outfits."
+      ],
+      "attributes": {}
+    },
+    {
+      "name": "Wanderer License",
+      "category": "Licenses",
+      "series": "Licenses",
+      "index": 9020,
+      "thumbnail": "outfit/wanderer license",
+      "descriptions": [
+        "Intact within an amber shell, this leafy branch of the Noble Watchwood - rumored to come from the Wanderers' original home planet - symbolizes their pride and joy, the total revitalization of a planet. While unmatched in size and formidable to behold, the tree is quite fragile to even the slightest alterations in climate, so the growth of one such specimen to maturity is seen as a sign of a healed ecosystem. As a symbol of peace akin to Earth's olive branch, it grants its bearer the right to purchase non-military Wanderer ships."
+      ],
+      "attributes": {}
+    },
+    {
+      "name": "Wanderer Military License",
+      "category": "Licenses",
+      "series": "Licenses",
+      "index": 9030,
+      "thumbnail": "outfit/wanderer military license",
+      "descriptions": [
+        "The history of the Wanderers is not without hardship and failure. Immortalized in a bronze mold, this withered branch recalls the time the Wanderers could not save a world, for skilled as they may be, they cannot stop destruction when it is actively sought after by others mightier than them. The fall of the Noble Watchwood, their cherished emblem, now stands as a solemn vow: when peace fails, they too must prepare to fight. To stand and fight with the Wanderers, this license grants access to their greatest warships."
+      ],
+      "attributes": {}
+    }
+  ]
+}

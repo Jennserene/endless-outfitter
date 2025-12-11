@@ -1,0 +1,442 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "incipias",
+    "generatedAt": "2025-12-11T01:30:18.510Z",
+    "itemCount": 19
+  },
+  "data": [
+    {
+      "name": "Plasma Discharger",
+      "category": "Guns",
+      "series": "Guns",
+      "index": 12010,
+      "cost": 140000,
+      "thumbnail": "outfit/plasma discharger",
+      "mass": 25,
+      "outfit space": -20,
+      "descriptions": [
+        "The Incipias started to mine asteroids long before they began intrasystem travel due to the proximity of their home world's atmosphere to its rings. As a result this mining tool seems to be more advanced than their general technology, yet it is still not comparable to the efficiency of human weapons.",
+        "\tThe discharger itself shoots bolts of high density plasma that split up into small particles after some time. Because of the plasma infuser the fire rate is exceptional, but the energy usage is severe."
+      ],
+      "attributes": {
+        "weapon capacity": -20,
+        "gun ports": -1,
+        "weapon": {
+          "sprite": "projectile/plasma discharge",
+          "sound": "plasma discharger",
+          "hit effect": "blaster impact",
+          "submunition": {
+            "_value": "plasma particle"
+          },
+          "inaccuracy": 8,
+          "velocity": 10,
+          "lifetime": 64,
+          "random lifetime": 12,
+          "reload": 40,
+          "firing energy": 60,
+          "firing heat": 30,
+          "shield damage": 33,
+          "hull damage": 39,
+          "minable damage": 90
+        }
+      }
+    },
+    {
+      "name": "plasma particle",
+      "descriptions": [],
+      "attributes": {
+        "weapon": {
+          "sprite": "effect/plasma particle",
+          "hit effect": "blaster impact",
+          "lifetime": 60,
+          "random velocity": 2,
+          "inaccuracy": 20,
+          "shield damage": 6.6,
+          "hull damage": 7.8,
+          "minable damage": 18
+        }
+      }
+    },
+    {
+      "name": "Stagnation Beam",
+      "category": "Turrets",
+      "series": "Turrets",
+      "index": 12010,
+      "cost": 180000,
+      "thumbnail": "outfit/stagnation beam",
+      "mass": 30,
+      "outfit space": -30,
+      "descriptions": [
+        "The Stagnation Beam is one of the few technologies of the Incipias that surpasses anything humanity has made thus far - in fact, the first prototypes were built before the Incipias even dreamed of space travel. The weapon's origins lie in giant reactors that were constructed to pull asteroids out of their home planet's orbit, providing easy access to more resources. Naturally, a mechanism to slow the asteroids down was also implemented to prevent accidental asteroid strikes.",
+        "\tAs the Incipias' mastery of spaceflight grew, so did the generators' efficiency, which allowed for more compact, ship-based tractor beams. Resource collection was greatly streamlined by these new models, much to the benefit of the Incipias' otherwise sluggish ships.",
+        "\tThe secret of how these beams work is only known to a few scientists of the Incipias who are under the control of the state. Such knowledge, if made public, could have disastrous consequences for the Hicemus and their grip on power."
+      ],
+      "attributes": {
+        "weapon capacity": -30,
+        "turret mounts": -1,
+        "weapon": {
+          "sprite": {
+            "random start frame": true,
+            "frame rate": 6,
+            "_value": "projectile/stagnation beam"
+          },
+          "hardpoint sprite": "hardpoint/stagnation beam",
+          "sound": "stagnation beam",
+          "hit effect": "stagnation beam impact",
+          "inaccuracy": 0.5,
+          "turret turn": 3.8,
+          "velocity": 600,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 0.5,
+          "firing heat": 3.2,
+          "shield damage": 0.1,
+          "hull damage": 0.1,
+          "hit force": -40,
+          "slowing damage": 0.1
+        }
+      }
+    },
+    {
+      "name": "Star Tail",
+      "category": "Secondary Weapons",
+      "series": "Secondary Weapons",
+      "index": 12010,
+      "cost": 320000,
+      "thumbnail": "outfit/star tail launcher",
+      "mass": 48,
+      "outfit space": -50,
+      "descriptions": [
+        "Little to no information about this weapon has ever been made public. Rumors are that it shoots highly volatile plasma chunks.",
+        "\tCaptains that have used this weapon say that its projectiles could change direction mid-flight, and were able to follow their targets despite attempts by their victims to dodge the shots.",
+        "\tAmmunition for this weapon can be restocked at any outfitter."
+      ],
+      "attributes": {
+        "weapon capacity": -50,
+        "gun ports": -1,
+        "star tail capacity": 20,
+        "weapon": {
+          "sprite": {
+            "frame rate": 10,
+            "no repeat": true,
+            "_value": "projectile/star tail upload"
+          },
+          "sound": "star tail",
+          "hit effect": "blaster impact",
+          "velocity": 1,
+          "lifetime": 58,
+          "reload": 180,
+          "firing energy": 60,
+          "firing heat": 30,
+          "shield damage": 820,
+          "hull damage": 860,
+          "range override": 3000,
+          "homing": {
+            "blindspot": true
+          },
+          "optical tracking": 1,
+          "turn": 0.5,
+          "ammo": "Star Tail Cell",
+          "submunition": {
+            "_value": "Star Tail Projectile"
+          }
+        }
+      }
+    },
+    {
+      "name": "Star Tail Projectile",
+      "descriptions": [],
+      "attributes": {
+        "weapon": {
+          "sprite": {
+            "frame rate": 12,
+            "_value": "projectile/star tail"
+          },
+          "hit effect": "star tail hit",
+          "live effect": {
+            "_value": "star tail live"
+          },
+          "velocity": 1,
+          "acceleration": 5,
+          "drag": 0.2,
+          "lifetime": 120,
+          "shield damage": 410,
+          "hull damage": 430,
+          "homing": {
+            "blindspot": true
+          },
+          "optical tracking": 1,
+          "turn": 0.5
+        }
+      }
+    },
+    {
+      "name": "Star Tail Cell",
+      "category": "Ammunition",
+      "cost": 1500,
+      "thumbnail": "outfit/star tail cell",
+      "mass": 0.1,
+      "descriptions": [
+        "The Star Tail needs an extreme amount of energy that the Incipias are not able to create in a short amount of time. To accommodate this, the Star Tail Cell contains an energy-rich substance that releases its energy when fired. One of these cells holds enough energy to fire exactly one shot."
+      ],
+      "attributes": {
+        "star tail capacity": -1
+      }
+    },
+    {
+      "name": "Star Tail Storage",
+      "category": "Ammunition",
+      "cost": 6000,
+      "thumbnail": "outfit/star tail cell storage",
+      "mass": 10,
+      "outfit space": -10,
+      "descriptions": [
+        "Because Star Tail Cells are highly volatile, they need a robust storage system. This radial design is able to withstand minor explosions by using a variant of a shield that can be deployed temporarily.",
+        "\tOne layer of this easily expandable system is already shipped with the gun itself. To increase storage space, more layers are simply stacked on top."
+      ],
+      "attributes": {
+        "star tail capacity": 20
+      }
+    },
+    {
+      "name": "Horizon Grappler",
+      "category": "Turrets",
+      "series": "Tractor Beams",
+      "index": 12020,
+      "cost": 200000,
+      "thumbnail": "outfit/horizon grappler",
+      "mass": 25,
+      "outfit space": -25,
+      "descriptions": [
+        "The pinnacle of Incipian technology is represented by this mining utility. Perfected over centuries, this tractor beam is far beyond anything the Incipias have developed so far. The beam's name originates from its first prototypes developed before the advent of spaceflight, which gathered minerals by pulling asteroids from their homeworld's rings into its atmosphere."
+      ],
+      "attributes": {
+        "weapon capacity": -25,
+        "turret mounts": -1,
+        "weapon": {
+          "hardpoint sprite": "hardpoint/horizon grappler",
+          "hardpoint offset": 0,
+          "sound": "tractor beam",
+          "hit effect": "horizon grappler",
+          "tractor beam": 9,
+          "velocity": 400,
+          "lifetime": 1,
+          "reload": 1,
+          "firing energy": 3.2,
+          "firing heat": 1.1
+        }
+      }
+    },
+    {
+      "name": "Gas-Class Shield",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 12010,
+      "cost": 136000,
+      "thumbnail": "outfit/gas class shield",
+      "mass": 60,
+      "outfit space": -60,
+      "descriptions": [
+        "Shield technology is one of the most recent developments of the Incipias. While this shield appears similar to a human shield device, it works on a completely different basis. In its core hydrogen is burned, providing energy for regeneration. This proved so effective that it became the main power source of all of their ships."
+      ],
+      "attributes": {
+        "shield generation": 0.1,
+        "energy generation": 4.2,
+        "heat generation": 5,
+        "shield fuel": 0.01
+      }
+    },
+    {
+      "name": "Liquid-Class Shield",
+      "category": "Systems",
+      "series": "Shields",
+      "index": 12020,
+      "cost": 216000,
+      "thumbnail": "outfit/liquid class shield",
+      "mass": 80,
+      "outfit space": -90,
+      "descriptions": [
+        "This more advanced shield generator burns a liquid instead of a gas. This raises the efficiency considerably but also requires more space, making this outfit popular only on larger ships."
+      ],
+      "attributes": {
+        "shield generation": 0.25,
+        "energy generation": 6.1,
+        "heat generation": 6,
+        "shield fuel": 0.02
+      }
+    },
+    {
+      "name": "Metallic Hydrogen Cell",
+      "category": "Power",
+      "series": "Batteries",
+      "index": 12010,
+      "cost": 2500,
+      "thumbnail": "outfit/metallic hydrogen cell",
+      "mass": 20,
+      "outfit space": -20,
+      "descriptions": [
+        "Hydrogen energy storage was discovered early by the Incipias because of the great amount of metallic hydrogen on their homeworld. Because Incipias ships usually access their energy at the time it is produced, only a small amount of storage is needed. Most of their ships have only one cell installed as a consequence."
+      ],
+      "attributes": {
+        "energy capacity": 500
+      }
+    },
+    {
+      "name": "MH Blue-Class Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 12011,
+      "cost": 32000,
+      "thumbnail": "outfit/mh blue-class thruster",
+      "mass": 27,
+      "outfit space": -27,
+      "descriptions": [
+        "In Incipian culture, blue is the weakest color. A thruster labeled as blue does not bode well for the speed of any ship using it."
+      ],
+      "attributes": {
+        "engine capacity": -27,
+        "flare sprite": {
+          "frame rate": 24,
+          "_value": "effect/incipias flare/metallic hydrogen small"
+        },
+        "flare sound": "incip plasma small",
+        "thrust": 24,
+        "thrusting energy": 2,
+        "thrusting heat": 2.5
+      }
+    },
+    {
+      "name": "MH Blue-Class Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 12010,
+      "cost": 28000,
+      "thumbnail": "outfit/mh blue-class steering",
+      "mass": 24,
+      "outfit space": -24,
+      "descriptions": [
+        "This steering barely provides the minimum force needed to turn a ship, but it is still used often because of how cheap it is."
+      ],
+      "attributes": {
+        "engine capacity": -24,
+        "turn": 498,
+        "turning energy": 1,
+        "turning heat": 3
+      }
+    },
+    {
+      "name": "MH Green-Class Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 12021,
+      "cost": 44000,
+      "thumbnail": "outfit/mh green-class thruster",
+      "mass": 32,
+      "outfit space": -32,
+      "descriptions": [
+        "Green is a color of balance for the Incipias. This thruster balances the need for space with the need for powerful engines."
+      ],
+      "attributes": {
+        "engine capacity": -32,
+        "flare sprite": {
+          "frame rate": 24,
+          "_value": "effect/incipias flare/metallic hydrogen medium"
+        },
+        "flare sound": "incip plasma med",
+        "thrust": 30,
+        "thrusting energy": 2.2,
+        "thrusting heat": 2.8
+      }
+    },
+    {
+      "name": "MH Green-Class Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 12020,
+      "cost": 35000,
+      "thumbnail": "outfit/mh green-class steering",
+      "mass": 28,
+      "outfit space": -28,
+      "descriptions": [
+        "The Incipias seem to have something against turning their ships. Even though this steering is supposed to be an upgrade from the Blue-Class steering, it is barely an improvement."
+      ],
+      "attributes": {
+        "engine capacity": -28,
+        "turn": 618,
+        "turning energy": 1.1,
+        "turning heat": 3.1
+      }
+    },
+    {
+      "name": "MH Red-Class Thruster",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 12031,
+      "cost": 50000,
+      "thumbnail": "outfit/mh red-class thruster",
+      "mass": 41,
+      "outfit space": -41,
+      "descriptions": [
+        "The abundance of metallic hydrogen on the Incipias home planet has led to the development of engines that utilize this potent source of energy, allowing for more efficient thrusters than what might be expected given the Incipias' short history of spaceflight."
+      ],
+      "attributes": {
+        "engine capacity": -41,
+        "flare sprite": {
+          "frame rate": 24,
+          "_value": "effect/incipias flare/metallic hydrogen large"
+        },
+        "flare sound": "incip plasma large",
+        "thrust": 48,
+        "thrusting energy": 5,
+        "thrusting heat": 10
+      }
+    },
+    {
+      "name": "MH Red-Class Steering",
+      "category": "Engines",
+      "series": "Engines",
+      "index": 12030,
+      "cost": 49000,
+      "thumbnail": "outfit/mh red-class steering",
+      "mass": 41,
+      "outfit space": -41,
+      "descriptions": [
+        "Even the Incipias realize that ships need to turn towards their target to be able to shoot it. This steering is specifically designed for combat, but captains with a lot of money find it very useful for mining."
+      ],
+      "attributes": {
+        "engine capacity": -41,
+        "turn": 1134,
+        "turning energy": 2.5,
+        "turning heat": 12
+      }
+    },
+    {
+      "name": "Cloud Piercer",
+      "category": "Hand to Hand",
+      "series": "H2H",
+      "index": 12010,
+      "cost": 10000,
+      "thumbnail": "outfit/cloud piercer",
+      "descriptions": [
+        "When it comes to close combat, the Incipias are formidable opponents. This brutal weapon may not be the best to invade another ship with, but when it comes to defending, it quite literally shreds enemies."
+      ],
+      "attributes": {
+        "capture attack": 0.55,
+        "capture defense": 1.5,
+        "unplunderable": 1
+      }
+    },
+    {
+      "name": "Hicemus Conflict License",
+      "category": "Licenses",
+      "series": "Licenses",
+      "index": 12010,
+      "descriptions": [
+        "The Hicemus have trusted you enough to give you this license, allowing a glimpse at their most precious technology - technology that is meant to give them an advantage over other factions."
+      ],
+      "attributes": {}
+    }
+  ]
+}

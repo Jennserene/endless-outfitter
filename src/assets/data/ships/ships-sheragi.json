@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "sheragi",
+    "generatedAt": "2025-12-11T01:30:18.497Z",
+    "itemCount": 3
+  },
+  "data": [
+    {
+      "name": "Emerald Sword",
+      "sprite": "ship/emeraldsword",
+      "thumbnail": "thumbnail/emeraldsword",
+      "attributes": {
+        "category": "Superheavy",
+        "cost": 100000000,
+        "shields": 9500,
+        "hull": 45000,
+        "required crew": 86,
+        "bunks": 302,
+        "mass": 4360,
+        "drag": 41,
+        "heat dissipation": 0.22,
+        "fuel capacity": 900,
+        "cargo space": 169,
+        "outfit space": 1190,
+        "weapon capacity": 512,
+        "engine capacity": 230,
+        "weapon": {
+          "blast radius": 993,
+          "shield damage": 19930,
+          "hull damage": 11965,
+          "hit force": 11495
+        }
+      },
+      "outfits": [
+        {
+          "name": "Dragonflame Cannon",
+          "quantity": 1
+        },
+        {
+          "name": "Particle Waveform Turret",
+          "quantity": 6
+        },
+        {
+          "name": "Sheragi Anti-Missile",
+          "quantity": 2
+        },
+        {
+          "name": "Large EM Battery",
+          "quantity": 1
+        },
+        {
+          "name": "Large Hybrid Cooling",
+          "quantity": 1
+        },
+        {
+          "name": "Electronic Warfare System",
+          "quantity": 2
+        },
+        {
+          "name": "Fusion Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "An ancient Sheragi warship that was crewed by mutineers that fled from their civil war and escaped into interstellar space. Found orbiting a disconnected star, this is an impressively large ship, fit for the equally large Sheragi. The ship's main weapon is a fusion-pumped gamma-ray laser called the 'Dragonflame Cannon.' Despite the relatively primitive outfits, it's still a very capable war machine due to its size.",
+        "For its original Sheragi masters, this warship was home to around 100 individuals. For others, however, that number more than doubles, bringing it on par with the largest city ships."
+      ]
+    },
+    {
+      "name": "Emerald Sword",
+      "sprite": "ship/emeraldsword",
+      "thumbnail": "thumbnail/emeraldsword",
+      "attributes": {
+        "category": "Unknown"
+      },
+      "outfits": [
+        {
+          "name": "Dragonflame Cannon",
+          "quantity": 1
+        },
+        {
+          "name": "Particle Waveform Turret",
+          "quantity": 6
+        },
+        {
+          "name": "Sheragi Anti-Missile",
+          "quantity": 2
+        },
+        {
+          "name": "Large EM Battery",
+          "quantity": 1
+        },
+        {
+          "name": "Large Hybrid Cooling",
+          "quantity": 1
+        },
+        {
+          "name": "Electronic Warfare System",
+          "quantity": 2
+        },
+        {
+          "name": "Outfits Expansion",
+          "quantity": 2
+        },
+        {
+          "name": "Fusion Drive",
+          "quantity": 1
+        },
+        {
+          "name": "Jump Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Black Diamond",
+      "sprite": "ship/blackdiamond",
+      "thumbnail": "thumbnail/blackdiamond",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 1000000,
+        "shields": 1600,
+        "hull": 3400,
+        "mass": 60,
+        "drag": 0.95,
+        "heat dissipation": 0.82,
+        "outfit space": 152,
+        "weapon capacity": 35,
+        "engine capacity": 38,
+        "weapon": {
+          "blast radius": 24,
+          "shield damage": 240,
+          "hull damage": 120,
+          "hit force": 360
+        }
+      },
+      "outfits": [
+        {
+          "name": "Heavy Ion Cyclotron",
+          "quantity": 1
+        },
+        {
+          "name": "Shard Fabricator",
+          "quantity": 2
+        },
+        {
+          "name": "Electronic Warfare System",
+          "quantity": 1
+        },
+        {
+          "name": "Small EM Battery",
+          "quantity": 1
+        },
+        {
+          "name": "Small Hybrid Cooling",
+          "quantity": 1
+        },
+        {
+          "name": "Fission Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Sheragi, being too large to effectively pilot ships this small, invested heavily in the development of autonomous fighters. The hardware that controls this isn't much more complex than the combat drones in human space, but it is bigger, and the lack of life support systems and amenities for a pilot allows it to carry extra outfitting space.",
+        "\tThe fighter also comes equipped with a powerful hull repair system to aid in its survival. This system doesn't work while the fighter is under fire, though, requiring the fighter to have not taken damage for a short while before activating.",
+        "\tFighters do not come equipped with a hyperdrive. You cannot carry a fighter unless you have a ship in your fleet with a fighter bay."
+      ]
+    }
+  ]
+}

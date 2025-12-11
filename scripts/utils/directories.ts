@@ -14,7 +14,7 @@ import {
  */
 export function ensureDataDirectories(): void {
   if (!existsSync(DATA_DIR)) {
-    throw new Error(`Data directory does not exist: ${DATA_DIR}`);
+    mkdirSync(DATA_DIR, { recursive: true });
   }
   if (!existsSync(SHIPS_DIR)) {
     mkdirSync(SHIPS_DIR, { recursive: true });
