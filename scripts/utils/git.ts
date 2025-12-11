@@ -1,7 +1,7 @@
 import { logger } from "@/lib/logger";
 import { existsSync } from "fs";
 import { execSync } from "child_process";
-import { GAME_VERSION } from "@/config/game-version";
+import { GAME_VERSION } from "@config/game-version";
 import { SUBMODULE_PATH } from "./paths";
 
 /**

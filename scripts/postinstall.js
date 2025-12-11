@@ -11,6 +11,10 @@ if (process.env.NODE_ENV !== "production") {
     console.log("Initializing git submodules...");
     execSync("git submodule update --init --recursive", { stdio: "inherit" });
 
+    // Ensure Husky hooks are installed
+    console.log("Setting up Husky git hooks...");
+    execSync("npx husky install", { stdio: "inherit" });
+
     // Add other development setup tasks here as needed
   } catch {
     console.warn(

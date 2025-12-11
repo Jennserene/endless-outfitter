@@ -1,5 +1,5 @@
 import { join } from "path";
-import { GAME_REPO_PATH } from "@/config/game-version";
+import { GAME_REPO_PATH } from "@config/game-version";
 
 /**
  * Path constants for data generation and validation scripts

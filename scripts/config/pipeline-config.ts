@@ -1,5 +1,5 @@
-import { GAME_VERSION, GAME_REPO_PATH } from "@/config/game-version";
-import { DATA_SCHEMA_FORMAT_VERSION } from "@/config/data-schema-version";
+import { GAME_VERSION, GAME_REPO_PATH } from "@config/game-version";
+import { DATA_SCHEMA_FORMAT_VERSION } from "@config/data-schema-version";
 import { join } from "path";
 import {
   DATA_DIR,
