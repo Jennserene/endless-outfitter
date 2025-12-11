@@ -16,19 +16,20 @@ describe("outfit-generator", () => {
   });
 
   describe("generateOutfits", () => {
-    it("should create OutfitGenerator and execute", () => {
+    it("When generating outfits, Then should create OutfitGenerator and execute", () => {
+      // Arrange
       const mockExecute = jest.fn();
-      (
-        BaseGenerator as jest.MockedClass<typeof BaseGenerator>
-      ).mockImplementation(
+      (BaseGenerator as jest.Mock).mockImplementation(
         () =>
           ({
             execute: mockExecute,
           }) as Partial<BaseGenerator<unknown>> as BaseGenerator<unknown>
       );
 
+      // Act
       generateOutfits();
 
+      // Assert
       expect(BaseGenerator).toHaveBeenCalledWith(
         outfitConverter.convertRawOutfitsToZod,
         expect.any(String), // RAW_OUTFIT_DIR

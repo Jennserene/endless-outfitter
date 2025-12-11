@@ -8,7 +8,8 @@ describe("OutfitsListTransformer", () => {
   });
 
   describe("transform", () => {
-    it("should transform outfits object to array", () => {
+    it("When transforming outfits object, Then should convert to array format", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         outfits: {
@@ -18,8 +19,10 @@ describe("OutfitsListTransformer", () => {
         },
       };
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.outfits).toEqual([
         { name: "Engine 1", quantity: 1 },
         { name: "Weapon 1", quantity: 2 },
@@ -27,7 +30,8 @@ describe("OutfitsListTransformer", () => {
       ]);
     });
 
-    it("should use quantity 1 for non-numeric values", () => {
+    it("When outfits have non-numeric values, Then should use quantity 1", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         outfits: {
@@ -37,8 +41,10 @@ describe("OutfitsListTransformer", () => {
         },
       };
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.outfits).toEqual([
         { name: "Engine 1", quantity: 1 },
         { name: "Weapon 1", quantity: 1 },
@@ -46,28 +52,35 @@ describe("OutfitsListTransformer", () => {
       ]);
     });
 
-    it("should return empty array when outfits is missing", () => {
+    it("When outfits is missing, Then should return empty array", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
       };
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.outfits).toEqual([]);
     });
 
-    it("should return empty array when outfits is null", () => {
+    it("When outfits is null, Then should return empty array", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         outfits: null,
       };
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.outfits).toEqual([]);
     });
 
-    it("should preserve other ship properties", () => {
+    it("When transforming ship, Then should preserve other properties", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         sprite: "sprite.png",
@@ -76,20 +89,25 @@ describe("OutfitsListTransformer", () => {
         },
       };
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.name).toBe("Test Ship");
       expect(result.sprite).toBe("sprite.png");
     });
 
-    it("should handle empty outfits object", () => {
+    it("When outfits object is empty, Then should return empty array", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         outfits: {},
       };
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.outfits).toEqual([]);
     });
   });

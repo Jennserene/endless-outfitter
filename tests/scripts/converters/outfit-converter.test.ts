@@ -36,8 +36,10 @@ describe("outfit-converter", () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    mockOutfitTransformer =
-      createMockTransformer() as jest.Mocked<outfitTransformer.OutfitTransformer>;
+    mockOutfitTransformer = {
+      ...createMockTransformer(),
+      knownFields: [],
+    } as unknown as jest.Mocked<outfitTransformer.OutfitTransformer>;
 
     (
       outfitTransformer.OutfitTransformer as jest.MockedClass<
@@ -47,7 +49,8 @@ describe("outfit-converter", () => {
   });
 
   describe("convertOutfitsToZod", () => {
-    it("should parse content and convert to validated outfits", () => {
+    it("When parsing content, Then should convert to validated outfits", () => {
+      // Arrange
       const content = "outfit Test Outfit\n\tmass 10";
       const rawOutfits = [createRawOutfit({ name: "Test Outfit", mass: "10" })];
       const transformed = createMockOutfit({ name: "Test Outfit", mass: 10 });
@@ -57,8 +60,10 @@ describe("outfit-converter", () => {
       mockOutfitTransformer.transform.mockReturnValue(transformed);
       (OutfitSchema.parse as jest.Mock).mockReturnValue(validated);
 
+      // Act
       const result = convertOutfitsToZod(content);
 
+      // Assert
       expect(parseOutfitTxt.parseOutfitData).toHaveBeenCalledWith(content);
       expect(mockOutfitTransformer.transform).toHaveBeenCalledWith(
         rawOutfits[0]
@@ -67,7 +72,8 @@ describe("outfit-converter", () => {
       expect(result).toEqual([validated]);
     });
 
-    it("should handle multiple outfits", () => {
+    it("When parsing multiple outfits, Then should convert all outfits", () => {
+      // Arrange
       const content = "outfit Outfit1\noutfit Outfit2";
       const rawOutfits = [
         createRawOutfit({ name: "Outfit1" }),
@@ -86,12 +92,15 @@ describe("outfit-converter", () => {
         .mockReturnValueOnce(validated1)
         .mockReturnValueOnce(validated2);
 
+      // Act
       const result = convertOutfitsToZod(content);
 
+      // Assert
       expect(result).toHaveLength(2);
     });
 
-    it("should handle validation errors with handleValidationError", () => {
+    it("When validation fails, Then should handle error with handleValidationError", () => {
+      // Arrange
       const content = "outfit Test Outfit";
       const rawOutfits = [createRawOutfit({ name: "Test Outfit" })];
       const transformed = createMockOutfit();
@@ -102,12 +111,13 @@ describe("outfit-converter", () => {
       (OutfitSchema.parse as jest.Mock).mockImplementation(() => {
         throw zodError;
       });
-      (errorHandling.handleValidationError as jest.Mock).mockImplementation(
-        () => {
-          throw new Error("Validation failed");
-        }
-      );
+      (
+        errorHandling.handleValidationError as unknown as jest.Mock
+      ).mockImplementation(() => {
+        throw new Error("Validation failed");
+      });
 
+      // Act & Assert
       expect(() => {
         convertOutfitsToZod(content);
       }).toThrow("Validation failed");
@@ -117,7 +127,8 @@ describe("outfit-converter", () => {
   });
 
   describe("convertRawOutfitsToZod", () => {
-    it("should convert raw outfits array to validated outfits", () => {
+    it("When converting raw outfits array, Then should return validated outfits", () => {
+      // Arrange
       const rawOutfits = [createRawOutfit({ name: "Test Outfit", mass: "10" })];
       const transformed = createMockOutfit({ name: "Test Outfit", mass: 10 });
       const validated = createMockOutfit({ name: "Test Outfit", mass: 10 });
@@ -125,15 +136,18 @@ describe("outfit-converter", () => {
       mockOutfitTransformer.transform.mockReturnValue(transformed);
       (OutfitSchema.parse as jest.Mock).mockReturnValue(validated);
 
+      // Act
       const result = convertRawOutfitsToZod(rawOutfits);
 
+      // Assert
       expect(mockOutfitTransformer.transform).toHaveBeenCalledWith(
         rawOutfits[0]
       );
       expect(result).toEqual([validated]);
     });
 
-    it("should pass species to handleValidationError on validation failure", () => {
+    it("When validation fails with species, Then should pass species to handleValidationError", () => {
+      // Arrange
       const rawOutfits = [createRawOutfit({ name: "Test Outfit" })];
       const transformed = createMockOutfit();
       const zodError = createMockZodError();
@@ -142,12 +156,13 @@ describe("outfit-converter", () => {
       (OutfitSchema.parse as jest.Mock).mockImplementation(() => {
         throw zodError;
       });
-      (errorHandling.handleValidationError as jest.Mock).mockImplementation(
-        () => {
-          throw new Error("Validation failed");
-        }
-      );
+      (
+        errorHandling.handleValidationError as unknown as jest.Mock
+      ).mockImplementation(() => {
+        throw new Error("Validation failed");
+      });
 
+      // Act & Assert
       expect(() => {
         convertRawOutfitsToZod(rawOutfits, "pug");
       }).toThrow("Validation failed");
@@ -160,8 +175,11 @@ describe("outfit-converter", () => {
       );
     });
 
-    it("should handle empty array", () => {
+    it("When converting empty array, Then should return empty array", () => {
+      // Act
       const result = convertRawOutfitsToZod([]);
+
+      // Assert
       expect(result).toEqual([]);
     });
   });

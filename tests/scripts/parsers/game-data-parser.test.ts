@@ -6,9 +6,11 @@ import type { ParseNode } from "@scripts/types";
 
 describe("game-data-parser", () => {
   describe("parseIndentedFormat", () => {
-    it("should parse simple single-level structure", () => {
+    it("When parsing simple single-level structure, Then should return node with key and value", () => {
+      // Act
       const result = parseIndentedFormat("ship Test Ship");
 
+      // Assert
       expect(result).toHaveLength(1);
       expect(result[0].key).toBe("ship");
       // parseLineValues splits on spaces, so "Test Ship" becomes ["Test", "Ship"]
@@ -17,10 +19,14 @@ describe("game-data-parser", () => {
       expect(result[0].children.length).toBeGreaterThan(0);
     });
 
-    it("should parse nested structure with indentation", () => {
+    it("When parsing nested structure with indentation, Then should return nested nodes", () => {
+      // Arrange
       const content = 'ship "Test Ship"\n\tmass 100\n\tdrag 0.1';
+
+      // Act
       const result = parseIndentedFormat(content);
 
+      // Assert
       expect(result).toHaveLength(1);
       expect(result[0].key).toBe("ship");
       expect(result[0].value).toBe("Test Ship");
@@ -31,10 +37,14 @@ describe("game-data-parser", () => {
       expect(dragChild?.value).toBe(0.1);
     });
 
-    it("should skip empty lines and comments", () => {
+    it("When parsing content with empty lines and comments, Then should skip them", () => {
+      // Arrange
       const content = 'ship "Test Ship"\n\n\tmass 100\n# comment\n\tdrag 0.1';
+
+      // Act
       const result = parseIndentedFormat(content);
 
+      // Assert
       expect(result).toHaveLength(1);
       expect(result[0].key).toBe("ship");
       // Should have mass and drag children, plus any _value children from "Test Ship"
@@ -44,18 +54,24 @@ describe("game-data-parser", () => {
       expect(regularChildren.length).toBeGreaterThanOrEqual(2);
     });
 
-    it("should handle multiple root-level nodes", () => {
+    it("When parsing multiple root-level nodes, Then should return all nodes", () => {
+      // Arrange
       const content = "ship Ship1\nship Ship2";
+
+      // Act
       const result = parseIndentedFormat(content);
 
+      // Assert
       expect(result).toHaveLength(2);
       expect(result[0].value).toBe("Ship1");
       expect(result[1].value).toBe("Ship2");
     });
 
-    it("should handle additional values as children", () => {
+    it("When parsing line with additional values, Then should handle them as children", () => {
+      // Act
       const result = parseIndentedFormat("ship Test Ship 100 200");
 
+      // Assert
       // "Test Ship 100 200" is parsed as ["Test", "Ship", 100, 200]
       // First value is primary, rest become _value children
       expect(result[0].value).toBe("Test");
@@ -65,16 +81,23 @@ describe("game-data-parser", () => {
       expect(valueChildren.length).toBeGreaterThanOrEqual(2);
     });
 
-    it("should handle empty content", () => {
+    it("When parsing empty content, Then should return empty array", () => {
+      // Act
       const result = parseIndentedFormat("");
+
+      // Assert
       expect(result).toEqual([]);
     });
 
-    it("should handle deeply nested structures", () => {
+    it("When parsing deeply nested structures, Then should preserve nesting", () => {
+      // Arrange
       const content =
         "ship Test Ship\n\tattributes\n\t\tmass 100\n\t\tdrag 0.1\n\tengine Engine1\n\t\tpower 200";
+
+      // Act
       const result = parseIndentedFormat(content);
 
+      // Assert
       expect(result).toHaveLength(1);
       expect(result[0].key).toBe("ship");
       const attributes = result[0].children.find((c) => c.key === "attributes");
@@ -82,37 +105,49 @@ describe("game-data-parser", () => {
       expect(attributes?.children.length).toBeGreaterThan(0);
     });
 
-    it("should handle tabs as indentation", () => {
+    it("When parsing with tabs as indentation, Then should handle tabs correctly", () => {
+      // Arrange
       const content = "ship Test Ship\n\tmass 100";
+
+      // Act
       const result = parseIndentedFormat(content);
 
+      // Assert
       expect(result[0].children.length).toBeGreaterThan(0);
     });
 
-    it("should handle multiple spaces as indentation", () => {
+    it("When parsing with multiple spaces as indentation, Then should handle spaces correctly", () => {
+      // Arrange
       const content = "ship Test Ship\n  mass 100";
+
+      // Act
       const result = parseIndentedFormat(content);
 
+      // Assert
       expect(result[0].children.length).toBeGreaterThan(0);
     });
   });
 
   describe("nodesToObject", () => {
-    it("should convert simple leaf nodes to object", () => {
+    it("When converting simple leaf nodes, Then should return flat object", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         { key: "mass", value: 100, children: [], lineNumber: 1 },
         { key: "drag", value: 0.1, children: [], lineNumber: 2 },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         mass: 100,
         drag: 0.1,
       });
     });
 
-    it("should convert nodes with children to nested objects", () => {
+    it("When converting nodes with children, Then should return nested objects", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "attributes",
@@ -125,8 +160,10 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         attributes: {
           mass: 100,
@@ -135,19 +172,23 @@ describe("game-data-parser", () => {
       });
     });
 
-    it("should handle boolean flags (key without value)", () => {
+    it("When converting boolean flags, Then should set value to true", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         { key: "isSpecial", value: undefined, children: [], lineNumber: 1 },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         isSpecial: true,
       });
     });
 
-    it("should handle duplicate keys by creating arrays", () => {
+    it("When converting duplicate keys, Then should create arrays", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "description",
@@ -163,14 +204,17 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         description: ["First description", "Second description"],
       });
     });
 
-    it("should handle positional keys as arrays", () => {
+    it("When converting positional keys, Then should create arrays", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "engine",
@@ -186,8 +230,10 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes, ["engine"]);
 
+      // Assert
       expect(result.engine).toBeInstanceOf(Array);
       expect(result.engine).toHaveLength(2);
       const engineArray = result.engine as Array<Record<string, unknown>>;
@@ -195,7 +241,8 @@ describe("game-data-parser", () => {
       expect(engineArray[1].power).toBe(200);
     });
 
-    it("should preserve primary value when node has children", () => {
+    it("When converting node with children and value, Then should preserve primary value", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "sprite",
@@ -205,8 +252,10 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         sprite: {
           _value: "sprite.png",
@@ -215,7 +264,8 @@ describe("game-data-parser", () => {
       });
     });
 
-    it("should skip _value nodes", () => {
+    it("When converting nodes with _value children, Then should skip _value nodes", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "ship",
@@ -228,8 +278,10 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         ship: {
           _value: "Test Ship",
@@ -238,7 +290,8 @@ describe("game-data-parser", () => {
       });
     });
 
-    it("should handle positional values in positional keys", () => {
+    it("When converting positional values in positional keys, Then should group values", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "gun",
@@ -252,20 +305,26 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes, ["gun"]);
 
+      // Assert
       expect(result.gun).toBeInstanceOf(Array);
       const gunArray = result.gun as Array<Record<string, unknown>>;
       expect(gunArray[0]._values).toEqual(["Gun1", 100, 200]);
       expect(gunArray[0].damage).toBe(50);
     });
 
-    it("should handle empty nodes array", () => {
+    it("When converting empty nodes array, Then should return empty object", () => {
+      // Act
       const result = nodesToObject([]);
+
+      // Assert
       expect(result).toEqual({});
     });
 
-    it("should handle deeply nested structures", () => {
+    it("When converting deeply nested structures, Then should preserve all nesting", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "ship",
@@ -291,8 +350,10 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         ship: {
           _value: "Test Ship",
@@ -306,7 +367,8 @@ describe("game-data-parser", () => {
       });
     });
 
-    it("should handle non-positional keys with children", () => {
+    it("When converting non-positional keys with children, Then should preserve structure", () => {
+      // Arrange
       const nodes: ParseNode[] = [
         {
           key: "outfit",
@@ -316,8 +378,10 @@ describe("game-data-parser", () => {
         },
       ];
 
+      // Act
       const result = nodesToObject(nodes);
 
+      // Assert
       expect(result).toEqual({
         outfit: {
           _value: "Test Outfit",

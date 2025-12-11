@@ -25,7 +25,8 @@ describe("OutfitTransformer", () => {
   });
 
   describe("transform", () => {
-    it("should transform basic outfit data", () => {
+    it("When transforming basic outfit data, Then should preserve all fields", () => {
+      // Arrange
       const input = {
         name: "Test Outfit",
         plural: "Test Outfits",
@@ -37,8 +38,10 @@ describe("OutfitTransformer", () => {
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(undefined);
       (descriptionsUtils.extractDescriptions as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.name).toBe("Test Outfit");
       expect(result.plural).toBe("Test Outfits");
       expect(result.category).toBe("Engine");
@@ -46,7 +49,8 @@ describe("OutfitTransformer", () => {
       expect(result.mass).toBe(10);
     });
 
-    it("should extract licenses to attributes", () => {
+    it("When extracting licenses, Then should move to attributes", () => {
+      // Arrange
       const input = {
         name: "Test Outfit",
         licenses: "GPL-3.0",
@@ -55,14 +59,17 @@ describe("OutfitTransformer", () => {
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(["GPL-3.0"]);
       (descriptionsUtils.extractDescriptions as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect((result as Record<string, unknown>).attributes).toEqual({
         licenses: ["GPL-3.0"],
       });
     });
 
-    it("should extract descriptions", () => {
+    it("When extracting descriptions, Then should add descriptions array", () => {
+      // Arrange
       const input = {
         name: "Test Outfit",
         description: "A test outfit",
@@ -73,14 +80,17 @@ describe("OutfitTransformer", () => {
         "A test outfit",
       ]);
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect((result as Record<string, unknown>).descriptions).toEqual([
         "A test outfit",
       ]);
     });
 
-    it("should extract thumbnail using extractStringValue when not string", () => {
+    it("When thumbnail is not string, Then should extract using extractStringValue", () => {
+      // Arrange
       const input = {
         name: "Test Outfit",
         thumbnail: { _value: "thumbnail.png" },
@@ -92,8 +102,10 @@ describe("OutfitTransformer", () => {
         "thumbnail.png"
       );
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(valueExtraction.extractStringValue).toHaveBeenCalledWith({
         _value: "thumbnail.png",
       });
@@ -102,7 +114,8 @@ describe("OutfitTransformer", () => {
       );
     });
 
-    it("should move unknown fields to attributes", () => {
+    it("When unknown fields exist, Then should move them to attributes", () => {
+      // Arrange
       const input = {
         name: "Test Outfit",
         "unknown field": "value",
@@ -112,15 +125,18 @@ describe("OutfitTransformer", () => {
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(undefined);
       (descriptionsUtils.extractDescriptions as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       const resultAttributes = (result as Record<string, unknown>)
         .attributes as Record<string, unknown>;
       expect(resultAttributes["unknown field"]).toBe("value");
       expect(resultAttributes["another field"]).toBe(100);
     });
 
-    it("should handle numeric index", () => {
+    it("When index is numeric, Then should preserve index", () => {
+      // Arrange
       const input = {
         name: "Test Outfit",
         index: 5,
@@ -129,12 +145,15 @@ describe("OutfitTransformer", () => {
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(undefined);
       (descriptionsUtils.extractDescriptions as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect((result as Record<string, unknown>).index).toBe(5);
     });
 
-    it("should set index to undefined when not a number", () => {
+    it("When index is not a number, Then should set to undefined", () => {
+      // Arrange
       const input = {
         name: "Test Outfit",
         index: "not a number",
@@ -143,8 +162,10 @@ describe("OutfitTransformer", () => {
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(undefined);
       (descriptionsUtils.extractDescriptions as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = transformer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect((result as Record<string, unknown>).index).toBeUndefined();
     });
   });

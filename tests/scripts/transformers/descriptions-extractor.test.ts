@@ -16,15 +16,18 @@ describe("DescriptionsExtractor", () => {
   });
 
   describe("transform", () => {
-    it("should extract descriptions and add to output", () => {
+    it("When extracting descriptions, Then should add descriptions array to output", () => {
+      // Arrange
       const input = createMockShip({ description: "A test ship" });
 
       (descriptionsUtils.extractDescriptions as jest.Mock).mockReturnValue([
         "A test ship",
       ]);
 
+      // Act
       const result = extractor.transform(input);
 
+      // Assert
       expect(descriptionsUtils.extractDescriptions).toHaveBeenCalledWith(
         "A test ship"
       );
@@ -35,7 +38,8 @@ describe("DescriptionsExtractor", () => {
       });
     });
 
-    it("should handle array descriptions", () => {
+    it("When description is array, Then should extract all description lines", () => {
+      // Arrange
       const input = createMockShip({
         description: ["First line", "Second line"],
       });
@@ -45,12 +49,15 @@ describe("DescriptionsExtractor", () => {
         "Second line",
       ]);
 
+      // Act
       const result = extractor.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.descriptions).toEqual(["First line", "Second line"]);
     });
 
-    it("should preserve other properties", () => {
+    it("When transforming ship, Then should preserve other properties", () => {
+      // Arrange
       const input = createMockShip({
         sprite: "sprite.png",
         description: "A test ship",
@@ -60,19 +67,24 @@ describe("DescriptionsExtractor", () => {
         "A test ship",
       ]);
 
+      // Act
       const result = extractor.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.name).toBe("Test Ship");
       expect(result.sprite).toBe("sprite.png");
     });
 
-    it("should handle missing description", () => {
+    it("When description is missing, Then should return empty descriptions array", () => {
+      // Arrange
       const input = createMockShip();
 
       (descriptionsUtils.extractDescriptions as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = extractor.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.descriptions).toEqual([]);
     });
   });

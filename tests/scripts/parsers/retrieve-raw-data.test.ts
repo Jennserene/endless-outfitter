@@ -35,9 +35,11 @@ describe("retrieve-raw-data", () => {
   });
 
   describe("retrieveRawData", () => {
-    it("should execute all steps in order", () => {
+    it("When executing retrieveRawData, Then should execute all steps in order", () => {
+      // Act
       retrieveRawData();
 
+      // Assert
       expect(logger.info).toHaveBeenCalledWith(
         "Starting raw data parsing...\n"
       );
@@ -54,13 +56,15 @@ describe("retrieve-raw-data", () => {
       );
     });
 
-    it("should handle validation errors", () => {
+    it("When validation errors occur, Then should throw and stop execution", () => {
+      // Arrange
       (gitUtils.validateSubmoduleVersion as jest.Mock).mockImplementation(
         () => {
           throw new Error("Version mismatch");
         }
       );
 
+      // Act & Assert
       expect(() => {
         retrieveRawData();
       }).toThrow("Version mismatch");
@@ -70,7 +74,8 @@ describe("retrieve-raw-data", () => {
       expect(parseOutfitTxt.parseOutfitTxt).not.toHaveBeenCalled();
     });
 
-    it("should handle directory wipe errors", () => {
+    it("When directory wipe errors occur, Then should throw and stop execution", () => {
+      // Arrange
       (gitUtils.validateSubmoduleVersion as jest.Mock).mockReturnValue(
         undefined
       );
@@ -78,6 +83,7 @@ describe("retrieve-raw-data", () => {
         throw new Error("Directory wipe failed");
       });
 
+      // Act & Assert
       expect(() => {
         retrieveRawData();
       }).toThrow("Directory wipe failed");
@@ -86,7 +92,8 @@ describe("retrieve-raw-data", () => {
       expect(parseOutfitTxt.parseOutfitTxt).not.toHaveBeenCalled();
     });
 
-    it("should handle parse ship errors", () => {
+    it("When parse ship errors occur, Then should throw and stop execution", () => {
+      // Arrange
       (gitUtils.validateSubmoduleVersion as jest.Mock).mockReturnValue(
         undefined
       );
@@ -97,6 +104,7 @@ describe("retrieve-raw-data", () => {
         throw new Error("Parse ship failed");
       });
 
+      // Act & Assert
       expect(() => {
         retrieveRawData();
       }).toThrow("Parse ship failed");
@@ -104,7 +112,8 @@ describe("retrieve-raw-data", () => {
       expect(parseOutfitTxt.parseOutfitTxt).not.toHaveBeenCalled();
     });
 
-    it("should handle parse outfit errors", () => {
+    it("When parse outfit errors occur, Then should throw error", () => {
+      // Arrange
       (gitUtils.validateSubmoduleVersion as jest.Mock).mockReturnValue(
         undefined
       );
@@ -116,6 +125,7 @@ describe("retrieve-raw-data", () => {
         throw new Error("Parse outfit failed");
       });
 
+      // Act & Assert
       expect(() => {
         retrieveRawData();
       }).toThrow("Parse outfit failed");

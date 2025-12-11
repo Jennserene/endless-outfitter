@@ -43,7 +43,8 @@ describe("parse-outfit-txt", () => {
   });
 
   describe("parseOutfitData", () => {
-    it("should parse outfit data from content", () => {
+    it("When parsing outfit data from content, Then should return array of outfit objects", () => {
+      // Arrange
       const mockNodes = [
         {
           key: "outfit",
@@ -69,37 +70,46 @@ describe("parse-outfit-txt", () => {
         .mockReturnValueOnce({ mass: "10", cost: "1000" })
         .mockReturnValueOnce({ mass: "20" });
 
+      // Act
       const result = parseOutfitData(
         "outfit Test Outfit\n\tmass 10\n\tcost 1000"
       );
 
+      // Assert
       expect(result).toEqual([
         { name: "Test Outfit", mass: "10", cost: "1000" },
         { name: "Another Outfit", mass: "20" },
       ]);
     });
 
-    it("should return empty array when no outfits found", () => {
+    it("When parsing content with no outfits, Then should return empty array", () => {
+      // Arrange
       (gameDataParser.parseIndentedFormat as jest.Mock).mockReturnValue([
         { key: "ship", value: "Test Ship", children: [], lineNumber: 1 },
       ]);
 
+      // Act
       const result = parseOutfitData("ship Test Ship");
 
+      // Assert
       expect(result).toEqual([]);
     });
 
-    it("should handle empty content", () => {
+    it("When parsing empty content, Then should return empty array", () => {
+      // Arrange
       (gameDataParser.parseIndentedFormat as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = parseOutfitData("");
 
+      // Assert
       expect(result).toEqual([]);
     });
   });
 
   describe("parseOutfitTxt", () => {
-    it("should parse outfits and write files for each species", () => {
+    it("When parsing outfits, Then should write files for each species", () => {
+      // Arrange
       const mockFiles = [
         { path: "outfits.txt", content: "outfit Test Outfit\n\tmass 10" },
       ];
@@ -131,8 +141,10 @@ describe("parse-outfit-txt", () => {
         "/test/outfits-human.json"
       );
 
+      // Act
       parseOutfitTxt();
 
+      // Assert
       expect(logger.info).toHaveBeenCalledWith(
         "Parsing outfits to raw JSON..."
       );
@@ -148,12 +160,13 @@ describe("parse-outfit-txt", () => {
       );
     });
 
-    it.skip("should handle file reading errors", () => {
+    it.skip("When file reading errors occur, Then should handle errors", () => {
       // Not working: Complex to mock file reading errors with current structure
       // Would need to mock readGameDataFiles to throw, but error handling isn't explicit in parseOutfitTxt
     });
 
-    it("should handle multiple species", () => {
+    it("When parsing multiple species, Then should write files for each species", () => {
+      // Arrange
       const mockFiles = [
         { path: "outfits.txt", content: "outfit Outfit1" },
         { path: "engines.txt", content: "outfit Outfit2" },
@@ -185,8 +198,10 @@ describe("parse-outfit-txt", () => {
         .mockReturnValueOnce("/test/outfits-human.json")
         .mockReturnValueOnce("/test/outfits-pug.json");
 
+      // Act
       parseOutfitTxt();
 
+      // Assert
       expect(fileIo.writeJsonFile).toHaveBeenCalledTimes(2);
       expect(logger.success).toHaveBeenCalledWith(
         "Total: 2 outfits across 2 species"

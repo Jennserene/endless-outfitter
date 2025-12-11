@@ -5,7 +5,8 @@ import { TEST_IMAGE_PATHS } from "../__fixtures__/images";
 
 describe("image-extractor", () => {
   describe("extractImagePaths", () => {
-    it("should extract sprite and thumbnail from ships", () => {
+    it("When extracting from ships with sprite and thumbnail, Then should return both image paths", () => {
+      // Arrange
       const ships = [
         createMockShip({
           sprite: TEST_IMAGE_PATHS.SHIP_SPRITE,
@@ -14,14 +15,17 @@ describe("image-extractor", () => {
       ];
       const outfits: unknown[] = [];
 
+      // Act
       const result = extractImagePaths(ships, outfits);
 
+      // Assert
       expect(result.size).toBe(2);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_SPRITE)).toBe(true);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_THUMBNAIL)).toBe(true);
     });
 
-    it("should extract thumbnail from outfits", () => {
+    it("When extracting from outfits with thumbnail, Then should return thumbnail path", () => {
+      // Arrange
       const ships: unknown[] = [];
       const outfits = [
         createMockOutfit({
@@ -29,13 +33,16 @@ describe("image-extractor", () => {
         }),
       ];
 
+      // Act
       const result = extractImagePaths(ships, outfits);
 
+      // Assert
       expect(result.size).toBe(1);
       expect(result.has(TEST_IMAGE_PATHS.OUTFIT_THUMBNAIL)).toBe(true);
     });
 
-    it("should extract images from both ships and outfits", () => {
+    it("When extracting from both ships and outfits, Then should return all unique image paths", () => {
+      // Arrange
       const ships = [
         createMockShip({
           sprite: TEST_IMAGE_PATHS.SHIP_SPRITE,
@@ -48,24 +55,30 @@ describe("image-extractor", () => {
         }),
       ];
 
+      // Act
       const result = extractImagePaths(ships, outfits);
 
+      // Assert
       expect(result.size).toBe(3);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_SPRITE)).toBe(true);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_THUMBNAIL)).toBe(true);
       expect(result.has(TEST_IMAGE_PATHS.OUTFIT_THUMBNAIL)).toBe(true);
     });
 
-    it("should handle missing sprite and thumbnail fields", () => {
+    it("When ships and outfits have missing image fields, Then should return empty set", () => {
+      // Arrange
       const ships = [createMockShip()];
       const outfits = [createMockOutfit()];
 
+      // Act
       const result = extractImagePaths(ships, outfits);
 
+      // Assert
       expect(result.size).toBe(0);
     });
 
-    it("should deduplicate image paths", () => {
+    it("When duplicate image paths exist, Then should deduplicate them", () => {
+      // Arrange
       const ships = [
         createMockShip({
           sprite: TEST_IMAGE_PATHS.SHIP_SPRITE,
@@ -82,21 +95,26 @@ describe("image-extractor", () => {
         }),
       ];
 
+      // Act
       const result = extractImagePaths(ships, outfits);
 
+      // Assert
       expect(result.size).toBe(3);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_SPRITE)).toBe(true);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_THUMBNAIL)).toBe(true);
       expect(result.has(TEST_IMAGE_PATHS.ANOTHER_THUMBNAIL)).toBe(true);
     });
 
-    it("should handle empty arrays", () => {
+    it("When arrays are empty, Then should return empty set", () => {
+      // Act
       const result = extractImagePaths([], []);
 
+      // Assert
       expect(result.size).toBe(0);
     });
 
-    it("should handle ships with only sprite", () => {
+    it("When ships have only sprite, Then should return sprite path", () => {
+      // Arrange
       const ships = [
         createMockShip({
           sprite: TEST_IMAGE_PATHS.SHIP_SPRITE,
@@ -104,13 +122,16 @@ describe("image-extractor", () => {
       ];
       const outfits: unknown[] = [];
 
+      // Act
       const result = extractImagePaths(ships, outfits);
 
+      // Assert
       expect(result.size).toBe(1);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_SPRITE)).toBe(true);
     });
 
-    it("should handle ships with only thumbnail", () => {
+    it("When ships have only thumbnail, Then should return thumbnail path", () => {
+      // Arrange
       const ships = [
         createMockShip({
           thumbnail: TEST_IMAGE_PATHS.SHIP_THUMBNAIL,
@@ -118,8 +139,10 @@ describe("image-extractor", () => {
       ];
       const outfits: unknown[] = [];
 
+      // Act
       const result = extractImagePaths(ships, outfits);
 
+      // Assert
       expect(result.size).toBe(1);
       expect(result.has(TEST_IMAGE_PATHS.SHIP_THUMBNAIL)).toBe(true);
     });

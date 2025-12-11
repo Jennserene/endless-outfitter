@@ -41,11 +41,14 @@ describe("git", () => {
   });
 
   describe("getSubmoduleVersion", () => {
-    it("should return tag version when on exact tag", () => {
+    it("When submodule is on exact tag, Then should return tag version", () => {
+      // Arrange
       (execSync as jest.Mock).mockReturnValueOnce("v0.10.16\n");
 
+      // Act
       const version = getSubmoduleVersion();
 
+      // Assert
       expect(version).toBe("v0.10.16");
       expect(execSync).toHaveBeenCalledWith(
         "git describe --tags --exact-match",
@@ -56,15 +59,18 @@ describe("git", () => {
       );
     });
 
-    it("should return commit hash when not on tag", () => {
+    it("When submodule is not on tag, Then should return commit hash", () => {
+      // Arrange
       (execSync as jest.Mock)
         .mockImplementationOnce(() => {
           throw new Error("Not on tag");
         })
         .mockReturnValueOnce("abc1234def5678\n");
 
+      // Act
       const version = getSubmoduleVersion();
 
+      // Assert
       expect(version).toBe("abc1234");
       expect(execSync).toHaveBeenCalledTimes(2);
       expect(execSync).toHaveBeenNthCalledWith(
@@ -81,11 +87,13 @@ describe("git", () => {
       });
     });
 
-    it("should throw when both git commands fail", () => {
+    it("When both git commands fail, Then should throw error", () => {
+      // Arrange
       (execSync as jest.Mock).mockImplementation(() => {
         throw new Error("Git command failed");
       });
 
+      // Act & Assert
       expect(() => {
         getSubmoduleVersion();
       }).toThrow("Could not determine submodule version");
@@ -93,20 +101,25 @@ describe("git", () => {
   });
 
   describe("validateSubmoduleVersion", () => {
-    it("should succeed when version matches", () => {
+    it("When version matches, Then should succeed and log success", () => {
+      // Arrange
       (existsSync as jest.Mock).mockReturnValueOnce(true);
       (execSync as jest.Mock).mockReturnValueOnce("v0.10.16\n");
 
+      // Act
       validateSubmoduleVersion();
 
+      // Assert
       expect(logger.success).toHaveBeenCalledWith(
         "Version validated: v0.10.16"
       );
     });
 
-    it("should throw when submodule path does not exist", () => {
+    it("When submodule path does not exist, Then should throw error", () => {
+      // Arrange
       (existsSync as jest.Mock).mockReturnValueOnce(false);
 
+      // Act & Assert
       expect(() => {
         validateSubmoduleVersion();
       }).toThrow(
@@ -114,10 +127,12 @@ describe("git", () => {
       );
     });
 
-    it("should throw when version does not match", () => {
+    it("When version does not match, Then should throw error", () => {
+      // Arrange
       (existsSync as jest.Mock).mockReturnValueOnce(true);
       (execSync as jest.Mock).mockReturnValueOnce("v0.10.15\n");
 
+      // Act & Assert
       expect(() => {
         validateSubmoduleVersion();
       }).toThrow(
@@ -125,7 +140,8 @@ describe("git", () => {
       );
     });
 
-    it("should handle commit hash version", () => {
+    it("When submodule is on commit hash, Then should throw version mismatch", () => {
+      // Arrange
       (existsSync as jest.Mock).mockReturnValueOnce(true);
       (execSync as jest.Mock)
         .mockImplementationOnce(() => {
@@ -133,6 +149,7 @@ describe("git", () => {
         })
         .mockReturnValueOnce("abc1234def5678\n");
 
+      // Act & Assert
       // This will fail because commit hash won't match GAME_VERSION
       expect(() => {
         validateSubmoduleVersion();

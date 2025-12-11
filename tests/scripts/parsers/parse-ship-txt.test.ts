@@ -40,7 +40,8 @@ describe("parse-ship-txt", () => {
   });
 
   describe("parseShipData", () => {
-    it("should parse ship data from content", () => {
+    it("When parsing ship data from content, Then should return array of ship objects", () => {
+      // Arrange
       const mockNodes = [
         {
           key: "ship",
@@ -66,35 +67,44 @@ describe("parse-ship-txt", () => {
         .mockReturnValueOnce({ mass: "100", drag: "0.1" })
         .mockReturnValueOnce({ mass: "200" });
 
+      // Act
       const result = parseShipData("ship Test Ship\n\tmass 100\n\tdrag 0.1");
 
+      // Assert
       expect(result).toEqual([
         { name: "Test Ship", mass: "100", drag: "0.1" },
         { name: "Another Ship", mass: "200" },
       ]);
     });
 
-    it("should return empty array when no ships found", () => {
+    it("When parsing content with no ships, Then should return empty array", () => {
+      // Arrange
       (gameDataParser.parseIndentedFormat as jest.Mock).mockReturnValue([
         { key: "outfit", value: "Test Outfit", children: [], lineNumber: 1 },
       ]);
 
+      // Act
       const result = parseShipData("outfit Test Outfit");
 
+      // Assert
       expect(result).toEqual([]);
     });
 
-    it("should handle empty content", () => {
+    it("When parsing empty content, Then should return empty array", () => {
+      // Arrange
       (gameDataParser.parseIndentedFormat as jest.Mock).mockReturnValue([]);
 
+      // Act
       const result = parseShipData("");
 
+      // Assert
       expect(result).toEqual([]);
     });
   });
 
   describe("parseShipTxt", () => {
-    it("should parse ships and write files for each species", () => {
+    it("When parsing ships, Then should write files for each species", () => {
+      // Arrange
       const mockFiles = [
         { path: "ships.txt", content: "ship Test Ship\n\tmass 100" },
       ];
@@ -126,8 +136,10 @@ describe("parse-ship-txt", () => {
         "/test/ships-human.json"
       );
 
+      // Act
       parseShipTxt();
 
+      // Assert
       expect(logger.info).toHaveBeenCalledWith("Parsing ships to raw JSON...");
       expect(fileIo.writeJsonFile).toHaveBeenCalledWith(
         "/test/ships-human.json",
@@ -141,12 +153,13 @@ describe("parse-ship-txt", () => {
       );
     });
 
-    it.skip("should handle file reading errors", () => {
+    it.skip("When file reading errors occur, Then should handle errors", () => {
       // Not working: Complex to mock file reading errors with current structure
       // Would need to mock readGameDataFiles to throw, but error handling isn't explicit in parseShipTxt
     });
 
-    it("should handle multiple species", () => {
+    it("When parsing multiple species, Then should write files for each species", () => {
+      // Arrange
       const mockFiles = [
         { path: "ships.txt", content: "ship Ship1" },
         { path: "kestrel.txt", content: "ship Ship2" },
@@ -178,8 +191,10 @@ describe("parse-ship-txt", () => {
         .mockReturnValueOnce("/test/ships-human.json")
         .mockReturnValueOnce("/test/ships-pug.json");
 
+      // Act
       parseShipTxt();
 
+      // Assert
       expect(fileIo.writeJsonFile).toHaveBeenCalledTimes(2);
       expect(logger.success).toHaveBeenCalledWith(
         "Total: 2 ships across 2 species"

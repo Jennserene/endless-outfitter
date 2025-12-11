@@ -13,9 +13,11 @@ jest.mock("@config/data-schema-version", () => ({
 
 describe("metadata", () => {
   describe("createMetadata", () => {
-    it("should create metadata with correct structure", () => {
+    it("When creating metadata, Then should include all required properties", () => {
+      // Act
       const result = createMetadata("human", 5);
 
+      // Assert
       expect(result).toHaveProperty("version");
       expect(result).toHaveProperty("schemaVersion");
       expect(result).toHaveProperty("species");
@@ -23,44 +25,64 @@ describe("metadata", () => {
       expect(result).toHaveProperty("itemCount");
     });
 
-    it("should set version from config", () => {
+    it("When creating metadata, Then should set version from config", () => {
+      // Act
       const result = createMetadata("human", 5);
+
+      // Assert
       expect(result.version).toBe(GAME_VERSION);
     });
 
-    it("should set schemaVersion as combination", () => {
+    it("When creating metadata, Then should set schemaVersion as combination", () => {
+      // Act
       const result = createMetadata("human", 5);
+
+      // Assert
       expect(result.schemaVersion).toBe(
         `${DATA_SCHEMA_FORMAT_VERSION}-${GAME_VERSION}`
       );
     });
 
-    it("should set species correctly", () => {
+    it("When creating metadata with species, Then should set species correctly", () => {
+      // Act
       const result = createMetadata("pug", 10);
+
+      // Assert
       expect(result.species).toBe("pug");
     });
 
-    it("should set itemCount correctly", () => {
+    it("When creating metadata with item count, Then should set itemCount correctly", () => {
+      // Act
       const result = createMetadata("human", 42);
+
+      // Assert
       expect(result.itemCount).toBe(42);
     });
 
-    it("should set generatedAt as ISO string", () => {
+    it("When creating metadata, Then should set generatedAt as ISO string", () => {
+      // Act
       const result = createMetadata("human", 5);
+
+      // Assert
       expect(result.generatedAt).toMatch(
         /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/
       );
     });
 
-    it("should handle zero item count", () => {
+    it("When item count is zero, Then should handle zero count", () => {
+      // Act
       const result = createMetadata("human", 0);
+
+      // Assert
       expect(result.itemCount).toBe(0);
     });
 
-    it("should handle different species", () => {
+    it("When creating metadata for different species, Then should set species correctly", () => {
+      // Act
       const result1 = createMetadata("human", 5);
       const result2 = createMetadata("pug", 5);
 
+      // Assert
       expect(result1.species).toBe("human");
       expect(result2.species).toBe("pug");
     });

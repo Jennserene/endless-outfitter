@@ -29,7 +29,8 @@ describe("retrieve-game-data", () => {
   });
 
   describe("readGameDataFiles", () => {
-    it("should read and return files with content and species", () => {
+    it("When reading game data files, Then should return files with content and species", () => {
+      // Arrange
       const mockFiles = [
         { path: "/test/data/human/ships.txt", species: "human" },
         { path: "/test/data/pug/ships.txt", species: "pug" },
@@ -41,8 +42,10 @@ describe("retrieve-game-data", () => {
         .mockReturnValueOnce("ship Ship1")
         .mockReturnValueOnce("ship Ship2");
 
+      // Act
       const result = readGameDataFiles(["ships.txt"]);
 
+      // Assert
       expect(result).toHaveLength(2);
       expect(result[0]).toEqual({
         content: "ship Ship1",
@@ -54,16 +57,19 @@ describe("retrieve-game-data", () => {
       });
     });
 
-    it("should throw error when no files found", () => {
+    it("When no files are found, Then should throw error", () => {
+      // Arrange
       (paths.getGameDataPath as jest.Mock).mockReturnValue("/test/data");
       (fileIo.findDataFiles as jest.Mock).mockReturnValue([]);
 
+      // Act & Assert
       expect(() => {
         readGameDataFiles(["ships.txt"]);
       }).toThrow("No game data files found matching [ships.txt] in /test/data");
     });
 
-    it("should handle multiple filenames", () => {
+    it("When handling multiple filenames, Then should find all matching files", () => {
+      // Arrange
       const mockFiles = [
         { path: "/test/data/human/ships.txt", species: "human" },
         { path: "/test/data/human/kestrel.txt", species: "human" },
@@ -75,8 +81,10 @@ describe("retrieve-game-data", () => {
         .mockReturnValueOnce("ship Ship1")
         .mockReturnValueOnce("ship Ship2");
 
+      // Act
       const result = readGameDataFiles(["ships.txt", "kestrel.txt"]);
 
+      // Assert
       expect(result).toHaveLength(2);
       expect(fileIo.findDataFiles).toHaveBeenCalledWith("/test/data", [
         "ships.txt",
@@ -84,20 +92,24 @@ describe("retrieve-game-data", () => {
       ]);
     });
 
-    it("should handle files with undefined species", () => {
+    it("When files have undefined species, Then should preserve undefined species", () => {
+      // Arrange
       const mockFiles = [{ path: "/test/data/ships.txt", species: undefined }];
 
       (paths.getGameDataPath as jest.Mock).mockReturnValue("/test/data");
       (fileIo.findDataFiles as jest.Mock).mockReturnValue(mockFiles);
       (fs.readFileSync as jest.Mock).mockReturnValue("ship Ship1");
 
+      // Act
       const result = readGameDataFiles(["ships.txt"]);
 
+      // Assert
       expect(result).toHaveLength(1);
       expect(result[0].species).toBeUndefined();
     });
 
-    it("should read file content correctly", () => {
+    it("When reading file content, Then should read and return content correctly", () => {
+      // Arrange
       const mockFiles = [
         { path: "/test/data/human/ships.txt", species: "human" },
       ];
@@ -107,8 +119,10 @@ describe("retrieve-game-data", () => {
       (fileIo.findDataFiles as jest.Mock).mockReturnValue(mockFiles);
       (fs.readFileSync as jest.Mock).mockReturnValue(fileContent);
 
+      // Act
       const result = readGameDataFiles(["ships.txt"]);
 
+      // Assert
       expect(fs.readFileSync).toHaveBeenCalledWith(
         "/test/data/human/ships.txt",
         "utf-8"
@@ -118,7 +132,8 @@ describe("retrieve-game-data", () => {
   });
 
   describe("GameDataPaths", () => {
-    it("should export GameDataPaths constant", () => {
+    it("When accessing GameDataPaths, Then should export constant with arrays", () => {
+      // Assert
       expect(GameDataPaths).toBeDefined();
       expect(GameDataPaths.SHIPS).toBeInstanceOf(Array);
       expect(GameDataPaths.OUTFITS).toBeInstanceOf(Array);

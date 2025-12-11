@@ -8,7 +8,8 @@ describe("AttributesNormalizer", () => {
   });
 
   describe("transform", () => {
-    it("should normalize attributes from object", () => {
+    it("When normalizing attributes from object, Then should preserve attributes and add category", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         attributes: {
@@ -17,8 +18,10 @@ describe("AttributesNormalizer", () => {
         },
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.attributes).toEqual({
         mass: 100,
         cost: 1000,
@@ -26,32 +29,39 @@ describe("AttributesNormalizer", () => {
       });
     });
 
-    it("should create empty attributes when attributes is true", () => {
+    it("When attributes is true, Then should create empty attributes with category", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         attributes: true,
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.attributes).toEqual({
         category: "Unknown",
       });
     });
 
-    it("should create empty attributes when attributes is undefined", () => {
+    it("When attributes is undefined, Then should create empty attributes with category", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.attributes).toEqual({
         category: "Unknown",
       });
     });
 
-    it("should merge add attributes into attributes", () => {
+    it("When merging add attributes, Then should combine with existing attributes", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         attributes: {
@@ -63,8 +73,10 @@ describe("AttributesNormalizer", () => {
         },
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.attributes).toEqual({
         mass: 100,
         cost: 1000,
@@ -73,7 +85,8 @@ describe("AttributesNormalizer", () => {
       });
     });
 
-    it("should copy category from top level to attributes", () => {
+    it("When category exists at top level, Then should copy to attributes", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         category: "Fighter",
@@ -82,8 +95,10 @@ describe("AttributesNormalizer", () => {
         },
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect((result.attributes as Record<string, unknown>).category).toBe(
         "Fighter"
       );
@@ -91,7 +106,8 @@ describe("AttributesNormalizer", () => {
       expect(result.category).toBe("Fighter");
     });
 
-    it("should use existing category in attributes if present", () => {
+    it("When category exists in attributes, Then should use existing category", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         category: "Fighter",
@@ -101,14 +117,17 @@ describe("AttributesNormalizer", () => {
         },
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect((result.attributes as Record<string, unknown>).category).toBe(
         "Bomber"
       );
     });
 
-    it("should set default category when missing", () => {
+    it("When category is missing, Then should set default category", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         attributes: {
@@ -116,14 +135,17 @@ describe("AttributesNormalizer", () => {
         },
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect((result.attributes as Record<string, unknown>).category).toBe(
         "Unknown"
       );
     });
 
-    it("should preserve other ship properties", () => {
+    it("When transforming input, Then should preserve other properties", () => {
+      // Arrange
       const input = {
         name: "Test Ship",
         sprite: "sprite.png",
@@ -132,8 +154,10 @@ describe("AttributesNormalizer", () => {
         },
       };
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.name).toBe("Test Ship");
       expect(result.sprite).toBe("sprite.png");
     });

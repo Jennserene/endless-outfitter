@@ -9,6 +9,10 @@ import { generateShips } from "../generators/ship-generator";
 import { generateOutfits } from "../generators/outfit-generator";
 import { ImageRetrievalService } from "../services/image-retrieval-service";
 import { loadShips, loadOutfits } from "@/lib/loaders/data-loader";
+import {
+  createPipelineStepError,
+  ScriptErrorCode,
+} from "../utils/error-handling";
 
 /**
  * Pipeline step definition
@@ -86,9 +90,7 @@ export class DataGenerationPipeline {
         step.execute();
       } catch (error) {
         this.logger.error(`Step "${step.name}" failed`, error);
-        throw new Error(`Pipeline failed at step "${step.name}"`, {
-          cause: error,
-        });
+        throw createPipelineStepError(step.name, error);
       }
     }
 

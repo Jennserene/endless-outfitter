@@ -28,7 +28,7 @@ jest.mock("@scripts/utils/error-handling", () => ({
 }));
 
 describe("validate-data", () => {
-  it.skip("should validate ships and outfits data", () => {
+  it.skip("When validating data, Then should validate ships and outfits data", () => {
     // Not working: validate-data.ts calls main() at module level (line 44: main())
     // This makes it difficult to test without executing the script
     // The validation logic is tested indirectly through:

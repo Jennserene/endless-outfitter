@@ -71,36 +71,50 @@ describe("BaseGenerator", () => {
   });
 
   describe("extractSpecies", () => {
-    it("should extract species from filename with prefix", () => {
+    it("When extracting species from filename with prefix, Then should return species name", () => {
+      // Act
       const species = generator.extractSpecies("test-human.json");
+
+      // Assert
       expect(species).toBe("human");
     });
 
-    it("should extract species from filename without prefix", () => {
+    it("When extracting species from filename without prefix, Then should return species name", () => {
+      // Act
       const species = generator.extractSpecies("test-pug.json");
+
+      // Assert
       expect(species).toBe("pug");
     });
 
-    it("should handle complex species names", () => {
+    it("When extracting species with complex name, Then should return full species name", () => {
+      // Act
       const species = generator.extractSpecies("test-sheragi.json");
+
+      // Assert
       expect(species).toBe("sheragi");
     });
   });
 
   describe("readRawData", () => {
-    it("should read and parse JSON file", () => {
+    it("When reading valid JSON file, Then should parse and return data", () => {
+      // Arrange
       const mockData = [{ name: "item1" }, { name: "item2" }];
       (fs.readFileSync as jest.Mock).mockReturnValue(JSON.stringify(mockData));
 
+      // Act
       const result = generator.readRawData("/test/file.json");
 
+      // Assert
       expect(fs.readFileSync).toHaveBeenCalledWith("/test/file.json", "utf-8");
       expect(result).toEqual(mockData);
     });
 
-    it("should throw when JSON is invalid", () => {
+    it("When reading invalid JSON file, Then should throw error", () => {
+      // Arrange
       (fs.readFileSync as jest.Mock).mockReturnValue("invalid json");
 
+      // Act & Assert
       expect(() => {
         generator.readRawData("/test/file.json");
       }).toThrow();
@@ -108,7 +122,8 @@ describe("BaseGenerator", () => {
   });
 
   describe("writeOutput", () => {
-    it("should write output with metadata and data", () => {
+    it("When writing output, Then should create metadata and write file with data", () => {
+      // Arrange
       const mockMetadata = {
         version: "v1.0",
         schemaVersion: "1.0-v1.0",
@@ -121,8 +136,10 @@ describe("BaseGenerator", () => {
         "/test/output/test-human.json"
       );
 
+      // Act
       generator.writeOutput("human", ["item1", "item2"]);
 
+      // Assert
       expect(metadata.createMetadata).toHaveBeenCalledWith("human", 2);
       expect(fileIo.getSpeciesFilePath).toHaveBeenCalledWith(
         "/test/output",
@@ -140,9 +157,11 @@ describe("BaseGenerator", () => {
   });
 
   describe("logProgress", () => {
-    it("should log progress for a species", () => {
+    it("When logging progress, Then should log success message with count and species", () => {
+      // Act
       generator.logProgress("human", 5);
 
+      // Assert
       expect(logger.success).toHaveBeenCalledWith(
         "Generated 5 test-items (human) to test-human.json"
       );
@@ -150,9 +169,11 @@ describe("BaseGenerator", () => {
   });
 
   describe("logSummary", () => {
-    it("should log summary across all species", () => {
+    it("When logging summary, Then should log total count across all species", () => {
+      // Act
       generator.logSummary(10, 2);
 
+      // Assert
       expect(logger.success).toHaveBeenCalledWith(
         "Total: 10 test-items across 2 species"
       );
@@ -160,7 +181,8 @@ describe("BaseGenerator", () => {
   });
 
   describe("execute", () => {
-    it("should execute successfully with multiple files", () => {
+    it("When executing with multiple files, Then should process all files and log summary", () => {
+      // Arrange
       const mockFiles = ["test-human.json", "test-pug.json"];
       const mockRawData1 = [{ name: "item1" }, { name: "item2" }];
       const mockRawData2 = [{ name: "item3" }];
@@ -182,8 +204,10 @@ describe("BaseGenerator", () => {
         .mockReturnValueOnce("/test/output/test-human.json")
         .mockReturnValueOnce("/test/output/test-pug.json");
 
+      // Act
       generator.execute();
 
+      // Assert
       expect(logger.info).toHaveBeenCalledWith(
         "Generating test-items files from raw JSON..."
       );
@@ -199,9 +223,11 @@ describe("BaseGenerator", () => {
       );
     });
 
-    it("should throw when rawDir does not exist", () => {
+    it("When raw directory does not exist, Then should throw error", () => {
+      // Arrange
       (fs.existsSync as jest.Mock).mockReturnValue(false);
 
+      // Act & Assert
       expect(() => {
         generator.execute();
       }).toThrow(
@@ -209,25 +235,29 @@ describe("BaseGenerator", () => {
       );
     });
 
-    it("should handle empty directory", () => {
+    it("When directory is empty, Then should log zero summary and not write files", () => {
+      // Arrange
       (fs.existsSync as jest.Mock).mockReturnValue(true);
       (fs.readdirSync as jest.Mock).mockReturnValue([]);
 
+      // Act
       generator.execute();
 
+      // Assert
       expect(logger.success).toHaveBeenCalledWith(
         "Total: 0 test-items across 0 species"
       );
       expect(fileIo.writeJsonFile).not.toHaveBeenCalled();
     });
 
-    it.skip("should handle converter errors", () => {
+    it.skip("When converter errors occur, Then should propagate error", () => {
       // Not working: Converter errors would need to be caught and handled,
       // but BaseGenerator doesn't have explicit error handling for converter failures
       // The error would propagate up, which is expected behavior
     });
 
-    it("should filter out non-JSON files", () => {
+    it("When directory contains non-JSON files, Then should filter them out", () => {
+      // Arrange
       const mockFiles = ["test-human.json", "readme.txt", "test-pug.json"];
       const mockRawData = [{ name: "item1" }];
       const mockMetadata = {
@@ -248,9 +278,10 @@ describe("BaseGenerator", () => {
         .mockReturnValueOnce("/test/output/test-human.json")
         .mockReturnValueOnce("/test/output/test-pug.json");
 
+      // Act
       generator.execute();
 
-      // Should only process JSON files
+      // Assert - Should only process JSON files
       expect(fs.readFileSync).toHaveBeenCalledTimes(2);
       expect(fileIo.writeJsonFile).toHaveBeenCalledTimes(2);
     });

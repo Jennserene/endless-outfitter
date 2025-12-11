@@ -19,7 +19,8 @@ describe("LicensesExtractor", () => {
   });
 
   describe("transform", () => {
-    it("should extract licenses from attributes", () => {
+    it("When extracting licenses from attributes, Then should convert to array", () => {
+      // Arrange
       const input = createMockShipWithAttributes({
         licenses: "GPL-3.0",
         mass: 100,
@@ -27,15 +28,18 @@ describe("LicensesExtractor", () => {
 
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(["GPL-3.0"]);
 
+      // Act
       const result = extractor.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(licensesUtils.extractLicenses).toHaveBeenCalledWith("GPL-3.0");
       expect((result.attributes as Record<string, unknown>).licenses).toEqual([
         "GPL-3.0",
       ]);
     });
 
-    it("should remove licenses when extraction returns undefined", () => {
+    it("When extraction returns undefined, Then should remove licenses property", () => {
+      // Arrange
       const input = createMockShipWithAttributes({
         licenses: null,
         mass: 100,
@@ -43,23 +47,29 @@ describe("LicensesExtractor", () => {
 
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(undefined);
 
+      // Act
       const result = extractor.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(
         (result.attributes as Record<string, unknown>).licenses
       ).toBeUndefined();
     });
 
-    it("should return item unchanged when no attributes", () => {
+    it("When item has no attributes, Then should return item unchanged", () => {
+      // Arrange
       const input = createMockShip();
 
+      // Act
       const result = extractor.transform(input);
 
+      // Assert
       expect(licensesUtils.extractLicenses).not.toHaveBeenCalled();
       expect(result).toEqual(input);
     });
 
-    it("should preserve other attribute properties", () => {
+    it("When transforming item, Then should preserve other attribute properties", () => {
+      // Arrange
       const input = createMockShipWithAttributes({
         licenses: "GPL-3.0",
         mass: 100,
@@ -68,14 +78,17 @@ describe("LicensesExtractor", () => {
 
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(["GPL-3.0"]);
 
+      // Act
       const result = extractor.transform(input) as Record<string, unknown>;
 
+      // Assert
       const attributes = result.attributes as Record<string, unknown>;
       expect(attributes.mass).toBe(100);
       expect(attributes.cost).toBe(1000);
     });
 
-    it("should preserve non-attribute properties", () => {
+    it("When transforming item, Then should preserve non-attribute properties", () => {
+      // Arrange
       const input = createMockShipWithAttributes(
         { licenses: "GPL-3.0" },
         { sprite: "sprite.png" }
@@ -83,8 +96,10 @@ describe("LicensesExtractor", () => {
 
       (licensesUtils.extractLicenses as jest.Mock).mockReturnValue(["GPL-3.0"]);
 
+      // Act
       const result = extractor.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.name).toBe("Test Ship");
       expect(result.sprite).toBe("sprite.png");
     });

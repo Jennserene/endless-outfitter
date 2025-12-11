@@ -7,190 +7,274 @@ import {
 
 describe("line-parser", () => {
   describe("parseLineValues", () => {
-    it("should parse simple space-separated values", () => {
+    it("When parsing simple space-separated values, Then should return array of strings", () => {
+      // Act
       const result = parseLineValues("foo bar baz");
+
+      // Assert
       expect(result).toEqual(["foo", "bar", "baz"]);
     });
 
-    it("should parse numeric values as numbers", () => {
+    it("When parsing numeric values, Then should return array of numbers", () => {
+      // Act
       const result = parseLineValues("100 200 300");
+
+      // Assert
       expect(result).toEqual([100, 200, 300]);
     });
 
-    it("should parse mixed strings and numbers", () => {
+    it("When parsing mixed strings and numbers, Then should return array with correct types", () => {
+      // Act
       const result = parseLineValues("ship 100 0.5");
+
+      // Assert
       expect(result).toEqual(["ship", 100, 0.5]);
     });
 
-    it("should parse quoted strings", () => {
+    it("When parsing quoted strings, Then should return unquoted values", () => {
+      // Act
       const result = parseLineValues('"quoted string" unquoted');
+
+      // Assert
       expect(result).toEqual(["quoted string", "unquoted"]);
     });
 
-    it("should parse backtick-quoted strings", () => {
+    it("When parsing backtick-quoted strings, Then should return unquoted values", () => {
+      // Act
       const result = parseLineValues("`backtick string` normal");
+
+      // Assert
       expect(result).toEqual(["backtick string", "normal"]);
     });
 
-    it("should handle quoted strings with spaces", () => {
+    it("When parsing quoted strings with spaces, Then should preserve spaces within quotes", () => {
+      // Act
       const result = parseLineValues('"multi word string" value');
+
+      // Assert
       expect(result).toEqual(["multi word string", "value"]);
     });
 
-    it("should handle empty quoted strings", () => {
+    it("When parsing empty quoted strings, Then should return empty string", () => {
+      // Act
       const result = parseLineValues('"" value');
+
+      // Assert
       expect(result).toEqual(["", "value"]);
     });
 
-    it("should handle decimal numbers", () => {
+    it("When parsing decimal numbers, Then should return array of decimal numbers", () => {
+      // Act
       const result = parseLineValues("1.5 2.75 0.1");
+
+      // Assert
       expect(result).toEqual([1.5, 2.75, 0.1]);
     });
 
-    it("should handle negative numbers", () => {
+    it("When parsing negative numbers, Then should return array of negative numbers", () => {
+      // Act
       const result = parseLineValues("-100 -0.5");
+
+      // Assert
       expect(result).toEqual([-100, -0.5]);
     });
 
-    it("should handle multiple spaces between values", () => {
+    it("When parsing values with multiple spaces, Then should ignore extra spaces", () => {
+      // Act
       const result = parseLineValues("foo    bar     baz");
+
+      // Assert
       expect(result).toEqual(["foo", "bar", "baz"]);
     });
 
-    it("should handle leading and trailing spaces", () => {
+    it("When parsing values with leading and trailing spaces, Then should trim spaces", () => {
+      // Act
       const result = parseLineValues("  foo bar  ");
+
+      // Assert
       expect(result).toEqual(["foo", "bar"]);
     });
 
-    it("should handle empty string", () => {
+    it("When parsing empty string, Then should return empty array", () => {
+      // Act
       const result = parseLineValues("");
+
+      // Assert
       expect(result).toEqual([]);
     });
 
-    it("should handle string that looks like number but isn't", () => {
+    it("When parsing string that looks like number, Then should return as string", () => {
+      // Act
       const result = parseLineValues("abc123 def456");
+
+      // Assert
       expect(result).toEqual(["abc123", "def456"]);
     });
 
-    it("should handle Infinity and NaN as strings", () => {
+    it("When parsing Infinity and NaN, Then should return as strings", () => {
+      // Act
       const result = parseLineValues("Infinity NaN");
+
+      // Assert
       expect(result).toEqual(["Infinity", "NaN"]);
     });
 
-    it("should handle escaped quotes inside quoted strings", () => {
-      // Note: The parser doesn't unescape quotes, it keeps the backslash
+    it("When parsing escaped quotes inside quoted strings, Then should preserve backslashes", () => {
+      // Act
       const result = parseLineValues('"string with \\"quote\\""');
+
+      // Assert
       expect(result).toEqual(['string with \\"quote\\"']);
     });
 
-    it("should handle mixed quotes", () => {
+    it("When parsing mixed quote types, Then should handle all quote types correctly", () => {
+      // Act
       const result = parseLineValues('"double" `backtick` normal');
+
+      // Assert
       expect(result).toEqual(["double", "backtick", "normal"]);
     });
   });
 
   describe("shouldSkipLine", () => {
-    it("should skip empty lines", () => {
+    it("When line is empty or whitespace only, Then should return true", () => {
+      // Assert
       expect(shouldSkipLine("")).toBe(true);
       expect(shouldSkipLine("   ")).toBe(true);
       expect(shouldSkipLine("\t\t")).toBe(true);
     });
 
-    it("should skip comment lines", () => {
+    it("When line starts with comment character, Then should return true", () => {
+      // Assert
       expect(shouldSkipLine("# comment")).toBe(true);
       expect(shouldSkipLine("  # comment with spaces")).toBe(true);
       expect(shouldSkipLine("#")).toBe(true);
     });
 
-    it("should not skip regular lines", () => {
+    it("When line contains regular content, Then should return false", () => {
+      // Assert
       expect(shouldSkipLine("ship Test Ship")).toBe(false);
       expect(shouldSkipLine("  ship Test Ship")).toBe(false);
       expect(shouldSkipLine("outfit Test Outfit")).toBe(false);
     });
 
-    it("should not skip lines with # in the middle", () => {
+    it("When line contains # in the middle, Then should return false", () => {
+      // Assert
       expect(shouldSkipLine("ship Test # Ship")).toBe(false);
       expect(shouldSkipLine('ship "Test # Ship"')).toBe(false);
     });
   });
 
   describe("extractKeyValue", () => {
-    it("should extract unquoted key and value", () => {
+    it("When extracting unquoted key and value, Then should return key and rest of line", () => {
+      // Act
       const result = extractKeyValue("ship Test Ship");
+
+      // Assert
       expect(result).toEqual({
         key: "ship",
         restOfLine: "Test Ship",
       });
     });
 
-    it("should extract unquoted key with no value", () => {
+    it("When extracting unquoted key with no value, Then should return key and empty rest", () => {
+      // Act
       const result = extractKeyValue("ship");
+
+      // Assert
       expect(result).toEqual({
         key: "ship",
         restOfLine: "",
       });
     });
 
-    it("should extract quoted key and value", () => {
+    it("When extracting quoted key and value, Then should return unquoted key and rest", () => {
+      // Act
       const result = extractKeyValue('"ship name" 100 200');
+
+      // Assert
       expect(result).toEqual({
         key: "ship name",
         restOfLine: "100 200",
       });
     });
 
-    it("should extract quoted key with no value", () => {
+    it("When extracting quoted key with no value, Then should return unquoted key and empty rest", () => {
+      // Act
       const result = extractKeyValue('"ship name"');
+
+      // Assert
       expect(result).toEqual({
         key: "ship name",
         restOfLine: "",
       });
     });
 
-    it("should handle quoted key with spaces in value", () => {
+    it("When extracting quoted key with spaces in value, Then should preserve value", () => {
+      // Act
       const result = extractKeyValue('"ship name" mass 100');
+
+      // Assert
       expect(result).toEqual({
         key: "ship name",
         restOfLine: "mass 100",
       });
     });
 
-    it("should return null for malformed quoted key", () => {
+    it("When extracting malformed quoted key, Then should return null", () => {
+      // Act
       const result = extractKeyValue('"unclosed quote');
+
+      // Assert
       expect(result).toBeNull();
     });
 
-    it("should handle empty quoted key", () => {
+    it("When extracting empty quoted key, Then should return empty key", () => {
+      // Act
       const result = extractKeyValue('"" value');
+
+      // Assert
       expect(result).toEqual({
         key: "",
         restOfLine: "value",
       });
     });
 
-    it("should handle key with multiple spaces before value", () => {
+    it("When extracting key with multiple spaces, Then should ignore extra spaces", () => {
+      // Act
       const result = extractKeyValue("ship    Test Ship");
+
+      // Assert
       expect(result).toEqual({
         key: "ship",
         restOfLine: "Test Ship",
       });
     });
 
-    it("should handle key with tabs", () => {
+    it("When extracting key with tabs, Then should handle tabs correctly", () => {
+      // Act
       const result = extractKeyValue("ship\tTest Ship");
+
+      // Assert
       expect(result).toEqual({
         key: "ship",
         restOfLine: "Test Ship",
       });
     });
 
-    it("should return null for empty string", () => {
+    it("When extracting from empty string, Then should return null", () => {
+      // Act
       const result = extractKeyValue("");
+
+      // Assert
       expect(result).toBeNull();
     });
 
-    it("should handle key with special characters", () => {
+    it("When extracting key with special characters, Then should preserve special characters", () => {
+      // Act
       const result = extractKeyValue("ship-name Test Ship");
+
+      // Assert
       expect(result).toEqual({
         key: "ship-name",
         restOfLine: "Test Ship",
@@ -204,68 +288,99 @@ describe("line-parser", () => {
       name: string;
     }
 
-    it("should find parent with smaller indent", () => {
+    it("When finding parent with smaller indent, Then should return parent and update stack", () => {
+      // Arrange
       const stack: TestNode[] = [
         { indent: 0, name: "root" },
         { indent: 1, name: "child1" },
         { indent: 2, name: "child2" },
       ];
+
+      // Act
       const parent = findParentNode(stack, 1);
+
+      // Assert
       expect(parent).toEqual({ indent: 0, name: "root" });
       expect(stack.length).toBe(1);
     });
 
-    it("should find parent with same indent level", () => {
+    it("When finding parent with same indent level, Then should return parent", () => {
+      // Arrange
       const stack: TestNode[] = [
         { indent: 0, name: "root" },
         { indent: 1, name: "child1" },
       ];
+
+      // Act
       const parent = findParentNode(stack, 1);
+
+      // Assert
       expect(parent).toEqual({ indent: 0, name: "root" });
       expect(stack.length).toBe(1);
     });
 
-    it("should return null when no parent exists", () => {
+    it("When no parent exists, Then should return null", () => {
+      // Arrange
       const stack: TestNode[] = [];
+
+      // Act
       const parent = findParentNode(stack, 0);
+
+      // Assert
       expect(parent).toBeNull();
     });
 
-    it("should return null when indent is less than all nodes", () => {
+    it("When indent is less than all nodes, Then should return null and clear stack", () => {
+      // Arrange
       const stack: TestNode[] = [
         { indent: 2, name: "node1" },
         { indent: 3, name: "node2" },
       ];
+
+      // Act
       const parent = findParentNode(stack, 1);
+
+      // Assert
       expect(parent).toBeNull();
       expect(stack.length).toBe(0);
     });
 
-    it("should pop nodes until finding correct parent", () => {
+    it("When finding parent in nested structure, Then should pop nodes until parent found", () => {
+      // Arrange
       const stack: TestNode[] = [
         { indent: 0, name: "root" },
         { indent: 1, name: "level1" },
         { indent: 2, name: "level2" },
         { indent: 3, name: "level3" },
       ];
+
+      // Act
       const parent = findParentNode(stack, 1);
+
+      // Assert
       expect(parent).toEqual({ indent: 0, name: "root" });
       expect(stack.length).toBe(1);
       expect(stack[0]).toEqual({ indent: 0, name: "root" });
     });
 
-    it("should handle equal indent by popping to parent", () => {
+    it("When handling equal indent, Then should pop to parent", () => {
+      // Arrange
       const stack: TestNode[] = [
         { indent: 0, name: "root" },
         { indent: 1, name: "sibling1" },
         { indent: 1, name: "sibling2" },
       ];
+
+      // Act
       const parent = findParentNode(stack, 1);
+
+      // Assert
       expect(parent).toEqual({ indent: 0, name: "root" });
       expect(stack.length).toBe(1);
     });
 
-    it("should handle deeply nested structure", () => {
+    it("When handling deeply nested structure, Then should find correct parent", () => {
+      // Arrange
       const stack: TestNode[] = [
         { indent: 0, name: "root" },
         { indent: 1, name: "a" },
@@ -273,7 +388,11 @@ describe("line-parser", () => {
         { indent: 3, name: "c" },
         { indent: 4, name: "d" },
       ];
+
+      // Act
       const parent = findParentNode(stack, 2);
+
+      // Assert
       expect(parent).toEqual({ indent: 1, name: "a" });
       expect(stack.length).toBe(2);
     });

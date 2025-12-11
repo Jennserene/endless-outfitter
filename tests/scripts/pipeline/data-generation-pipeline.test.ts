@@ -6,6 +6,7 @@ import * as shipGenerator from "@scripts/generators/ship-generator";
 import * as outfitGenerator from "@scripts/generators/outfit-generator";
 import * as dataLoader from "@/lib/loaders/data-loader";
 import { ImageRetrievalService } from "@scripts/services/image-retrieval-service";
+import { TEST_STEP_NAMES, TEST_ERROR_MESSAGES } from "../__fixtures__";
 
 // Mock dependencies
 jest.mock("@/lib/logger", () => ({
@@ -50,20 +51,23 @@ describe("DataGenerationPipeline", () => {
   });
 
   describe("constructor", () => {
-    it("should create steps correctly with default logger", () => {
+    it("When creating pipeline with default logger, Then should create all steps correctly", () => {
+      // Act
       const pipeline = new DataGenerationPipeline();
       const steps = pipeline.getSteps();
 
+      // Assert
       expect(steps).toHaveLength(6);
-      expect(steps[0].name).toBe("Clean output directories");
-      expect(steps[1].name).toBe("Retrieve raw data");
-      expect(steps[2].name).toBe("Ensure data directories");
-      expect(steps[3].name).toBe("Generate ships");
-      expect(steps[4].name).toBe("Generate outfits");
-      expect(steps[5].name).toBe("Retrieve images");
+      expect(steps[0].name).toBe(TEST_STEP_NAMES[0]);
+      expect(steps[1].name).toBe(TEST_STEP_NAMES[1]);
+      expect(steps[2].name).toBe(TEST_STEP_NAMES[2]);
+      expect(steps[3].name).toBe(TEST_STEP_NAMES[3]);
+      expect(steps[4].name).toBe(TEST_STEP_NAMES[4]);
+      expect(steps[5].name).toBe(TEST_STEP_NAMES[5]);
     });
 
-    it("should accept custom logger and use it for logging", () => {
+    it("When creating pipeline with custom logger, Then should use custom logger for logging", () => {
+      // Arrange
       const customLogger = {
         info: jest.fn(),
         success: jest.fn(),
@@ -73,19 +77,19 @@ describe("DataGenerationPipeline", () => {
       };
       const pipeline = new DataGenerationPipeline(customLogger);
 
-      expect(pipeline.getSteps()).toHaveLength(6);
-
-      // Verify custom logger is actually used
+      // Act
       pipeline.execute();
 
+      // Assert
+      expect(pipeline.getSteps()).toHaveLength(6);
       expect(customLogger.info).toHaveBeenCalledWith(
         "Starting data generation pipeline...\n"
       );
       expect(customLogger.info).toHaveBeenCalledWith(
-        "Executing step: Clean output directories..."
+        `Executing step: ${TEST_STEP_NAMES[0]}...`
       );
       expect(customLogger.info).toHaveBeenCalledWith(
-        "Executing step: Retrieve raw data..."
+        `Executing step: ${TEST_STEP_NAMES[1]}...`
       );
       expect(customLogger.success).toHaveBeenCalledWith(
         "Data generation pipeline completed successfully!"
@@ -94,12 +98,15 @@ describe("DataGenerationPipeline", () => {
   });
 
   describe("getSteps", () => {
-    it("should return steps array with correct structure", () => {
+    it("When getting steps, Then should return array with correct structure", () => {
+      // Arrange
       const pipeline = new DataGenerationPipeline();
+
+      // Act
       const steps = pipeline.getSteps();
 
+      // Assert
       expect(steps).toHaveLength(6);
-      // Verify each step has the required structure
       steps.forEach((step) => {
         expect(step).toHaveProperty("name");
         expect(step).toHaveProperty("execute");
@@ -110,36 +117,39 @@ describe("DataGenerationPipeline", () => {
   });
 
   describe("execute", () => {
-    it("should run all steps in order", () => {
+    it("When executing pipeline, Then should run all steps in order", () => {
+      // Arrange
       const pipeline = new DataGenerationPipeline();
 
+      // Act
       pipeline.execute();
 
+      // Assert
       expect(logger.info).toHaveBeenCalledWith(
         "Starting data generation pipeline...\n"
       );
       expect(logger.info).toHaveBeenCalledWith(
-        "Executing step: Clean output directories..."
+        `Executing step: ${TEST_STEP_NAMES[0]}...`
       );
       expect(directories.cleanOutputDirectories).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
-        "Executing step: Retrieve raw data..."
+        `Executing step: ${TEST_STEP_NAMES[1]}...`
       );
       expect(retrieveRawData.retrieveRawData).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
-        "Executing step: Ensure data directories..."
+        `Executing step: ${TEST_STEP_NAMES[2]}...`
       );
       expect(directories.ensureDataDirectories).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
-        "Executing step: Generate ships..."
+        `Executing step: ${TEST_STEP_NAMES[3]}...`
       );
       expect(shipGenerator.generateShips).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
-        "Executing step: Generate outfits..."
+        `Executing step: ${TEST_STEP_NAMES[4]}...`
       );
       expect(outfitGenerator.generateOutfits).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
-        "Executing step: Retrieve images..."
+        `Executing step: ${TEST_STEP_NAMES[5]}...`
       );
       expect(dataLoader.loadShips).toHaveBeenCalled();
       expect(dataLoader.loadOutfits).toHaveBeenCalled();
@@ -149,21 +159,23 @@ describe("DataGenerationPipeline", () => {
       );
     });
 
-    it("should handle step errors and throw with context", () => {
+    it("When first step fails, Then should throw error with context and not execute subsequent steps", () => {
+      // Arrange
       const pipeline = new DataGenerationPipeline();
-      const error = new Error("Step failed");
+      const error = new Error(TEST_ERROR_MESSAGES.STEP_FAILED);
       (directories.cleanOutputDirectories as jest.Mock).mockImplementation(
         () => {
           throw error;
         }
       );
 
+      // Act & Assert
       expect(() => {
         pipeline.execute();
-      }).toThrow('Pipeline failed at step "Clean output directories"');
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[0]}"`);
 
       expect(logger.error).toHaveBeenCalledWith(
-        'Step "Clean output directories" failed',
+        `Step "${TEST_STEP_NAMES[0]}" failed`,
         error
       );
       expect(retrieveRawData.retrieveRawData).not.toHaveBeenCalled();
@@ -173,9 +185,10 @@ describe("DataGenerationPipeline", () => {
       expect(dataLoader.loadShips).not.toHaveBeenCalled();
     });
 
-    it("should handle errors in middle steps", () => {
+    it("When middle step fails, Then should throw error and not execute subsequent steps", () => {
+      // Arrange
       const pipeline = new DataGenerationPipeline();
-      const error = new Error("Directory error");
+      const error = new Error(TEST_ERROR_MESSAGES.DIRECTORY_ERROR);
       (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
         undefined
       );
@@ -186,12 +199,13 @@ describe("DataGenerationPipeline", () => {
         }
       );
 
+      // Act & Assert
       expect(() => {
         pipeline.execute();
-      }).toThrow('Pipeline failed at step "Ensure data directories"');
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[2]}"`);
 
       expect(logger.error).toHaveBeenCalledWith(
-        'Step "Ensure data directories" failed',
+        `Step "${TEST_STEP_NAMES[2]}" failed`,
         error
       );
       expect(directories.cleanOutputDirectories).toHaveBeenCalled();
@@ -200,9 +214,10 @@ describe("DataGenerationPipeline", () => {
       expect(dataLoader.loadShips).not.toHaveBeenCalled();
     });
 
-    it("should handle errors in last step", () => {
+    it("When last step fails, Then should throw error with context", () => {
+      // Arrange
       const pipeline = new DataGenerationPipeline();
-      const error = new Error("Image retrieval error");
+      const error = new Error(TEST_ERROR_MESSAGES.IMAGE_RETRIEVAL_ERROR);
       (directories.cleanOutputDirectories as jest.Mock).mockReturnValue(
         undefined
       );
@@ -223,12 +238,13 @@ describe("DataGenerationPipeline", () => {
         () => mockService
       );
 
+      // Act & Assert
       expect(() => {
         pipeline.execute();
-      }).toThrow('Pipeline failed at step "Retrieve images"');
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[5]}"`);
 
       expect(logger.error).toHaveBeenCalledWith(
-        'Step "Retrieve images" failed',
+        `Step "${TEST_STEP_NAMES[5]}" failed`,
         error
       );
     });

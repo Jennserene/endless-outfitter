@@ -16,19 +16,20 @@ describe("ship-generator", () => {
   });
 
   describe("generateShips", () => {
-    it("should create ShipGenerator and execute", () => {
+    it("When generating ships, Then should create ShipGenerator and execute", () => {
+      // Arrange
       const mockExecute = jest.fn();
-      (
-        BaseGenerator as jest.MockedClass<typeof BaseGenerator>
-      ).mockImplementation(
+      (BaseGenerator as jest.Mock).mockImplementation(
         () =>
           ({
             execute: mockExecute,
           }) as Partial<BaseGenerator<unknown>> as BaseGenerator<unknown>
       );
 
+      // Act
       generateShips();
 
+      // Assert
       expect(BaseGenerator).toHaveBeenCalledWith(
         shipConverter.convertRawShipsToZod,
         expect.any(String), // RAW_SHIP_DIR

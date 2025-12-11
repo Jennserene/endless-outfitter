@@ -24,9 +24,11 @@ jest.mock("@config/data-schema-version", () => ({
 
 describe("pipeline-config", () => {
   describe("createPipelineConfig", () => {
-    it("should create config with correct structure", () => {
+    it("When creating pipeline config, Then should include all required properties", () => {
+      // Act
       const config = createPipelineConfig();
 
+      // Assert
       expect(config).toHaveProperty("gameVersion");
       expect(config).toHaveProperty("gameRepoPath");
       expect(config).toHaveProperty("schemaVersion");
@@ -34,30 +36,44 @@ describe("pipeline-config", () => {
       expect(config).toHaveProperty("paths");
     });
 
-    it("should set gameVersion from config", () => {
+    it("When creating pipeline config, Then should set gameVersion from config", () => {
+      // Act
       const config = createPipelineConfig();
+
+      // Assert
       expect(config.gameVersion).toBe(GAME_VERSION);
     });
 
-    it("should set gameRepoPath from config", () => {
+    it("When creating pipeline config, Then should set gameRepoPath from config", () => {
+      // Act
       const config = createPipelineConfig();
+
+      // Assert
       expect(config.gameRepoPath).toBe(GAME_REPO_PATH);
     });
 
-    it("should set schemaVersion from config", () => {
+    it("When creating pipeline config, Then should set schemaVersion from config", () => {
+      // Act
       const config = createPipelineConfig();
+
+      // Assert
       expect(config.schemaVersion).toBe(DATA_SCHEMA_FORMAT_VERSION);
     });
 
-    it("should set filePatterns from GameDataPaths", () => {
+    it("When creating pipeline config, Then should set filePatterns from GameDataPaths", () => {
+      // Act
       const config = createPipelineConfig();
+
+      // Assert
       expect(config.filePatterns.ships).toEqual(GameDataPaths.SHIPS);
       expect(config.filePatterns.outfits).toEqual(GameDataPaths.OUTFITS);
     });
 
-    it("should set all path values correctly", () => {
+    it("When creating pipeline config, Then should set all path values correctly", () => {
+      // Act
       const config = createPipelineConfig();
 
+      // Assert
       expect(config.paths.dataDir).toBe(DATA_DIR);
       expect(config.paths.shipsDir).toBe(SHIPS_DIR);
       expect(config.paths.outfitsDir).toBe(OUTFITS_DIR);

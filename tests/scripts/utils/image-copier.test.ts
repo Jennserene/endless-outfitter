@@ -34,15 +34,18 @@ describe("image-copier", () => {
   });
 
   describe("copyImageFile", () => {
-    it("should copy file and create destination directory", () => {
+    it("When copying file, Then should create destination directory if needed", () => {
+      // Arrange
       const sourcePath = "/source/image.png";
       const destPath = "/dest/subdir/image.png";
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === sourcePath; // source exists, directory doesn't
       });
 
+      // Act
       copyImageFile(sourcePath, destPath);
 
+      // Assert
       expect(fs.existsSync).toHaveBeenCalledWith(sourcePath);
       expect(fs.existsSync).toHaveBeenCalledWith("/dest/subdir");
       expect(fs.mkdirSync).toHaveBeenCalledWith("/dest/subdir", {
@@ -51,30 +54,36 @@ describe("image-copier", () => {
       expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath, destPath);
     });
 
-    it("should not create directory if it already exists", () => {
+    it("When destination directory exists, Then should not create directory", () => {
+      // Arrange
       const sourcePath = "/source/image.png";
       const destPath = "/dest/image.png";
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === sourcePath || path === "/dest";
       });
 
+      // Act
       copyImageFile(sourcePath, destPath);
 
+      // Assert
       expect(fs.mkdirSync).not.toHaveBeenCalled();
       expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath, destPath);
     });
 
-    it("should throw error if source file doesn't exist", () => {
+    it("When source file doesn't exist, Then should throw error", () => {
+      // Arrange
       const sourcePath = "/source/nonexistent.png";
       const destPath = "/dest/image.png";
       (fs.existsSync as jest.Mock).mockReturnValue(false);
 
+      // Act & Assert
       expect(() => {
         copyImageFile(sourcePath, destPath);
       }).toThrow(`Source image file not found: ${sourcePath}`);
     });
 
-    it("should throw error if copy fails", () => {
+    it("When copy operation fails, Then should throw error", () => {
+      // Arrange
       const sourcePath = "/source/image.png";
       const destPath = "/dest/image.png";
       (fs.existsSync as jest.Mock).mockReturnValue(true);
@@ -82,6 +91,7 @@ describe("image-copier", () => {
         throw new Error("Permission denied");
       });
 
+      // Act & Assert
       expect(() => {
         copyImageFile(sourcePath, destPath);
       }).toThrow(`Failed to copy image from ${sourcePath} to ${destPath}`);
@@ -89,7 +99,8 @@ describe("image-copier", () => {
   });
 
   describe("copyImagesToAssets", () => {
-    it("should copy all images successfully", () => {
+    it("When copying all images, Then should copy successfully and return counts", () => {
+      // Arrange
       const imagePaths = new Set([
         TEST_IMAGE_PATHS.SHIP_SPRITE,
         TEST_IMAGE_PATHS.SHIP_THUMBNAIL,
@@ -98,8 +109,6 @@ describe("image-copier", () => {
       const sourcePath2 = `${TEST_GAME_REPO_PATH}/images/${TEST_IMAGE_PATHS.SHIP_THUMBNAIL}.png`;
       const destPath1 = `${TEST_ASSETS_DIR}/${TEST_IMAGE_PATHS.SHIP_SPRITE}.png`;
       const destPath2 = `${TEST_ASSETS_DIR}/${TEST_IMAGE_PATHS.SHIP_THUMBNAIL}.png`;
-      const destDir1 = `${TEST_ASSETS_DIR}/ship`;
-      const destDir2 = `${TEST_ASSETS_DIR}/thumbnail`;
 
       // Mock resolveImagePath to return source paths in sequence
       (imageResolver.resolveImagePath as jest.Mock)
@@ -115,12 +124,14 @@ describe("image-copier", () => {
         return false;
       });
 
+      // Act
       const result = copyImagesToAssets(
         imagePaths,
         TEST_GAME_REPO_PATH,
         TEST_ASSETS_DIR
       );
 
+      // Assert
       expect(result.copied).toBe(2);
       expect(result.failed).toBe(0);
       expect(fs.copyFileSync).toHaveBeenCalledTimes(2);
@@ -128,7 +139,8 @@ describe("image-copier", () => {
       expect(fs.copyFileSync).toHaveBeenCalledWith(sourcePath2, destPath2);
     });
 
-    it("should handle unresolved image paths", () => {
+    it("When image paths are unresolved, Then should mark as failed and log warnings", () => {
+      // Arrange
       const imagePaths = new Set([
         TEST_IMAGE_PATHS.SHIP_SPRITE,
         TEST_IMAGE_PATHS.SHIP_THUMBNAIL,
@@ -138,18 +150,21 @@ describe("image-copier", () => {
         .mockReturnValueOnce(null)
         .mockReturnValueOnce(null);
 
+      // Act
       const result = copyImagesToAssets(
         imagePaths,
         TEST_GAME_REPO_PATH,
         TEST_ASSETS_DIR
       );
 
+      // Assert
       expect(result.copied).toBe(0);
       expect(result.failed).toBe(2);
       expect(logger.warn).toHaveBeenCalledTimes(2);
     });
 
-    it("should handle copy errors gracefully", () => {
+    it("When copy errors occur, Then should handle gracefully and return failure count", () => {
+      // Arrange
       const imagePaths = new Set([TEST_IMAGE_PATHS.SHIP_SPRITE]);
       const sourcePath = `${TEST_GAME_REPO_PATH}/images/${TEST_IMAGE_PATHS.SHIP_SPRITE}.png`;
 
@@ -159,18 +174,21 @@ describe("image-copier", () => {
         throw new Error("Copy failed");
       });
 
+      // Act
       const result = copyImagesToAssets(
         imagePaths,
         TEST_GAME_REPO_PATH,
         TEST_ASSETS_DIR
       );
 
+      // Assert
       expect(result.copied).toBe(0);
       expect(result.failed).toBe(1);
       expect(logger.warn).toHaveBeenCalled();
     });
 
-    it("should maintain directory structure in destination", () => {
+    it("When copying images, Then should maintain directory structure in destination", () => {
+      // Arrange
       const imagePaths = new Set([TEST_IMAGE_PATHS.SHIP_SPRITE]);
       const sourcePath = `${TEST_GAME_REPO_PATH}/images/${TEST_IMAGE_PATHS.SHIP_SPRITE}.png`;
       // The implementation adds the extension from sourcePath if imagePath doesn't have one
@@ -181,23 +199,28 @@ describe("image-copier", () => {
         return path === sourcePath; // source file exists, directory doesn't
       });
 
+      // Act
       copyImagesToAssets(imagePaths, TEST_GAME_REPO_PATH, TEST_ASSETS_DIR);
 
+      // Assert
       expect(fs.copyFileSync).toHaveBeenCalledWith(
         sourcePath,
         expectedDestPath
       );
     });
 
-    it("should handle empty image paths set", () => {
+    it("When image paths set is empty, Then should return zero counts", () => {
+      // Arrange
       const imagePaths = new Set<string>();
 
+      // Act
       const result = copyImagesToAssets(
         imagePaths,
         TEST_GAME_REPO_PATH,
         TEST_ASSETS_DIR
       );
 
+      // Assert
       expect(result.copied).toBe(0);
       expect(result.failed).toBe(0);
     });

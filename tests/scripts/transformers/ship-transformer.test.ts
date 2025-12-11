@@ -70,7 +70,8 @@ describe("ShipTransformer", () => {
   });
 
   describe("transform", () => {
-    it("should chain all transformers in order", () => {
+    it("When transforming ship, Then should chain all transformers in order", () => {
+      // Arrange
       const input = { name: "Test Ship" };
       const step1 = { name: "Test Ship", step1: true };
       const step2 = { name: "Test Ship", step2: true };
@@ -93,8 +94,10 @@ describe("ShipTransformer", () => {
       mockDescriptionsExtractor.transform.mockReturnValue(step5);
       mockSpriteThumbnailExtractor.transform.mockReturnValue(step6);
 
+      // Act
       transformer.transform(input);
 
+      // Assert
       expect(mockAttributesNormalizer.transform).toHaveBeenCalledWith(input);
       expect(mockNumericNormalizer.transform).toHaveBeenCalledWith(step1);
       expect(mockLicensesExtractor.transform).toHaveBeenCalledWith(step2);
@@ -105,7 +108,8 @@ describe("ShipTransformer", () => {
       );
     });
 
-    it("should extract only schema fields from final result", () => {
+    it("When final result has extra fields, Then should extract only schema fields", () => {
+      // Arrange
       const finalTransformed = {
         name: "Test Ship",
         plural: "Test Ships",
@@ -124,8 +128,10 @@ describe("ShipTransformer", () => {
       mockDescriptionsExtractor.transform.mockReturnValue({});
       mockSpriteThumbnailExtractor.transform.mockReturnValue(finalTransformed);
 
+      // Act
       const result = transformer.transform({});
 
+      // Assert
       expect(result).toEqual({
         name: "Test Ship",
         plural: "Test Ships",
@@ -138,7 +144,8 @@ describe("ShipTransformer", () => {
       expect(result).not.toHaveProperty("extraField");
     });
 
-    it("should handle undefined fields gracefully", () => {
+    it("When fields are undefined, Then should handle gracefully", () => {
+      // Arrange
       const finalTransformed = {
         name: "Test Ship",
       };
@@ -150,8 +157,10 @@ describe("ShipTransformer", () => {
       mockDescriptionsExtractor.transform.mockReturnValue({});
       mockSpriteThumbnailExtractor.transform.mockReturnValue(finalTransformed);
 
+      // Act
       const result = transformer.transform({});
 
+      // Assert
       expect(result).toEqual({
         name: "Test Ship",
         plural: undefined,

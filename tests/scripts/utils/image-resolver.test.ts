@@ -13,126 +13,160 @@ describe("image-resolver", () => {
   });
 
   describe("findImageFile", () => {
-    it("should find image file with .png extension", () => {
+    it("When finding image file, Then should check .png extension first", () => {
+      // Arrange
       const basePath = "images/ship/kestrel";
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === `${basePath}.png`;
       });
 
+      // Act
       const result = findImageFile(basePath);
 
+      // Assert
       expect(result).toBe(`${basePath}.png`);
       expect(fs.existsSync).toHaveBeenCalledWith(`${basePath}.png`);
     });
 
-    it("should try multiple extensions", () => {
+    it("When .png not found, Then should try multiple extensions", () => {
+      // Arrange
       const basePath = "images/ship/kestrel";
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === `${basePath}.jpg`;
       });
 
+      // Act
       const result = findImageFile(basePath);
 
+      // Assert
       expect(result).toBe(`${basePath}.jpg`);
     });
 
-    it("should return null if no file found", () => {
+    it("When no file found with any extension, Then should return null", () => {
+      // Arrange
       const basePath = "images/ship/nonexistent";
       (fs.existsSync as jest.Mock).mockReturnValue(false);
 
+      // Act
       const result = findImageFile(basePath);
 
+      // Assert
       expect(result).toBeNull();
     });
 
-    it("should handle path with existing extension", () => {
+    it("When path has existing extension, Then should use path as-is", () => {
+      // Arrange
       const pathWithExt = "images/ship/kestrel.png";
       (fs.existsSync as jest.Mock).mockReturnValue(true);
 
+      // Act
       const result = findImageFile(pathWithExt);
 
+      // Assert
       expect(result).toBe(pathWithExt);
     });
 
-    it("should try path as-is if no extension matches", () => {
+    it("When no extension matches, Then should try path as-is", () => {
+      // Arrange
       const basePath = "images/ship/kestrel";
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === basePath;
       });
 
+      // Act
       const result = findImageFile(basePath);
 
+      // Assert
       expect(result).toBe(basePath);
     });
   });
 
   describe("resolveImagePath", () => {
-    it("should resolve image path in images directory", () => {
+    it("When resolving image path, Then should check images directory", () => {
+      // Arrange
       const imagePath = TEST_IMAGE_PATHS.SHIP_SPRITE;
       const expectedPath = `${TEST_GAME_REPO_PATH}/images/${imagePath}.png`;
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === expectedPath;
       });
 
+      // Act
       const result = resolveImagePath(imagePath, TEST_GAME_REPO_PATH);
 
+      // Assert
       expect(result).toBe(expectedPath);
     });
 
-    it("should try images directory first", () => {
+    it("When resolving image path, Then should try images directory first", () => {
+      // Arrange
       const imagePath = TEST_IMAGE_PATHS.SHIP_SPRITE;
       const imagesPath = `${TEST_GAME_REPO_PATH}/images/${imagePath}.png`;
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === imagesPath;
       });
 
+      // Act
       const result = resolveImagePath(imagePath, TEST_GAME_REPO_PATH);
 
+      // Assert
       expect(result).toBe(imagesPath);
     });
 
-    it("should try image directory if images doesn't exist", () => {
+    it("When images directory doesn't exist, Then should try image directory", () => {
+      // Arrange
       const imagePath = TEST_IMAGE_PATHS.SHIP_SPRITE;
       const imagePathDir = `${TEST_GAME_REPO_PATH}/image/${imagePath}.png`;
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === imagePathDir;
       });
 
+      // Act
       const result = resolveImagePath(imagePath, TEST_GAME_REPO_PATH);
 
+      // Assert
       expect(result).toBe(imagePathDir);
     });
 
-    it("should try root directory if other locations don't exist", () => {
+    it("When other locations don't exist, Then should try root directory", () => {
+      // Arrange
       const imagePath = TEST_IMAGE_PATHS.SHIP_SPRITE;
       const rootPath = `${TEST_GAME_REPO_PATH}/${imagePath}.png`;
       (fs.existsSync as jest.Mock).mockImplementation((path: string) => {
         return path === rootPath;
       });
 
+      // Act
       const result = resolveImagePath(imagePath, TEST_GAME_REPO_PATH);
 
+      // Assert
       expect(result).toBe(rootPath);
     });
 
-    it("should return null if image not found", () => {
+    it("When image not found in any location, Then should return null", () => {
+      // Arrange
       const imagePath = TEST_IMAGE_PATHS.SHIP_SPRITE;
       (fs.existsSync as jest.Mock).mockReturnValue(false);
 
+      // Act
       const result = resolveImagePath(imagePath, TEST_GAME_REPO_PATH);
 
+      // Assert
       expect(result).toBeNull();
     });
 
-    it("should return null for empty image path", () => {
+    it("When image path is empty, Then should return null", () => {
+      // Act
       const result = resolveImagePath("", TEST_GAME_REPO_PATH);
 
+      // Assert
       expect(result).toBeNull();
     });
 
-    it("should return null for empty game repo path", () => {
+    it("When game repo path is empty, Then should return null", () => {
+      // Act
       const result = resolveImagePath(TEST_IMAGE_PATHS.SHIP_SPRITE, "");
 
+      // Assert
       expect(result).toBeNull();
     });
   });

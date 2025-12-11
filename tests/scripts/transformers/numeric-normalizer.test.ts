@@ -19,7 +19,8 @@ describe("NumericNormalizer", () => {
   });
 
   describe("transform", () => {
-    it("should normalize numeric attributes", () => {
+    it("When normalizing numeric attributes, Then should convert string numbers to numbers", () => {
+      // Arrange
       const input = createMockShipWithAttributes({
         mass: "100",
         cost: "1000",
@@ -32,8 +33,10 @@ describe("NumericNormalizer", () => {
         drag: 0.5,
       });
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(numericUtils.normalizeNumericAttributes).toHaveBeenCalledWith(
         input.attributes,
         expect.arrayContaining(["mass", "cost", "drag"])
@@ -45,16 +48,20 @@ describe("NumericNormalizer", () => {
       expect(attributes.drag).toBe(0.5);
     });
 
-    it("should return ship unchanged when no attributes", () => {
+    it("When ship has no attributes, Then should return ship unchanged", () => {
+      // Arrange
       const input = createMockShip();
 
+      // Act
       const result = normalizer.transform(input);
 
+      // Assert
       expect(numericUtils.normalizeNumericAttributes).not.toHaveBeenCalled();
       expect(result).toEqual(input);
     });
 
-    it("should preserve non-attribute fields", () => {
+    it("When transforming ship, Then should preserve non-attribute fields", () => {
+      // Arrange
       const input = createMockShipWithAttributes(
         { mass: "100" },
         { sprite: "sprite.png" }
@@ -65,21 +72,26 @@ describe("NumericNormalizer", () => {
         mass: 100,
       });
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.name).toBe("Test Ship");
       expect(result.sprite).toBe("sprite.png");
     });
 
-    it("should handle empty attributes object", () => {
+    it("When attributes object is empty, Then should handle empty attributes", () => {
+      // Arrange
       const input = createMockShipWithAttributes({});
 
       (numericUtils.normalizeNumericAttributes as jest.Mock).mockReturnValue({
         category: "Unknown",
       });
 
+      // Act
       const result = normalizer.transform(input) as Record<string, unknown>;
 
+      // Assert
       expect(result.attributes).toHaveProperty("category", "Unknown");
     });
   });
