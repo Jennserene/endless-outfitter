@@ -14,6 +14,12 @@ import {
 } from "../__fixtures__/ships";
 import { createMockTransformer } from "../__helpers__/transformers";
 import { createMockZodError } from "../__helpers__/zod";
+import {
+  TEST_ITEM_NAMES,
+  TEST_LOGGER_MESSAGES,
+  TEST_SPECIES,
+  TEST_NUMERIC_VALUES,
+} from "../__fixtures__/constants";
 
 // Mock dependencies
 jest.mock("@scripts/parsers/parse-ship-txt", () => ({
@@ -55,10 +61,19 @@ describe("ship-converter", () => {
   describe("convertShipsToZod", () => {
     it("When parsing content, Then should convert to validated ships", () => {
       // Arrange
-      const content = "ship Test Ship\n\tmass 100";
-      const rawShips = [createRawShip({ name: "Test Ship", mass: "100" })];
-      const transformed = createMockShipWithAttributes({ mass: 100 });
-      const validated = createMockShipWithAttributes({ mass: 100 });
+      const content = `ship ${TEST_ITEM_NAMES.SHIP}\n\tmass ${TEST_NUMERIC_VALUES.MASS_STRING_SHIP}`;
+      const rawShips = [
+        createRawShip({
+          name: TEST_ITEM_NAMES.SHIP,
+          mass: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
+        }),
+      ];
+      const transformed = createMockShipWithAttributes({
+        mass: TEST_NUMERIC_VALUES.MASS_SHIP,
+      });
+      const validated = createMockShipWithAttributes({
+        mass: TEST_NUMERIC_VALUES.MASS_SHIP,
+      });
 
       (parseShipTxt.parseShipData as jest.Mock).mockReturnValue(rawShips);
       mockShipTransformer.transform.mockReturnValue(transformed);
@@ -76,15 +91,15 @@ describe("ship-converter", () => {
 
     it("When parsing multiple ships, Then should convert all ships", () => {
       // Arrange
-      const content = "ship Ship1\nship Ship2";
+      const content = `ship ${TEST_ITEM_NAMES.SHIP_1}\nship ${TEST_ITEM_NAMES.SHIP_2}`;
       const rawShips = [
-        createRawShip({ name: "Ship1" }),
-        createRawShip({ name: "Ship2" }),
+        createRawShip({ name: TEST_ITEM_NAMES.SHIP_1 }),
+        createRawShip({ name: TEST_ITEM_NAMES.SHIP_2 }),
       ];
-      const transformed1 = createMockShip({ name: "Ship1" });
-      const transformed2 = createMockShip({ name: "Ship2" });
-      const validated1 = createMockShip({ name: "Ship1" });
-      const validated2 = createMockShip({ name: "Ship2" });
+      const transformed1 = createMockShip({ name: TEST_ITEM_NAMES.SHIP_1 });
+      const transformed2 = createMockShip({ name: TEST_ITEM_NAMES.SHIP_2 });
+      const validated1 = createMockShip({ name: TEST_ITEM_NAMES.SHIP_1 });
+      const validated2 = createMockShip({ name: TEST_ITEM_NAMES.SHIP_2 });
 
       (parseShipTxt.parseShipData as jest.Mock).mockReturnValue(rawShips);
       mockShipTransformer.transform
@@ -103,8 +118,8 @@ describe("ship-converter", () => {
 
     it("When validation fails, Then should handle error with handleValidationError", () => {
       // Arrange
-      const content = "ship Test Ship";
-      const rawShips = [createRawShip({ name: "Test Ship" })];
+      const content = `ship ${TEST_ITEM_NAMES.SHIP}`;
+      const rawShips = [createRawShip({ name: TEST_ITEM_NAMES.SHIP })];
       const transformed = createMockShip();
       const zodError = createMockZodError();
 
@@ -116,13 +131,13 @@ describe("ship-converter", () => {
       (
         errorHandling.handleValidationError as unknown as jest.Mock
       ).mockImplementation(() => {
-        throw new Error("Validation failed");
+        throw new Error(TEST_LOGGER_MESSAGES.VALIDATION_FAILED);
       });
 
       // Act & Assert
       expect(() => {
         convertShipsToZod(content);
-      }).toThrow("Validation failed");
+      }).toThrow(TEST_LOGGER_MESSAGES.VALIDATION_FAILED);
 
       expect(errorHandling.handleValidationError).toHaveBeenCalled();
     });
@@ -131,9 +146,18 @@ describe("ship-converter", () => {
   describe("convertRawShipsToZod", () => {
     it("When converting raw ships array, Then should return validated ships", () => {
       // Arrange
-      const rawShips = [createRawShip({ name: "Test Ship", mass: "100" })];
-      const transformed = createMockShipWithAttributes({ mass: 100 });
-      const validated = createMockShipWithAttributes({ mass: 100 });
+      const rawShips = [
+        createRawShip({
+          name: TEST_ITEM_NAMES.SHIP,
+          mass: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
+        }),
+      ];
+      const transformed = createMockShipWithAttributes({
+        mass: TEST_NUMERIC_VALUES.MASS_SHIP,
+      });
+      const validated = createMockShipWithAttributes({
+        mass: TEST_NUMERIC_VALUES.MASS_SHIP,
+      });
 
       mockShipTransformer.transform.mockReturnValue(transformed);
       (ShipSchema.parse as jest.Mock).mockReturnValue(validated);
@@ -148,7 +172,7 @@ describe("ship-converter", () => {
 
     it("When validation fails with species, Then should pass species to handleValidationError", () => {
       // Arrange
-      const rawShips = [createRawShip({ name: "Test Ship" })];
+      const rawShips = [createRawShip({ name: TEST_ITEM_NAMES.SHIP })];
       const transformed = createMockShip();
       const zodError = createMockZodError();
 
@@ -159,19 +183,19 @@ describe("ship-converter", () => {
       (
         errorHandling.handleValidationError as unknown as jest.Mock
       ).mockImplementation(() => {
-        throw new Error("Validation failed");
+        throw new Error(TEST_LOGGER_MESSAGES.VALIDATION_FAILED);
       });
 
       // Act & Assert
       expect(() => {
-        convertRawShipsToZod(rawShips, "human");
-      }).toThrow("Validation failed");
+        convertRawShipsToZod(rawShips, TEST_SPECIES.HUMAN);
+      }).toThrow(TEST_LOGGER_MESSAGES.VALIDATION_FAILED);
 
       expect(errorHandling.handleValidationError).toHaveBeenCalledWith(
         expect.any(z.ZodError),
         expect.any(String),
         "ship",
-        "human"
+        TEST_SPECIES.HUMAN
       );
     });
 

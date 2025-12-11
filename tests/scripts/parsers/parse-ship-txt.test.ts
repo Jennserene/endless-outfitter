@@ -4,6 +4,14 @@ import * as retrieveGameData from "@scripts/parsers/retrieve-game-data";
 import * as gameDataParser from "@scripts/parsers/game-data-parser";
 import * as speciesUtils from "@scripts/utils/species";
 import * as fileIo from "@scripts/utils/file-io";
+import {
+  TEST_ITEM_NAMES,
+  TEST_LOGGER_MESSAGES,
+  TEST_SPECIES,
+  TEST_NUMERIC_VALUES,
+  TEST_FILE_PATHS,
+  TEST_SUCCESS_MESSAGES,
+} from "../__fixtures__/constants";
 
 // Mock dependencies
 jest.mock("@/lib/logger", () => ({
@@ -45,16 +53,24 @@ describe("parse-ship-txt", () => {
       const mockNodes = [
         {
           key: "ship",
-          value: "Test Ship",
+          value: TEST_ITEM_NAMES.SHIP,
           children: [
-            { key: "mass", value: "100", children: [] },
-            { key: "drag", value: "0.1", children: [] },
+            {
+              key: "mass",
+              value: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
+              children: [],
+            },
+            {
+              key: "drag",
+              value: TEST_NUMERIC_VALUES.DRAG_STRING,
+              children: [],
+            },
           ],
           lineNumber: 1,
         },
         {
           key: "ship",
-          value: "Another Ship",
+          value: TEST_ITEM_NAMES.ANOTHER_SHIP,
           children: [{ key: "mass", value: "200", children: [] }],
           lineNumber: 5,
         },
@@ -64,27 +80,41 @@ describe("parse-ship-txt", () => {
         mockNodes
       );
       (gameDataParser.nodesToObject as jest.Mock)
-        .mockReturnValueOnce({ mass: "100", drag: "0.1" })
+        .mockReturnValueOnce({
+          mass: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
+          drag: TEST_NUMERIC_VALUES.DRAG_STRING,
+        })
         .mockReturnValueOnce({ mass: "200" });
 
       // Act
-      const result = parseShipData("ship Test Ship\n\tmass 100\n\tdrag 0.1");
+      const result = parseShipData(
+        `ship ${TEST_ITEM_NAMES.SHIP}\n\tmass ${TEST_NUMERIC_VALUES.MASS_STRING_SHIP}\n\tdrag ${TEST_NUMERIC_VALUES.DRAG_STRING}`
+      );
 
       // Assert
       expect(result).toEqual([
-        { name: "Test Ship", mass: "100", drag: "0.1" },
-        { name: "Another Ship", mass: "200" },
+        {
+          name: TEST_ITEM_NAMES.SHIP,
+          mass: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
+          drag: TEST_NUMERIC_VALUES.DRAG_STRING,
+        },
+        { name: TEST_ITEM_NAMES.ANOTHER_SHIP, mass: "200" },
       ]);
     });
 
     it("When parsing content with no ships, Then should return empty array", () => {
       // Arrange
       (gameDataParser.parseIndentedFormat as jest.Mock).mockReturnValue([
-        { key: "outfit", value: "Test Outfit", children: [], lineNumber: 1 },
+        {
+          key: "outfit",
+          value: TEST_ITEM_NAMES.OUTFIT,
+          children: [],
+          lineNumber: 1,
+        },
       ]);
 
       // Act
-      const result = parseShipData("outfit Test Outfit");
+      const result = parseShipData(`outfit ${TEST_ITEM_NAMES.OUTFIT}`);
 
       // Assert
       expect(result).toEqual([]);
@@ -106,16 +136,30 @@ describe("parse-ship-txt", () => {
     it("When parsing ships, Then should write files for each species", () => {
       // Arrange
       const mockFiles = [
-        { path: "ships.txt", content: "ship Test Ship\n\tmass 100" },
+        {
+          path: "ships.txt",
+          content: `ship ${TEST_ITEM_NAMES.SHIP}\n\tmass ${TEST_NUMERIC_VALUES.MASS_STRING_SHIP}`,
+        },
       ];
       const mockSpeciesMap = new Map([
-        ["human", ["ship Test Ship\n\tmass 100"]],
+        [
+          TEST_SPECIES.HUMAN,
+          [
+            `ship ${TEST_ITEM_NAMES.SHIP}\n\tmass ${TEST_NUMERIC_VALUES.MASS_STRING_SHIP}`,
+          ],
+        ],
       ]);
       const mockNodes = [
         {
           key: "ship",
-          value: "Test Ship",
-          children: [{ key: "mass", value: "100", children: [] }],
+          value: TEST_ITEM_NAMES.SHIP,
+          children: [
+            {
+              key: "mass",
+              value: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
+              children: [],
+            },
+          ],
           lineNumber: 1,
         },
       ];
@@ -130,26 +174,37 @@ describe("parse-ship-txt", () => {
         mockNodes
       );
       (gameDataParser.nodesToObject as jest.Mock).mockReturnValue({
-        mass: "100",
+        mass: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
       });
       (fileIo.getSpeciesFilePath as jest.Mock).mockReturnValue(
-        "/test/ships-human.json"
+        TEST_FILE_PATHS.SHIPS_HUMAN
       );
 
       // Act
       parseShipTxt();
 
       // Assert
-      expect(logger.info).toHaveBeenCalledWith("Parsing ships to raw JSON...");
+      expect(logger.info).toHaveBeenCalledWith(
+        TEST_LOGGER_MESSAGES.PARSING_SHIPS
+      );
       expect(fileIo.writeJsonFile).toHaveBeenCalledWith(
-        "/test/ships-human.json",
-        [{ name: "Test Ship", mass: "100" }]
+        TEST_FILE_PATHS.SHIPS_HUMAN,
+        [
+          {
+            name: TEST_ITEM_NAMES.SHIP,
+            mass: TEST_NUMERIC_VALUES.MASS_STRING_SHIP,
+          },
+        ]
       );
       expect(logger.success).toHaveBeenCalledWith(
-        "Parsed 1 ships (human) to ships-human.json"
+        TEST_SUCCESS_MESSAGES.PARSED_SHIP(
+          1,
+          TEST_SPECIES.HUMAN,
+          "ships-human.json"
+        )
       );
       expect(logger.success).toHaveBeenCalledWith(
-        "Total: 1 ships across 1 species"
+        TEST_SUCCESS_MESSAGES.TOTAL_SINGLE(1, "ships", 1)
       );
     });
 
@@ -161,18 +216,28 @@ describe("parse-ship-txt", () => {
     it("When parsing multiple species, Then should write files for each species", () => {
       // Arrange
       const mockFiles = [
-        { path: "ships.txt", content: "ship Ship1" },
-        { path: "kestrel.txt", content: "ship Ship2" },
+        { path: "ships.txt", content: `ship ${TEST_ITEM_NAMES.SHIP_1}` },
+        { path: "kestrel.txt", content: `ship ${TEST_ITEM_NAMES.SHIP_2}` },
       ];
       const mockSpeciesMap = new Map([
-        ["human", ["ship Ship1"]],
-        ["pug", ["ship Ship2"]],
+        [TEST_SPECIES.HUMAN, [`ship ${TEST_ITEM_NAMES.SHIP_1}`]],
+        [TEST_SPECIES.PUG, [`ship ${TEST_ITEM_NAMES.SHIP_2}`]],
       ]);
       const mockNodes1 = [
-        { key: "ship", value: "Ship1", children: [], lineNumber: 1 },
+        {
+          key: "ship",
+          value: TEST_ITEM_NAMES.SHIP_1,
+          children: [],
+          lineNumber: 1,
+        },
       ];
       const mockNodes2 = [
-        { key: "ship", value: "Ship2", children: [], lineNumber: 1 },
+        {
+          key: "ship",
+          value: TEST_ITEM_NAMES.SHIP_2,
+          children: [],
+          lineNumber: 1,
+        },
       ];
 
       (retrieveGameData.readGameDataFiles as jest.Mock).mockReturnValue(
@@ -188,8 +253,8 @@ describe("parse-ship-txt", () => {
         .mockReturnValueOnce({})
         .mockReturnValueOnce({});
       (fileIo.getSpeciesFilePath as jest.Mock)
-        .mockReturnValueOnce("/test/ships-human.json")
-        .mockReturnValueOnce("/test/ships-pug.json");
+        .mockReturnValueOnce(TEST_FILE_PATHS.SHIPS_HUMAN)
+        .mockReturnValueOnce(TEST_FILE_PATHS.SHIPS_PUG);
 
       // Act
       parseShipTxt();
@@ -197,7 +262,7 @@ describe("parse-ship-txt", () => {
       // Assert
       expect(fileIo.writeJsonFile).toHaveBeenCalledTimes(2);
       expect(logger.success).toHaveBeenCalledWith(
-        "Total: 2 ships across 2 species"
+        TEST_SUCCESS_MESSAGES.TOTAL_SINGLE(2, "ships", 2)
       );
     });
   });

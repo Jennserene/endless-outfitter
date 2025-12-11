@@ -50,13 +50,3 @@ export function createMockOutfitNode(
     lineNumber,
   };
 }
-
-/**
- * Common test species names
- */
-export const TEST_SPECIES = {
-  HUMAN: "human",
-  PUG: "pug",
-  HAI: "hai",
-  SHERAGI: "sheragi",
-} as const;

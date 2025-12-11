@@ -7,6 +7,14 @@ import * as retrieveGameData from "@scripts/parsers/retrieve-game-data";
 import * as gameDataParser from "@scripts/parsers/game-data-parser";
 import * as speciesUtils from "@scripts/utils/species";
 import * as fileIo from "@scripts/utils/file-io";
+import {
+  TEST_ITEM_NAMES,
+  TEST_LOGGER_MESSAGES,
+  TEST_SPECIES,
+  TEST_NUMERIC_VALUES,
+  TEST_FILE_PATHS,
+  TEST_SUCCESS_MESSAGES,
+} from "../__fixtures__/constants";
 
 // Mock dependencies
 jest.mock("@/lib/logger", () => ({
@@ -48,16 +56,24 @@ describe("parse-outfit-txt", () => {
       const mockNodes = [
         {
           key: "outfit",
-          value: "Test Outfit",
+          value: TEST_ITEM_NAMES.OUTFIT,
           children: [
-            { key: "mass", value: "10", children: [] },
-            { key: "cost", value: "1000", children: [] },
+            {
+              key: "mass",
+              value: TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT,
+              children: [],
+            },
+            {
+              key: "cost",
+              value: TEST_NUMERIC_VALUES.COST_STRING,
+              children: [],
+            },
           ],
           lineNumber: 1,
         },
         {
           key: "outfit",
-          value: "Another Outfit",
+          value: TEST_ITEM_NAMES.ANOTHER_OUTFIT,
           children: [{ key: "mass", value: "20", children: [] }],
           lineNumber: 5,
         },
@@ -67,29 +83,41 @@ describe("parse-outfit-txt", () => {
         mockNodes
       );
       (gameDataParser.nodesToObject as jest.Mock)
-        .mockReturnValueOnce({ mass: "10", cost: "1000" })
+        .mockReturnValueOnce({
+          mass: TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT,
+          cost: TEST_NUMERIC_VALUES.COST_STRING,
+        })
         .mockReturnValueOnce({ mass: "20" });
 
       // Act
       const result = parseOutfitData(
-        "outfit Test Outfit\n\tmass 10\n\tcost 1000"
+        `outfit ${TEST_ITEM_NAMES.OUTFIT}\n\tmass ${TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT}\n\tcost ${TEST_NUMERIC_VALUES.COST_STRING}`
       );
 
       // Assert
       expect(result).toEqual([
-        { name: "Test Outfit", mass: "10", cost: "1000" },
-        { name: "Another Outfit", mass: "20" },
+        {
+          name: TEST_ITEM_NAMES.OUTFIT,
+          mass: TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT,
+          cost: TEST_NUMERIC_VALUES.COST_STRING,
+        },
+        { name: TEST_ITEM_NAMES.ANOTHER_OUTFIT, mass: "20" },
       ]);
     });
 
     it("When parsing content with no outfits, Then should return empty array", () => {
       // Arrange
       (gameDataParser.parseIndentedFormat as jest.Mock).mockReturnValue([
-        { key: "ship", value: "Test Ship", children: [], lineNumber: 1 },
+        {
+          key: "ship",
+          value: TEST_ITEM_NAMES.SHIP,
+          children: [],
+          lineNumber: 1,
+        },
       ]);
 
       // Act
-      const result = parseOutfitData("ship Test Ship");
+      const result = parseOutfitData(`ship ${TEST_ITEM_NAMES.SHIP}`);
 
       // Assert
       expect(result).toEqual([]);
@@ -111,16 +139,30 @@ describe("parse-outfit-txt", () => {
     it("When parsing outfits, Then should write files for each species", () => {
       // Arrange
       const mockFiles = [
-        { path: "outfits.txt", content: "outfit Test Outfit\n\tmass 10" },
+        {
+          path: "outfits.txt",
+          content: `outfit ${TEST_ITEM_NAMES.OUTFIT}\n\tmass ${TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT}`,
+        },
       ];
       const mockSpeciesMap = new Map([
-        ["human", ["outfit Test Outfit\n\tmass 10"]],
+        [
+          TEST_SPECIES.HUMAN,
+          [
+            `outfit ${TEST_ITEM_NAMES.OUTFIT}\n\tmass ${TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT}`,
+          ],
+        ],
       ]);
       const mockNodes = [
         {
           key: "outfit",
-          value: "Test Outfit",
-          children: [{ key: "mass", value: "10", children: [] }],
+          value: TEST_ITEM_NAMES.OUTFIT,
+          children: [
+            {
+              key: "mass",
+              value: TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT,
+              children: [],
+            },
+          ],
           lineNumber: 1,
         },
       ];
@@ -135,10 +177,10 @@ describe("parse-outfit-txt", () => {
         mockNodes
       );
       (gameDataParser.nodesToObject as jest.Mock).mockReturnValue({
-        mass: "10",
+        mass: TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT,
       });
       (fileIo.getSpeciesFilePath as jest.Mock).mockReturnValue(
-        "/test/outfits-human.json"
+        TEST_FILE_PATHS.OUTFITS_HUMAN
       );
 
       // Act
@@ -146,17 +188,26 @@ describe("parse-outfit-txt", () => {
 
       // Assert
       expect(logger.info).toHaveBeenCalledWith(
-        "Parsing outfits to raw JSON..."
+        TEST_LOGGER_MESSAGES.PARSING_OUTFITS
       );
       expect(fileIo.writeJsonFile).toHaveBeenCalledWith(
-        "/test/outfits-human.json",
-        [{ name: "Test Outfit", mass: "10" }]
+        TEST_FILE_PATHS.OUTFITS_HUMAN,
+        [
+          {
+            name: TEST_ITEM_NAMES.OUTFIT,
+            mass: TEST_NUMERIC_VALUES.MASS_STRING_OUTFIT,
+          },
+        ]
       );
       expect(logger.success).toHaveBeenCalledWith(
-        "Parsed 1 outfits (human) to outfits-human.json"
+        TEST_SUCCESS_MESSAGES.PARSED_OUTFIT(
+          1,
+          TEST_SPECIES.HUMAN,
+          "outfits-human.json"
+        )
       );
       expect(logger.success).toHaveBeenCalledWith(
-        "Total: 1 outfits across 1 species"
+        TEST_SUCCESS_MESSAGES.TOTAL_SINGLE(1, "outfits", 1)
       );
     });
 
@@ -168,18 +219,28 @@ describe("parse-outfit-txt", () => {
     it("When parsing multiple species, Then should write files for each species", () => {
       // Arrange
       const mockFiles = [
-        { path: "outfits.txt", content: "outfit Outfit1" },
-        { path: "engines.txt", content: "outfit Outfit2" },
+        { path: "outfits.txt", content: `outfit ${TEST_ITEM_NAMES.OUTFIT_1}` },
+        { path: "engines.txt", content: `outfit ${TEST_ITEM_NAMES.OUTFIT_2}` },
       ];
       const mockSpeciesMap = new Map([
-        ["human", ["outfit Outfit1"]],
-        ["pug", ["outfit Outfit2"]],
+        [TEST_SPECIES.HUMAN, [`outfit ${TEST_ITEM_NAMES.OUTFIT_1}`]],
+        [TEST_SPECIES.PUG, [`outfit ${TEST_ITEM_NAMES.OUTFIT_2}`]],
       ]);
       const mockNodes1 = [
-        { key: "outfit", value: "Outfit1", children: [], lineNumber: 1 },
+        {
+          key: "outfit",
+          value: TEST_ITEM_NAMES.OUTFIT_1,
+          children: [],
+          lineNumber: 1,
+        },
       ];
       const mockNodes2 = [
-        { key: "outfit", value: "Outfit2", children: [], lineNumber: 1 },
+        {
+          key: "outfit",
+          value: TEST_ITEM_NAMES.OUTFIT_2,
+          children: [],
+          lineNumber: 1,
+        },
       ];
 
       (retrieveGameData.readGameDataFiles as jest.Mock).mockReturnValue(
@@ -195,8 +256,8 @@ describe("parse-outfit-txt", () => {
         .mockReturnValueOnce({})
         .mockReturnValueOnce({});
       (fileIo.getSpeciesFilePath as jest.Mock)
-        .mockReturnValueOnce("/test/outfits-human.json")
-        .mockReturnValueOnce("/test/outfits-pug.json");
+        .mockReturnValueOnce(TEST_FILE_PATHS.OUTFITS_HUMAN)
+        .mockReturnValueOnce(TEST_FILE_PATHS.OUTFITS_PUG);
 
       // Act
       parseOutfitTxt();
@@ -204,7 +265,7 @@ describe("parse-outfit-txt", () => {
       // Assert
       expect(fileIo.writeJsonFile).toHaveBeenCalledTimes(2);
       expect(logger.success).toHaveBeenCalledWith(
-        "Total: 2 outfits across 2 species"
+        TEST_SUCCESS_MESSAGES.TOTAL_SINGLE(2, "outfits", 2)
       );
     });
   });
