@@ -22,10 +22,10 @@ export function createMockZodError(
   }
 
   // Fallback: create a basic ZodError
-  // Note: Zod v4+ structure may differ, so we use a type assertion
+  // Note: Zod v4+ uses raw string literals for issue codes instead of ZodIssueCode enum
   return new z.ZodError([
     {
-      code: z.ZodIssueCode.invalid_type,
+      code: "invalid_type",
       expected: expected as
         | "string"
         | "number"
@@ -37,6 +37,6 @@ export function createMockZodError(
         | "function",
       path: [field],
       message: `Expected ${expected}, received ${received}`,
-    } as z.ZodIssue,
+    },
   ]);
 }

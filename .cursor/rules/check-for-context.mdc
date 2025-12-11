@@ -2,9 +2,9 @@
 alwaysApply: true
 ---
 
-Before making any plan or change, review any readme available in the folder or it's parents (not including root) for guidelines on how to work in that folder.
-For changes in the nextjs app, check [src/README.md](src/README.md)
-For changes in scripts, check [scripts/README.md](scripts/README.md)
-For changes in tests, check [tests/README.md](tests/README.md)
+Before making any plan or change, review any llm-context.md available in the folder or it's parents for guidelines on how to work in that folder.
+For changes in the nextjs app, check [src/llm-context.md](src/llm-context.md)
+For changes in scripts, check [scripts/llm-context.md](scripts/llm-context.md)
+For changes in tests, check [tests/llm-context.md](tests/llm-context.md)
 
-For every change made in src or scripts, try to cover them in tests, then run those tests to make sure they work, following guidelines in [tests/README.md](tests/README.md)
+For every change made in src or scripts, try to cover them in tests, then run those tests to make sure they work, following guidelines in [tests/llm-context.md](tests/llm-context.md)

@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Turbopack config (empty for now - app works fine with default Turbopack)
+  turbopack: {},
   // Exclude vendor directory from production builds
   webpack: (config, { isServer, dev }) => {
     if (!dev && isServer) {

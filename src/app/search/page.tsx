@@ -23,19 +23,17 @@ export default function SearchPage({
   const type = searchParams.type || "all";
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <main>
-        <h1 className="text-3xl font-bold mb-4">Search</h1>
-        <p className="text-muted-foreground mb-4">
-          Search for ships, outfits, and other game data. This functionality
-          will be implemented soon.
+    <main className="w-full py-8">
+      <h1 className="text-3xl font-bold mb-4">Search</h1>
+      <p className="text-muted-foreground mb-4">
+        Search for ships, outfits, and other game data. This functionality will
+        be implemented soon.
+      </p>
+      {query && (
+        <p className="text-sm text-muted-foreground">
+          Search query: {query} (type: {type})
         </p>
-        {query && (
-          <p className="text-sm text-muted-foreground">
-            Search query: {query} (type: {type})
-          </p>
-        )}
-      </main>
-    </div>
+      )}
+    </main>
   );
 }

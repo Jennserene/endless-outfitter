@@ -16,9 +16,25 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
+    // Enable type-aware linting for TypeScript files
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
+    },
+  },
+  {
     files: ["scripts/**/*.js"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+  {
+    files: ["**/*.ts", "**/*.tsx"],
+    rules: {
+      // Warn when using deprecated APIs marked with @deprecated JSDoc tag
+      "@typescript-eslint/no-deprecated": "warn",
     },
   },
 ]);

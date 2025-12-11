@@ -17,14 +17,12 @@ export const metadata: Metadata = {
  */
 export default function OutfittingPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <main>
-        <h1 className="text-3xl font-bold mb-4">Ship Outfitting</h1>
-        <p className="text-muted-foreground">
-          Select a ship and configure its outfits. This functionality will be
-          implemented soon.
-        </p>
-      </main>
-    </div>
+    <main className="w-full py-8">
+      <h1 className="text-3xl font-bold mb-4">Ship Outfitting</h1>
+      <p className="text-muted-foreground">
+        Select a ship and configure its outfits. This functionality will be
+        implemented soon.
+      </p>
+    </main>
   );
 }

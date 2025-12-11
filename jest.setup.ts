@@ -19,3 +19,22 @@ if (typeof global.fetch === "undefined") {
       text: async () => "",
     } as Response)) as typeof fetch;
 }
+
+// Mock window.matchMedia for next-themes compatibility in tests
+// next-themes uses matchMedia to detect system theme preference
+// Only mock if window exists (jsdom environment)
+if (typeof window !== "undefined") {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: jest.fn().mockImplementation((query) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: jest.fn(), // deprecated
+      removeListener: jest.fn(), // deprecated
+      addEventListener: jest.fn(),
+      removeEventListener: jest.fn(),
+      dispatchEvent: jest.fn(),
+    })),
+  });
+}

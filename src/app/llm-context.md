@@ -10,14 +10,15 @@ This guide covers Next.js App Router specific patterns and best practices for or
 1. [Route Organization](#route-organization)
 2. [Page Components](#page-components)
 3. [Layout Components](#layout-components)
-4. [Route Groups](#route-groups)
-5. [Dynamic Routes](#dynamic-routes)
-6. [Metadata](#metadata)
-7. [Loading States](#loading-states)
-8. [Error Handling](#error-handling)
-9. [API Routes](#api-routes)
-10. [Page-Specific Components](#page-specific-components)
-11. [Route Conventions](#route-conventions)
+4. [Theme Management and Hydration](#theme-management-and-hydration)
+5. [Route Groups](#route-groups)
+6. [Dynamic Routes](#dynamic-routes)
+7. [Metadata](#metadata)
+8. [Loading States](#loading-states)
+9. [Error Handling](#error-handling)
+10. [API Routes](#api-routes)
+11. [Page-Specific Components](#page-specific-components)
+12. [Route Conventions](#route-conventions)
 
 ---
 
@@ -292,6 +293,206 @@ export default function ShipsLayout({
   );
 }
 ```
+
+---
+
+## Theme Management and Hydration
+
+The app uses `next-themes` for theme management (dark/light/system). When using the `useTheme` hook, you must handle hydration properly to avoid server/client mismatches.
+
+### The Problem
+
+The `theme` value from `useTheme` is `undefined` on the server because:
+
+- `localStorage` is not available during SSR
+- The theme preference is only known after the component mounts on the client
+- Rendering theme-dependent UI before mounting causes hydration mismatches
+
+### ❌ Incorrect: Direct Theme Usage
+
+**This will cause hydration errors:**
+
+```typescript
+'use client';
+
+import { useTheme } from 'next-themes';
+
+// ❌ DO NOT DO THIS - Will throw hydration mismatch error
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+      <option value="system">System</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  );
+}
+```
+
+### ✅ Correct: Wait for Mount
+
+**Always wait for the component to mount before rendering theme-dependent UI:**
+
+```typescript
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+
+export function ThemeToggle() {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Return null or a placeholder until mounted
+  if (!mounted) {
+    return null; // or return a skeleton/placeholder
+  }
+
+  return (
+    <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+      <option value="system">System</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  );
+}
+```
+
+### ✅ Alternative: Lazy Loading with next/dynamic
+
+**Use dynamic imports to load theme-dependent components only on the client:**
+
+```typescript
+// app/_components/theme-toggle.tsx
+'use client';
+
+import { useTheme } from 'next-themes';
+
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+      <option value="system">System</option>
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  );
+}
+```
+
+```typescript
+// app/page.tsx (Server Component)
+import dynamic from 'next/dynamic';
+
+// Load ThemeToggle only on the client side
+const ThemeToggle = dynamic(() => import('./_components/theme-toggle'), {
+  ssr: false,
+});
+
+export default function HomePage() {
+  return (
+    <div>
+      <ThemeToggle />
+      {/* Rest of page */}
+    </div>
+  );
+}
+```
+
+### Using resolvedTheme for Styling
+
+When you need to apply styles based on the resolved theme (e.g., showing different images), use `resolvedTheme` instead of `theme`:
+
+```typescript
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+
+export function ThemedImage() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Return a placeholder image to avoid layout shift
+    return (
+      <Image
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        width={400}
+        height={400}
+        alt="Loading"
+      />
+    );
+  }
+
+  const src = resolvedTheme === 'dark' ? '/dark.png' : '/light.png';
+
+  return <Image src={src} width={400} height={400} alt="Themed image" />;
+}
+```
+
+### CSS-Based Theme Handling
+
+For simple show/hide scenarios, use CSS to avoid hydration issues entirely:
+
+```typescript
+// Component renders both versions
+export function ThemedContent() {
+  return (
+    <>
+      {/* Hidden when theme is dark */}
+      <div data-hide-on-theme="dark">
+        <Image src="/light.png" width={400} height={400} alt="Light" />
+      </div>
+
+      {/* Hidden when theme is light */}
+      <div data-hide-on-theme="light">
+        <Image src="/dark.png" width={400} height={400} alt="Dark" />
+      </div>
+    </>
+  );
+}
+```
+
+```css
+/* In globals.css */
+[data-theme="dark"] [data-hide-on-theme="dark"],
+[data-theme="light"] [data-hide-on-theme="light"] {
+  display: none;
+}
+```
+
+### Theme Management Best Practices
+
+1. **Always Check `mounted`**: Use `useState` + `useEffect` to detect client-side mounting
+2. **Provide Placeholders**: Return a skeleton or placeholder to avoid layout shift
+3. **Use `resolvedTheme` for Styling**: When you need the actual theme value (dark/light), not "system"
+4. **Prefer CSS When Possible**: Use CSS selectors for simple show/hide scenarios
+5. **Lazy Load When Appropriate**: Use `next/dynamic` with `ssr: false` for complex theme-dependent components
+6. **Handle `undefined` Theme**: The theme will be `undefined` until mounted - always handle this case
+
+### ThemeProvider Configuration
+
+The `ThemeProvider` is configured in `app/provider.tsx` with:
+
+- `attribute="class"` - Uses Tailwind's class-based dark mode
+- `defaultTheme="system"` - Respects system preference by default
+- `enableSystem` - Allows switching between system, dark, and light themes
+
+The root layout includes `suppressHydrationWarning` on the `<html>` tag, which is required by next-themes to prevent hydration warnings when it updates the theme class.
 
 ---
 

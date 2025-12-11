@@ -1,14 +1,14 @@
 /**
  * Tests for src/app/error.tsx
- * Global error boundary component
+ * Error boundary component for the root route segment
  */
 
-import GlobalError from "@/app/error";
+import Error from "@/app/error";
 import { runErrorBoundaryTests } from "../__helpers__/test-error-boundary";
 
-describe("GlobalError", () => {
+describe("Error", () => {
   runErrorBoundaryTests({
-    ErrorComponent: GlobalError,
-    errorMessagePrefix: "Global error:",
+    ErrorComponent: Error,
+    errorMessagePrefix: "Error:",
   });
 });

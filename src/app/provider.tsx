@@ -1,5 +1,7 @@
 "use client";
 
+import { ThemeProvider } from "next-themes";
+
 /**
  * Global providers wrapper component.
  *
@@ -7,5 +9,9 @@
  * Add future providers (theme, app state, etc.) here as needed.
  */
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      {children}
+    </ThemeProvider>
+  );
 }

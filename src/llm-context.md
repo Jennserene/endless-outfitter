@@ -1068,7 +1068,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
 - Document complex functions and components
 - Use JSDoc for public APIs
-- Keep README files updated
+- Keep llm-context files updated
 
 ---
 
