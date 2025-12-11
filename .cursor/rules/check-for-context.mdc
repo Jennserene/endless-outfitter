@@ -1,0 +1,10 @@
+---
+alwaysApply: true
+---
+
+Before making any plan or change, review any readme available in the folder or it's parents (not including root) for guidelines on how to work in that folder.
+For changes in the nextjs app, check [src/README.md](src/README.md)
+For changes in scripts, check [scripts/README.md](scripts/README.md)
+For changes in tests, check [tests/README.md](tests/README.md)
+
+For every change made in src or scripts, try to cover them in tests, then run those tests to make sure they work, following guidelines in [tests/README.md](tests/README.md)

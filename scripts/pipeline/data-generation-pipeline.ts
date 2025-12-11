@@ -1,9 +1,14 @@
 import type { Logger } from "@/lib/logger";
 import { logger as defaultLogger } from "@/lib/logger";
 import { retrieveRawData } from "../parsers/retrieve-raw-data";
-import { ensureDataDirectories } from "../utils/directories";
+import {
+  ensureDataDirectories,
+  cleanOutputDirectories,
+} from "../utils/directories";
 import { generateShips } from "../generators/ship-generator";
 import { generateOutfits } from "../generators/outfit-generator";
+import { ImageRetrievalService } from "../services/image-retrieval-service";
+import { loadShips, loadOutfits } from "@/lib/loaders/data-loader";
 
 /**
  * Pipeline step definition
@@ -30,6 +35,10 @@ export class DataGenerationPipeline {
   private createSteps(): PipelineStep[] {
     return [
       {
+        name: "Clean output directories",
+        execute: () => cleanOutputDirectories(),
+      },
+      {
         name: "Retrieve raw data",
         execute: () => retrieveRawData(),
       },
@@ -45,6 +54,15 @@ export class DataGenerationPipeline {
         name: "Generate outfits",
         execute: () => generateOutfits(),
       },
+      {
+        name: "Retrieve images",
+        execute: () => {
+          const ships = loadShips();
+          const outfits = loadOutfits();
+          const service = new ImageRetrievalService(this.logger);
+          service.retrieveImages(ships, outfits);
+        },
+      },
     ];
   }
 
@@ -52,10 +70,12 @@ export class DataGenerationPipeline {
    * Execute the complete data generation pipeline.
    *
    * Steps:
-   * 1. Parse raw game data files to JSON (wipes and recreates raw data directory)
-   * 2. Ensure output directories exist
-   * 3. Generate ships from raw JSON
-   * 4. Generate outfits from raw JSON
+   * 1. Clean output directories (removes existing data and images)
+   * 2. Parse raw game data files to JSON (wipes and recreates raw data directory)
+   * 3. Ensure output directories exist
+   * 4. Generate ships from raw JSON
+   * 5. Generate outfits from raw JSON
+   * 6. Retrieve and copy image files to assets directory
    */
   execute(): void {
     this.logger.info("Starting data generation pipeline...\n");

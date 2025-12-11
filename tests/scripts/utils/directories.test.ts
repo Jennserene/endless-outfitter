@@ -2,9 +2,11 @@ import {
   ensureDataDirectories,
   validateDataDirectories,
   wipeRawDataDirectory,
+  cleanOutputDirectories,
 } from "@scripts/utils/directories";
 import { logger } from "@/lib/logger";
 import * as fs from "fs";
+import * as path from "path";
 import * as paths from "@scripts/utils/paths";
 
 // Mock fs module
@@ -18,8 +20,15 @@ jest.mock("fs", () => ({
 // Mock logger
 jest.mock("@/lib/logger", () => ({
   logger: {
+    info: jest.fn(),
     success: jest.fn(),
   },
+}));
+
+// Mock path module
+jest.mock("path", () => ({
+  ...jest.requireActual("path"),
+  relative: jest.fn(),
 }));
 
 // Mock paths
@@ -27,6 +36,10 @@ jest.mock("@scripts/utils/paths", () => ({
   DATA_DIR: "/test/data",
   SHIPS_DIR: "/test/data/ships",
   OUTFITS_DIR: "/test/data/outfits",
+  IMAGES_DIR: "/test/src/assets/images",
+  OUTFIT_IMAGES_DIR: "/test/src/assets/images/outfit",
+  SHIP_IMAGES_DIR: "/test/src/assets/images/ship",
+  THUMBNAIL_IMAGES_DIR: "/test/src/assets/images/thumbnail",
   RAW_DATA_DIR: "/test/scripts/.data/raw",
   RAW_SHIP_DIR: "/test/scripts/.data/raw/ships",
   RAW_OUTFIT_DIR: "/test/scripts/.data/raw/outfits",
@@ -42,7 +55,8 @@ describe("directories", () => {
       (fs.existsSync as jest.Mock)
         .mockReturnValueOnce(true) // DATA_DIR exists
         .mockReturnValueOnce(false) // SHIPS_DIR doesn't exist
-        .mockReturnValueOnce(false); // OUTFITS_DIR doesn't exist
+        .mockReturnValueOnce(false) // OUTFITS_DIR doesn't exist
+        .mockReturnValueOnce(true); // IMAGES_DIR exists
 
       ensureDataDirectories();
 
@@ -54,19 +68,32 @@ describe("directories", () => {
       });
     });
 
-    it("should throw when DATA_DIR does not exist", () => {
-      (fs.existsSync as jest.Mock).mockReturnValueOnce(false); // DATA_DIR doesn't exist
+    it("should create DATA_DIR when it does not exist", () => {
+      (fs.existsSync as jest.Mock)
+        .mockReturnValueOnce(false) // DATA_DIR doesn't exist
+        .mockReturnValueOnce(false) // SHIPS_DIR doesn't exist
+        .mockReturnValueOnce(false) // OUTFITS_DIR doesn't exist
+        .mockReturnValueOnce(true); // IMAGES_DIR exists
 
-      expect(() => {
-        ensureDataDirectories();
-      }).toThrow(`Data directory does not exist: ${paths.DATA_DIR}`);
+      ensureDataDirectories();
+
+      expect(fs.mkdirSync).toHaveBeenCalledWith(paths.DATA_DIR, {
+        recursive: true,
+      });
+      expect(fs.mkdirSync).toHaveBeenCalledWith(paths.SHIPS_DIR, {
+        recursive: true,
+      });
+      expect(fs.mkdirSync).toHaveBeenCalledWith(paths.OUTFITS_DIR, {
+        recursive: true,
+      });
     });
 
     it("should not create directories when they already exist", () => {
       (fs.existsSync as jest.Mock)
         .mockReturnValueOnce(true) // DATA_DIR exists
         .mockReturnValueOnce(true) // SHIPS_DIR exists
-        .mockReturnValueOnce(true); // OUTFITS_DIR exists
+        .mockReturnValueOnce(true) // OUTFITS_DIR exists
+        .mockReturnValueOnce(true); // IMAGES_DIR exists
 
       ensureDataDirectories();
 
@@ -77,7 +104,8 @@ describe("directories", () => {
       (fs.existsSync as jest.Mock)
         .mockReturnValueOnce(true) // DATA_DIR exists
         .mockReturnValueOnce(false) // SHIPS_DIR doesn't exist
-        .mockReturnValueOnce(true); // OUTFITS_DIR exists
+        .mockReturnValueOnce(true) // OUTFITS_DIR exists
+        .mockReturnValueOnce(true); // IMAGES_DIR exists
 
       ensureDataDirectories();
 
@@ -91,7 +119,8 @@ describe("directories", () => {
       (fs.existsSync as jest.Mock)
         .mockReturnValueOnce(true) // DATA_DIR exists
         .mockReturnValueOnce(true) // SHIPS_DIR exists
-        .mockReturnValueOnce(false); // OUTFITS_DIR doesn't exist
+        .mockReturnValueOnce(false) // OUTFITS_DIR doesn't exist
+        .mockReturnValueOnce(true); // IMAGES_DIR exists
 
       ensureDataDirectories();
 
@@ -231,6 +260,133 @@ describe("directories", () => {
       expect(fs.mkdirSync).toHaveBeenCalledWith(paths.RAW_OUTFIT_DIR, {
         recursive: true,
       });
+    });
+  });
+
+  describe("cleanOutputDirectories", () => {
+    beforeEach(() => {
+      // Mock process.cwd() for relative path calculation
+      (path.relative as jest.Mock).mockImplementation((from, to) => {
+        // Simple mock: return the path without the leading /test
+        return to.replace("/test/", "");
+      });
+    });
+
+    it("should clean all directories when they exist", () => {
+      (fs.existsSync as jest.Mock)
+        .mockReturnValueOnce(true) // DATA_DIR exists
+        .mockReturnValueOnce(true) // OUTFIT_IMAGES_DIR exists
+        .mockReturnValueOnce(true) // SHIP_IMAGES_DIR exists
+        .mockReturnValueOnce(true); // THUMBNAIL_IMAGES_DIR exists
+
+      cleanOutputDirectories();
+
+      expect(logger.info).toHaveBeenCalledWith(
+        "Cleaning output directories..."
+      );
+      expect(path.relative).toHaveBeenCalledWith(process.cwd(), paths.DATA_DIR);
+      expect(logger.info).toHaveBeenCalledWith("Removing contents of data");
+      expect(fs.rmSync).toHaveBeenCalledWith(paths.DATA_DIR, {
+        recursive: true,
+        force: true,
+      });
+      expect(logger.info).toHaveBeenCalledWith(
+        "Removing contents of outfit images directory"
+      );
+      expect(fs.rmSync).toHaveBeenCalledWith(paths.OUTFIT_IMAGES_DIR, {
+        recursive: true,
+        force: true,
+      });
+      expect(logger.info).toHaveBeenCalledWith(
+        "Removing contents of ship images directory"
+      );
+      expect(fs.rmSync).toHaveBeenCalledWith(paths.SHIP_IMAGES_DIR, {
+        recursive: true,
+        force: true,
+      });
+      expect(logger.info).toHaveBeenCalledWith(
+        "Removing contents of thumbnail images directory"
+      );
+      expect(fs.rmSync).toHaveBeenCalledWith(paths.THUMBNAIL_IMAGES_DIR, {
+        recursive: true,
+        force: true,
+      });
+      expect(logger.success).toHaveBeenCalledWith(
+        "Output directories cleaned successfully"
+      );
+    });
+
+    it("should skip directories that do not exist", () => {
+      (fs.existsSync as jest.Mock)
+        .mockReturnValueOnce(false) // DATA_DIR doesn't exist
+        .mockReturnValueOnce(false) // OUTFIT_IMAGES_DIR doesn't exist
+        .mockReturnValueOnce(false) // SHIP_IMAGES_DIR doesn't exist
+        .mockReturnValueOnce(false); // THUMBNAIL_IMAGES_DIR doesn't exist
+
+      cleanOutputDirectories();
+
+      expect(logger.info).toHaveBeenCalledWith(
+        "Cleaning output directories..."
+      );
+      expect(fs.rmSync).not.toHaveBeenCalled();
+      expect(logger.success).toHaveBeenCalledWith(
+        "Output directories cleaned successfully"
+      );
+    });
+
+    it("should clean only existing directories", () => {
+      (fs.existsSync as jest.Mock)
+        .mockReturnValueOnce(true) // DATA_DIR exists
+        .mockReturnValueOnce(false) // OUTFIT_IMAGES_DIR doesn't exist
+        .mockReturnValueOnce(true) // SHIP_IMAGES_DIR exists
+        .mockReturnValueOnce(false); // THUMBNAIL_IMAGES_DIR doesn't exist
+
+      cleanOutputDirectories();
+
+      expect(logger.info).toHaveBeenCalledWith(
+        "Cleaning output directories..."
+      );
+      expect(path.relative).toHaveBeenCalledWith(process.cwd(), paths.DATA_DIR);
+      expect(logger.info).toHaveBeenCalledWith("Removing contents of data");
+      expect(fs.rmSync).toHaveBeenCalledWith(paths.DATA_DIR, {
+        recursive: true,
+        force: true,
+      });
+      expect(logger.info).toHaveBeenCalledWith(
+        "Removing contents of ship images directory"
+      );
+      expect(fs.rmSync).toHaveBeenCalledWith(paths.SHIP_IMAGES_DIR, {
+        recursive: true,
+        force: true,
+      });
+      expect(fs.rmSync).not.toHaveBeenCalledWith(
+        paths.OUTFIT_IMAGES_DIR,
+        expect.any(Object)
+      );
+      expect(fs.rmSync).not.toHaveBeenCalledWith(
+        paths.THUMBNAIL_IMAGES_DIR,
+        expect.any(Object)
+      );
+      expect(logger.success).toHaveBeenCalledWith(
+        "Output directories cleaned successfully"
+      );
+    });
+
+    it("should log relative path for data directory", () => {
+      (fs.existsSync as jest.Mock)
+        .mockReturnValueOnce(true) // DATA_DIR exists
+        .mockReturnValueOnce(false) // OUTFIT_IMAGES_DIR doesn't exist
+        .mockReturnValueOnce(false) // SHIP_IMAGES_DIR doesn't exist
+        .mockReturnValueOnce(false); // THUMBNAIL_IMAGES_DIR doesn't exist
+
+      (path.relative as jest.Mock).mockReturnValue("src/assets/data");
+
+      cleanOutputDirectories();
+
+      expect(path.relative).toHaveBeenCalledWith(process.cwd(), paths.DATA_DIR);
+      expect(logger.info).toHaveBeenCalledWith(
+        "Removing contents of src/assets/data"
+      );
     });
   });
 });

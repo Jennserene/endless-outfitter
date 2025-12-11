@@ -1,9 +1,14 @@
 import { logger } from "@/lib/logger";
 import { existsSync, mkdirSync, readdirSync, rmSync } from "fs";
+import { relative } from "path";
 import {
   SHIPS_DIR,
   OUTFITS_DIR,
   DATA_DIR,
+  IMAGES_DIR,
+  OUTFIT_IMAGES_DIR,
+  SHIP_IMAGES_DIR,
+  THUMBNAIL_IMAGES_DIR,
   RAW_DATA_DIR,
   RAW_SHIP_DIR,
   RAW_OUTFIT_DIR,
@@ -21,6 +26,9 @@ export function ensureDataDirectories(): void {
   }
   if (!existsSync(OUTFITS_DIR)) {
     mkdirSync(OUTFITS_DIR, { recursive: true });
+  }
+  if (!existsSync(IMAGES_DIR)) {
+    mkdirSync(IMAGES_DIR, { recursive: true });
   }
 }
 
@@ -67,4 +75,35 @@ export function wipeRawDataDirectory(): void {
   }
   mkdirSync(RAW_SHIP_DIR, { recursive: true });
   mkdirSync(RAW_OUTFIT_DIR, { recursive: true });
+}
+
+/**
+ * Remove all existing data and image files before generation.
+ * Cleans src/assets/data, src/assets/images/outfit, src/assets/images/ship, and src/assets/images/thumbnail
+ */
+export function cleanOutputDirectories(): void {
+  logger.info("Cleaning output directories...");
+
+  // Clean data directory
+  if (existsSync(DATA_DIR)) {
+    const relativeDataDir = relative(process.cwd(), DATA_DIR);
+    logger.info(`Removing contents of ${relativeDataDir}`);
+    rmSync(DATA_DIR, { recursive: true, force: true });
+  }
+
+  // Clean image subdirectories
+  const imageDirs = [
+    { path: OUTFIT_IMAGES_DIR, name: "outfit images" },
+    { path: SHIP_IMAGES_DIR, name: "ship images" },
+    { path: THUMBNAIL_IMAGES_DIR, name: "thumbnail images" },
+  ];
+
+  for (const { path, name } of imageDirs) {
+    if (existsSync(path)) {
+      logger.info(`Removing contents of ${name} directory`);
+      rmSync(path, { recursive: true, force: true });
+    }
+  }
+
+  logger.success("Output directories cleaned successfully");
 }

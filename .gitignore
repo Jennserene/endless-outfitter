@@ -42,7 +42,8 @@ next-env.d.ts
 
 # IDE
 .vscode/
-.cursor/
+# Cursor
+.cursor/debug.log
 
 # Git submodules (local development only)
 /vendor/endless-sky
