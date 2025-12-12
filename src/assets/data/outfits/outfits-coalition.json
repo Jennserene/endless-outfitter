@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "coalition",
-    "generatedAt": "2025-12-11T16:46:20.645Z",
+    "generatedAt": "2025-12-12T16:01:45.156Z",
     "itemCount": 46
   },
   "data": [
@@ -16,6 +16,7 @@
       "thumbnail": "outfit/small collector module",
       "mass": 8,
       "outfit space": -6,
+      "slug": "small-collector-module",
       "descriptions": [
         "Solar power is the mainstay of the Coalition's merchant marine. The design of these panels has been refined over the millennia, growing ever more efficient."
       ],
@@ -33,6 +34,7 @@
       "thumbnail": "outfit/large collector module",
       "mass": 28,
       "outfit space": -21,
+      "slug": "large-collector-module",
       "descriptions": [
         "One of these solar panels is enough to meet the energy needs of a medium-sized Coalition civilian ship, especially given the energy efficiency of their engines and the fact that under their laws only Heliarch ships are allowed to have weapons."
       ],
@@ -50,6 +52,7 @@
       "thumbnail": "outfit/small reactor module",
       "mass": 42,
       "outfit space": -42,
+      "slug": "small-reactor-module",
       "descriptions": [
         "Solar power is sufficient for commerce, but excessive thriftiness is seldom a winning strategy in warfare. For ships that must have a reliable energy source to power weapons, the Heliarchs use compact nuclear reactors.",
         "\tA beam of antiprotons triggers fusion in tiny injected fuel pellets, allowing for a complete burnup far more efficient than would otherwise be possible."
@@ -68,6 +71,7 @@
       "thumbnail": "outfit/large reactor module",
       "mass": 98,
       "outfit space": -98,
+      "slug": "large-reactor-module",
       "descriptions": [
         "Though still unable to replicate Quarg power generation technology, Heliarch science teams are constantly looking to realize their most recent guess on how they work. For this larger module, a steady stream of injected antiprotons catalyzes reactions in carefully confined fusion plasma, extracting as much power as physically possible.",
         "\tThis advanced fusion reactor was designed for the most powerful Heliarch warships. Its structure has not changed significantly in the millennia since the first battle with the Quarg, but each generation of reactors is made slightly more efficient than the previous ones."
@@ -86,6 +90,7 @@
       "thumbnail": "outfit/small cogeneration module",
       "mass": 11,
       "outfit space": -11,
+      "slug": "small-cogeneration-module",
       "descriptions": [
         "The Kimek originally created much larger versions of this module, intended to provide energy for their hunger towers.",
         "\tThis compact design recovers much of what would otherwise be waste heat, making it a very efficient fuel cell."
@@ -104,6 +109,7 @@
       "thumbnail": "outfit/large cogeneration module",
       "mass": 46,
       "outfit space": -46,
+      "slug": "large-cogeneration-module",
       "descriptions": [
         "Without much exciting work available in peacetime, many Coalition engineers take to tinkering with existing equipment to improve its efficiency."
       ],
@@ -121,6 +127,7 @@
       "thumbnail": "outfit/small battery module",
       "mass": 4,
       "outfit space": -4,
+      "slug": "small-battery-module",
       "descriptions": [
         "Because Coalition ships rely on solar power, they must also be able to store a substantial amount of energy. This small battery pack is much more efficient than comparable human technology."
       ],
@@ -137,6 +144,7 @@
       "thumbnail": "outfit/large battery module",
       "mass": 18,
       "outfit space": -18,
+      "slug": "large-battery-module",
       "descriptions": [
         "This battery pack stores enough power to allow a Coalition ship to continue maneuvering even when its solar panels are only producing a fraction of their peak output."
       ],
@@ -153,6 +161,7 @@
       "thumbnail": "outfit/small shield module",
       "mass": 11,
       "outfit space": -11,
+      "slug": "small-shield-module",
       "descriptions": [
         "Although combat is almost unheard of in Coalition space, almost all of their ships are able to recharge their shields when necessary."
       ],
@@ -171,6 +180,7 @@
       "thumbnail": "outfit/large shield module",
       "mass": 39,
       "outfit space": -39,
+      "slug": "large-shield-module",
       "descriptions": [
         "The Coalition manufactures heavy shield generators for their ships in case they ever face aggression from the Quarg or another species."
       ],
@@ -189,6 +199,7 @@
       "thumbnail": "outfit/overcharged shield module",
       "mass": 44,
       "outfit space": -44,
+      "slug": "overcharged-shield-module",
       "descriptions": [
         "These modular shield generators are the most powerful emitters produced in Coalition space, and as such they are strictly controlled and exclusively used by the Heliarchs. The additions made to the Large Shield Module more than tripled its shield generation, but at the cost of it requiring a constant supply of energy to stabilize it."
       ],
@@ -208,6 +219,7 @@
       "thumbnail": "outfit/small repair module",
       "mass": 6,
       "outfit space": -6,
+      "slug": "small-repair-module",
       "descriptions": [
         "Arach ships, which rely more on strong hull than on energy shields, often carry one of these repair modules to allow damaged hull plating to be patched back together on the fly."
       ],
@@ -226,6 +238,7 @@
       "thumbnail": "outfit/large repair module",
       "mass": 21,
       "outfit space": -21,
+      "slug": "large-repair-module",
       "descriptions": [
         "This hub houses a small fleet of repair robots that can climb around on a ship's hull and repair damage to it, even in the middle of combat."
       ],
@@ -244,6 +257,7 @@
       "thumbnail": "outfit/overclocked repair module",
       "mass": 32,
       "outfit space": -32,
+      "slug": "overclocked-repair-module",
       "descriptions": [
         "These advanced repair modules are issued to Heliarch ships, providing hull repair unparalleled in all of Coalition space. The legions of small repair drones come with the extensive pathways they use to quickly get around a ship, and as such the outfit can interfere with a ship's cooling and heat dissipation systems."
       ],
@@ -263,6 +277,7 @@
       "thumbnail": "outfit/cooling module",
       "mass": 5,
       "outfit space": -5,
+      "slug": "cooling-module",
       "descriptions": [
         "This Cooling Module consumes energy. To conserve power, it does not ramp up to full strength unless a ship is very close to overheating."
       ],
@@ -280,6 +295,7 @@
       "thumbnail": "outfit/fuel module",
       "mass": 19,
       "outfit space": -19,
+      "slug": "fuel-module",
       "descriptions": [
         "In their early days of space exploration, the Saryds developed the Fuel Module to travel far from Saros without worrying about becoming stranded without fuel, or sudden fuel leaks.",
         "\tNowadays, nearly every system in the Coalition has refueling facilities, but some captains still find use in the extra jumps these modules offer."
@@ -298,6 +314,7 @@
       "thumbnail": "outfit/decoy plating",
       "mass": 7,
       "outfit space": -7,
+      "slug": "decoy-plating",
       "descriptions": [
         "This plating takes advantage of a ship's scan logs and reproduces the data of other ships nearby, effectively deflecting attempts to scan a ship's true cargo and equipment.",
         "\tOut of a need to protect themselves against destructive Heliarch torpedoes, the Lunarium incorporated small, independent radar jamming systems in each section of the plating, if only to act as a last line of defense."
@@ -316,6 +333,7 @@
       "thumbnail": "outfit/refueling module",
       "mass": 10,
       "outfit space": -10,
+      "slug": "refueling-module",
       "descriptions": [
         "To avoid the risk of being inspected by the Heliarchs as they refuel on planets, Lunarium captains employ this outfit when carrying supplies or stolen outfits.",
         "\tThe outfit's mechanisms need a partitioned amount of fuel set aside to allow it to work properly, so a ship can only install so many of these before becoming incapable of jumping to another system."
@@ -335,6 +353,7 @@
       "thumbnail": "outfit/shield refactor module",
       "mass": 7,
       "outfit space": -7,
+      "slug": "shield-refactor-module",
       "descriptions": [
         "In theory, all shield generators can operate at a much faster rate than normal, if pushed to their true limit. However, the constant need to reform shields during a heated battle quickly overloads shield generators and damages them in the process. By relocating dedicated hull repair systems to focus exclusively on repairing such damage, this compact device allows shield generators to reach their true potential.",
         "\tA much needed boon against the Heliarch torpedoes' devastating effects on hull plating, the Lunarium highly favors production of this expensive piece due to its advantages over other shield generators."
@@ -356,6 +375,7 @@
       "thumbnail": "outfit/small recovery module",
       "mass": 25,
       "outfit space": -25,
+      "slug": "small-recovery-module",
       "descriptions": [
         "By combining the Coalition's shield generation and hull repair technologies into one piece of equipment, the Lunarium has increased the effectiveness of both, allowing for better defenses against Heliarch weaponry."
       ],
@@ -377,6 +397,7 @@
       "thumbnail": "outfit/scan module",
       "mass": 3,
       "outfit space": -3,
+      "slug": "scanning-module",
       "descriptions": [
         "This system allows the Heliarchs to scan nearby ships, enabling them to detect weapons or illegal goods."
       ],
@@ -397,6 +418,7 @@
       "thumbnail": "outfit/outskirts gauger",
       "mass": 8,
       "outfit space": -8,
+      "slug": "outskirts-gauger",
       "descriptions": [
         "Completed with the data from one of their long-lost satellites, the newest scanner of House Idriss excels at reading various energy signatures across vast distances.",
         "\tConstantly running its calculations about every little thing it detects within its impressive range, the gauger needs a steady supply of energy to function."
@@ -416,6 +438,7 @@
       "thumbnail": "outfit/small thrust module",
       "mass": 9,
       "outfit space": -9,
+      "slug": "small-thrust-module",
       "descriptions": [
         "This tiny thruster produces a considerable amount of thrust... but also a considerable amount of heat."
       ],
@@ -440,6 +463,7 @@
       "thumbnail": "outfit/large thrust module",
       "mass": 32,
       "outfit space": -32,
+      "slug": "large-thrust-module",
       "descriptions": [
         "Coalition engineers prefer to focus on perfecting a few versatile designs rather than producing a wide range of them. This thruster is quite efficient, but large ships will need several of them stacked together to produce sufficient thrust."
       ],
@@ -464,6 +488,7 @@
       "thumbnail": "outfit/small reverse module",
       "mass": 9,
       "outfit space": -9,
+      "slug": "small-reverse-module",
       "descriptions": [
         "Placing this tiny thruster in the front of a freighter or transport allows Coalition merchants to considerably improve their energy efficiency, which is of great benefit when relying on solar power.",
         "\tBecause a reverse thruster must be facing forwards, it must be installed in the weapon section of your ship instead of the engine section."
@@ -489,6 +514,7 @@
       "thumbnail": "outfit/large reverse module",
       "mass": 32,
       "outfit space": -32,
+      "slug": "large-reverse-module",
       "descriptions": [
         "With their significant weapons capacity left unused in peacetime, captains of larger Coalition freighters and transports can use Large Reverse Modules to rapidly slow their ships, allowing them to save both time and energy.",
         "\tBecause a reverse thruster must be facing forwards, it must be installed in the weapon section of your ship instead of the engine section."
@@ -514,6 +540,7 @@
       "thumbnail": "outfit/small steering module",
       "mass": 7,
       "outfit space": -7,
+      "slug": "small-steering-module",
       "descriptions": [
         "Despite its high efficiency, this module is not sufficient for any but the tiniest of ships. Instead, the modules are designed with the expectation that ships may use two or three of them in tandem."
       ],
@@ -538,6 +565,7 @@
       "thumbnail": "outfit/large steering module",
       "mass": 25,
       "outfit space": -25,
+      "slug": "large-steering-module",
       "descriptions": [
         "By focusing on small, modular engines rather than the massive capital ship drives that most other species develop, the Coalition loses some of the potential efficiency for very large ships, but gains a considerable amount of flexibility."
       ],
@@ -560,6 +588,7 @@
       "index": 8020,
       "cost": 369000,
       "thumbnail": "outfit/enforcer confrontation gear",
+      "slug": "enforcer-confrontation-gear",
       "descriptions": [
         "The peak of Heliarch combat engineering, this weapon uses condensed blasts of energy to dispatch any who dare threaten the safety of the Coalition."
       ],
@@ -576,6 +605,7 @@
       "index": 8010,
       "cost": 97000,
       "thumbnail": "outfit/enforcer riot staff",
+      "slug": "enforcer-riot-staff",
       "descriptions": [
         "Made to deal with the occasional dissidents that pop up around Coalition space in a non-lethal manner, these weapons see minimal use in shipbound combat, but are carried anyway in the event a dissident gets aboard."
       ],
@@ -592,6 +622,7 @@
       "index": 8030,
       "cost": 257200,
       "thumbnail": "outfit/anti-materiel gun",
+      "slug": "anti-materiel-gun",
       "descriptions": [
         "Easy to use and relatively cheap to manufacture, these weapons were born by refurbishing the Heliarchs' favored arms, with the new barrel shaping the energy into deadly blasts that make short work of even the toughest body armor."
       ],
@@ -607,6 +638,7 @@
       "series": "Licenses",
       "index": 8010,
       "thumbnail": "outfit/coalition license",
+      "slug": "coalition-license",
       "descriptions": [
         "A digital chip in the form of a stylized badge, this document signifies the permission of the owner to browse, employ and deal in transactions involving civilian Coalition technology.",
         "\tThere is a history of controversy surrounding this license, as throughout the millennia several Heliarch laws have been in a back and forth regarding the conditions that need to be met for someone to obtain a license. This argument started with the third Civil Goods and Fares Act, created just a few decades after the War of Independence. It has continued all the way to the relatively recent twenty-sixth addendum to the second article of the Ninth Rectification on Commerce and Traffic, passed two hundred years ago, which made the acquisition requirements much more flexible."
@@ -619,6 +651,7 @@
       "series": "Licenses",
       "index": 8020,
       "thumbnail": "outfit/heliarch license",
+      "slug": "heliarch-license",
       "descriptions": [
         "An ornate circlet of gold and platinum, it serves as both a symbol of rank and as a license to access exclusive Heliarch facilities. Custom-made to fit a human's head, it's surprisingly light and comfortable."
       ],
@@ -633,6 +666,7 @@
       "thumbnail": "outfit/bombardment cannon",
       "mass": 12,
       "outfit space": -12,
+      "slug": "bombardment-cannon",
       "descriptions": [
         "The Bombardment Cannon was designed during the original war with the Quarg, in order to give Heliarch civilian ships a way to strike Quarg warships from a safe distance. But now, as with all their weapons, its use is limited to Heliarch warships."
       ],
@@ -668,6 +702,7 @@
       "thumbnail": "outfit/bombardment turret",
       "mass": 43,
       "outfit space": -43,
+      "slug": "bombardment-turret",
       "descriptions": [
         "A Bombardment Turret is not one of the most dangerous Heliarch weapons, but it has the advantage that it can hit targets a considerable distance away."
       ],
@@ -707,6 +742,7 @@
       "thumbnail": "outfit/finisher pod",
       "mass": 16,
       "outfit space": -36,
+      "slug": "finisher-pod",
       "descriptions": [
         "Finisher Torpedoes are one of the Heliarchs' most dreaded weapons. In fact, in one way or another most of their other weapons merely exist to hold a ship in place for long enough for a barrage of Finishers to destroy it.",
         "\tAmmunition for this weapon can be restocked at any outfitter."
@@ -765,6 +801,7 @@
       "thumbnail": "outfit/finisher maegrolain",
       "mass": 58,
       "outfit space": -88,
+      "slug": "finisher-maegrolain",
       "descriptions": [
         "Baptized with the Saryd word for \"furious thunderstorm,\" this enormous launcher is not meant for prolonged fights nor for use by lighter craft, but for delivering a few quick, devastating bursts of Finisher Torpedoes. It has much greater damage potential than its smaller counterpart.",
         "\tAmmunition for this weapon can be restocked at any outfitter."
@@ -818,6 +855,7 @@
     },
     {
       "name": "Active Finisher",
+      "slug": "active-finisher",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -863,6 +901,7 @@
       "thumbnail": "outfit/finisher storage",
       "mass": 4,
       "outfit space": -15,
+      "slug": "finisher-storage-tube",
       "descriptions": [
         "In order to allow Heliarch ships to install more Finisher Storage Tubes, Heliarch engineers have incorporated a tiny battery pack into each module. This allows for Heliarch ships to have a respectable energy capacity while also carrying a fearsome number of Finishers."
       ],
@@ -881,6 +920,7 @@
       "cost": 32000,
       "thumbnail": "outfit/finisher",
       "mass": 0.5,
+      "slug": "finisher-torpedo",
       "descriptions": [
         "A substantial fraction of the Heliarch military complex is devoted to supervising the refining, enrichment, and breeding of nuclear fuels. Having ensured a steady supply of feedstock, they are able to produce a selective set of highly exotic fissile materials. With minuscule critical masses and favorable neutronics properties, these carefully controlled isotopes are the key to giving the miniaturized nuclear warhead in the Finisher Torpedo enough power to deter any would-be threats to the Coalition.",
         "\tThis extremely powerful but also expensive missile is ammunition for the Heliarch Finisher Pod."
@@ -898,6 +938,7 @@
       "thumbnail": "outfit/heliarch attractor",
       "mass": 49,
       "outfit space": -49,
+      "slug": "heliarch-attractor",
       "descriptions": [
         "When battling the Quarg, the Heliarchs learned that the Quarg would not engage in a battle that their ships might be unable to escape. In response, they focused on building weapons that would keep a ship from being able to come to a stop and activate its jump drive."
       ],
@@ -938,6 +979,7 @@
       "thumbnail": "outfit/heliarch repulsor",
       "mass": 56,
       "outfit space": -56,
+      "slug": "heliarch-repulsor",
       "descriptions": [
         "This beam turret allows a Heliarch ship to hold its enemies far enough away that they cannot make use of their short-range weapons."
       ],
@@ -979,6 +1021,7 @@
       "thumbnail": "outfit/ion hail turret",
       "mass": 26,
       "outfit space": -26,
+      "slug": "ion-hail-turret",
       "descriptions": [
         "Instead of just placing an Ion Rain Gun on a turret mount, the Heliarch tweaked the cycles of shots, having each shot be significantly more effective and seeing an overall increase to the weapon's range, but at the cost of a reload period."
       ],
@@ -1006,6 +1049,7 @@
     },
     {
       "name": "ion hail",
+      "slug": "ion-hail",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -1036,6 +1080,7 @@
       "thumbnail": "outfit/ion rain gun",
       "mass": 17,
       "outfit space": -17,
+      "slug": "ion-rain-gun",
       "descriptions": [
         "Heliarch ships primarily serve as a police force. This weapon is designed to neutralize a target's offensive capabilities until more Heliarch ships can join the fray."
       ],
@@ -1074,6 +1119,7 @@
       "thumbnail": "outfit/mcs extractor",
       "mass": 18,
       "outfit space": -18,
+      "slug": "mcs-extractor",
       "descriptions": [
         "Not legally a weapon under Heliarch definitions, the \"Mineral Collection and Sorting\" extraction unit consists of a set of sharp, durable blades designed to quickly break down minable asteroids. It also comes with an integrated scanning system that looks for asteroids rich in minerals to facilitate the mining efforts.",
         "\tEspecially popular with novice pilots looking to pay off their ships, the extractor has been a reliable tool of mining businesses in the Coalition for millennia."

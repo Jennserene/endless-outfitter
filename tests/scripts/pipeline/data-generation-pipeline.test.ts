@@ -4,6 +4,7 @@ import * as retrieveRawData from "@scripts/parsers/retrieve-raw-data";
 import * as directories from "@scripts/utils/directories";
 import * as shipGenerator from "@scripts/generators/ship-generator";
 import * as outfitGenerator from "@scripts/generators/outfit-generator";
+import * as searchIndexGenerator from "@scripts/generators/search-index-generator";
 import * as dataLoader from "@/lib/loaders/data-loader";
 import { ImageRetrievalService } from "@scripts/services/image-retrieval-service";
 import { TEST_STEP_NAMES, TEST_ERROR_MESSAGES } from "../__fixtures__";
@@ -35,6 +36,10 @@ jest.mock("@scripts/generators/ship-generator", () => ({
 
 jest.mock("@scripts/generators/outfit-generator", () => ({
   generateOutfits: jest.fn(),
+}));
+
+jest.mock("@scripts/generators/search-index-generator", () => ({
+  generateSearchIndex: jest.fn(),
 }));
 
 jest.mock("@/lib/loaders/data-loader", () => ({
@@ -72,7 +77,7 @@ describe("DataGenerationPipeline", () => {
       const steps = pipeline.getSteps();
 
       // Assert
-      expect(steps).toHaveLength(9);
+      expect(steps).toHaveLength(10);
       expect(steps[0].name).toBe(TEST_STEP_NAMES[0]);
       expect(steps[1].name).toBe(TEST_STEP_NAMES[1]);
       expect(steps[2].name).toBe(TEST_STEP_NAMES[2]);
@@ -82,6 +87,7 @@ describe("DataGenerationPipeline", () => {
       expect(steps[6].name).toBe(TEST_STEP_NAMES[6]);
       expect(steps[7].name).toBe(TEST_STEP_NAMES[7]);
       expect(steps[8].name).toBe(TEST_STEP_NAMES[8]);
+      expect(steps[9].name).toBe(TEST_STEP_NAMES[9]);
     });
 
     it("When creating pipeline with custom logger, Then should use custom logger for logging", () => {
@@ -99,7 +105,7 @@ describe("DataGenerationPipeline", () => {
       pipeline.execute();
 
       // Assert
-      expect(pipeline.getSteps()).toHaveLength(9);
+      expect(pipeline.getSteps()).toHaveLength(10);
       expect(customLogger.info).toHaveBeenCalledWith(
         "Starting data generation pipeline...\n"
       );
@@ -124,7 +130,7 @@ describe("DataGenerationPipeline", () => {
       const steps = pipeline.getSteps();
 
       // Assert
-      expect(steps).toHaveLength(9);
+      expect(steps).toHaveLength(10);
       steps.forEach((step) => {
         expect(step).toHaveProperty("name");
         expect(step).toHaveProperty("execute");
@@ -176,11 +182,15 @@ describe("DataGenerationPipeline", () => {
       expect(logger.info).toHaveBeenCalledWith(
         `Executing step: ${TEST_STEP_NAMES[7]}...`
       );
+      expect(searchIndexGenerator.generateSearchIndex).toHaveBeenCalled();
+      expect(logger.info).toHaveBeenCalledWith(
+        `Executing step: ${TEST_STEP_NAMES[8]}...`
+      );
       expect(dataLoader.loadShips).toHaveBeenCalled();
       expect(dataLoader.loadOutfits).toHaveBeenCalled();
       expect(ImageRetrievalService).toHaveBeenCalled();
       expect(logger.info).toHaveBeenCalledWith(
-        `Executing step: ${TEST_STEP_NAMES[8]}...`
+        `Executing step: ${TEST_STEP_NAMES[9]}...`
       );
       expect(directories.deleteBackupFiles).toHaveBeenCalled();
       expect(logger.success).toHaveBeenCalledWith(
@@ -261,6 +271,9 @@ describe("DataGenerationPipeline", () => {
       );
       (shipGenerator.generateShips as jest.Mock).mockReturnValue(undefined);
       (outfitGenerator.generateOutfits as jest.Mock).mockReturnValue(undefined);
+      (searchIndexGenerator.generateSearchIndex as jest.Mock).mockReturnValue(
+        undefined
+      );
       (dataLoader.loadShips as jest.Mock).mockReturnValue([]);
       (dataLoader.loadOutfits as jest.Mock).mockReturnValue([]);
       const mockService = {
@@ -275,10 +288,10 @@ describe("DataGenerationPipeline", () => {
       // Act & Assert
       expect(() => {
         pipeline.execute();
-      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[7]}"`);
+      }).toThrow(`Pipeline failed at step "${TEST_STEP_NAMES[8]}"`);
 
       expect(logger.error).toHaveBeenCalledWith(
-        `Step "${TEST_STEP_NAMES[7]}" failed`,
+        `Step "${TEST_STEP_NAMES[8]}" failed`,
         error
       );
       expect(directories.restoreBackupFiles).toHaveBeenCalled();

@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "successors",
-    "generatedAt": "2025-12-11T16:46:20.639Z",
+    "generatedAt": "2025-12-12T00:53:04.002Z",
     "itemCount": 39
   },
   "data": [
@@ -12,6 +12,7 @@
       "plural": "Aaulqran",
       "sprite": "ship/aaulqra",
       "thumbnail": "thumbnail/aaulqra",
+      "slug": "aaulqra",
       "attributes": {
         "category": "Medium Warship",
         "cost": 26000000,
@@ -85,20 +86,11 @@
       ]
     },
     {
-      "name": "Aaulqra",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": [
-        "This medium warship is among the most common designs employed by the High Houses of the Successors. It is compact, fast, and durable for a ship of its class, but limited internal space and fuel capacity restrict it mostly to short-range patrol service."
-      ]
-    },
-    {
       "name": "Ejniisde",
       "plural": "Ejniisden",
       "sprite": "ship/ejniisde",
       "thumbnail": "thumbnail/ejniisde",
+      "slug": "ejniisde",
       "attributes": {
         "category": "Space Liner",
         "cost": 4100000,
@@ -160,6 +152,7 @@
       "plural": "Kaskhoraden",
       "sprite": "ship/kaskhorade",
       "thumbnail": "thumbnail/kaskhorade",
+      "slug": "kaskhorade",
       "attributes": {
         "category": "Utility",
         "cost": 45250000,
@@ -241,6 +234,7 @@
       "plural": "Kvelqden",
       "sprite": "ship/kvelqde",
       "thumbnail": "thumbnail/kvelqde",
+      "slug": "kvelqde",
       "attributes": {
         "category": "Transport",
         "cost": 185000,
@@ -287,20 +281,11 @@
       ]
     },
     {
-      "name": "Kvelqde",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": [
-        "This tiny shuttle is the smallest vessel operating in Successor space, and appears to fulfill much the same role as the human shuttles with which you are familiar, transporting small groups of passengers and quantities of cargo throughout their space. While it has enough space to equip weapons if necessary, its limited internal space and the low energy density of civilian Successor generators make these hardpoints most suitable to mining rather than combat."
-      ]
-    },
-    {
       "name": "Kvelqde-Khora",
       "plural": "Kvelqden-Khora",
       "sprite": "ship/kvelqde-khora",
       "thumbnail": "thumbnail/kvelqde-khora",
+      "slug": "kvelqde-khora",
       "attributes": {
         "category": "Interceptor",
         "cost": 240000,
@@ -362,6 +347,7 @@
       "plural": "Myaeden",
       "sprite": "ship/myaede",
       "thumbnail": "thumbnail/myaede",
+      "slug": "myaede",
       "attributes": {
         "category": "Light Freighter",
         "cost": 3250000,
@@ -419,20 +405,11 @@
       ]
     },
     {
-      "name": "Myaede",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": [
-        "The Myaede is neither elegant nor fast, but has cemented itself as the backbone of Successor commerce with a spacious cargo hold, heavy armor, and a flexible enough weapons layout to let it fight back in a pinch. The design is robust and dependable; many of the ships you've seen appear old and worn but pass through the spaceport no less smoothly than their newer counterparts."
-      ]
-    },
-    {
       "name": "Nnaatej",
       "plural": "Nnaatejen",
       "sprite": "ship/nnaatej",
       "thumbnail": "thumbnail/nnaatej",
+      "slug": "nnaatej",
       "attributes": {
         "category": "Transport",
         "cost": 3825000,
@@ -490,6 +467,7 @@
       "plural": "Nnesaaraun",
       "sprite": "ship/nnesaarau",
       "thumbnail": "thumbnail/nnesaarau",
+      "slug": "nnesaarau",
       "attributes": {
         "category": "Transport",
         "cost": 1225000,
@@ -547,20 +525,11 @@
       ]
     },
     {
-      "name": "Nnesaarau",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": [
-        "These very light vessels don't have much room for passengers or cargo, but move swiftly and elegantly through Successor space. These qualities, combined with their high price and uncommon presence, suggest that these may be luxury craft of some sort, too impractical for use by the majority of Successors."
-      ]
-    },
-    {
       "name": "Ojde",
       "plural": "Ojden",
       "sprite": "ship/ojde",
       "thumbnail": "thumbnail/ojde",
+      "slug": "ojde",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 8250000,
@@ -623,20 +592,11 @@
       ]
     },
     {
-      "name": "Ojde",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": [
-        "Although it is the largest freighter employed by the Successors, the Ojde is still substantially smaller than large human freighters like the Bulk Freighter and Behemoth. While this limits the cargo capacity of any single ship, it also allows these vessels to be surprisingly fast and maneuverable and increases the number of facilities which can effectively tend to them."
-      ]
-    },
-    {
       "name": "Seiitej",
       "plural": "Seiitejen",
       "sprite": "ship/seiitej",
       "thumbnail": "thumbnail/seiitej",
+      "slug": "seiitej",
       "attributes": {
         "category": "Utility",
         "cost": 9250000,
@@ -707,6 +667,7 @@
       "plural": "Stolsaqran",
       "sprite": "ship/stolsaqra",
       "thumbnail": "thumbnail/stolsaqra",
+      "slug": "stolsaqra",
       "attributes": {
         "category": "Interceptor",
         "cost": 450000,
@@ -765,20 +726,11 @@
       ]
     },
     {
-      "name": "Stolsaqra",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": [
-        "The Successors' attempt at an interceptor is quite compact and sports a surprising amount of firepower for a ship of its size, though restrictive internal space leaves it plagued with power and propulsion issues if it is equipped to fully utilize its weapons capacity. While it is manufactured by the High Houses, the Stolsaqra is made available to the general Successor public, albeit with significantly downgraded systems compared to the military-exclusive model."
-      ]
-    },
-    {
       "name": "Veusade",
       "plural": "Veusaden",
       "sprite": "ship/veusade",
       "thumbnail": "thumbnail/veusade",
+      "slug": "veusade",
       "attributes": {
         "category": "Light Warship",
         "cost": 16500000,
@@ -845,20 +797,11 @@
       ]
     },
     {
-      "name": "Veusade",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": [
-        "The Veusade bristles with gun ports but has a small overall weapons capacity; in fact, it is just enough to saturate its hardpoints with drag cannons. Such a narrowly-focused design makes these ships ill-suited for multipurpose use, but they are frequently seen as auxiliary or police craft, owing to their ability to rapidly catch and immobilize fleeing vessels."
-      ]
-    },
-    {
       "name": "Vujlet",
       "plural": "Vujleten",
       "sprite": "ship/vujlet",
       "thumbnail": "thumbnail/vujlet",
+      "slug": "vujlet",
       "attributes": {
         "category": "Light Warship",
         "cost": 8200000,
@@ -929,772 +872,1684 @@
       ]
     },
     {
-      "name": "Vujlet",
+      "name": "Aaulqra (Naive)",
+      "plural": "Aaulqran",
+      "sprite": "ship/aaulqra",
+      "thumbnail": "thumbnail/aaulqra",
+      "slug": "aaulqra-naive",
       "attributes": {
-        "category": "Unknown"
+        "category": "Medium Warship",
+        "cost": 26000000,
+        "shields": 10000,
+        "hull": 55000,
+        "required crew": 18,
+        "bunks": 25,
+        "mass": 650,
+        "drag": 8.75,
+        "heat dissipation": 0.49,
+        "fuel capacity": 600,
+        "cargo space": 15,
+        "outfit space": 550,
+        "weapon capacity": 240,
+        "engine capacity": 120,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
-      "outfits": [],
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "This medium warship is among the most common designs employed by the High Houses of the Successors. It is compact, fast, and durable for a ship of its class, but limited internal space and fuel capacity restrict it mostly to short-range patrol service."
+      ]
+    },
+    {
+      "name": "Kvelqde (Naive)",
+      "plural": "Kvelqden",
+      "sprite": "ship/kvelqde",
+      "thumbnail": "thumbnail/kvelqde",
+      "slug": "kvelqde-naive",
+      "attributes": {
+        "category": "Transport",
+        "cost": 185000,
+        "shields": 350,
+        "hull": 2400,
+        "required crew": 1,
+        "bunks": 9,
+        "mass": 110,
+        "drag": 2.25,
+        "heat dissipation": 0.82,
+        "fuel capacity": 500,
+        "cargo space": 25,
+        "outfit space": 160,
+        "weapon capacity": 55,
+        "engine capacity": 45,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "This tiny shuttle is the smallest vessel operating in Successor space, and appears to fulfill much the same role as the human shuttles with which you are familiar, transporting small groups of passengers and quantities of cargo throughout their space. While it has enough space to equip weapons if necessary, its limited internal space and the low energy density of civilian Successor generators make these hardpoints most suitable to mining rather than combat."
+      ]
+    },
+    {
+      "name": "Myaede (Naive)",
+      "plural": "Myaeden",
+      "sprite": "ship/myaede",
+      "thumbnail": "thumbnail/myaede",
+      "slug": "myaede-naive",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 3250000,
+        "shields": 1500,
+        "hull": 13000,
+        "required crew": 6,
+        "bunks": 20,
+        "mass": 500,
+        "drag": 7.1,
+        "heat dissipation": 0.62,
+        "fuel capacity": 500,
+        "cargo space": 125,
+        "outfit space": 275,
+        "weapon capacity": 125,
+        "engine capacity": 130,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Myaede is neither elegant nor fast, but has cemented itself as the backbone of Successor commerce with a spacious cargo hold, heavy armor, and a flexible enough weapons layout to let it fight back in a pinch. The design is robust and dependable; many of the ships you've seen appear old and worn but pass through the spaceport no less smoothly than their newer counterparts."
+      ]
+    },
+    {
+      "name": "Nnesaarau (Naive)",
+      "plural": "Nnesaaraun",
+      "sprite": "ship/nnesaarau",
+      "thumbnail": "thumbnail/nnesaarau",
+      "slug": "nnesaarau-naive",
+      "attributes": {
+        "category": "Transport",
+        "cost": 1225000,
+        "shields": 1800,
+        "hull": 2200,
+        "required crew": 1,
+        "bunks": 4,
+        "mass": 90,
+        "drag": 2.1,
+        "heat dissipation": 0.86,
+        "fuel capacity": 600,
+        "cargo space": 8,
+        "outfit space": 175,
+        "weapon capacity": 30,
+        "engine capacity": 60,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "These very light vessels don't have much room for passengers or cargo, but move swiftly and elegantly through Successor space. These qualities, combined with their high price and uncommon presence, suggest that these may be luxury craft of some sort, too impractical for use by the majority of Successors."
+      ]
+    },
+    {
+      "name": "Ojde (Naive)",
+      "plural": "Ojden",
+      "sprite": "ship/ojde",
+      "thumbnail": "thumbnail/ojde",
+      "slug": "ojde-naive",
+      "attributes": {
+        "category": "Heavy Freighter",
+        "cost": 8250000,
+        "shields": 3000,
+        "hull": 31500,
+        "required crew": 8,
+        "bunks": 24,
+        "mass": 1190,
+        "drag": 15.5,
+        "heat dissipation": 0.5,
+        "fuel capacity": 500,
+        "cargo space": 450,
+        "outfit space": 330,
+        "weapon capacity": 180,
+        "engine capacity": 150,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "Although it is the largest freighter employed by the Successors, the Ojde is still substantially smaller than large human freighters like the Bulk Freighter and Behemoth. While this limits the cargo capacity of any single ship, it also allows these vessels to be surprisingly fast and maneuverable and increases the number of facilities which can effectively tend to them."
+      ]
+    },
+    {
+      "name": "Stolsaqra (Naive)",
+      "plural": "Stolsaqran",
+      "sprite": "ship/stolsaqra",
+      "thumbnail": "thumbnail/stolsaqra",
+      "slug": "stolsaqra-naive",
+      "attributes": {
+        "category": "Interceptor",
+        "cost": 450000,
+        "shields": 850,
+        "hull": 6100,
+        "required crew": 1,
+        "bunks": 2,
+        "mass": 120,
+        "drag": 2.75,
+        "heat dissipation": 0.79,
+        "fuel capacity": 300,
+        "cargo space": 5,
+        "outfit space": 212,
+        "weapon capacity": 90,
+        "engine capacity": 80,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Successors' attempt at an interceptor is quite compact and sports a surprising amount of firepower for a ship of its size, though restrictive internal space leaves it plagued with power and propulsion issues if it is equipped to fully utilize its weapons capacity. While it is manufactured by the High Houses, the Stolsaqra is made available to the general Successor public, albeit with significantly downgraded systems compared to the military-exclusive model."
+      ]
+    },
+    {
+      "name": "Veusade (Naive)",
+      "plural": "Veusaden",
+      "sprite": "ship/veusade",
+      "thumbnail": "thumbnail/veusade",
+      "slug": "veusade-naive",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 16500000,
+        "shields": 8000,
+        "hull": 29000,
+        "required crew": 5,
+        "bunks": 10,
+        "mass": 360,
+        "drag": 5.45,
+        "heat dissipation": 0.62,
+        "fuel capacity": 500,
+        "cargo space": 15,
+        "outfit space": 370,
+        "weapon capacity": 96,
+        "engine capacity": 120,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Veusade bristles with gun ports but has a small overall weapons capacity; in fact, it is just enough to saturate its hardpoints with drag cannons. Such a narrowly-focused design makes these ships ill-suited for multipurpose use, but they are frequently seen as auxiliary or police craft, owing to their ability to rapidly catch and immobilize fleeing vessels."
+      ]
+    },
+    {
+      "name": "Vujlet (Naive)",
+      "plural": "Vujleten",
+      "sprite": "ship/vujlet",
+      "thumbnail": "thumbnail/vujlet",
+      "slug": "vujlet-naive",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 8200000,
+        "shields": 3000,
+        "hull": 17500,
+        "required crew": 2,
+        "bunks": 6,
+        "mass": 230,
+        "drag": 3.8,
+        "heat dissipation": 0.68,
+        "fuel capacity": 600,
+        "cargo space": 10,
+        "outfit space": 280,
+        "weapon capacity": 105,
+        "engine capacity": 85,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        }
+      ],
       "descriptions": [
         "The compact Vujlet is a mass-produced High Houses warship flexible enough to serve in a variety of light-duty roles. Large enough to operate as a self-sufficient unit, these vessels serve as a useful bridge between short-ranged, relatively vulnerable interceptors, and larger, more resource-intensive warships that can be much more expensive to build and operate."
       ]
     },
     {
-      "name": "Aaulqra",
+      "name": "Aaulqra (Brawler)",
+      "plural": "Aaulqran",
+      "sprite": "ship/aaulqra",
+      "thumbnail": "thumbnail/aaulqra",
+      "slug": "aaulqra-brawler",
       "attributes": {
-        "category": "Unknown"
+        "category": "Medium Warship",
+        "cost": 26000000,
+        "shields": 10000,
+        "hull": 55000,
+        "required crew": 18,
+        "bunks": 25,
+        "mass": 650,
+        "drag": 8.75,
+        "heat dissipation": 0.49,
+        "fuel capacity": 600,
+        "cargo space": 15,
+        "outfit space": 550,
+        "weapon capacity": 240,
+        "engine capacity": 120,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "`\"Ojet\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Drag Cannon",
-          "quantity": 3
-        },
-        {
-          "name": "Bimodal Coilgun Turret",
-          "quantity": 2
-        },
-        {
-          "name": "`\"Uoret\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`3-\"Kaska\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Jorv\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Regen",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "6",
           "quantity": 1
         },
         {
-          "name": "`\"Aqra\"",
+          "name": "7",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Aaulqra",
+      "name": "Aaulqra (Sniper)",
+      "plural": "Aaulqran",
+      "sprite": "ship/aaulqra",
+      "thumbnail": "thumbnail/aaulqra",
+      "slug": "aaulqra-sniper",
       "attributes": {
-        "category": "Unknown"
+        "category": "Medium Warship",
+        "cost": 26000000,
+        "shields": 10000,
+        "hull": 55000,
+        "required crew": 18,
+        "bunks": 25,
+        "mass": 650,
+        "drag": 8.75,
+        "heat dissipation": 0.49,
+        "fuel capacity": 600,
+        "cargo space": 15,
+        "outfit space": 550,
+        "weapon capacity": 240,
+        "engine capacity": 120,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "`\"Ojet\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`\"Sjeja\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "High-Velocity Spike",
-          "quantity": 20
-        },
-        {
-          "name": "`\"Uoret\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`3-\"Kaska\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "`\"Jaase\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Light",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "6",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "7",
           "quantity": 1
         },
         {
-          "name": "`\"Veusa\"",
+          "name": "8",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Kaskhorade",
+      "name": "Kaskhorade (Brawler)",
+      "plural": "Kaskhoraden",
+      "sprite": "ship/kaskhorade",
+      "thumbnail": "thumbnail/kaskhorade",
+      "slug": "kaskhorade-brawler",
       "attributes": {
-        "category": "Unknown"
+        "category": "Utility",
+        "cost": 45250000,
+        "shields": 7000,
+        "hull": 44500,
+        "required crew": 34,
+        "bunks": 130,
+        "mass": 990,
+        "drag": 13.6,
+        "heat dissipation": 0.5,
+        "fuel capacity": 600,
+        "cargo space": 140,
+        "outfit space": 570,
+        "weapon capacity": 280,
+        "engine capacity": 110,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Bimodal Coilgun Turret",
-          "quantity": 4
-        },
-        {
-          "name": "`\"Uoret\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`OC-\"Mavra\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Jorv\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Regen",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Kaskhorade",
+      "name": "Kaskhorade (Sniper)",
+      "plural": "Kaskhoraden",
+      "sprite": "ship/kaskhorade",
+      "thumbnail": "thumbnail/kaskhorade",
+      "slug": "kaskhorade-sniper",
       "attributes": {
-        "category": "Unknown"
+        "category": "Utility",
+        "cost": 45250000,
+        "shields": 7000,
+        "hull": 44500,
+        "required crew": 34,
+        "bunks": 130,
+        "mass": 990,
+        "drag": 13.6,
+        "heat dissipation": 0.5,
+        "fuel capacity": 600,
+        "cargo space": 140,
+        "outfit space": 570,
+        "weapon capacity": 280,
+        "engine capacity": 110,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "`\"Sjeja\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "High-Velocity Spike Rack",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "High-Velocity Spike",
-          "quantity": 60
-        },
-        {
-          "name": "`\"Uoret\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Jaase\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Light",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "`\"Veusa\"",
+          "name": "6",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Kvelqde",
+      "name": "Kvelqde (Mining)",
+      "plural": "Kvelqden",
+      "sprite": "ship/kvelqde",
+      "thumbnail": "thumbnail/kvelqde",
+      "slug": "kvelqde-mining",
       "attributes": {
-        "category": "Unknown"
+        "category": "Transport",
+        "cost": 185000,
+        "shields": 350,
+        "hull": 2400,
+        "required crew": 1,
+        "bunks": 9,
+        "mass": 110,
+        "drag": 2.25,
+        "heat dissipation": 0.82,
+        "fuel capacity": 500,
+        "cargo space": 25,
+        "outfit space": 160,
+        "weapon capacity": 55,
+        "engine capacity": 45,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Pulse Laser Turret",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`1-\"Uurau\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`OC-\"Mavra\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`3-\"Kaska\"",
-          "quantity": 1
-        },
-        {
-          "name": "`\"Byiaa\"",
-          "quantity": 1
-        },
-        {
-          "name": "`\"Tuur\"",
-          "quantity": 1
-        },
-        {
-          "name": "`\"Niis\"",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
+          "name": "3",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Kvelqde",
+      "name": "Kvelqde (Violent)",
+      "plural": "Kvelqden",
+      "sprite": "ship/kvelqde",
+      "thumbnail": "thumbnail/kvelqde",
+      "slug": "kvelqde-violent",
       "attributes": {
-        "category": "Unknown"
+        "category": "Transport",
+        "cost": 185000,
+        "shields": 350,
+        "hull": 2400,
+        "required crew": 1,
+        "bunks": 9,
+        "mass": 110,
+        "drag": 2.25,
+        "heat dissipation": 0.82,
+        "fuel capacity": 500,
+        "cargo space": 25,
+        "outfit space": 160,
+        "weapon capacity": 55,
+        "engine capacity": 45,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Overcharged Pulse Laser",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Overcharged Laser Turret",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`1-\"Uurau\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Ej\"",
-          "quantity": 1
-        },
-        {
-          "name": "`\"Aqra\"",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
+          "name": "3",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Kvelqde-Khora",
+      "name": "Kvelqde-Khora (Mining)",
+      "plural": "Kvelqden-Khora",
+      "sprite": "ship/kvelqde-khora",
+      "thumbnail": "thumbnail/kvelqde-khora",
+      "slug": "kvelqde-khora-mining",
       "attributes": {
-        "category": "Unknown"
+        "category": "Interceptor",
+        "cost": 240000,
+        "shields": 785,
+        "hull": 4625,
+        "required crew": 1,
+        "bunks": 6,
+        "mass": 158,
+        "drag": 2.95,
+        "heat dissipation": 0.78,
+        "fuel capacity": 500,
+        "cargo space": 10,
+        "outfit space": 197,
+        "weapon capacity": 63,
+        "engine capacity": 45,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Successor Pulse Laser",
-          "quantity": 2
-        },
-        {
-          "name": "`3-\"Kaska\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Auxiliary Power Reserve",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Byiaa\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Tuur\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Cargo Expansion",
-          "quantity": 2
-        },
-        {
-          "name": "`\"Aqra\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Myaede",
+      "name": "Myaede (Mining)",
+      "plural": "Myaeden",
+      "sprite": "ship/myaede",
+      "thumbnail": "thumbnail/myaede",
+      "slug": "myaede-mining",
       "attributes": {
-        "category": "Unknown"
+        "category": "Light Freighter",
+        "cost": 3250000,
+        "shields": 1500,
+        "hull": 13000,
+        "required crew": 6,
+        "bunks": 20,
+        "mass": 500,
+        "drag": 7.1,
+        "heat dissipation": 0.62,
+        "fuel capacity": 500,
+        "cargo space": 125,
+        "outfit space": 275,
+        "weapon capacity": 125,
+        "engine capacity": 130,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Pulse Laser Turret",
-          "quantity": 2
-        },
-        {
-          "name": "`3-\"Kaska\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`1-\"Uurau\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Ej\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Tuur\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Cargo Expansion",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "`\"Aqra\"",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Myaede",
+      "name": "Myaede (Mining, Defensive)",
+      "plural": "Myaeden",
+      "sprite": "ship/myaede",
+      "thumbnail": "thumbnail/myaede",
+      "slug": "myaede-mining-defensive",
       "attributes": {
-        "category": "Unknown"
+        "category": "Light Freighter",
+        "cost": 3250000,
+        "shields": 1500,
+        "hull": 13000,
+        "required crew": 6,
+        "bunks": 20,
+        "mass": 500,
+        "drag": 7.1,
+        "heat dissipation": 0.62,
+        "fuel capacity": 500,
+        "cargo space": 125,
+        "outfit space": 275,
+        "weapon capacity": 125,
+        "engine capacity": 130,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Successor Pulse Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Pulse Laser Turret",
-          "quantity": 2
-        },
-        {
-          "name": "`6-\"Ruuv\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`\"Ej\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Tuur\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Myaede",
+      "name": "Myaede (Violent)",
+      "plural": "Myaeden",
+      "sprite": "ship/myaede",
+      "thumbnail": "thumbnail/myaede",
+      "slug": "myaede-violent",
       "attributes": {
-        "category": "Unknown"
+        "category": "Light Freighter",
+        "cost": 3250000,
+        "shields": 1500,
+        "hull": 13000,
+        "required crew": 6,
+        "bunks": 20,
+        "mass": 500,
+        "drag": 7.1,
+        "heat dissipation": 0.62,
+        "fuel capacity": 500,
+        "cargo space": 125,
+        "outfit space": 275,
+        "weapon capacity": 125,
+        "engine capacity": 130,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Overcharged Pulse Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Overcharged Laser Turret",
-          "quantity": 2
-        },
-        {
-          "name": "`6-\"Ruuv\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Auxiliary Power Reserve",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Ej\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Nnaatej",
+      "name": "Nnaatej (Defensive)",
+      "plural": "Nnaatejen",
+      "sprite": "ship/nnaatej",
+      "thumbnail": "thumbnail/nnaatej",
+      "slug": "nnaatej-defensive",
       "attributes": {
-        "category": "Unknown"
+        "category": "Transport",
+        "cost": 3825000,
+        "shields": 3000,
+        "hull": 15500,
+        "required crew": 5,
+        "bunks": 26,
+        "mass": 570,
+        "drag": 5.6,
+        "heat dissipation": 0.61,
+        "fuel capacity": 500,
+        "cargo space": 35,
+        "outfit space": 220,
+        "weapon capacity": 54,
+        "engine capacity": 82,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Pulse Laser Turret",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`3-\"Kaska\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`1-\"Uurau\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`OC-\"Mavra\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "`\"Ej\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
-          "quantity": 1
-        },
-        {
-          "name": "`\"Chyyra\"",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
+          "name": "5",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Ojde",
+      "name": "Ojde (Mining)",
+      "plural": "Ojden",
+      "sprite": "ship/ojde",
+      "thumbnail": "thumbnail/ojde",
+      "slug": "ojde-mining",
       "attributes": {
-        "category": "Unknown"
+        "category": "Heavy Freighter",
+        "cost": 8250000,
+        "shields": 3000,
+        "hull": 31500,
+        "required crew": 8,
+        "bunks": 24,
+        "mass": 1190,
+        "drag": 15.5,
+        "heat dissipation": 0.5,
+        "fuel capacity": 500,
+        "cargo space": 450,
+        "outfit space": 330,
+        "weapon capacity": 180,
+        "engine capacity": 150,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Pulse Laser Turret",
-          "quantity": 2
-        },
-        {
-          "name": "`6-\"Ruuv\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Primary Power Reserve",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Ej\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "`\"Tuur\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "`\"Veusa\"",
+          "name": "6",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "7",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Stolsaqra",
+      "name": "Stolsaqra (Military)",
+      "plural": "Stolsaqran",
+      "sprite": "ship/stolsaqra",
+      "thumbnail": "thumbnail/stolsaqra",
+      "slug": "stolsaqra-military",
       "attributes": {
-        "category": "Unknown"
+        "category": "Interceptor",
+        "cost": 450000,
+        "shields": 850,
+        "hull": 6100,
+        "required crew": 1,
+        "bunks": 2,
+        "mass": 120,
+        "drag": 2.75,
+        "heat dissipation": 0.79,
+        "fuel capacity": 300,
+        "cargo space": 5,
+        "outfit space": 212,
+        "weapon capacity": 90,
+        "engine capacity": 80,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "`\"Ojet\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`3-\"Kaska\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Byiaa\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Light",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "`\"Veldt\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "`\"Aqra\"",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Stolsaqra",
+      "name": "Stolsaqra (Mission Escort)",
+      "plural": "Stolsaqran",
+      "sprite": "ship/stolsaqra",
+      "thumbnail": "thumbnail/stolsaqra",
+      "slug": "stolsaqra-mission-escort",
       "attributes": {
-        "category": "Unknown"
+        "category": "Interceptor",
+        "cost": 450000,
+        "shields": 850,
+        "hull": 6100,
+        "required crew": 1,
+        "bunks": 2,
+        "mass": 120,
+        "drag": 2.75,
+        "heat dissipation": 0.79,
+        "fuel capacity": 300,
+        "cargo space": 5,
+        "outfit space": 212,
+        "weapon capacity": 90,
+        "engine capacity": 80,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Drag Cannon",
-          "quantity": 3
-        },
-        {
-          "name": "`3-\"Kaska\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`\"Byiaa\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "Fuel Pod",
-          "quantity": 3
-        },
-        {
-          "name": "Multimodal Armor: Light",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Aqra\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Stolsaqra",
+      "name": "Stolsaqra (Short-Range)",
+      "plural": "Stolsaqran",
+      "sprite": "ship/stolsaqra",
+      "thumbnail": "thumbnail/stolsaqra",
+      "slug": "stolsaqra-short-range",
       "attributes": {
-        "category": "Unknown"
+        "category": "Interceptor",
+        "cost": 450000,
+        "shields": 850,
+        "hull": 6100,
+        "required crew": 1,
+        "bunks": 2,
+        "mass": 120,
+        "drag": 2.75,
+        "heat dissipation": 0.79,
+        "fuel capacity": 300,
+        "cargo space": 5,
+        "outfit space": 212,
+        "weapon capacity": 90,
+        "engine capacity": 80,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Drag Cannon",
-          "quantity": 3
-        },
-        {
-          "name": "`OC-\"Mavra\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`\"Byiaa\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Light",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Veldt\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "`\"Aqra\"",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Veusade",
+      "name": "Veusade (Surveillance)",
+      "plural": "Veusaden",
+      "sprite": "ship/veusade",
+      "thumbnail": "thumbnail/veusade",
+      "slug": "veusade-surveillance",
       "attributes": {
-        "category": "Unknown"
+        "category": "Light Warship",
+        "cost": 16500000,
+        "shields": 8000,
+        "hull": 29000,
+        "required crew": 5,
+        "bunks": 10,
+        "mass": 360,
+        "drag": 5.45,
+        "heat dissipation": 0.62,
+        "fuel capacity": 500,
+        "cargo space": 15,
+        "outfit space": 370,
+        "weapon capacity": 96,
+        "engine capacity": 120,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "Drag Cannon",
-          "quantity": 8
-        },
-        {
-          "name": "`\"Ryuit\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Auxiliary Power Reserve",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "`\"Jaase\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Light",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "`\"Veldt\"",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "`\"Veusa\"",
+          "name": "6",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Vujlet",
+      "name": "Vujlet (Aggressive)",
+      "plural": "Vujleten",
+      "sprite": "ship/vujlet",
+      "thumbnail": "thumbnail/vujlet",
+      "slug": "vujlet-aggressive",
       "attributes": {
-        "category": "Unknown"
+        "category": "Light Warship",
+        "cost": 8200000,
+        "shields": 3000,
+        "hull": 17500,
+        "required crew": 2,
+        "bunks": 6,
+        "mass": 230,
+        "drag": 3.8,
+        "heat dissipation": 0.68,
+        "fuel capacity": 600,
+        "cargo space": 10,
+        "outfit space": 280,
+        "weapon capacity": 105,
+        "engine capacity": 85,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "`\"Ojet\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`\"Nnesa\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "Auxiliary Power Reserve",
-          "quantity": 3
-        },
-        {
-          "name": "`\"Ej\"",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Heavy",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Vujlet",
+      "name": "Vujlet (Surveillance)",
+      "plural": "Vujleten",
+      "sprite": "ship/vujlet",
+      "thumbnail": "thumbnail/vujlet",
+      "slug": "vujlet-surveillance",
       "attributes": {
-        "category": "Unknown"
+        "category": "Light Warship",
+        "cost": 8200000,
+        "shields": 3000,
+        "hull": 17500,
+        "required crew": 2,
+        "bunks": 6,
+        "mass": 230,
+        "drag": 3.8,
+        "heat dissipation": 0.68,
+        "fuel capacity": 600,
+        "cargo space": 10,
+        "outfit space": 280,
+        "weapon capacity": 105,
+        "engine capacity": 85,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
       },
       "outfits": [
         {
-          "name": "`\"Ojet\"",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "`\"Nnesa\"",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "Primary Power Reserve",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "`\"Jaase\"",
+          "name": "3",
           "quantity": 1
         },
         {
-          "name": "Successor Cooling",
+          "name": "4",
           "quantity": 1
         },
         {
-          "name": "Multimodal Armor: Light",
+          "name": "5",
           "quantity": 1
         },
         {
-          "name": "`\"Veldt\"",
+          "name": "6",
           "quantity": 1
         },
         {
-          "name": "`\"Chyyra\"",
+          "name": "7",
           "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
           "quantity": 1
         }
       ],

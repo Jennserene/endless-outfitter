@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "incipias",
-    "generatedAt": "2025-12-11T16:46:20.611Z",
+    "generatedAt": "2025-12-12T00:53:03.978Z",
     "itemCount": 7
   },
   "data": [
@@ -12,6 +12,7 @@
       "plural": "Ventae",
       "sprite": "ship/venta",
       "thumbnail": "thumbnail/venta",
+      "slug": "venta",
       "attributes": {
         "category": "Heavy Warship",
         "cost": 25000000,
@@ -81,6 +82,7 @@
       "plural": "Nimbi",
       "sprite": "ship/nimbus",
       "thumbnail": "thumbnail/nimbus",
+      "slug": "nimbus",
       "attributes": {
         "category": "Medium Warship",
         "cost": 3250000,
@@ -139,72 +141,11 @@
       ]
     },
     {
-      "name": "Nimbus",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Liquid-Class Shield",
-          "quantity": 1
-        },
-        {
-          "name": "Metallic Hydrogen Cell",
-          "quantity": 1
-        },
-        {
-          "name": "MH Red-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "MH Red-Class Steering",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Nimbus",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Liquid-Class Shield",
-          "quantity": 1
-        },
-        {
-          "name": "Metallic Hydrogen Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Plasma Discharger",
-          "quantity": 4
-        },
-        {
-          "name": "Horizon Grappler",
-          "quantity": 1
-        },
-        {
-          "name": "Cloud Piercer",
-          "quantity": 20
-        },
-        {
-          "name": "MH Red-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "MH Red-Class Steering",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Nimbo Stratus",
       "plural": "Nimbo Strati",
       "sprite": "ship/stratus",
       "thumbnail": "thumbnail/stratus",
+      "slug": "nimbo-stratus",
       "attributes": {
         "category": "Utility",
         "cost": 460000,
@@ -258,6 +199,7 @@
       "plural": "Nimbo Cirri",
       "sprite": "ship/cirrus",
       "thumbnail": "thumbnail/cirrus",
+      "slug": "nimbo-cirrus",
       "attributes": {
         "category": "Light Freighter",
         "cost": 330000,
@@ -305,6 +247,7 @@
       "name": "Gero",
       "sprite": "ship/gero",
       "thumbnail": "thumbnail/gero",
+      "slug": "gero",
       "attributes": {
         "category": "Transport",
         "cost": 985000,
@@ -347,6 +290,126 @@
       "descriptions": [
         "The completion of Pon'tes caused a huge increase in travel between the station and Redias. Designers from Alto Shipyards quickly saw an opportunity and so the Incipias' first transport ship was built."
       ]
+    },
+    {
+      "name": "Nimbus (Civilian)",
+      "plural": "Nimbi",
+      "sprite": "ship/nimbus",
+      "thumbnail": "thumbnail/nimbus",
+      "slug": "nimbus-civilian",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 3250000,
+        "shields": 6000,
+        "hull": 4000,
+        "required crew": 20,
+        "bunks": 40,
+        "mass": 1640,
+        "drag": 10.8,
+        "heat dissipation": 0.46,
+        "fuel capacity": 200,
+        "cargo space": 75,
+        "outfit space": 450,
+        "weapon capacity": 120,
+        "engine capacity": 85,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Nimbus (Mining)",
+      "plural": "Nimbi",
+      "sprite": "ship/nimbus",
+      "thumbnail": "thumbnail/nimbus",
+      "slug": "nimbus-mining",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 3250000,
+        "shields": 6000,
+        "hull": 4000,
+        "required crew": 20,
+        "bunks": 40,
+        "mass": 1640,
+        "drag": 10.8,
+        "heat dissipation": 0.46,
+        "fuel capacity": 200,
+        "cargo space": 75,
+        "outfit space": 450,
+        "weapon capacity": 120,
+        "engine capacity": 85,
+        "weapon": {
+          "blast radius": 100,
+          "shield damage": 1000,
+          "hull damage": 500,
+          "hit force": 1500
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
     }
   ]
 }

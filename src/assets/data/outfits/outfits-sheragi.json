@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "sheragi",
-    "generatedAt": "2025-12-11T16:46:20.660Z",
+    "generatedAt": "2025-12-12T16:01:45.224Z",
     "itemCount": 14
   },
   "data": [
@@ -17,6 +17,7 @@
       "thumbnail": "outfit/small embattery",
       "mass": 14,
       "outfit space": -14,
+      "slug": "small-em-battery",
       "descriptions": [
         "This small superconductive inductor stores just enough power to keep a fighter running, and the electromagnetic field it generates helps to maintain the shield matrix."
       ],
@@ -39,6 +40,7 @@
       "thumbnail": "outfit/embattery",
       "mass": 150,
       "outfit space": -150,
+      "slug": "large-em-battery",
       "descriptions": [
         "This is a massive superconductive coil, capable of storing large amounts of energy in an electromagnetic field and discharging all of it in a fraction of a second. The magnetic field also provides a small boost to the shield regeneration of the ship, which is otherwise very underdeveloped."
       ],
@@ -60,6 +62,7 @@
       "thumbnail": "outfit/small sheragi cooling",
       "mass": 8,
       "outfit space": -8,
+      "slug": "small-hybrid-cooling",
       "descriptions": [
         "This small cooling solution was designed with fighters in mind, and as such, it does not store fuel. However, it provides more passive cooling than its big brother."
       ],
@@ -79,6 +82,7 @@
       "thumbnail": "outfit/sheragicooling",
       "mass": 40,
       "outfit space": -40,
+      "slug": "large-hybrid-cooling",
       "descriptions": [
         "This Sheragi cooling system is primitive at best, but it works both actively and passively, allowing it to dissipate much more heat than a simple radiator would. It does, however, drain a lot of power when subjected to the heat of battle. It also includes cryogenic tanks to hold some additional fuel, which is used as a temporary heat reservoir."
       ],
@@ -99,6 +103,7 @@
       "thumbnail": "outfit/fissiondrive",
       "mass": 71,
       "outfit space": -71,
+      "slug": "fission-drive",
       "descriptions": [
         "A much smaller cousin of the Fusion Drive, it relies on fission instead of fusion to function, providing the necessary power generation and thrust to drive the Heavy Ion Cyclotron."
       ],
@@ -136,6 +141,7 @@
       "thumbnail": "outfit/fusiondrive",
       "mass": 480,
       "outfit space": -480,
+      "slug": "fusion-drive",
       "descriptions": [
         "The Sheragi engines are much more than simple tubes spewing fire; they are a collection of interdependent devices, providing increased efficiency at the cost of modularity. These include a hyperdrive, an enormous fusion reactor, and the most powerful plasma engines you've ever seen. It's all examples of relatively simple technology, but they have been refined and taken to their extreme. The engines are fundamentally connected to the fusion reactor, increasing their thrust even further and thereby allowing the Emerald Sword to fly at impressive speeds, traveling through interstellar space with relative ease."
       ],
@@ -186,6 +192,7 @@
       "thumbnail": "outfit/sheragi ews",
       "mass": 6,
       "outfit space": -6,
+      "slug": "electronic-warfare-system",
       "descriptions": [
         "This device provides radar jamming and a whole suite of electronic warfare, gathering data about the battlefield in real time and enhancing a ship's combat capabilities. It was an essential item for every Sheragi warship, and the technique it uses is still difficult to counter to this very day."
       ],
@@ -206,6 +213,7 @@
       "thumbnail": "outfit/dragonflame",
       "mass": 156,
       "outfit space": -156,
+      "slug": "dragonflame-cannon",
       "descriptions": [
         "The ancient Sheragi superweapon is simple in concept, but the cost involved in developing something like it is exorbitant. It's hard to envision what could have motivated the creation of such a thing. It uses an obscene amount of energy to trigger an extremely powerful thermonuclear reaction, directing most of the energy from the resulting explosion forwards in a devastatingly powerful beam of gamma radiation."
       ],
@@ -253,6 +261,7 @@
       "thumbnail": "outfit/sheragiam",
       "mass": 35,
       "outfit space": -35,
+      "slug": "sheragi-anti-missile",
       "descriptions": [
         "The Sheragi Anti-Missile fires an extremely powerful laser pulse capable of obliterating any missile in a single shot, but it comes at the expense of a long recharge time."
       ],
@@ -282,6 +291,7 @@
       "thumbnail": "outfit/pwave turret",
       "mass": 47,
       "outfit space": -47,
+      "slug": "particle-waveform-turret",
       "descriptions": [
         "This ancient Sheragi turret accelerates a dense packet of electrons that, while very ineffective against any kind of shielding, has a very long range and disrupts electrical systems. By the nature of these weapons, one can deduce that their tactics likely involved using the Dragonflame Cannon at long range to break the enemy shields and finishing them off at relatively close range with the Particle Waveform Turrets."
       ],
@@ -324,6 +334,7 @@
       "thumbnail": "outfit/shard",
       "mass": 10,
       "outfit space": -10,
+      "slug": "shard-fabricator",
       "descriptions": [
         "To reduce reliance on supply chains during prolonged war time, this outfit contains specialized fabricators that produce simple kinetic missiles from stock materials and a small amount of stored fuel; their guidance system merely receives data from the shipboard radar. The missiles are fired in volleys of six at a time from each launcher, making them very effective at overwhelming point defenses despite their fragility. However, the low amount of fuel they carry means they can only home in on the target for about a second before they turn into unguided ammunition. Because they are manufactured on the spot, it takes a long time to reload."
       ],
@@ -368,6 +379,7 @@
     },
     {
       "name": "Shard inactive",
+      "slug": "shard-inactive",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -395,6 +407,7 @@
       "thumbnail": "outfit/hion",
       "mass": 33,
       "outfit space": -33,
+      "slug": "heavy-ion-cyclotron",
       "descriptions": [
         "The main weapon of the Sheragi fighters is a particle accelerator not unlike the ones used by the Republic Navy and the Syndicate. However, this one produces a dense stream of heavy metal ions instead of bursts of lighter ones, resulting in high damage with intense recoil. Because the particle accelerator itself can be mounted elsewhere, it saves on weapon space."
       ],
@@ -425,6 +438,7 @@
     },
     {
       "name": "Heavy Ion Fragment",
+      "slug": "heavy-ion-fragment",
       "descriptions": [],
       "attributes": {
         "weapon": {

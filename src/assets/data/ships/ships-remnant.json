@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "remnant",
-    "generatedAt": "2025-12-11T16:46:20.627Z",
+    "generatedAt": "2025-12-12T16:01:44.914Z",
     "itemCount": 38
   },
   "data": [
@@ -12,6 +12,7 @@
       "plural": "Albatrosses",
       "sprite": "ship/albatross",
       "thumbnail": "thumbnail/albatross",
+      "slug": "albatross",
       "attributes": {
         "category": "Heavy Warship",
         "cost": 20250000,
@@ -85,428 +86,11 @@
       ]
     },
     {
-      "name": "Albatross",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 5
-        },
-        {
-          "name": "EMP Torpedo Bay",
-          "quantity": 2
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 3
-        },
-        {
-          "name": "EMP Torpedo",
-          "quantity": 39
-        },
-        {
-          "name": "EMP Torpedo Storage Bay",
-          "quantity": 3
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 3
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 57
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Crucible-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Scram Drive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Albatross",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Thrasher Turret",
-          "quantity": 4
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 2
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 49
-        },
-        {
-          "name": "Smelter-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Scram Drive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Albatross",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 3
-        },
-        {
-          "name": "Thrasher Cannon",
-          "quantity": 4
-        },
-        {
-          "name": "Thrasher Turret",
-          "quantity": 3
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 2
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 3
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 4
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 65
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Crucible-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Scram Drive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Albatross",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Point Defense Turret",
-          "quantity": 4
-        },
-        {
-          "name": "Thrasher Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 2
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 6
-        },
-        {
-          "name": "Systems Core (Large)",
-          "quantity": 3
-        },
-        {
-          "name": "Small Heat Shunt",
-          "quantity": 1
-        },
-        {
-          "name": "Large Heat Shunt",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 75
-        },
-        {
-          "name": "Crucible-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Albatross",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Thrasher Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 2
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Emergency Ramscoop",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 6
-        },
-        {
-          "name": "Systems Core (Large)",
-          "quantity": 4
-        },
-        {
-          "name": "Large Heat Shunt",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 47
-        },
-        {
-          "name": "Crucible-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Crucible-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Albatross",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 5
-        },
-        {
-          "name": "Teciimach Bay",
-          "quantity": 2
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 3
-        },
-        {
-          "name": "Teciimach Canister",
-          "quantity": 45
-        },
-        {
-          "name": "Teciimach Canister Rack",
-          "quantity": 3
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 3
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 57
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Crucible-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Scram Drive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Modified Dromedary",
       "plural": "Modified Dromedaries",
       "sprite": "ship/modified dromedary",
       "thumbnail": "thumbnail/modified dromedary",
+      "slug": "modified-dromedary",
       "attributes": {
         "category": "Utility",
         "cost": 57600000,
@@ -586,177 +170,10 @@
       ]
     },
     {
-      "name": "Modified Dromedary",
-      "sprite": "ship/modified dromedary ghost",
-      "thumbnail": "thumbnail/modified dromedary wreck",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Fusion Reactor",
-          "quantity": 1
-        },
-        {
-          "name": "LP144a Battery Pack",
-          "quantity": 1
-        },
-        {
-          "name": "D94-YV Shield Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Large Radar Jammer",
-          "quantity": 1
-        },
-        {
-          "name": "Ramscoop",
-          "quantity": 1
-        },
-        {
-          "name": "NDR-114 Android",
-          "quantity": 100
-        },
-        {
-          "name": "Laser Rifle",
-          "quantity": 100
-        },
-        {
-          "name": "X4700 Ion Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "X5200 Ion Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Modified Dromedary",
-      "sprite": "ship/modified dromedary specter",
-      "thumbnail": "thumbnail/modified dromedary wreck",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Fusion Reactor",
-          "quantity": 1
-        },
-        {
-          "name": "LP144a Battery Pack",
-          "quantity": 1
-        },
-        {
-          "name": "D94-YV Shield Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Large Radar Jammer",
-          "quantity": 1
-        },
-        {
-          "name": "Ramscoop",
-          "quantity": 1
-        },
-        {
-          "name": "NDR-114 Android",
-          "quantity": 100
-        },
-        {
-          "name": "Laser Rifle",
-          "quantity": 15
-        },
-        {
-          "name": "X4700 Ion Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "X5200 Ion Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Modified Dromedary",
-      "sprite": "ship/modified dromedary wreck",
-      "thumbnail": "thumbnail/modified dromedary wreck",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Laser Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Quad Blaster Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Anti-Missile Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Fusion Reactor",
-          "quantity": 1
-        },
-        {
-          "name": "LP144a Battery Pack",
-          "quantity": 1
-        },
-        {
-          "name": "D94-YV Shield Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Large Radar Jammer",
-          "quantity": 1
-        },
-        {
-          "name": "Ramscoop",
-          "quantity": 1
-        },
-        {
-          "name": "NDR-114 Android",
-          "quantity": 100
-        },
-        {
-          "name": "Laser Rifle",
-          "quantity": 150
-        },
-        {
-          "name": "X4700 Ion Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "X5200 Ion Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": [
-        "The Tycho Crater Cooperative's Dromedary was one of the foremost colonization ships during the early era before piracy became rampant and triggered the necessity for city-ships to be more combat-oriented. These ships incorporate extensive hydroponics, large construction equipment installations, and hundreds of densely packed \"dream cells\" built to transport people in bulk.",
-        "\tThis is a wreck. A ship that once might have held hundreds of people has no functional environmental system, the once verdant hydroponics domes are shattered, and much of the ship appears to be destroyed. Burns, strange scrapes, and twists to structural elements abound. Only a smattering of droids persistently continuing their work manage to maintain any degree of functionality."
-      ]
-    },
-    {
       "name": "Gull",
       "sprite": "ship/gull",
       "thumbnail": "thumbnail/gull",
+      "slug": "gull",
       "attributes": {
         "category": "Light Freighter",
         "cost": 9500000,
@@ -836,313 +253,9 @@
       ]
     },
     {
-      "name": "Gull",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 3
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 2
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 4
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Gull",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "EMP Torpedo Bay",
-          "quantity": 1
-        },
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 2
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 1
-        },
-        {
-          "name": "EMP Torpedo",
-          "quantity": 16
-        },
-        {
-          "name": "EMP Torpedo Storage Bay",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 2
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 2
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 3
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Gull",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Teciimach Bay",
-          "quantity": 1
-        },
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 2
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Teciimach Canister",
-          "quantity": 18
-        },
-        {
-          "name": "Teciimach Canister Rack",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 2
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 2
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 3
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Gull",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Cargo Expansion",
-          "quantity": 4
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 3
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Gull",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Bunk Room",
-          "quantity": 4
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 3
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Heron",
       "sprite": "ship/heron",
+      "slug": "heron",
       "attributes": {
         "category": "Superheavy",
         "cost": 256375000,
@@ -1241,6 +354,7 @@
       "plural": "Ibises",
       "sprite": "ship/ibis",
       "thumbnail": "thumbnail/ibis",
+      "slug": "ibis",
       "attributes": {
         "category": "Medium Warship",
         "cost": 11627000,
@@ -1330,6 +444,7 @@
       "name": "Merganser",
       "sprite": "ship/merganser",
       "thumbnail": "thumbnail/merganser",
+      "slug": "merganser",
       "attributes": {
         "category": "Interceptor",
         "cost": 4830000,
@@ -1396,62 +511,10 @@
       ]
     },
     {
-      "name": "Merganser",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 2
-        },
-        {
-          "name": "Teciimach Pod",
-          "quantity": 1
-        },
-        {
-          "name": "Teciimach Canister",
-          "quantity": 3
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 2
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Small Heat Shunt",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Crucible-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Crucible-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Bellows-Class Afterburner",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Pelican",
       "sprite": "ship/pelican",
       "thumbnail": "thumbnail/pelican",
+      "slug": "pelican",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 9900000,
@@ -1525,58 +588,10 @@
       ]
     },
     {
-      "name": "Pelican",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Small Heat Shunt",
-          "quantity": 2
-        },
-        {
-          "name": "Cargo Expansion",
-          "quantity": 5
-        },
-        {
-          "name": "Scram Drive",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 2
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 15
-        },
-        {
-          "name": "Emergency Ramscoop",
-          "quantity": 5
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Penguin",
       "sprite": "ship/penguin/penguin",
       "thumbnail": "thumbnail/penguin",
+      "slug": "penguin",
       "attributes": {
         "category": "Transport",
         "cost": 2530000,
@@ -1642,6 +657,7 @@
       "name": "Peregrine",
       "sprite": "ship/peregrine/peregrine",
       "thumbnail": "thumbnail/peregrine",
+      "slug": "peregrine",
       "attributes": {
         "category": "Medium Warship",
         "cost": 41627000,
@@ -1737,82 +753,10 @@
       ]
     },
     {
-      "name": "Peregrine",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Thrasher Cannon",
-          "quantity": 4
-        },
-        {
-          "name": "Teciimach Bay",
-          "quantity": 1
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Thrasher Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Teciimach Canister",
-          "quantity": 9
-        },
-        {
-          "name": "Aeon Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 2
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 2
-        },
-        {
-          "name": "Small Heat Shunt",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Salvage Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 11
-        },
-        {
-          "name": "Bellows-Class Afterburner",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Scram Drive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Petrel",
       "sprite": "ship/petrel",
       "thumbnail": "thumbnail/petrel",
+      "slug": "petrel",
       "attributes": {
         "category": "Fighter",
         "cost": 1141000,
@@ -1871,6 +815,7 @@
       "name": "Puffin",
       "sprite": "ship/puffin",
       "thumbnail": "thumbnail/puffin",
+      "slug": "puffin",
       "attributes": {
         "category": "Transport",
         "cost": 530000,
@@ -1916,6 +861,7 @@
       "name": "Smew",
       "sprite": "ship/smew",
       "thumbnail": "thumbnail/smew",
+      "slug": "smew",
       "attributes": {
         "category": "Fighter",
         "cost": 971000,
@@ -1963,100 +909,10 @@
       ]
     },
     {
-      "name": "Smew",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Thrasher Cannon",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Anvil-Class Engine",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Smew",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Anvil-Class Engine",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Smew",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Teciimach Canister",
-          "quantity": 3
-        },
-        {
-          "name": "Teciimach Pod",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Anvil-Class Engine",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Starling",
       "sprite": "ship/starling",
       "thumbnail": "thumbnail/starling",
+      "slug": "starling",
       "attributes": {
         "category": "Light Warship",
         "cost": 8800000,
@@ -2135,237 +991,10 @@
       ]
     },
     {
-      "name": "Starling",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Thrasher Cannon",
-          "quantity": 5
-        },
-        {
-          "name": "Point Defense Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 10
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Starling",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "EMP Torpedo Bay",
-          "quantity": 1
-        },
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 4
-        },
-        {
-          "name": "EMP Torpedo",
-          "quantity": 16
-        },
-        {
-          "name": "EMP Torpedo Storage Bay",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Emergency Ramscoop",
-          "quantity": 2
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 9
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Smelter-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Starling",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Inhibitor Cannon",
-          "quantity": 2
-        },
-        {
-          "name": "Thrasher Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Emergency Ramscoop",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 11
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Starling",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Thrasher Cannon",
-          "quantity": 3
-        },
-        {
-          "name": "Thrasher Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Epoch Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Millennium Cell",
-          "quantity": 1
-        },
-        {
-          "name": "Crystal Capacitor",
-          "quantity": 1
-        },
-        {
-          "name": "Quantum Key Stone",
-          "quantity": 1
-        },
-        {
-          "name": "Thermoelectric Cooler",
-          "quantity": 1
-        },
-        {
-          "name": "Tuning Rifle",
-          "quantity": 8
-        },
-        {
-          "name": "Forge-Class Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "Forge-Class Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Tern",
       "sprite": "ship/tern",
       "thumbnail": "thumbnail/tern",
+      "slug": "tern",
       "attributes": {
         "category": "Drone",
         "cost": 860000,
@@ -2413,6 +1042,1794 @@
         "\tUnlike most spacefaring nations, the Remnant do not have enough people to pilot fighter wings in waves likely to sustain significant casualties. As such, they frequently use these hardy drones to fulfill similar screening roles in their home systems, allowing manned craft to focus on more specialized tasks.",
         "\tDrones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
       ]
+    },
+    {
+      "name": "Albatross (Sniper)",
+      "plural": "Albatrosses",
+      "sprite": "ship/albatross",
+      "thumbnail": "thumbnail/albatross",
+      "slug": "albatross-sniper",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 20250000,
+        "shields": 34200,
+        "hull": 12600,
+        "required crew": 44,
+        "bunks": 75,
+        "mass": 1443,
+        "drag": 14.2,
+        "heat dissipation": 0.37,
+        "fuel capacity": 600,
+        "cargo space": 124,
+        "outfit space": 672,
+        "weapon capacity": 236,
+        "engine capacity": 142,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 3600,
+          "hull damage": 1800,
+          "hit force": 5400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross (Turret)",
+      "plural": "Albatrosses",
+      "sprite": "ship/albatross",
+      "thumbnail": "thumbnail/albatross",
+      "slug": "albatross-turret",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 20250000,
+        "shields": 34200,
+        "hull": 12600,
+        "required crew": 44,
+        "bunks": 75,
+        "mass": 1443,
+        "drag": 14.2,
+        "heat dissipation": 0.37,
+        "fuel capacity": 600,
+        "cargo space": 124,
+        "outfit space": 672,
+        "weapon capacity": 236,
+        "engine capacity": 142,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 3600,
+          "hull damage": 1800,
+          "hit force": 5400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross (Heavy)",
+      "plural": "Albatrosses",
+      "sprite": "ship/albatross",
+      "thumbnail": "thumbnail/albatross",
+      "slug": "albatross-heavy",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 20250000,
+        "shields": 34200,
+        "hull": 12600,
+        "required crew": 44,
+        "bunks": 75,
+        "mass": 1443,
+        "drag": 14.2,
+        "heat dissipation": 0.37,
+        "fuel capacity": 600,
+        "cargo space": 124,
+        "outfit space": 672,
+        "weapon capacity": 236,
+        "engine capacity": 142,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 3600,
+          "hull damage": 1800,
+          "hit force": 5400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross (Shield)",
+      "plural": "Albatrosses",
+      "sprite": "ship/albatross",
+      "thumbnail": "thumbnail/albatross",
+      "slug": "albatross-shield",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 20250000,
+        "shields": 34200,
+        "hull": 12600,
+        "required crew": 44,
+        "bunks": 75,
+        "mass": 1443,
+        "drag": 14.2,
+        "heat dissipation": 0.37,
+        "fuel capacity": 600,
+        "cargo space": 124,
+        "outfit space": 672,
+        "weapon capacity": 236,
+        "engine capacity": 142,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 3600,
+          "hull damage": 1800,
+          "hit force": 5400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross (Ember Shield)",
+      "plural": "Albatrosses",
+      "sprite": "ship/albatross",
+      "thumbnail": "thumbnail/albatross",
+      "slug": "albatross-ember-shield",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 20250000,
+        "shields": 34200,
+        "hull": 12600,
+        "required crew": 44,
+        "bunks": 75,
+        "mass": 1443,
+        "drag": 14.2,
+        "heat dissipation": 0.37,
+        "fuel capacity": 600,
+        "cargo space": 124,
+        "outfit space": 672,
+        "weapon capacity": 236,
+        "engine capacity": 142,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 3600,
+          "hull damage": 1800,
+          "hit force": 5400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Albatross (Sniper II)",
+      "plural": "Albatrosses",
+      "sprite": "ship/albatross",
+      "thumbnail": "thumbnail/albatross",
+      "slug": "albatross-sniper-ii",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 20250000,
+        "shields": 34200,
+        "hull": 12600,
+        "required crew": 44,
+        "bunks": 75,
+        "mass": 1443,
+        "drag": 14.2,
+        "heat dissipation": 0.37,
+        "fuel capacity": 600,
+        "cargo space": 124,
+        "outfit space": 672,
+        "weapon capacity": 236,
+        "engine capacity": 142,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 3600,
+          "hull damage": 1800,
+          "hit force": 5400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Modified Dromedary Ghost",
+      "plural": "Modified Dromedaries",
+      "sprite": "ship/modified dromedary ghost",
+      "thumbnail": "thumbnail/modified dromedary wreck",
+      "slug": "modified-dromedary-ghost",
+      "attributes": {
+        "category": "Utility",
+        "cost": 57600000,
+        "shields": 15100,
+        "hull": 9600,
+        "required crew": 95,
+        "bunks": 300,
+        "mass": 2366,
+        "drag": 28.7,
+        "heat dissipation": 0.22,
+        "fuel capacity": 900,
+        "cargo space": 550,
+        "outfit space": 740,
+        "weapon capacity": 270,
+        "engine capacity": 195,
+        "weapon": {
+          "blast radius": 260,
+          "shield damage": 2600,
+          "hull damage": 1300,
+          "hit force": 3900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Modified Dromedary Specter",
+      "plural": "Modified Dromedaries",
+      "sprite": "ship/modified dromedary specter",
+      "thumbnail": "thumbnail/modified dromedary wreck",
+      "slug": "modified-dromedary-specter",
+      "attributes": {
+        "category": "Utility",
+        "cost": 57600000,
+        "shields": 15100,
+        "hull": 9600,
+        "required crew": 95,
+        "bunks": 300,
+        "mass": 2366,
+        "drag": 28.7,
+        "heat dissipation": 0.22,
+        "fuel capacity": 900,
+        "cargo space": 550,
+        "outfit space": 740,
+        "weapon capacity": 270,
+        "engine capacity": 195,
+        "weapon": {
+          "blast radius": 260,
+          "shield damage": 2600,
+          "hull damage": 1300,
+          "hit force": 3900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Modified Dromedary Wreck",
+      "plural": "Modified Dromedaries",
+      "sprite": "ship/modified dromedary wreck",
+      "thumbnail": "thumbnail/modified dromedary wreck",
+      "slug": "modified-dromedary-wreck",
+      "attributes": {
+        "category": "Utility",
+        "cost": 57600000,
+        "shields": 15100,
+        "hull": 9600,
+        "required crew": 95,
+        "bunks": 300,
+        "mass": 2366,
+        "drag": 28.7,
+        "heat dissipation": 0.22,
+        "fuel capacity": 900,
+        "cargo space": 550,
+        "outfit space": 740,
+        "weapon capacity": 270,
+        "engine capacity": 195,
+        "weapon": {
+          "blast radius": 260,
+          "shield damage": 2600,
+          "hull damage": 1300,
+          "hit force": 3900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Tycho Crater Cooperative's Dromedary was one of the foremost colonization ships during the early era before piracy became rampant and triggered the necessity for city-ships to be more combat-oriented. These ships incorporate extensive hydroponics, large construction equipment installations, and hundreds of densely packed \"dream cells\" built to transport people in bulk.",
+        "\tThis is a wreck. A ship that once might have held hundreds of people has no functional environmental system, the once verdant hydroponics domes are shattered, and much of the ship appears to be destroyed. Burns, strange scrapes, and twists to structural elements abound. Only a smattering of droids persistently continuing their work manage to maintain any degree of functionality."
+      ]
+    },
+    {
+      "name": "Gull (Sniper)",
+      "sprite": "ship/gull",
+      "thumbnail": "thumbnail/gull",
+      "slug": "gull-sniper",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 9500000,
+        "shields": 6500,
+        "hull": 2500,
+        "required crew": 3,
+        "bunks": 20,
+        "mass": 416,
+        "drag": 7.5,
+        "heat dissipation": 0.56,
+        "fuel capacity": 600,
+        "cargo space": 175,
+        "outfit space": 311,
+        "weapon capacity": 83,
+        "engine capacity": 101,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull (Support)",
+      "sprite": "ship/gull",
+      "thumbnail": "thumbnail/gull",
+      "slug": "gull-support",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 9500000,
+        "shields": 6500,
+        "hull": 2500,
+        "required crew": 3,
+        "bunks": 20,
+        "mass": 416,
+        "drag": 7.5,
+        "heat dissipation": 0.56,
+        "fuel capacity": 600,
+        "cargo space": 175,
+        "outfit space": 311,
+        "weapon capacity": 83,
+        "engine capacity": 101,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull (Support II)",
+      "sprite": "ship/gull",
+      "thumbnail": "thumbnail/gull",
+      "slug": "gull-support-ii",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 9500000,
+        "shields": 6500,
+        "hull": 2500,
+        "required crew": 3,
+        "bunks": 20,
+        "mass": 416,
+        "drag": 7.5,
+        "heat dissipation": 0.56,
+        "fuel capacity": 600,
+        "cargo space": 175,
+        "outfit space": 311,
+        "weapon capacity": 83,
+        "engine capacity": 101,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull (Cargo)",
+      "sprite": "ship/gull",
+      "thumbnail": "thumbnail/gull",
+      "slug": "gull-cargo",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 9500000,
+        "shields": 6500,
+        "hull": 2500,
+        "required crew": 3,
+        "bunks": 20,
+        "mass": 416,
+        "drag": 7.5,
+        "heat dissipation": 0.56,
+        "fuel capacity": 600,
+        "cargo space": 175,
+        "outfit space": 311,
+        "weapon capacity": 83,
+        "engine capacity": 101,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Gull (Bunks)",
+      "sprite": "ship/gull",
+      "thumbnail": "thumbnail/gull",
+      "slug": "gull-bunks",
+      "attributes": {
+        "category": "Light Freighter",
+        "cost": 9500000,
+        "shields": 6500,
+        "hull": 2500,
+        "required crew": 3,
+        "bunks": 20,
+        "mass": 416,
+        "drag": 7.5,
+        "heat dissipation": 0.56,
+        "fuel capacity": 600,
+        "cargo space": 175,
+        "outfit space": 311,
+        "weapon capacity": 83,
+        "engine capacity": 101,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Merganser (II)",
+      "sprite": "ship/merganser",
+      "thumbnail": "thumbnail/merganser",
+      "slug": "merganser-ii",
+      "attributes": {
+        "category": "Interceptor",
+        "cost": 4830000,
+        "shields": 3500,
+        "hull": 3000,
+        "required crew": 1,
+        "bunks": 3,
+        "mass": 130,
+        "drag": 1.7,
+        "heat dissipation": 0.75,
+        "fuel capacity": 600,
+        "cargo space": 11,
+        "outfit space": 181,
+        "weapon capacity": 60,
+        "engine capacity": 64,
+        "weapon": {
+          "blast radius": 10,
+          "shield damage": 100,
+          "hull damage": 150,
+          "hit force": 250
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Pelican (Heavy Lift)",
+      "sprite": "ship/pelican",
+      "thumbnail": "thumbnail/pelican",
+      "slug": "pelican-heavy-lift",
+      "attributes": {
+        "category": "Heavy Freighter",
+        "cost": 9900000,
+        "shields": 11300,
+        "hull": 5700,
+        "required crew": 14,
+        "bunks": 35,
+        "mass": 640,
+        "drag": 10.1,
+        "heat dissipation": 0.5,
+        "fuel capacity": 600,
+        "cargo space": 302,
+        "outfit space": 480,
+        "weapon capacity": 157,
+        "engine capacity": 144,
+        "weapon": {
+          "blast radius": 160,
+          "shield damage": 1600,
+          "hull damage": 800,
+          "hit force": 2400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Peregrine (II)",
+      "sprite": "ship/peregrine/peregrine",
+      "thumbnail": "thumbnail/peregrine",
+      "slug": "peregrine-ii",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 41627000,
+        "shields": 15400,
+        "hull": 8600,
+        "required crew": 9,
+        "bunks": 25,
+        "mass": 801,
+        "drag": 6.5,
+        "heat dissipation": 0.57,
+        "fuel capacity": 900,
+        "cargo space": 59,
+        "outfit space": 522,
+        "weapon capacity": 220,
+        "engine capacity": 171,
+        "weapon": {
+          "blast radius": 240,
+          "shield damage": 2400,
+          "hull damage": 1200,
+          "hit force": 3000
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Smew (Miner)",
+      "sprite": "ship/smew",
+      "thumbnail": "thumbnail/smew",
+      "slug": "smew-miner",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 971000,
+        "shields": 1200,
+        "hull": 2800,
+        "required crew": 1,
+        "bunks": 8,
+        "mass": 56.5,
+        "drag": 1.84,
+        "heat dissipation": 0.62,
+        "fuel capacity": 100,
+        "cargo space": 70,
+        "outfit space": 80,
+        "weapon capacity": 10,
+        "engine capacity": 46,
+        "weapon": {
+          "blast radius": 24,
+          "shield damage": 130,
+          "hull damage": 175,
+          "hit force": 315
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Smew (Runabout)",
+      "sprite": "ship/smew",
+      "thumbnail": "thumbnail/smew",
+      "slug": "smew-runabout",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 971000,
+        "shields": 1200,
+        "hull": 2800,
+        "required crew": 1,
+        "bunks": 8,
+        "mass": 56.5,
+        "drag": 1.84,
+        "heat dissipation": 0.62,
+        "fuel capacity": 100,
+        "cargo space": 70,
+        "outfit space": 80,
+        "weapon capacity": 10,
+        "engine capacity": 46,
+        "weapon": {
+          "blast radius": 24,
+          "shield damage": 130,
+          "hull damage": 175,
+          "hit force": 315
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Smew (Teciimach Ferry)",
+      "sprite": "ship/smew",
+      "thumbnail": "thumbnail/smew",
+      "slug": "smew-teciimach-ferry",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 971000,
+        "shields": 1200,
+        "hull": 2800,
+        "required crew": 1,
+        "bunks": 8,
+        "mass": 56.5,
+        "drag": 1.84,
+        "heat dissipation": 0.62,
+        "fuel capacity": 100,
+        "cargo space": 70,
+        "outfit space": 80,
+        "weapon capacity": 10,
+        "engine capacity": 46,
+        "weapon": {
+          "blast radius": 24,
+          "shield damage": 130,
+          "hull damage": 175,
+          "hit force": 315
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling (Heavy)",
+      "sprite": "ship/starling",
+      "thumbnail": "thumbnail/starling",
+      "slug": "starling-heavy",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 8800000,
+        "shields": 8800,
+        "hull": 4900,
+        "required crew": 6,
+        "bunks": 15,
+        "mass": 387,
+        "drag": 4.6,
+        "heat dissipation": 0.59,
+        "fuel capacity": 900,
+        "cargo space": 36,
+        "outfit space": 316,
+        "weapon capacity": 83,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling (Sniper)",
+      "sprite": "ship/starling",
+      "thumbnail": "thumbnail/starling",
+      "slug": "starling-sniper",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 8800000,
+        "shields": 8800,
+        "hull": 4900,
+        "required crew": 6,
+        "bunks": 15,
+        "mass": 387,
+        "drag": 4.6,
+        "heat dissipation": 0.59,
+        "fuel capacity": 900,
+        "cargo space": 36,
+        "outfit space": 316,
+        "weapon capacity": 83,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling (Hunter)",
+      "sprite": "ship/starling",
+      "thumbnail": "thumbnail/starling",
+      "slug": "starling-hunter",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 8800000,
+        "shields": 8800,
+        "hull": 4900,
+        "required crew": 6,
+        "bunks": 15,
+        "mass": 387,
+        "drag": 4.6,
+        "heat dissipation": 0.59,
+        "fuel capacity": 900,
+        "cargo space": 36,
+        "outfit space": 316,
+        "weapon capacity": 83,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Starling (Thrasher)",
+      "sprite": "ship/starling",
+      "thumbnail": "thumbnail/starling",
+      "slug": "starling-thrasher",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 8800000,
+        "shields": 8800,
+        "hull": 4900,
+        "required crew": 6,
+        "bunks": 15,
+        "mass": 387,
+        "drag": 4.6,
+        "heat dissipation": 0.59,
+        "fuel capacity": 900,
+        "cargo space": 36,
+        "outfit space": 316,
+        "weapon capacity": 83,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 80,
+          "shield damage": 800,
+          "hull damage": 400,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
     }
   ]
 }

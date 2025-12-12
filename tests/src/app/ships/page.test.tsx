@@ -18,8 +18,30 @@ describe("ShipsPage", () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockGetShips.mockReturnValue([
-      { id: "1", name: "Argosy", hull: 100 },
-      { id: "2", name: "Bactrian", hull: 200 },
+      {
+        name: "Argosy",
+        attributes: {
+          category: "Transport",
+          cost: 100000,
+          hull: 100,
+          shields: 50,
+          "outfit space": 100,
+        },
+        outfits: [],
+        descriptions: [],
+      },
+      {
+        name: "Bactrian",
+        attributes: {
+          category: "Transport",
+          cost: 200000,
+          hull: 200,
+          shields: 100,
+          "outfit space": 200,
+        },
+        outfits: [],
+        descriptions: [],
+      },
     ]);
   });
 
@@ -34,15 +56,45 @@ describe("ShipsPage", () => {
 
   it("should display total ships count", async () => {
     mockGetShips.mockReturnValue([
-      { id: "1", name: "Argosy" },
-      { id: "2", name: "Bactrian" },
-      { id: "3", name: "Beetle" },
+      {
+        name: "Argosy",
+        attributes: {
+          category: "Transport",
+          cost: 100000,
+          hull: 100,
+          "outfit space": 100,
+        },
+        outfits: [],
+        descriptions: [],
+      },
+      {
+        name: "Bactrian",
+        attributes: {
+          category: "Transport",
+          cost: 200000,
+          hull: 200,
+          "outfit space": 200,
+        },
+        outfits: [],
+        descriptions: [],
+      },
+      {
+        name: "Beetle",
+        attributes: {
+          category: "Fighter",
+          cost: 50000,
+          hull: 50,
+          "outfit space": 50,
+        },
+        outfits: [],
+        descriptions: [],
+      },
     ]);
 
     const page = await ShipsPage();
     render(page);
 
-    expect(screen.getByText(/Total ships: 3/i)).toBeInTheDocument();
+    expect(screen.getByText(/3 total ship/i)).toBeInTheDocument();
   });
 
   it("should call getShips to load data", async () => {
@@ -57,6 +109,6 @@ describe("ShipsPage", () => {
     const page = await ShipsPage();
     render(page);
 
-    expect(screen.getByText(/Total ships: 0/i)).toBeInTheDocument();
+    expect(screen.getByText(/0 total ship/i)).toBeInTheDocument();
   });
 });

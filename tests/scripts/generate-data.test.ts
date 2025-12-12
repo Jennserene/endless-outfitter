@@ -306,7 +306,7 @@ describe("generate-data CLI", () => {
       // Assert
       expect(result.success).toBe(true);
       expect(result.message).toContain("successfully");
-      expect(result.steps).toHaveLength(9);
+      expect(result.steps).toHaveLength(10);
       result.steps?.forEach((step) => {
         expect(step.status).toBe("success");
       });

@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "pug",
-    "generatedAt": "2025-12-11T16:46:20.624Z",
+    "generatedAt": "2025-12-12T00:48:42.120Z",
     "itemCount": 4
   },
   "data": [
@@ -11,6 +11,7 @@
       "name": "Pug Zibruka",
       "sprite": "ship/pug zibruka",
       "thumbnail": "thumbnail/pug zibruka",
+      "slug": "pug-zibruka",
       "attributes": {
         "category": "Light Warship",
         "cost": 1900000,
@@ -67,6 +68,7 @@
       "name": "Pug Enfolta",
       "sprite": "ship/pug enfolta",
       "thumbnail": "thumbnail/pug enfolta",
+      "slug": "pug-enfolta",
       "attributes": {
         "category": "Medium Warship",
         "cost": 6300000,
@@ -131,6 +133,7 @@
       "name": "Pug Maboro",
       "sprite": "ship/pug maboro",
       "thumbnail": "thumbnail/pug maboro",
+      "slug": "pug-maboro",
       "attributes": {
         "category": "Heavy Warship",
         "cost": 9500000,
@@ -195,6 +198,7 @@
       "name": "Pug Arfecta",
       "sprite": "ship/pug arfecta",
       "thumbnail": "thumbnail/pug arfecta",
+      "slug": "pug-arfecta",
       "attributes": {
         "category": "Medium Warship",
         "cost": 90000000,

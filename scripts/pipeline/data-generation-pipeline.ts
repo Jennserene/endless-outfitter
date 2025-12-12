@@ -10,6 +10,7 @@ import {
 } from "../utils/directories";
 import { generateShips } from "../generators/ship-generator";
 import { generateOutfits } from "../generators/outfit-generator";
+import { generateSearchIndex } from "../generators/search-index-generator";
 import { ImageRetrievalService } from "../services/image-retrieval-service";
 import { loadShips, loadOutfits } from "@/lib/loaders/data-loader";
 import { createPipelineStepError } from "../utils/error-handling";
@@ -87,6 +88,10 @@ export class DataGenerationPipeline {
         execute: () => generateOutfits(this.existingFileCache),
       },
       {
+        name: "Generate search index",
+        execute: () => generateSearchIndex(),
+      },
+      {
         name: "Retrieve images",
         execute: () => {
           const ships = loadShips();
@@ -113,8 +118,9 @@ export class DataGenerationPipeline {
    * 5. Ensure output directories exist
    * 6. Generate ships from raw JSON (skips writing if content unchanged)
    * 7. Generate outfits from raw JSON (skips writing if content unchanged)
-   * 8. Retrieve and copy image files to assets directory
-   * 9. Delete backup files (on success)
+   * 8. Generate search index from all ships and outfits
+   * 9. Retrieve and copy image files to assets directory
+   * 10. Delete backup files (on success)
    *
    * On error, all backup files are restored to their original names.
    */

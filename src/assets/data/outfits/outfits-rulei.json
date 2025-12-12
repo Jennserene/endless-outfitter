@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "rulei",
-    "generatedAt": "2025-12-11T16:46:20.660Z",
+    "generatedAt": "2025-12-12T16:01:45.211Z",
     "itemCount": 5
   },
   "data": [
@@ -16,6 +16,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 31,
       "outfit space": -31,
+      "slug": "fate-sealer",
       "descriptions": [
         "An energy particle weapon that intensifies a blast to a single location after a brief duration. The after-effect of the explosion pulls the target closer to the origin of the blast."
       ],
@@ -45,6 +46,7 @@
     },
     {
       "name": "Fate Sealer Activated",
+      "slug": "fate-sealer-activated",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -71,6 +73,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 31,
       "outfit space": -31,
+      "slug": "fate-divider",
       "descriptions": [
         "An energy particle weapon that intensifies a blast to a single location after a brief duration. The after-effect of the explosion pushes the target farther from the origin of the blast."
       ],
@@ -100,6 +103,7 @@
     },
     {
       "name": "Fate Divider Activated",
+      "slug": "fate-divider-activated",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -126,6 +130,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 121,
       "outfit space": -121,
+      "slug": "abyssal-composer",
       "descriptions": [
         "This is an extremely dangerous device that uses graviton technology to pull a target's mass and energy apart, and then feeds the materials to the firing ship's systems."
       ],

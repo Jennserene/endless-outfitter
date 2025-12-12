@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "gegno",
-    "generatedAt": "2025-12-11T16:46:20.594Z",
+    "generatedAt": "2025-12-12T16:01:44.659Z",
     "itemCount": 34
   },
   "data": [
@@ -11,6 +11,7 @@
       "name": "Shale",
       "sprite": "ship/gegno shale",
       "thumbnail": "thumbnail/gegno shale",
+      "slug": "shale",
       "attributes": {
         "category": "Transport",
         "cost": 148000,
@@ -63,6 +64,7 @@
       "name": "Dolomite",
       "sprite": "ship/gegno dolomite",
       "thumbnail": "thumbnail/gegno dolomite",
+      "slug": "dolomite",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 2768000,
@@ -115,6 +117,7 @@
       "name": "Conglomerate",
       "sprite": "ship/gegno conglomerate",
       "thumbnail": "thumbnail/gegno conglomerate",
+      "slug": "conglomerate",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 5909000,
@@ -179,6 +182,7 @@
       "name": "Granofel",
       "sprite": "ship/gegno granofel",
       "thumbnail": "thumbnail/gegno granofel",
+      "slug": "granofel",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 5150000,
@@ -231,6 +235,7 @@
       "name": "Gypsum",
       "sprite": "ship/gegno gypsum",
       "thumbnail": "thumbnail/gegno gypsum",
+      "slug": "gypsum",
       "attributes": {
         "category": "Light Freighter",
         "cost": 1692000,
@@ -292,6 +297,7 @@
       "name": "Corundum",
       "sprite": "ship/gegno corundum",
       "thumbnail": "thumbnail/gegno corundum",
+      "slug": "corundum",
       "attributes": {
         "category": "Light Freighter",
         "cost": 2465000,
@@ -350,46 +356,10 @@
       ]
     },
     {
-      "name": "Corundum",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Ion Torch",
-          "quantity": 2
-        },
-        {
-          "name": "C3 Scrap Cell",
-          "quantity": 1
-        },
-        {
-          "name": "C7 Brawl Cell",
-          "quantity": 1
-        },
-        {
-          "name": "R01 Skirmish Battery",
-          "quantity": 1
-        },
-        {
-          "name": "RG18 Torch Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "RG18 Torch Steering",
-          "quantity": 2
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Protolith",
       "sprite": "ship/gegno protolith",
       "thumbnail": "thumbnail/gegno protolith",
+      "slug": "protolith",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 115700000,
@@ -442,6 +412,7 @@
       "name": "Dunite",
       "sprite": "ship/gegno dunite",
       "thumbnail": "thumbnail/gegno dunite",
+      "slug": "dunite",
       "attributes": {
         "category": "Interceptor",
         "cost": 50000,
@@ -502,6 +473,7 @@
       "name": "Augen",
       "sprite": "ship/gegno augen",
       "thumbnail": "thumbnail/gegno augen",
+      "slug": "augen",
       "attributes": {
         "category": "Superheavy",
         "cost": 58800000,
@@ -587,6 +559,7 @@
       "name": "Slate",
       "sprite": "ship/gegno slate",
       "thumbnail": "thumbnail/gegno slate",
+      "slug": "slate",
       "attributes": {
         "category": "Light Freighter",
         "cost": 169000,
@@ -643,6 +616,7 @@
       "name": "Schist",
       "sprite": "ship/gegno schist a",
       "thumbnail": "thumbnail/gegno schist a",
+      "slug": "schist",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 3737000,
@@ -709,29 +683,10 @@
       ]
     },
     {
-      "name": "Schist",
-      "sprite": "ship/gegno schist b",
-      "thumbnail": "thumbnail/gegno schist b",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": []
-    },
-    {
-      "name": "Schist",
-      "sprite": "ship/gegno schist c",
-      "thumbnail": "thumbnail/gegno schist c",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": []
-    },
-    {
       "name": "Rhyolite",
       "sprite": "ship/gegno rhyolite",
       "thumbnail": "thumbnail/gegno rhyolite",
+      "slug": "rhyolite",
       "attributes": {
         "category": "Interceptor",
         "cost": 1165000,
@@ -792,6 +747,7 @@
       "name": "Eclogite",
       "sprite": "ship/gegno eclogite",
       "thumbnail": "thumbnail/gegno eclogite",
+      "slug": "eclogite",
       "attributes": {
         "category": "Light Warship",
         "cost": 2500000,
@@ -856,6 +812,7 @@
       "name": "Diorite",
       "sprite": "ship/gegno diorite",
       "thumbnail": "thumbnail/gegno diorite",
+      "slug": "diorite",
       "attributes": {
         "category": "Medium Warship",
         "cost": 3350000,
@@ -921,46 +878,10 @@
       ]
     },
     {
-      "name": "Diorite",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Ballistic Cannon",
-          "quantity": 2
-        },
-        {
-          "name": "C7 Brawl Cell",
-          "quantity": 2
-        },
-        {
-          "name": "R01 Skirmish Battery",
-          "quantity": 1
-        },
-        {
-          "name": "RG18 Torch Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "RG3 Torch Steering",
-          "quantity": 1
-        },
-        {
-          "name": "RG15 Torch Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Hornfel",
       "sprite": "ship/gegno hornfel a",
       "thumbnail": "thumbnail/gegno hornfel a",
+      "slug": "hornfel",
       "attributes": {
         "category": "Medium Warship",
         "cost": 5052000,
@@ -1026,77 +947,11 @@
       ]
     },
     {
-      "name": "Hornfel",
-      "sprite": "ship/gegno hornfel b",
-      "thumbnail": "thumbnail/gegno hornfel b",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": []
-    },
-    {
-      "name": "Hornfel",
-      "sprite": "ship/gegno hornfel c",
-      "thumbnail": "thumbnail/gegno hornfel c",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [],
-      "descriptions": []
-    },
-    {
-      "name": "Hornfel",
-      "sprite": "ship/gegno hornfel d",
-      "thumbnail": "thumbnail/gegno hornfel d",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Choleric Cannon",
-          "quantity": 2
-        },
-        {
-          "name": "Irate Cannon",
-          "quantity": 8
-        },
-        {
-          "name": "Choleric Cannon Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Irate Cannon Turret",
-          "quantity": 1
-        },
-        {
-          "name": "C17 Warzone Core",
-          "quantity": 1
-        },
-        {
-          "name": "R03 Warforge Battery",
-          "quantity": 1
-        },
-        {
-          "name": "RG18 Torch Thruster",
-          "quantity": 1
-        },
-        {
-          "name": "RG18 Torch Steering",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Gneiss",
       "plural": "Gneiss",
       "sprite": "ship/gegno gneiss",
       "thumbnail": "thumbnail/gegno gneiss",
+      "slug": "gneiss",
       "attributes": {
         "category": "Heavy Warship",
         "cost": 15066000,
@@ -1166,6 +1021,7 @@
       "name": "Granulite",
       "sprite": "ship/gegno granulite",
       "thumbnail": "thumbnail/gegno granulite",
+      "slug": "granulite",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 16820000,
@@ -1246,6 +1102,7 @@
       "name": "Halite",
       "sprite": "ship/gegno halite",
       "thumbnail": "thumbnail/gegno halite",
+      "slug": "halite",
       "attributes": {
         "category": "Fighter",
         "cost": 71000,
@@ -1294,6 +1151,7 @@
       "name": "Mica",
       "sprite": "ship/gegno mica",
       "thumbnail": "thumbnail/gegno mica",
+      "slug": "mica",
       "attributes": {
         "category": "Transport",
         "cost": 201000,
@@ -1350,6 +1208,7 @@
       "name": "Coesite",
       "sprite": "ship/gegno coesite",
       "thumbnail": "thumbnail/gegno coesite",
+      "slug": "coesite",
       "attributes": {
         "category": "Light Warship",
         "cost": 1872000,
@@ -1426,6 +1285,7 @@
       "name": "Tridymite",
       "sprite": "ship/gegno tridymite",
       "thumbnail": "thumbnail/gegno tridymite",
+      "slug": "tridymite",
       "attributes": {
         "category": "Transport",
         "cost": 1170000,
@@ -1486,6 +1346,7 @@
       "name": "Felsic",
       "sprite": "ship/gegno felsic",
       "thumbnail": "thumbnail/gegno felsic",
+      "slug": "felsic",
       "attributes": {
         "category": "Utility",
         "cost": 3955000,
@@ -1554,6 +1415,7 @@
       "name": "Feldspar",
       "sprite": "ship/gegno feldspar",
       "thumbnail": "thumbnail/gegno feldspar",
+      "slug": "feldspar",
       "attributes": {
         "category": "Heavy Warship",
         "cost": 14760000,
@@ -1623,6 +1485,7 @@
       "name": "Epidote",
       "sprite": "ship/gegno epidote",
       "thumbnail": "thumbnail/gegno epidote",
+      "slug": "epidote",
       "attributes": {
         "category": "Utility",
         "cost": 14454000,
@@ -1700,6 +1563,7 @@
       "name": "Kyanite",
       "sprite": "ship/gegno kyanite",
       "thumbnail": "thumbnail/gegno kyanite",
+      "slug": "kyanite",
       "attributes": {
         "category": "Utility",
         "cost": 28870000,
@@ -1758,66 +1622,579 @@
       ]
     },
     {
-      "name": "Kyanite",
+      "name": "Corundum (Torch)",
+      "sprite": "ship/gegno corundum",
+      "thumbnail": "thumbnail/gegno corundum",
+      "slug": "corundum-torch",
       "attributes": {
-        "category": "Unknown"
+        "category": "Light Freighter",
+        "cost": 2465000,
+        "shields": 0,
+        "hull": 5400,
+        "required crew": 6,
+        "bunks": 9,
+        "mass": 630,
+        "drag": 4.5,
+        "heat dissipation": 0.64,
+        "fuel capacity": 600,
+        "cargo space": 140,
+        "outfit space": 316,
+        "weapon capacity": 64,
+        "engine capacity": 162,
+        "weapon": {
+          "blast radius": 84,
+          "shield damage": 410,
+          "hull damage": 710,
+          "hit force": 800
+        }
       },
       "outfits": [
         {
-          "name": "Guile Pulse Laser",
-          "quantity": 2
+          "name": "0",
+          "quantity": 1
         },
         {
-          "name": "Plasmasickle",
-          "quantity": 33
+          "name": "1",
+          "quantity": 1
         },
         {
-          "name": "Plasma Grenades",
-          "quantity": 33
+          "name": "2",
+          "quantity": 1
         },
         {
-          "name": "SC-14 Plasma Thruster",
-          "quantity": 2
+          "name": "3",
+          "quantity": 1
         },
         {
-          "name": "SC-14 Plasma Steering",
-          "quantity": 2
+          "name": "4",
+          "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Kyanite",
+      "name": "Schist (Light Load)",
+      "sprite": "ship/gegno schist b",
+      "thumbnail": "thumbnail/gegno schist b",
+      "slug": "schist-light-load",
       "attributes": {
-        "category": "Unknown"
+        "category": "Heavy Freighter",
+        "cost": 3737000,
+        "shields": 0,
+        "hull": 10700,
+        "required crew": 23,
+        "bunks": 73,
+        "mass": 950,
+        "drag": 8.5,
+        "heat dissipation": 0.5,
+        "fuel capacity": 500,
+        "cargo space": 140,
+        "outfit space": 298,
+        "weapon capacity": 100,
+        "engine capacity": 96,
+        "weapon": {
+          "blast radius": 71,
+          "shield damage": 310,
+          "hull damage": 660,
+          "hit force": 700
+        }
       },
       "outfits": [
         {
-          "name": "Acumen Bolt Cannon",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Plasmasickle",
-          "quantity": 33
+          "name": "1",
+          "quantity": 1
         },
         {
-          "name": "Plasma Grenades",
-          "quantity": 33
+          "name": "2",
+          "quantity": 1
         },
         {
-          "name": "SC-14 Plasma Thruster",
-          "quantity": 2
+          "name": "3",
+          "quantity": 1
         },
         {
-          "name": "SC-14 Plasma Steering",
-          "quantity": 2
+          "name": "4",
+          "quantity": 1
         },
         {
-          "name": "Hyperdrive",
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Schist (Heavy Load)",
+      "sprite": "ship/gegno schist c",
+      "thumbnail": "thumbnail/gegno schist c",
+      "slug": "schist-heavy-load",
+      "attributes": {
+        "category": "Heavy Freighter",
+        "cost": 3737000,
+        "shields": 0,
+        "hull": 10700,
+        "required crew": 23,
+        "bunks": 73,
+        "mass": 950,
+        "drag": 8.5,
+        "heat dissipation": 0.5,
+        "fuel capacity": 500,
+        "cargo space": 140,
+        "outfit space": 298,
+        "weapon capacity": 100,
+        "engine capacity": 96,
+        "weapon": {
+          "blast radius": 71,
+          "shield damage": 310,
+          "hull damage": 660,
+          "hit force": 700
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Diorite (Ballistic)",
+      "sprite": "ship/gegno diorite",
+      "thumbnail": "thumbnail/gegno diorite",
+      "slug": "diorite-ballistic",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 3350000,
+        "shields": 0,
+        "hull": 7900,
+        "required crew": 14,
+        "bunks": 29,
+        "mass": 549,
+        "drag": 7.54,
+        "heat dissipation": 0.56,
+        "fuel capacity": 500,
+        "cargo space": 40,
+        "outfit space": 453,
+        "weapon capacity": 195,
+        "engine capacity": 140,
+        "weapon": {
+          "blast radius": 90,
+          "shield damage": 540,
+          "hull damage": 770,
+          "hit force": 810
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Hornfel (Light Load)",
+      "sprite": "ship/gegno hornfel b",
+      "thumbnail": "thumbnail/gegno hornfel b",
+      "slug": "hornfel-light-load",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 5052000,
+        "shields": 0,
+        "hull": 14600,
+        "required crew": 32,
+        "bunks": 48,
+        "mass": 1489,
+        "drag": 10.1,
+        "heat dissipation": 0.38,
+        "fuel capacity": 600,
+        "cargo space": 120,
+        "outfit space": 508,
+        "weapon capacity": 240,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 90,
+          "shield damage": 600,
+          "hull damage": 840,
+          "hit force": 900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Hornfel (Heavy Load)",
+      "sprite": "ship/gegno hornfel c",
+      "thumbnail": "thumbnail/gegno hornfel c",
+      "slug": "hornfel-heavy-load",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 5052000,
+        "shields": 0,
+        "hull": 14600,
+        "required crew": 32,
+        "bunks": 48,
+        "mass": 1489,
+        "drag": 10.1,
+        "heat dissipation": 0.38,
+        "fuel capacity": 600,
+        "cargo space": 120,
+        "outfit space": 508,
+        "weapon capacity": 240,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 90,
+          "shield damage": 600,
+          "hull damage": 840,
+          "hit force": 900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Hornfel (Heavy Weapons)",
+      "sprite": "ship/gegno hornfel d",
+      "thumbnail": "thumbnail/gegno hornfel d",
+      "slug": "hornfel-heavy-weapons",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 5052000,
+        "shields": 0,
+        "hull": 14600,
+        "required crew": 32,
+        "bunks": 48,
+        "mass": 1489,
+        "drag": 10.1,
+        "heat dissipation": 0.38,
+        "fuel capacity": 600,
+        "cargo space": 120,
+        "outfit space": 508,
+        "weapon capacity": 240,
+        "engine capacity": 94,
+        "weapon": {
+          "blast radius": 90,
+          "shield damage": 600,
+          "hull damage": 840,
+          "hit force": 900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Kyanite (Guile)",
+      "sprite": "ship/gegno kyanite",
+      "thumbnail": "thumbnail/gegno kyanite",
+      "slug": "kyanite-guile",
+      "attributes": {
+        "category": "Utility",
+        "cost": 28870000,
+        "shields": 0,
+        "hull": 13650,
+        "required crew": 66,
+        "bunks": 93,
+        "mass": 1735,
+        "drag": 22.6,
+        "heat dissipation": 0.33,
+        "fuel capacity": 400,
+        "cargo space": 76,
+        "outfit space": 380,
+        "weapon capacity": 202,
+        "engine capacity": 160,
+        "weapon": {
+          "blast radius": 197,
+          "shield damage": 2030,
+          "hull damage": 1440,
+          "hit force": 2800
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Kyanite (Acumen)",
+      "sprite": "ship/gegno kyanite",
+      "thumbnail": "thumbnail/gegno kyanite",
+      "slug": "kyanite-acumen",
+      "attributes": {
+        "category": "Utility",
+        "cost": 28870000,
+        "shields": 0,
+        "hull": 13650,
+        "required crew": 66,
+        "bunks": 93,
+        "mass": 1735,
+        "drag": 22.6,
+        "heat dissipation": 0.33,
+        "fuel capacity": 400,
+        "cargo space": 76,
+        "outfit space": 380,
+        "weapon capacity": 202,
+        "engine capacity": 160,
+        "weapon": {
+          "blast radius": 197,
+          "shield damage": 2030,
+          "hull damage": 1440,
+          "hit force": 2800
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
           "quantity": 1
         }
       ],

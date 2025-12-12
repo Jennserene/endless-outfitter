@@ -10,6 +10,7 @@ const OutfitSchema = z.object({
   thumbnail: z.string().optional(),
   mass: z.number().optional(),
   "outfit space": z.number().optional(),
+  slug: z.string(),
   descriptions: z.array(z.string()).default([]),
   // Dynamic attributes - capture all other numeric/string/array/object attributes
   // Using z.any() for flexibility with nested structures in weapon objects, etc.

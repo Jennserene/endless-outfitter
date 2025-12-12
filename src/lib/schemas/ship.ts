@@ -31,6 +31,7 @@ const ShipSchema = z.object({
   plural: z.string().optional(),
   sprite: z.string().optional(),
   thumbnail: z.string().optional(),
+  slug: z.string(),
   attributes: ShipAttributeSchema,
   outfits: z.array(
     z.object({

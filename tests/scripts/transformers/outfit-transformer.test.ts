@@ -47,6 +47,7 @@ describe("OutfitTransformer", () => {
       expect(result.category).toBe("Engine");
       expect(result.cost).toBe(1000);
       expect(result.mass).toBe(10);
+      expect(result.slug).toBe("test-outfit");
     });
 
     it("When extracting licenses, Then should move to attributes", () => {

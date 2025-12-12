@@ -18,6 +18,7 @@ export const TEST_STEP_NAMES = [
   "Ensure data directories",
   "Generate ships",
   "Generate outfits",
+  "Generate search index",
   "Retrieve images",
   "Delete backup files",
 ] as const;

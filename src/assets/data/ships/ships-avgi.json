@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "avgi",
-    "generatedAt": "2025-12-11T16:46:20.585Z",
+    "generatedAt": "2025-12-12T00:53:03.920Z",
     "itemCount": 42
   },
   "data": [
@@ -11,6 +11,7 @@
       "name": "Koryfi",
       "sprite": "ship/avgi koryfi/koryfi",
       "thumbnail": "thumbnail/avgi koryfi",
+      "slug": "koryfi",
       "attributes": {
         "category": "Transport",
         "cost": 600000,
@@ -70,6 +71,7 @@
       "plural": "Melodikos",
       "sprite": "ship/avgi melodikos/melodikos",
       "thumbnail": "thumbnail/avgi melodikos",
+      "slug": "melodikos",
       "attributes": {
         "category": "Space Liner",
         "cost": 1200000,
@@ -136,6 +138,7 @@
       "name": "Avlaki",
       "sprite": "ship/avgi avlaki",
       "thumbnail": "thumbnail/avgi avlaki",
+      "slug": "avlaki",
       "attributes": {
         "category": "Light Freighter",
         "cost": 450000,
@@ -191,6 +194,7 @@
       "plural": "Harmonikos",
       "sprite": "ship/avgi harmonikos",
       "thumbnail": "thumbnail/avgi harmonikos",
+      "slug": "harmonikos",
       "attributes": {
         "category": "Heavy Freighter",
         "cost": 900000,
@@ -254,6 +258,7 @@
       "plural": "Phononos",
       "sprite": "ship/avgi phononos",
       "thumbnail": "thumbnail/avgi phononos",
+      "slug": "phononos",
       "attributes": {
         "category": "Light Freighter",
         "cost": 180000,
@@ -299,6 +304,7 @@
       "name": "Frequentia",
       "sprite": "ship/avgi frequentia",
       "thumbnail": "thumbnail/avgi frequentia",
+      "slug": "frequentia",
       "attributes": {
         "category": "Light Freighter",
         "cost": 1200000,
@@ -378,6 +384,7 @@
       "name": "Polari",
       "sprite": "ship/avgi polari",
       "thumbnail": "thumbnail/avgi polari",
+      "slug": "polari",
       "attributes": {
         "category": "Utility",
         "cost": 1800000,
@@ -475,6 +482,7 @@
       "name": "Entasi",
       "sprite": "ship/avgi entasi",
       "thumbnail": "thumbnail/avgi entasi",
+      "slug": "entasi",
       "attributes": {
         "category": "Utility",
         "cost": 2400000,
@@ -544,6 +552,7 @@
       "name": "Undsyni",
       "sprite": "ship/avgi undsyni",
       "thumbnail": "thumbnail/avgi undsyni",
+      "slug": "undsyni",
       "attributes": {
         "category": "Utility",
         "cost": 12000000,
@@ -643,179 +652,10 @@
       ]
     },
     {
-      "name": "Undsyni",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 3
-        },
-        {
-          "name": "Speckle Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Speck Round",
-          "quantity": 4800
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 24
-        },
-        {
-          "name": "Lantern Fission Core",
-          "quantity": 3
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Cell",
-          "quantity": 3
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Cryogenic Deuterium Tank",
-          "quantity": 18
-        },
-        {
-          "name": "Deuterium Slush Tank",
-          "quantity": 12
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Spectrometer Array",
-          "quantity": 1
-        },
-        {
-          "name": "Outfits Expansion",
-          "quantity": 1
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Undsyni",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 3
-        },
-        {
-          "name": "Speckle Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Speck Round",
-          "quantity": 4800
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 24
-        },
-        {
-          "name": "Lantern Fission Core",
-          "quantity": 3
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Cell",
-          "quantity": 3
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Plasmadyne Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Cryogenic Deuterium Tank",
-          "quantity": 18
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Spectrometer Array",
-          "quantity": 1
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Modified Tachytia",
       "sprite": "ship/avgi tachytia/tachytia",
       "thumbnail": "thumbnail/avgi tachytia",
+      "slug": "modified-tachytia",
       "attributes": {
         "category": "Utility",
         "cost": 99000000,
@@ -918,6 +758,7 @@
       "plural": "Tremoros",
       "sprite": "ship/avgi tremoros",
       "thumbnail": "thumbnail/avgi tremoros",
+      "slug": "tremoros",
       "attributes": {
         "category": "Interceptor",
         "cost": 600000,
@@ -986,6 +827,7 @@
       "plural": "Prismaios",
       "sprite": "ship/avgi prismaios",
       "thumbnail": "thumbnail/avgi prismaios",
+      "slug": "prismaios",
       "attributes": {
         "category": "Light Warship",
         "cost": 3600000,
@@ -1079,148 +921,11 @@
       ]
     },
     {
-      "name": "Prismaios",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Blue Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Lantern Fission Core",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 2
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 2
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 6
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 2
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 1
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Prismaios",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Speckle Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Speck Round",
-          "quantity": 4800
-        },
-        {
-          "name": "External Launch Tube",
-          "quantity": 2
-        },
-        {
-          "name": "`\"Orchid\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 6
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Interferos",
       "plural": "Interferos",
       "sprite": "ship/avgi interferos",
       "thumbnail": "thumbnail/avgi interferos",
+      "slug": "interferos",
       "attributes": {
         "category": "Light Warship",
         "cost": 1500000,
@@ -1296,123 +1001,10 @@
       ]
     },
     {
-      "name": "Interferos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 1
-        },
-        {
-          "name": "Medium VLS",
-          "quantity": 2
-        },
-        {
-          "name": "`\"Nettle\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Cell",
-          "quantity": 3
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 1
-        },
-        {
-          "name": "R-180 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Interferos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 1
-        },
-        {
-          "name": "External Launch Tube",
-          "quantity": 4
-        },
-        {
-          "name": "`\"Orchid\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Cell",
-          "quantity": 3
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 1
-        },
-        {
-          "name": "R-180 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Diaspersi",
       "sprite": "ship/avgi diaspersi",
       "thumbnail": "thumbnail/avgi diaspersi",
+      "slug": "diaspersi",
       "attributes": {
         "category": "Medium Warship",
         "cost": 4200000,
@@ -1506,176 +1098,11 @@
       ]
     },
     {
-      "name": "Diaspersi",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Speckle Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Speck Round",
-          "quantity": 2400
-        },
-        {
-          "name": "External Launch Tube",
-          "quantity": 2
-        },
-        {
-          "name": "`\"Orchid\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ophrys Stockpile",
-          "quantity": 3
-        },
-        {
-          "name": "`\"Ophrys\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 3
-        },
-        {
-          "name": "Concealment Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "Deuterium Slush Tank",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 36
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Diaspersi",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "UREB Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Small VLS",
-          "quantity": 1
-        },
-        {
-          "name": "`\"Nettle\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Specular Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 4
-        },
-        {
-          "name": "Concealment Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "Deuterium Slush Tank",
-          "quantity": 3
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 36
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Refraktos",
       "plural": "Refraktos",
       "sprite": "ship/avgi refraktos",
       "thumbnail": "thumbnail/avgi refraktos",
+      "slug": "refraktos",
       "attributes": {
         "category": "Medium Warship",
         "cost": 4500000,
@@ -1767,148 +1194,11 @@
       ]
     },
     {
-      "name": "Refraktos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "UREB Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Green Optical Laser",
-          "quantity": 3
-        },
-        {
-          "name": "Photoelectric Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 3
-        },
-        {
-          "name": "Specular Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 2
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 2
-        },
-        {
-          "name": "Heatsink Partition",
-          "quantity": 3
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 24
-        },
-        {
-          "name": "`Z-666",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 5
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 1
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Refraktos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Ultraviolet Excimer Laser",
-          "quantity": 1
-        },
-        {
-          "name": "Green Optical Laser",
-          "quantity": 6
-        },
-        {
-          "name": "Photoelectric Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 3
-        },
-        {
-          "name": "Specular Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 2
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 2
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 2
-        },
-        {
-          "name": "Heatsink Partition",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 24
-        },
-        {
-          "name": "`Z-666",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 5
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 1
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Difraktos",
       "plural": "Difraktos",
       "sprite": "ship/avgi difraktos",
       "thumbnail": "thumbnail/avgi difraktos",
+      "slug": "difraktos",
       "attributes": {
         "category": "Medium Warship",
         "cost": 6000000,
@@ -2014,325 +1304,10 @@
       ]
     },
     {
-      "name": "Difraktos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Speckle Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Speck Round",
-          "quantity": 4800
-        },
-        {
-          "name": "Medium VLS",
-          "quantity": 4
-        },
-        {
-          "name": "`\"Nettle\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Diffuse Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 3
-        },
-        {
-          "name": "Concealment Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 42
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "R-180 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Difraktos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Green Optical Laser",
-          "quantity": 3
-        },
-        {
-          "name": "Speckle Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Speck Round",
-          "quantity": 9600
-        },
-        {
-          "name": "External Launch Tube",
-          "quantity": 4
-        },
-        {
-          "name": "`\"Orchid\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Specular Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 3
-        },
-        {
-          "name": "Concealment Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 42
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "R-180 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Difraktos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "`\"Orchid\"",
-          "quantity": 1
-        },
-        {
-          "name": "Concealment Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "External Launch Tube",
-          "quantity": 4
-        },
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 1
-        },
-        {
-          "name": "Lantern Fission Core",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 3
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 42
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "R-180 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 2
-        },
-        {
-          "name": "Specular Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "UREB Turret",
-          "quantity": 2
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Difraktos",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Concealment Lamina",
-          "quantity": 1
-        },
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 2
-        },
-        {
-          "name": "Jump Drive",
-          "quantity": 1
-        },
-        {
-          "name": "Lantern Fission Core",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 3
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 42
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 1
-        },
-        {
-          "name": "R-180 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "R-360 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 1
-        },
-        {
-          "name": "Specular Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "UREB Turret",
-          "quantity": 4
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 2
-        },
-        {
-          "name": "`Z-333",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Atenuatia",
       "sprite": "ship/avgi atenuatia",
       "thumbnail": "thumbnail/avgi atenuatia",
+      "slug": "atenuatia",
       "attributes": {
         "category": "Heavy Warship",
         "cost": 14400000,
@@ -2434,94 +1409,10 @@
       ]
     },
     {
-      "name": "Atenuatia",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Speckle Turret",
-          "quantity": 1
-        },
-        {
-          "name": "Speck Round",
-          "quantity": 2400
-        },
-        {
-          "name": "Blue Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "Green Optical Laser",
-          "quantity": 2
-        },
-        {
-          "name": "External Launch Tube",
-          "quantity": 2
-        },
-        {
-          "name": "`\"Orchid\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ophrys Stockpile",
-          "quantity": 3
-        },
-        {
-          "name": "`\"Ophrys\"",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Bank",
-          "quantity": 1
-        },
-        {
-          "name": "Specular Deflector",
-          "quantity": 1
-        },
-        {
-          "name": "Optical Lasing Generator",
-          "quantity": 2
-        },
-        {
-          "name": "Magnetic Scoop",
-          "quantity": 1
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 6
-        },
-        {
-          "name": "Optical Laser Rifle",
-          "quantity": 90
-        },
-        {
-          "name": "`Z-666",
-          "quantity": 1
-        },
-        {
-          "name": "Inductive Extractor",
-          "quantity": 2
-        },
-        {
-          "name": "Remass Injector",
-          "quantity": 4
-        },
-        {
-          "name": "R-720 RCS Thrusters",
-          "quantity": 1
-        },
-        {
-          "name": "Hyperdrive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Akoustiki",
       "sprite": "ship/avgi akoustiki",
       "thumbnail": "thumbnail/avgi akoustiki",
+      "slug": "akoustiki",
       "attributes": {
         "category": "Fighter",
         "cost": 120000,
@@ -2587,6 +1478,7 @@
       "name": "Photikon",
       "sprite": "ship/avgi photikon",
       "thumbnail": "thumbnail/avgi photikon",
+      "slug": "photikon",
       "attributes": {
         "category": "Fighter",
         "cost": 180000,
@@ -2639,76 +1531,11 @@
       ]
     },
     {
-      "name": "Photikon",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "Small VLS",
-          "quantity": 1
-        },
-        {
-          "name": "`\"Nettle\"",
-          "quantity": 1
-        },
-        {
-          "name": "Concentrating Solar Array",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Cell",
-          "quantity": 3
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetoplasma Drive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
-      "name": "Photikon",
-      "attributes": {
-        "category": "Unknown"
-      },
-      "outfits": [
-        {
-          "name": "External Launch Rail",
-          "quantity": 3
-        },
-        {
-          "name": "`\"Ophrys\"",
-          "quantity": 1
-        },
-        {
-          "name": "Concentrating Solar Array",
-          "quantity": 1
-        },
-        {
-          "name": "Ultracapacitor Cell",
-          "quantity": 3
-        },
-        {
-          "name": "Multispectral Scanner",
-          "quantity": 1
-        },
-        {
-          "name": "Magnetoplasma Drive",
-          "quantity": 1
-        }
-      ],
-      "descriptions": []
-    },
-    {
       "name": "Vibratia",
       "plural": "Vibratia",
       "sprite": "ship/avgi vibratia",
       "thumbnail": "thumbnail/avgi vibratia",
+      "slug": "vibratia",
       "attributes": {
         "category": "Drone",
         "cost": 90000,
@@ -2761,6 +1588,7 @@
       "name": "Undulon",
       "sprite": "ship/avgi undulon",
       "thumbnail": "thumbnail/avgi undulon",
+      "slug": "undulon",
       "attributes": {
         "category": "Drone",
         "cost": 36000,
@@ -2815,6 +1643,7 @@
       "name": "Optikon",
       "sprite": "ship/avgi optikon",
       "thumbnail": "thumbnail/avgi optikon",
+      "slug": "optikon",
       "attributes": {
         "category": "Drone",
         "cost": 54000,
@@ -2864,6 +1693,7 @@
       "plural": "Sonikis",
       "sprite": "ship/avgi sonikis",
       "thumbnail": "thumbnail/avgi sonikis",
+      "slug": "sonikis",
       "attributes": {
         "category": "Drone",
         "cost": 60000,
@@ -2903,58 +1733,1641 @@
       ]
     },
     {
-      "name": "Sonikis",
+      "name": "Undsyni (Tanker)",
+      "sprite": "ship/avgi undsyni",
+      "thumbnail": "thumbnail/avgi undsyni",
+      "slug": "undsyni-tanker",
       "attributes": {
-        "category": "Unknown"
+        "category": "Utility",
+        "cost": 12000000,
+        "shields": 2400,
+        "hull": 15000,
+        "required crew": 12,
+        "bunks": 60,
+        "mass": 2100,
+        "drag": 15,
+        "heat dissipation": 1.2,
+        "fuel capacity": 2400,
+        "cargo space": 600,
+        "outfit space": 636,
+        "weapon capacity": 153,
+        "engine capacity": 168,
+        "weapon": {
+          "blast radius": 540,
+          "shield damage": 3600,
+          "hull damage": 2400,
+          "hit force": 4800
+        }
       },
       "outfits": [
         {
-          "name": "Speckle Coilgun",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Speck Round",
-          "quantity": 900
-        },
-        {
-          "name": "Concentrating Solar Array",
+          "name": "1",
           "quantity": 1
         },
         {
-          "name": "Ultracapacitor Cell",
-          "quantity": 2
-        },
-        {
-          "name": "Spectrometer Array",
+          "name": "2",
           "quantity": 1
         },
         {
-          "name": "Magnetoplasma Drive",
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        },
+        {
+          "name": "16",
           "quantity": 1
         }
       ],
       "descriptions": []
     },
     {
-      "name": "Sonikis",
+      "name": "Undsyni (Plasmadyne)",
+      "sprite": "ship/avgi undsyni",
+      "thumbnail": "thumbnail/avgi undsyni",
+      "slug": "undsyni-plasmadyne",
       "attributes": {
-        "category": "Unknown"
+        "category": "Utility",
+        "cost": 12000000,
+        "shields": 2400,
+        "hull": 15000,
+        "required crew": 12,
+        "bunks": 60,
+        "mass": 2100,
+        "drag": 15,
+        "heat dissipation": 1.2,
+        "fuel capacity": 2400,
+        "cargo space": 600,
+        "outfit space": 636,
+        "weapon capacity": 153,
+        "engine capacity": 168,
+        "weapon": {
+          "blast radius": 540,
+          "shield damage": 3600,
+          "hull damage": 2400,
+          "hit force": 4800
+        }
       },
       "outfits": [
         {
-          "name": "Concentrating Solar Array",
+          "name": "0",
           "quantity": 1
         },
         {
-          "name": "Ultracapacitor Cell",
-          "quantity": 2
+          "name": "1",
+          "quantity": 1
         },
         {
-          "name": "Cryogenic Deuterium Tank",
-          "quantity": 2
+          "name": "2",
+          "quantity": 1
         },
         {
-          "name": "Magnetoplasma Drive",
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        },
+        {
+          "name": "16",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Prismaios (Laserstar)",
+      "plural": "Prismaios",
+      "sprite": "ship/avgi prismaios",
+      "thumbnail": "thumbnail/avgi prismaios",
+      "slug": "prismaios-laserstar",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 3600000,
+        "shields": 1800,
+        "hull": 7200,
+        "required crew": 2,
+        "bunks": 6,
+        "mass": 420,
+        "drag": 2.4,
+        "heat dissipation": 1.2,
+        "fuel capacity": 1200,
+        "cargo space": 36,
+        "outfit space": 360,
+        "weapon capacity": 120,
+        "engine capacity": 105,
+        "weapon": {
+          "blast radius": 240,
+          "shield damage": 1500,
+          "hull damage": 900,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Prismaios (Orchid)",
+      "plural": "Prismaios",
+      "sprite": "ship/avgi prismaios",
+      "thumbnail": "thumbnail/avgi prismaios",
+      "slug": "prismaios-orchid",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 3600000,
+        "shields": 1800,
+        "hull": 7200,
+        "required crew": 2,
+        "bunks": 6,
+        "mass": 420,
+        "drag": 2.4,
+        "heat dissipation": 1.2,
+        "fuel capacity": 1200,
+        "cargo space": 36,
+        "outfit space": 360,
+        "weapon capacity": 120,
+        "engine capacity": 105,
+        "weapon": {
+          "blast radius": 240,
+          "shield damage": 1500,
+          "hull damage": 900,
+          "hit force": 1200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Interferos (KKV)",
+      "plural": "Interferos",
+      "sprite": "ship/avgi interferos",
+      "thumbnail": "thumbnail/avgi interferos",
+      "slug": "interferos-kkv",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 1500000,
+        "shields": 900,
+        "hull": 4500,
+        "mass": 270,
+        "drag": 5.4,
+        "heat dissipation": 0.9,
+        "fuel capacity": 600,
+        "cargo space": 12,
+        "outfit space": 294,
+        "weapon capacity": 102,
+        "engine capacity": 66,
+        "weapon": {
+          "blast radius": 210,
+          "shield damage": 900,
+          "hull damage": 450,
+          "hit force": 900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Interferos (Orchid)",
+      "plural": "Interferos",
+      "sprite": "ship/avgi interferos",
+      "thumbnail": "thumbnail/avgi interferos",
+      "slug": "interferos-orchid",
+      "attributes": {
+        "category": "Light Warship",
+        "cost": 1500000,
+        "shields": 900,
+        "hull": 4500,
+        "mass": 270,
+        "drag": 5.4,
+        "heat dissipation": 0.9,
+        "fuel capacity": 600,
+        "cargo space": 12,
+        "outfit space": 294,
+        "weapon capacity": 102,
+        "engine capacity": 66,
+        "weapon": {
+          "blast radius": 210,
+          "shield damage": 900,
+          "hull damage": 450,
+          "hit force": 900
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Diaspersi (Orchid)",
+      "sprite": "ship/avgi diaspersi",
+      "thumbnail": "thumbnail/avgi diaspersi",
+      "slug": "diaspersi-orchid",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 4200000,
+        "shields": 2400,
+        "hull": 14400,
+        "required crew": 15,
+        "bunks": 36,
+        "mass": 810,
+        "drag": 6,
+        "heat dissipation": 1.2,
+        "fuel capacity": 2400,
+        "cargo space": 120,
+        "outfit space": 432,
+        "weapon capacity": 96,
+        "engine capacity": 114,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 2400,
+          "hull damage": 1800,
+          "hit force": 2400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Diaspersi (UREB)",
+      "sprite": "ship/avgi diaspersi",
+      "thumbnail": "thumbnail/avgi diaspersi",
+      "slug": "diaspersi-ureb",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 4200000,
+        "shields": 2400,
+        "hull": 14400,
+        "required crew": 15,
+        "bunks": 36,
+        "mass": 810,
+        "drag": 6,
+        "heat dissipation": 1.2,
+        "fuel capacity": 2400,
+        "cargo space": 120,
+        "outfit space": 432,
+        "weapon capacity": 96,
+        "engine capacity": 114,
+        "weapon": {
+          "blast radius": 360,
+          "shield damage": 2400,
+          "hull damage": 1800,
+          "hit force": 2400
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Refraktos (UREB)",
+      "plural": "Refraktos",
+      "sprite": "ship/avgi refraktos",
+      "thumbnail": "thumbnail/avgi refraktos",
+      "slug": "refraktos-ureb",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 4500000,
+        "shields": 3600,
+        "hull": 12600,
+        "required crew": 12,
+        "bunks": 24,
+        "mass": 810,
+        "drag": 6,
+        "heat dissipation": 1.44,
+        "fuel capacity": 1800,
+        "cargo space": 60,
+        "outfit space": 516,
+        "weapon capacity": 150,
+        "engine capacity": 180,
+        "weapon": {
+          "blast radius": 420,
+          "shield damage": 880,
+          "hull damage": 440,
+          "hit force": 1320
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Refraktos (Excimer)",
+      "plural": "Refraktos",
+      "sprite": "ship/avgi refraktos",
+      "thumbnail": "thumbnail/avgi refraktos",
+      "slug": "refraktos-excimer",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 4500000,
+        "shields": 3600,
+        "hull": 12600,
+        "required crew": 12,
+        "bunks": 24,
+        "mass": 810,
+        "drag": 6,
+        "heat dissipation": 1.44,
+        "fuel capacity": 1800,
+        "cargo space": 60,
+        "outfit space": 516,
+        "weapon capacity": 150,
+        "engine capacity": 180,
+        "weapon": {
+          "blast radius": 420,
+          "shield damage": 880,
+          "hull damage": 440,
+          "hit force": 1320
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Difraktos (KKV)",
+      "plural": "Difraktos",
+      "sprite": "ship/avgi difraktos",
+      "thumbnail": "thumbnail/avgi difraktos",
+      "slug": "difraktos-kkv",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 6000000,
+        "shields": 6000,
+        "hull": 18000,
+        "required crew": 15,
+        "bunks": 42,
+        "mass": 1200,
+        "drag": 7.2,
+        "heat dissipation": 1.2,
+        "fuel capacity": 1800,
+        "cargo space": 60,
+        "outfit space": 540,
+        "weapon capacity": 252,
+        "engine capacity": 144,
+        "weapon": {
+          "blast radius": 420,
+          "shield damage": 4800,
+          "hull damage": 3600,
+          "hit force": 3600
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        },
+        {
+          "name": "16",
+          "quantity": 1
+        },
+        {
+          "name": "17",
+          "quantity": 1
+        },
+        {
+          "name": "18",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Difraktos (Orchid)",
+      "plural": "Difraktos",
+      "sprite": "ship/avgi difraktos",
+      "thumbnail": "thumbnail/avgi difraktos",
+      "slug": "difraktos-orchid",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 6000000,
+        "shields": 6000,
+        "hull": 18000,
+        "required crew": 15,
+        "bunks": 42,
+        "mass": 1200,
+        "drag": 7.2,
+        "heat dissipation": 1.2,
+        "fuel capacity": 1800,
+        "cargo space": 60,
+        "outfit space": 540,
+        "weapon capacity": 252,
+        "engine capacity": 144,
+        "weapon": {
+          "blast radius": 420,
+          "shield damage": 4800,
+          "hull damage": 3600,
+          "hit force": 3600
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        },
+        {
+          "name": "16",
+          "quantity": 1
+        },
+        {
+          "name": "17",
+          "quantity": 1
+        },
+        {
+          "name": "18",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Difraktos (UREB + Orchid)",
+      "plural": "Difraktos",
+      "sprite": "ship/avgi difraktos",
+      "thumbnail": "thumbnail/avgi difraktos",
+      "slug": "difraktos-ureb-orchid",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 6000000,
+        "shields": 6000,
+        "hull": 18000,
+        "required crew": 15,
+        "bunks": 42,
+        "mass": 1200,
+        "drag": 7.2,
+        "heat dissipation": 1.2,
+        "fuel capacity": 1800,
+        "cargo space": 60,
+        "outfit space": 540,
+        "weapon capacity": 252,
+        "engine capacity": 144,
+        "weapon": {
+          "blast radius": 420,
+          "shield damage": 4800,
+          "hull damage": 3600,
+          "hit force": 3600
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        },
+        {
+          "name": "16",
+          "quantity": 1
+        },
+        {
+          "name": "17",
+          "quantity": 1
+        },
+        {
+          "name": "18",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Difraktos (UREB)",
+      "plural": "Difraktos",
+      "sprite": "ship/avgi difraktos",
+      "thumbnail": "thumbnail/avgi difraktos",
+      "slug": "difraktos-ureb",
+      "attributes": {
+        "category": "Medium Warship",
+        "cost": 6000000,
+        "shields": 6000,
+        "hull": 18000,
+        "required crew": 15,
+        "bunks": 42,
+        "mass": 1200,
+        "drag": 7.2,
+        "heat dissipation": 1.2,
+        "fuel capacity": 1800,
+        "cargo space": 60,
+        "outfit space": 540,
+        "weapon capacity": 252,
+        "engine capacity": 144,
+        "weapon": {
+          "blast radius": 420,
+          "shield damage": 4800,
+          "hull damage": 3600,
+          "hit force": 3600
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        },
+        {
+          "name": "16",
+          "quantity": 1
+        },
+        {
+          "name": "17",
+          "quantity": 1
+        },
+        {
+          "name": "18",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Atenuatia (Orchid)",
+      "sprite": "ship/avgi atenuatia",
+      "thumbnail": "thumbnail/avgi atenuatia",
+      "slug": "atenuatia-orchid",
+      "attributes": {
+        "category": "Heavy Warship",
+        "cost": 14400000,
+        "shields": 4200,
+        "hull": 30000,
+        "required crew": 60,
+        "bunks": 90,
+        "mass": 2700,
+        "drag": 18,
+        "heat dissipation": 1.2,
+        "fuel capacity": 2400,
+        "cargo space": 120,
+        "outfit space": 696,
+        "weapon capacity": 180,
+        "engine capacity": 186,
+        "weapon": {
+          "blast radius": 540,
+          "shield damage": 6400,
+          "hull damage": 4800,
+          "hit force": 4200
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        },
+        {
+          "name": "11",
+          "quantity": 1
+        },
+        {
+          "name": "12",
+          "quantity": 1
+        },
+        {
+          "name": "13",
+          "quantity": 1
+        },
+        {
+          "name": "14",
+          "quantity": 1
+        },
+        {
+          "name": "15",
+          "quantity": 1
+        },
+        {
+          "name": "16",
+          "quantity": 1
+        },
+        {
+          "name": "17",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Photikon (KKV)",
+      "sprite": "ship/avgi photikon",
+      "thumbnail": "thumbnail/avgi photikon",
+      "slug": "photikon-kkv",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 180000,
+        "shields": 240,
+        "hull": 2100,
+        "mass": 45,
+        "drag": 0.6,
+        "heat dissipation": 0.72,
+        "fuel capacity": 90,
+        "outfit space": 90,
+        "weapon capacity": 27,
+        "engine capacity": 24,
+        "weapon": {
+          "blast radius": 24,
+          "shield damage": 420,
+          "hull damage": 360,
+          "hit force": 180
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Photikon (Ophrys)",
+      "sprite": "ship/avgi photikon",
+      "thumbnail": "thumbnail/avgi photikon",
+      "slug": "photikon-ophrys",
+      "attributes": {
+        "category": "Fighter",
+        "cost": 180000,
+        "shields": 240,
+        "hull": 2100,
+        "mass": 45,
+        "drag": 0.6,
+        "heat dissipation": 0.72,
+        "fuel capacity": 90,
+        "outfit space": 90,
+        "weapon capacity": 27,
+        "engine capacity": 24,
+        "weapon": {
+          "blast radius": 24,
+          "shield damage": 420,
+          "hull damage": 360,
+          "hit force": 180
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Sonikis (Armed)",
+      "plural": "Sonikis",
+      "sprite": "ship/avgi sonikis",
+      "thumbnail": "thumbnail/avgi sonikis",
+      "slug": "sonikis-armed",
+      "attributes": {
+        "category": "Drone",
+        "cost": 60000,
+        "hull": 600,
+        "mass": 24,
+        "drag": 0.9,
+        "heat dissipation": 0.72,
+        "fuel capacity": 120,
+        "cargo space": 60,
+        "outfit space": 69,
+        "weapon capacity": 18,
+        "engine capacity": 24,
+        "weapon": {
+          "blast radius": 9,
+          "shield damage": 180,
+          "hull damage": 120,
+          "hit force": 90
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Sonikis (Tanker)",
+      "plural": "Sonikis",
+      "sprite": "ship/avgi sonikis",
+      "thumbnail": "thumbnail/avgi sonikis",
+      "slug": "sonikis-tanker",
+      "attributes": {
+        "category": "Drone",
+        "cost": 60000,
+        "hull": 600,
+        "mass": 24,
+        "drag": 0.9,
+        "heat dissipation": 0.72,
+        "fuel capacity": 120,
+        "cargo space": 60,
+        "outfit space": 69,
+        "weapon capacity": 18,
+        "engine capacity": 24,
+        "weapon": {
+          "blast radius": 9,
+          "shield damage": 180,
+          "hull damage": 120,
+          "hit force": 90
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
           "quantity": 1
         }
       ],

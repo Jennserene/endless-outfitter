@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "drak",
-    "generatedAt": "2025-12-11T16:46:20.646Z",
+    "generatedAt": "2025-12-12T16:01:45.165Z",
     "itemCount": 11
   },
   "data": [
@@ -16,6 +16,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 64,
       "outfit space": -64,
+      "slug": "drak-distancer",
       "descriptions": [
         "This is a thruster that can produce force in any direction, allowing a Drak ship to keep a safe distance away from its target."
       ],
@@ -44,6 +45,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 84,
       "outfit space": -84,
+      "slug": "drak-draining-field",
       "descriptions": [
         "This device is the Archon's primary defensive tool: not only does it disrupt the shields and energy supplies of all hostile ships within it, it also exerts a powerful repelling force that keeps ships from closing in with the Archon."
       ],
@@ -81,6 +83,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 84,
       "outfit space": -84,
+      "slug": "drak-draining-field-augmented",
       "descriptions": [
         "This device is the Archon's primary defensive tool: not only does it disrupt the shields and energy supplies of all hostile ships within it, it also exerts a powerful repelling force that keeps ships from closing in with the Archon.",
         "\tWhile normally kept at minimal strength, the Archons have demonstrated the ability to ramp up the field to be vastly stronger when faced with a serious threat."
@@ -122,6 +125,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 66,
       "outfit space": -66,
+      "slug": "drak-anti-missile-field",
       "descriptions": [
         "This device produces a field that destroys any missiles that come within it."
       ],
@@ -148,6 +152,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 66,
       "outfit space": -66,
+      "slug": "drak-anti-missile-field-augmented",
       "descriptions": [
         "This device produces a field that destroys any missiles that come within it.",
         "\tThis level of anti-missile effectiveness is required only when dealing with the most powerful of threats."
@@ -178,6 +183,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 48,
       "outfit space": -48,
+      "slug": "drak-turret",
       "descriptions": [
         "This is a turret-based cannon with significant range and accuracy."
       ],
@@ -214,6 +220,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 48,
       "outfit space": -48,
+      "slug": "drak-turret-augmented",
       "descriptions": [
         "This is a turret-based cannon with significant range and accuracy.",
         "\tAgainst most threats, Archons respond with their weapons set to very low levels. They are, however, more than capable of dealing much more damage when the situation requires it."
@@ -254,6 +261,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 96,
       "outfit space": -96,
+      "slug": "drak-antimatter-cannon",
       "descriptions": [
         "This is the most powerful weapon that the Archons deign to utilize in the presence of the younger races."
       ],
@@ -293,6 +301,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 96,
       "outfit space": -96,
+      "slug": "drak-antimatter-cannon-augmented",
       "descriptions": [
         "This is the most powerful weapon that the Archons deign to utilize in the presence of the younger races. Hitherto unknown as Archons are rarely pushed to the point of needing to use more than their minimum abilities, the Antimatter Cannon is capable of far more damage than originally thought."
       ],
@@ -328,6 +337,7 @@
     },
     {
       "name": "Drak Antimatter Fragment",
+      "slug": "drak-antimatter-fragment",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -364,6 +374,7 @@
     },
     {
       "name": "Drak Antimatter Fragment (Augmented)",
+      "slug": "drak-antimatter-fragment-augmented",
       "descriptions": [],
       "attributes": {
         "weapon": {

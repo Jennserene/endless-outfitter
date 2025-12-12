@@ -7,6 +7,7 @@ import { GAME_REPO_PATH } from "@config/game-version";
 export const DATA_DIR = join(process.cwd(), "src/assets/data");
 export const SHIPS_DIR = join(DATA_DIR, "ships");
 export const OUTFITS_DIR = join(DATA_DIR, "outfits");
+export const SEARCH_INDEX_PATH = join(DATA_DIR, "search-index.json");
 export const IMAGES_DIR = join(process.cwd(), "src/assets/images");
 export const OUTFIT_IMAGES_DIR = join(IMAGES_DIR, "outfit");
 export const SHIP_IMAGES_DIR = join(IMAGES_DIR, "ship");

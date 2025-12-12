@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "bunrodea",
-    "generatedAt": "2025-12-11T16:46:20.587Z",
+    "generatedAt": "2025-12-12T00:48:42.085Z",
     "itemCount": 8
   },
   "data": [
@@ -11,6 +11,7 @@
       "name": "Kaiken",
       "sprite": "ship/kaiken",
       "thumbnail": "thumbnail/kaiken",
+      "slug": "kaiken",
       "attributes": {
         "category": "Fighter",
         "cost": 1199000,
@@ -74,6 +75,7 @@
       "name": "Sasumata",
       "sprite": "ship/sasumata",
       "thumbnail": "thumbnail/sasumata",
+      "slug": "sasumata",
       "attributes": {
         "category": "Transport",
         "cost": 12650000,
@@ -163,6 +165,7 @@
       "name": "Tanto",
       "sprite": "ship/tanto",
       "thumbnail": "thumbnail/tanto",
+      "slug": "tanto",
       "attributes": {
         "category": "Light Freighter",
         "cost": 5995000,
@@ -231,6 +234,7 @@
       "name": "Ararebo",
       "sprite": "ship/ararebo",
       "thumbnail": "thumbnail/ararebo",
+      "slug": "ararebo",
       "attributes": {
         "category": "Utility",
         "cost": 17565000,
@@ -323,6 +327,7 @@
       "name": "Tekkan",
       "sprite": "ship/tekkan",
       "thumbnail": "thumbnail/tekkan",
+      "slug": "tekkan",
       "attributes": {
         "category": "Light Warship",
         "cost": 10119000,
@@ -403,6 +408,7 @@
       "name": "Kunai",
       "sprite": "ship/kunai",
       "thumbnail": "thumbnail/kunai",
+      "slug": "kunai",
       "attributes": {
         "category": "Light Warship",
         "cost": 12444000,
@@ -487,6 +493,7 @@
       "name": "Kama",
       "sprite": "ship/kama",
       "thumbnail": "thumbnail/kama",
+      "slug": "kama",
       "attributes": {
         "category": "Medium Warship",
         "cost": 20580000,
@@ -579,6 +586,7 @@
       "name": "Chigiriki",
       "sprite": "ship/chigiriki",
       "thumbnail": "thumbnail/chigiriki",
+      "slug": "chigiriki",
       "attributes": {
         "category": "Heavy Warship",
         "cost": 30876000,

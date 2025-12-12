@@ -11,6 +11,7 @@ export enum ScriptErrorCode {
   CONFIGURATION_ERROR = "E4004",
   FILE_SYSTEM_ERROR = "E4005",
   INTERRUPTED = "E4006",
+  SHIP_VARIANT_MISSING_BASE = "E4007",
 }
 
 /**

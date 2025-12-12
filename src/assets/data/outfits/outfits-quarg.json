@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "quarg",
-    "generatedAt": "2025-12-11T16:46:20.659Z",
+    "generatedAt": "2025-12-12T16:01:45.207Z",
     "itemCount": 25
   },
   "data": [
@@ -16,6 +16,7 @@
       "thumbnail": "outfit/small quarg thruster",
       "mass": 50,
       "outfit space": -50,
+      "slug": "small-graviton-thruster",
       "descriptions": [
         "How exactly Quarg thrusters work is unknown, but the mechanism that powers even this small set of engines consumes more energy than some human warships. Where all this energy goes is a complete mystery.",
         "\tThese engines also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships equipped with them accelerate faster under their own power than one would expect, while also taking less impact from external forces."
@@ -46,6 +47,7 @@
       "thumbnail": "outfit/small quarg steering",
       "mass": 30,
       "outfit space": -30,
+      "slug": "small-graviton-steering",
       "descriptions": [
         "Despite their small size, these Quarg steering engines can turn their ships on a dime. It is rumored that, unlike human steering thrusters, the Quarg do not care where on the hull these are installed, producing the same rotational moment even if directly in line with the ship's center of mass.",
         "\tThey also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships with these engines accelerate faster under their own power than one would expect, while also taking less impact from external forces."
@@ -68,6 +70,7 @@
       "thumbnail": "outfit/medium quarg thruster",
       "mass": 70,
       "outfit space": -70,
+      "slug": "medium-graviton-thruster",
       "descriptions": [
         "Quarg thrusters are quite powerful for their size and produce very little heat, but at the cost of consuming immense amounts of energy. The mechanism by which they produce thrust is unknown, but it is rumored that the passing of a Quarg ship wreaks havoc on every gravitational wave antenna in the system.",
         "\tThey also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships with these engines accelerate faster under their own power than one would expect, while also taking less impact from external forces."
@@ -97,6 +100,7 @@
       "thumbnail": "outfit/medium quarg steering",
       "mass": 50,
       "outfit space": -50,
+      "slug": "medium-graviton-steering",
       "descriptions": [
         "According to rumor, some Quarg ships have their steering engines installed internally, with no need for external thrusters. Much like a gyroscope, they can seemingly orient a ship from anywhere, but unlike them they never seem to saturate or become locked.",
         "\tThey also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships with these engines accelerate faster under their own power than one would expect, while also taking less impact from external forces."
@@ -119,6 +123,7 @@
       "thumbnail": "outfit/large quarg thruster",
       "mass": 100,
       "outfit space": -100,
+      "slug": "large-graviton-thruster",
       "descriptions": [
         "This large set of Quarg thrusters is both powerful and subtle, leaving behind no bright exhaust trail nor emitting any detectable radiation aside from a faint violet glow. This is juxtaposed with the extreme amount of energy these engines consume, enough to power entire stations.",
         "\tThey also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships with these engines accelerate faster under their own power than one would expect, while also taking less impact from external forces."
@@ -149,6 +154,7 @@
       "thumbnail": "outfit/large quarg steering",
       "mass": 70,
       "outfit space": -70,
+      "slug": "large-graviton-steering",
       "descriptions": [
         "Quarg ships are famed for their ability to turn quickly and precisely, as though oriented by a divine hand rather than the flickering exhaust of human steering thrusters. According to some guesses on their mode of operation, this may be closer to the truth than not.",
         "\tThey also have strange capabilities which seem to violate the laws of physics as humanity understands them. Ships with these engines accelerate faster under their own power than one would expect, while also taking less impact from external forces."
@@ -171,6 +177,7 @@
       "thumbnail": "outfit/quarg quantum battery",
       "mass": 50,
       "outfit space": -50,
+      "slug": "quantum-vacuum-battery",
       "descriptions": [
         "Human engineers who first came into contact with the Quarg were astonished by the sheer energy density of their technology. This Quarg battery holds enough energy to level a small city, rumored to be stored in the negative quantum vacuum pressure between innumerable tiny plates. Somehow, the battery chills itself as energy is drained from it, seemingly in defiance of the human understanding of thermodynamics."
       ],
@@ -189,6 +196,7 @@
       "thumbnail": "outfit/quarg antimatter core",
       "mass": 50,
       "outfit space": -50,
+      "slug": "antimatter-core",
       "descriptions": [
         "Although humanity is now capable of producing antimatter in relatively significant quantities when compared to a thousand years ago, it is still nothing next to the output of the Quarg, who can produce enough antimatter to outfit even civilian ships with an extremely compact Antimatter Core. This device releases extreme amounts of energy in a simple, elegant package, all while producing surprisingly little waste heat."
       ],
@@ -206,6 +214,7 @@
       "thumbnail": "outfit/quarg singularity core",
       "mass": 400,
       "outfit space": -80,
+      "slug": "singularity-core",
       "descriptions": [
         "According to little more than vague allusions by the Quarg, these generators contain a minuscule black hole, spewing radiation as it is fed a trickle of mass. This black hole is small enough to output a truly staggering amount of energy via Hawking radiation, which grows in power as a black hole shrinks, something that suggests the black hole within the Singularity Core is truly microscopic.",
         "\tFurther wild guesses by scientists and conspiracy theorists alike allege that the Quarg are able to somehow trick the laws of physics themselves to make this black hole weigh far less than it otherwise should, bringing its mass from that of a small moon to something a ship could have a hope of moving."
@@ -225,6 +234,7 @@
       "thumbnail": "outfit/quarg quasar core",
       "mass": 600,
       "outfit space": -120,
+      "slug": "quasar-core",
       "descriptions": [
         "This larger generator appears similar to the Singularity Core, only even more powerful. Little is known about its exact function, but purely based on its name, some have speculated that the Quasar Core's increased output is the result of the black hole at its core being fed enough mass to form a small accretion disk, releasing light and heat as it falls towards the event horizon and is compressed to an unimaginable degree.",
         "\tWhile this process should be far less fuel-efficient than simply capturing the Hawking radiation emitted by the black hole alone, the staggering power density of this generator appears to be evidence it was worth the trade."
@@ -244,6 +254,7 @@
       "thumbnail": "outfit/quarg aspis shield generator",
       "mass": 40,
       "outfit space": -40,
+      "slug": "aspis-shield-generator",
       "descriptions": [
         "Even the smallest example of Quarg shield generation displays defensive powers greater than what humans would normally consider to be sufficient."
       ],
@@ -263,6 +274,7 @@
       "thumbnail": "outfit/quarg ancile shield generator",
       "mass": 55,
       "outfit space": -55,
+      "slug": "ancile-shield-generator",
       "descriptions": [
         "In addition to being able to recover their shields more quickly and efficiently than any other technology of considerable size, Quarg shield generators also provide an impressive degree of protection against weapons designed to bypass shields entirely."
       ],
@@ -282,6 +294,7 @@
       "thumbnail": "outfit/quarg aegis shield generator",
       "mass": 80,
       "outfit space": -80,
+      "slug": "aegis-shield-generator",
       "descriptions": [
         "The first humans who met the Quarg thought that their technology worked on magic, and many even think so to this day. The mechanism by which this Quarg shield generator works is completely unknown to humanity, providing an astounding amount of protection, and the Quarg aren't interested in giving up the secrets behind it."
       ],
@@ -301,6 +314,7 @@
       "thumbnail": "outfit/quarg peripheral repair hub",
       "mass": 25,
       "outfit space": -25,
+      "slug": "peripheral-repair-hub",
       "descriptions": [
         "The repair systems employed by the Quarg operate in ways that seem to defy reality, somehow gathering matter and injecting it into a ship's hull and fuel systems. This provides essential maintenance that benefits core aspects of spaceflight - durability, longevity, and most importantly, survivability."
       ],
@@ -319,6 +333,7 @@
       "thumbnail": "outfit/quarg central repair hub",
       "mass": 55,
       "outfit space": -55,
+      "slug": "central-repair-hub",
       "descriptions": [
         "In a manner which is not easily discernible to humans, this system collects ambient matter in space and feeds it back to the ship from a large central hub of wires and tubes. The accumulated matter is then used to both regenerate the ship's hull and refill its fuel reserves."
       ],
@@ -337,6 +352,7 @@
       "thumbnail": "outfit/quarg skydagger",
       "mass": 25,
       "outfit space": -25,
+      "slug": "skydagger",
       "descriptions": [
         "Where overwhelming force is not necessary, these beam weapons are used in place of more powerful weapons to simply provide defense to non-combatants. However, they remain a danger not to be taken lightly."
       ],
@@ -376,6 +392,7 @@
       "thumbnail": "outfit/quarg skylance",
       "mass": 50,
       "outfit space": -50,
+      "slug": "skylance",
       "descriptions": [
         "Despite being among the oldest and least specialized of Quarg weaponry, these immensely powerful beam weapons strike fear into the hearts of all who dare oppose them. With a design that has survived longer than humanity itself, the Skylance is an elegant weapon, one from a more civilized age."
       ],
@@ -415,6 +432,7 @@
       "thumbnail": "outfit/quarg stratospear",
       "mass": 40,
       "outfit space": -40,
+      "slug": "stratospear",
       "descriptions": [
         "While those who can directly match the power of Quarg energy weapons are rare, some foolish younger races have attempted to oppose the Quarg with missile-based nuclear weapons, hoping for their destructive power to even the playing field. These Quarg anti-missile defenses, firing pinpoint beams of energy, have often dashed these hopes, targeting projectiles from considerable range and ensuring that only the most powerful missiles are capable of getting near a Quarg ship."
       ],
@@ -442,6 +460,7 @@
       "thumbnail": "outfit/quarg ranseur",
       "mass": 65,
       "outfit space": -65,
+      "slug": "elysian-ranseur",
       "descriptions": [
         "The technology behind this weapon is incomprehensibly complex, creating pulses of energy that bend spacetime itself. Powerful gravitational pulses are forced through the fold, penetrating through multiple targets with ease and delivering dangerous blows to those along the path. How the weapon is able to do any of this is only known to the Quarg."
       ],
@@ -478,6 +497,7 @@
       "thumbnail": "outfit/quarg culverin",
       "mass": 45,
       "outfit space": -45,
+      "slug": "celestial-culverin",
       "descriptions": [
         "This weapon tangles with spacetime in ways beyond understanding, producing gravitational forces that slow the target down. As if fulfilling their own intended destiny, the projectiles are guided to their target, disrupting their fuel systems. This utility, on top of being almost unavoidable, allows the weapon to lock down the Quarg's more distant enemies."
       ],
@@ -528,6 +548,7 @@
       "thumbnail": "outfit/quarg ribault",
       "mass": 35,
       "outfit space": -35,
+      "slug": "astral-ribault",
       "descriptions": [
         "The rapid flurries shot by this turret cover a wide area at a long range, firing a storm of negative energy particles. Attractive forces guide these particles towards their target, dealing very high damage to enemies within the immediate vicinity while keeping those that flee within the Quarg's reach."
       ],
@@ -558,6 +579,7 @@
     },
     {
       "name": "ribault unguided",
+      "slug": "ribault-unguided",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -571,6 +593,7 @@
     },
     {
       "name": "ribault guided",
+      "slug": "ribault-guided",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -606,6 +629,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 200,
       "outfit space": -200,
+      "slug": "slipstream-projector",
       "descriptions": [
         "While the exact workings of graviton tech are a mystery, it's no secret that this device manipulates gravity in such a wondrous way that it even bends the massive architecture of ringworlds to its whim. While the force is not enough to harm the delicate structure, the negative energy is powerful enough to rip off the shielding of a ship in a remarkably short period of time."
       ],
@@ -637,6 +661,7 @@
       "series": "Fortifications",
       "index": 91010,
       "thumbnail": "outfit/quarg countermeasures",
+      "slug": "phalanx-system",
       "descriptions": [
         "With an abundance of caution regarding the potential theft and misuse of their technology, Quarg ships are outfitted with special systems for repelling boarders in a manner that could be considered overkill. Because no one wants to be caught by the Quarg with stolen technology, these systems are pretty much worthless on the open market."
       ],

@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "pug",
-    "generatedAt": "2025-12-11T16:46:20.658Z",
+    "generatedAt": "2025-12-12T16:01:45.204Z",
     "itemCount": 14
   },
   "data": [
@@ -16,6 +16,7 @@
       "thumbnail": "outfit/pug zapper",
       "mass": 25,
       "outfit space": -25,
+      "slug": "pug-zapper",
       "descriptions": [
         "This is a formidable beam weapon, more damaging than even the most advanced energy beams that humanity has developed. Pug ships have integrated power plants that produce the considerable amount of energy that is needed to drive weapons like this one."
       ],
@@ -51,6 +52,7 @@
       "thumbnail": "outfit/pug zapper turret",
       "mass": 66,
       "outfit space": -66,
+      "slug": "pug-zapper-turret",
       "descriptions": [
         "Mounted on a turret, this Pug weapon becomes even more devastatingly powerful. However, its energy requirements are higher than most human ships can support."
       ],
@@ -89,6 +91,7 @@
       "thumbnail": "outfit/pug seeker",
       "mass": 34,
       "outfit space": -34,
+      "slug": "pug-seeker",
       "descriptions": [
         "You have no idea how this weapon works. It requires no ammunition, but its energy-based projectiles have the ability to home in on a target ship."
       ],
@@ -134,6 +137,7 @@
       "thumbnail": "outfit/pug anti-missile",
       "mass": 41,
       "outfit space": -41,
+      "slug": "pug-anti-missile",
       "descriptions": [
         "This anti-missile system designed by the Pug draws a lot of energy, but its fast firing rate makes it twice as effective as anything that Lovelace Labs has been able to come up with. A ship with one of these turrets will be very difficult to hit with missiles."
       ],
@@ -162,6 +166,7 @@
       "thumbnail": "outfit/t3 anti missile",
       "mass": 67,
       "outfit space": -67,
+      "slug": "tier-3-anti-missile",
       "descriptions": [
         "This powerful anti-missile turret is capable of destroying even the strongest of missiles."
       ],
@@ -193,6 +198,7 @@
       "thumbnail": "outfit/pug gridfire turret",
       "mass": 83,
       "outfit space": -83,
+      "slug": "pug-gridfire-turret",
       "descriptions": [
         "No one understands how the Gridfire Turret works, and the Pug aren't interested in explaining."
       ],
@@ -233,6 +239,7 @@
       "thumbnail": "outfit/pug akfar thruster",
       "mass": 43,
       "outfit space": -43,
+      "slug": "pug-akfar-thruster",
       "descriptions": [
         "This is a small thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
       ],
@@ -257,6 +264,7 @@
       "thumbnail": "outfit/pug akfar steering",
       "mass": 33,
       "outfit space": -33,
+      "slug": "pug-akfar-steering",
       "descriptions": [
         "This is a small steering system designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
       ],
@@ -281,6 +289,7 @@
       "thumbnail": "outfit/pug cormet thruster",
       "mass": 60,
       "outfit space": -60,
+      "slug": "pug-cormet-thruster",
       "descriptions": [
         "This is a medium-sized thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
       ],
@@ -305,6 +314,7 @@
       "thumbnail": "outfit/pug cormet steering",
       "mass": 46,
       "outfit space": -46,
+      "slug": "pug-cormet-steering",
       "descriptions": [
         "This is a medium-sized steering system designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
       ],
@@ -329,6 +339,7 @@
       "thumbnail": "outfit/pug lohmar thruster",
       "mass": 84,
       "outfit space": -84,
+      "slug": "pug-lohmar-thruster",
       "descriptions": [
         "This is a large thruster designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
       ],
@@ -353,6 +364,7 @@
       "thumbnail": "outfit/pug lohmar steering",
       "mass": 64,
       "outfit space": -64,
+      "slug": "pug-lohmar-steering",
       "descriptions": [
         "This is a large steering system designed by the Pug. It is not quite as powerful as a similarly sized atomic engine, but it makes up for that by being almost as energy efficient as ion engines."
       ],
@@ -376,6 +388,7 @@
       "index": 90020,
       "cost": 100000,
       "thumbnail": "outfit/pug biodefenses",
+      "slug": "pug-biodefenses",
       "descriptions": [
         "This semi-organic defense system is designed to release a highly lethal bioengineered virus capable of rapidly infecting any foreign entities present on the ship that it is installed on while leaving the crew of the ship unharmed. The virus, when combined with the defense system itself, is highly accurate at automatically determining friend from foe."
       ],
@@ -392,6 +405,7 @@
       "index": 90010,
       "cost": 123456,
       "thumbnail": "outfit/pug staff",
+      "slug": "pug-peacekeeping-staff",
       "descriptions": [
         "Though designed for planetary population control, the peacekeeping staff also works exceptionally well for ship defense. The staff emits a short-ranged beam that incapacitates anyone it touches by causing them to enter a euphoric and hallucinogenic state, wandering off to somewhere where they won't cause any trouble. Coming down from the state of euphoria is never pleasant."
       ],

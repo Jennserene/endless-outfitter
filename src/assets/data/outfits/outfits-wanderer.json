@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "wanderer",
-    "generatedAt": "2025-12-11T16:46:20.662Z",
+    "generatedAt": "2025-12-12T16:01:45.242Z",
     "itemCount": 31
   },
   "data": [
@@ -16,6 +16,7 @@
       "thumbnail": "outfit/sunbeam",
       "mass": 34,
       "outfit space": -34,
+      "slug": "sunbeam",
       "descriptions": [
         "The Wanderers do not devote much time to developing weapon technology, preferring to focus their attention on more constructive endeavors. However, the few weapons they have created are efficient and deadly."
       ],
@@ -50,6 +51,7 @@
       "thumbnail": "outfit/sunbeam turret",
       "mass": 46,
       "outfit space": -46,
+      "slug": "sunbeam-turret",
       "descriptions": [
         "As the Wanderers slowly cope with the transition from peacetime to the growing conflict with the Unfettered Hai, they have begun building ships that are capable of carrying turret-mounted weapons. Because of the sheer size of the Sunbeam, this turret only carries one of them."
       ],
@@ -90,6 +92,7 @@
       "thumbnail": "outfit/dual sunbeam turret",
       "mass": 83,
       "outfit space": -83,
+      "slug": "dual-sunbeam-turret",
       "descriptions": [
         "This turret carries a pair of Wanderer Sunbeams. For any ship that can support its energy requirements, it is an immensely powerful weapon."
       ],
@@ -130,6 +133,7 @@
       "thumbnail": "outfit/moonbeam",
       "mass": 19,
       "outfit space": -19,
+      "slug": "moonbeam",
       "descriptions": [
         "Because their Sunbeams are not very effective against the heavy plating of the Korath drones, the Wanderers have developed a new beam weapon that is considerably more effective against hull armor."
       ],
@@ -166,6 +170,7 @@
       "thumbnail": "outfit/moonbeam turret",
       "mass": 35,
       "outfit space": -35,
+      "slug": "moonbeam-turret",
       "descriptions": [
         "This turret only carries a single Moonbeam weapon, but with its duty cycle increased so it can do 50% more damage than the non-turreted version."
       ],
@@ -206,6 +211,7 @@
       "thumbnail": "outfit/wanderer anti-missile",
       "mass": 24,
       "outfit space": -24,
+      "slug": "wanderer-anti-missile",
       "descriptions": [
         "As a defense against the tracker pods used by the Unfettered Hai, the Wanderers have developed a hard-hitting anti-missile system that can knock almost any missile out of the sky with a single shot."
       ],
@@ -234,6 +240,7 @@
       "thumbnail": "outfit/thunderhead launcher",
       "mass": 14,
       "outfit space": -26,
+      "slug": "thunderhead-launcher",
       "descriptions": [
         "A prime example of Wanderer ingenuity, Thunderhead Missiles each carry five submunitions that are capable of independent tracking. Even if the target is able to shoot down or evade a few of them, the remaining missile fragments will still find their mark.",
         "\tAmmunition for this weapon can be restocked at any outfitter."
@@ -285,6 +292,7 @@
       "cost": 1800,
       "thumbnail": "outfit/thunderhead",
       "mass": 0.3,
+      "slug": "thunderhead-missile",
       "descriptions": [
         "Thunderhead cluster munitions are long-range Wanderer missiles that split into five fast and agile submunitions when they are close to their target. Each launcher can hold up to 40 of these."
       ],
@@ -294,6 +302,7 @@
     },
     {
       "name": "Thunderhead",
+      "slug": "thunderhead",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -332,6 +341,7 @@
       "thumbnail": "outfit/thunderhead storage",
       "mass": 2,
       "outfit space": -8,
+      "slug": "thunderhead-storage-array",
       "descriptions": [
         "The Thunderhead Storage Array is used to store extra ammunition for Thunderhead Launchers."
       ],
@@ -349,6 +359,7 @@
       "thumbnail": "outfit/small biochemical",
       "mass": 17,
       "outfit space": -17,
+      "slug": "small-biochemical-cell",
       "descriptions": [
         "This tiny generator draws energy from the metabolic byproducts of a collection of microorganisms that have been engineered by the Wanderers specifically for this purpose."
       ],
@@ -367,6 +378,7 @@
       "thumbnail": "outfit/large biochemical",
       "mass": 63,
       "outfit space": -63,
+      "slug": "large-biochemical-cell",
       "descriptions": [
         "The Wanderers are masters of unusual and efficient technology. This bioreactor is fueled by a culture of microorganisms that produce a small electric charge."
       ],
@@ -385,6 +397,7 @@
       "thumbnail": "outfit/red sun",
       "mass": 47,
       "outfit space": -47,
+      "slug": "red-sun-reactor",
       "descriptions": [
         "The Wanderers have recently begun producing this tiny reactor as a way to squeeze a bit more energy production into their warships."
       ],
@@ -403,6 +416,7 @@
       "thumbnail": "outfit/yellow sun",
       "mass": 82,
       "outfit space": -82,
+      "slug": "yellow-sun-reactor",
       "descriptions": [
         "This is a compact nuclear reactor designed by the Wanderers. In addition to generating power, it is able to store a small amount of energy."
       ],
@@ -421,6 +435,7 @@
       "thumbnail": "outfit/white sun",
       "mass": 127,
       "outfit space": -127,
+      "slug": "white-sun-reactor",
       "descriptions": [
         "The White Sun is a large nuclear reactor that the Wanderers use for powering their Strong Wind warships."
       ],
@@ -439,6 +454,7 @@
       "thumbnail": "outfit/blue sun",
       "mass": 152,
       "outfit space": -152,
+      "slug": "blue-sun-reactor",
       "descriptions": [
         "As the Wanderers have begun producing heavy warships, a need has arisen for larger and larger reactor cores to power them."
       ],
@@ -457,6 +473,7 @@
       "thumbnail": "outfit/bright cloud",
       "mass": 19,
       "outfit space": -19,
+      "slug": "bright-cloud-shielding",
       "descriptions": [
         "This small Wanderer shield generator is able to recharge a ship's shields at a considerable rate, but it also consumes more energy than some other shield generators do."
       ],
@@ -474,6 +491,7 @@
       "thumbnail": "outfit/dark storm",
       "mass": 41,
       "outfit space": -41,
+      "slug": "dark-storm-shielding",
       "descriptions": [
         "This Wanderer shield generator can restore a ship's shield strength more quickly than any human shielding technology, but while recharging shields it also draws a much larger amount of power."
       ],
@@ -491,6 +509,7 @@
       "thumbnail": "outfit/wanderer ramscoop",
       "mass": 7,
       "outfit space": -7,
+      "slug": "wanderer-ramscoop",
       "descriptions": [
         "Wanderer ships are designed to be self-sufficient even when traveling through uninhabited space, and their compact and efficient ramscoops are a key part of that self-sufficiency."
       ],
@@ -507,6 +526,7 @@
       "thumbnail": "outfit/wanderer heat sink",
       "mass": 12,
       "outfit space": -12,
+      "slug": "wanderer-heat-sink",
       "descriptions": [
         "Most Wanderer systems are so efficient that ancillary cooling is unnecessary. As a result, their recent attempts to add cooling to their heavy warships are somewhat rudimentary."
       ],
@@ -523,6 +543,7 @@
       "thumbnail": "outfit/tiny radiant thruster",
       "mass": 12,
       "outfit space": -12,
+      "slug": "type-1-radiant-thruster",
       "descriptions": [
         "This is the tiniest Wanderer engine. Like all their engines, it works in part by radiating excess heat, and as a result it doubles as a cooler for your ship."
       ],
@@ -548,6 +569,7 @@
       "thumbnail": "outfit/small radiant thruster",
       "mass": 27,
       "outfit space": -27,
+      "slug": "type-2-radiant-thruster",
       "descriptions": [
         "Wanderer engines work by transferring excess heat from the ship into the exhaust plasma. When not providing thrust, the engines still serve as a cooling system."
       ],
@@ -573,6 +595,7 @@
       "thumbnail": "outfit/medium radiant thruster",
       "mass": 42,
       "outfit space": -42,
+      "slug": "type-3-radiant-thruster",
       "descriptions": [
         "Most engines this size generate a considerable amount of heat, but the Wanderers have developed a way of using the engine itself to vent extra heat from a ship, generating extra propulsive force in the process."
       ],
@@ -598,6 +621,7 @@
       "thumbnail": "outfit/large radiant thruster",
       "mass": 65,
       "outfit space": -65,
+      "slug": "type-4-radiant-thruster",
       "descriptions": [
         "This is the largest engine that the Wanderers have developed. Its incredibly efficient design allows it to cool your ship even while it is firing."
       ],
@@ -623,6 +647,7 @@
       "thumbnail": "outfit/tiny radiant steering",
       "mass": 9,
       "outfit space": -9,
+      "slug": "type-1-radiant-steering",
       "descriptions": [
         "This tiny steering system is used by the Wanderers to power their unpiloted mining and surveying drones."
       ],
@@ -648,6 +673,7 @@
       "thumbnail": "outfit/small radiant steering",
       "mass": 20,
       "outfit space": -20,
+      "slug": "type-2-radiant-steering",
       "descriptions": [
         "This small Wanderer steering system vents excess heat from your ship even when it is not in use, allowing it to double as a cooling system."
       ],
@@ -673,6 +699,7 @@
       "thumbnail": "outfit/medium radiant steering",
       "mass": 30,
       "outfit space": -30,
+      "slug": "type-3-radiant-steering",
       "descriptions": [
         "This steering system is used by the Wanderers in their mid-sized ships. In addition to turning your ship, it is able to vent a considerable amount of heat."
       ],
@@ -698,6 +725,7 @@
       "thumbnail": "outfit/large radiant steering",
       "mass": 47,
       "outfit space": -47,
+      "slug": "type-4-radiant-steering",
       "descriptions": [
         "This is the largest steering system that the Wanderers sell."
       ],
@@ -720,6 +748,7 @@
       "series": "Licenses",
       "index": 9010,
       "thumbnail": "outfit/wanderer outfits license",
+      "slug": "wanderer-outfits-license",
       "descriptions": [
         "This oddly shaped dish holds a collection of perfectly preserved seeds of one Sentinel Skirtgrass, a sensitive yet robust species the Wanderers use during their initial terraforming efforts to gauge how well a world is responding to their methods. Each seed carries a built-in generational limit, ensuring the grass disappears after a few lifecycles so that it doesn't compete with native flora. These seeds symbolize the beginning of both terraforming and goodwill, granting their owner the right to acquire Wanderer outfits."
       ],
@@ -731,6 +760,7 @@
       "series": "Licenses",
       "index": 9020,
       "thumbnail": "outfit/wanderer license",
+      "slug": "wanderer-license",
       "descriptions": [
         "Intact within an amber shell, this leafy branch of the Noble Watchwood - rumored to come from the Wanderers' original home planet - symbolizes their pride and joy, the total revitalization of a planet. While unmatched in size and formidable to behold, the tree is quite fragile to even the slightest alterations in climate, so the growth of one such specimen to maturity is seen as a sign of a healed ecosystem. As a symbol of peace akin to Earth's olive branch, it grants its bearer the right to purchase non-military Wanderer ships."
       ],
@@ -742,6 +772,7 @@
       "series": "Licenses",
       "index": 9030,
       "thumbnail": "outfit/wanderer military license",
+      "slug": "wanderer-military-license",
       "descriptions": [
         "The history of the Wanderers is not without hardship and failure. Immortalized in a bronze mold, this withered branch recalls the time the Wanderers could not save a world, for skilled as they may be, they cannot stop destruction when it is actively sought after by others mightier than them. The fall of the Noble Watchwood, their cherished emblem, now stands as a solemn vow: when peace fails, they too must prepare to fight. To stand and fight with the Wanderers, this license grants access to their greatest warships."
       ],

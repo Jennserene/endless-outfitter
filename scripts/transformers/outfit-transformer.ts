@@ -1,6 +1,7 @@
 import { extractLicenses } from "../utils/licenses";
 import { extractDescriptions } from "../utils/descriptions";
 import { extractStringValue } from "../utils/value-extraction";
+import { slugify } from "../utils/slug";
 
 /**
  * Transforms raw outfit data to match the Outfit schema.
@@ -24,6 +25,7 @@ export class OutfitTransformer {
     const outfit = raw as Record<string, unknown>;
 
     const attributes: Record<string, unknown> = {};
+    const name = typeof outfit.name === "string" ? outfit.name : "";
     const result: Record<string, unknown> = {
       name: outfit.name,
       plural: outfit.plural,
@@ -40,6 +42,7 @@ export class OutfitTransformer {
         typeof outfit["outfit space"] === "number"
           ? outfit["outfit space"]
           : undefined,
+      slug: slugify(name),
     };
 
     // Handle licenses - convert to array of strings if present

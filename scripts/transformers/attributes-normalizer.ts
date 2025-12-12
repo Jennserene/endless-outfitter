@@ -22,11 +22,35 @@ export class AttributesNormalizer implements Transformer {
       attributes = {};
     }
 
-    // Handle "add attributes" - merge it into attributes
+    // Handle "add attributes" - add numeric values, replace others
+    // Support both formats:
+    // 1. "add attributes" (top-level format)
+    // 2. "add" with _value === "attributes" (variant format from parser)
+    let addAttributes: Record<string, unknown> | null = null;
+
     if (ship["add attributes"]) {
-      const addAttributes = ship["add attributes"];
-      if (typeof addAttributes === "object" && addAttributes !== null) {
-        Object.assign(attributes, addAttributes as Record<string, unknown>);
+      const addAttrs = ship["add attributes"];
+      if (typeof addAttrs === "object" && addAttrs !== null) {
+        addAttributes = addAttrs as Record<string, unknown>;
+      }
+    } else if (ship.add && typeof ship.add === "object" && ship.add !== null) {
+      const addData = ship.add as Record<string, unknown>;
+      if (addData._value === "attributes") {
+        addAttributes = { ...addData };
+        delete addAttributes._value; // Remove internal parser value
+      }
+    }
+
+    if (addAttributes) {
+      for (const key in addAttributes) {
+        const addValue = addAttributes[key];
+        const existingValue = attributes[key];
+        // If both are numbers, add them; otherwise replace
+        if (typeof addValue === "number" && typeof existingValue === "number") {
+          attributes[key] = existingValue + addValue;
+        } else {
+          attributes[key] = addValue;
+        }
       }
     }
 

@@ -6,10 +6,29 @@
 import { TEST_ERROR_MESSAGE, TEST_ERROR_DIGEST } from "./test-constants";
 
 /**
+ * Generate a URL-friendly slug from a name string.
+ */
+function slugify(name: string): string {
+  if (!name || typeof name !== "string") {
+    return "";
+  }
+
+  return name
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/\s/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/**
  * Ship data structure used in the application
  */
 export interface ShipFixture {
   name: string;
+  slug: string;
   attributes: {
     category: string;
     hull: number;
@@ -25,8 +44,10 @@ export interface ShipFixture {
 export function createShipFixture(
   overrides?: Partial<ShipFixture>
 ): ShipFixture {
+  const name = overrides?.name || "Argosy";
   return {
-    name: "Argosy",
+    name,
+    slug: overrides?.slug || slugify(name),
     attributes: {
       category: "ship",
       hull: 100,

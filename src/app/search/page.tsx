@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { searchGameData } from "@/lib/utils/search";
+import { SearchResultsClient } from "./_components/search-results";
 
 export const metadata: Metadata = {
   title: "Search - Endless Outfitter",
@@ -9,31 +11,24 @@ export const metadata: Metadata = {
  * Search page for data pages.
  *
  * This is a Server Component (default in Next.js App Router).
- * This page will eventually allow users to:
- * - Search for ships, outfits, and other game data
- * - Filter results by various criteria
- * - View detailed information about search results
+ * It performs server-side search using the search index and Fuse.js.
  */
-export default function SearchPage({
+export default async function SearchPage({
   searchParams,
 }: {
-  searchParams: { query?: string; type?: string };
+  searchParams: Promise<{ query?: string }>;
 }) {
-  const query = searchParams.query || "";
-  const type = searchParams.type || "all";
+  const resolvedSearchParams = await searchParams;
+  const query = resolvedSearchParams.query || "";
+  const results = query ? searchGameData(query) : { ships: [], outfits: [] };
 
   return (
     <main className="w-full py-8">
       <h1 className="text-3xl font-bold mb-4">Search</h1>
-      <p className="text-muted-foreground mb-4">
-        Search for ships, outfits, and other game data. This functionality will
-        be implemented soon.
+      <p className="text-muted-foreground mb-6">
+        Search for ships, outfits, and other game data by name.
       </p>
-      {query && (
-        <p className="text-sm text-muted-foreground">
-          Search query: {query} (type: {type})
-        </p>
-      )}
+      <SearchResultsClient initialQuery={query} initialResults={results} />
     </main>
   );
 }

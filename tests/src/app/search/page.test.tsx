@@ -4,70 +4,63 @@
  */
 
 import { render, screen } from "../../__helpers__/test-utils";
-import {
-  TEST_SEARCH_QUERY,
-  TEST_SEARCH_TYPE,
-} from "../../__helpers__/test-constants";
+import { TEST_SEARCH_QUERY } from "../../__helpers__/test-constants";
 import SearchPage from "@/app/search/page";
+import { mockRouter, mockSearchParams } from "../../__helpers__/mocks";
+
+// Mock next/navigation
+jest.mock("next/navigation", () => ({
+  useRouter: () => mockRouter,
+  useSearchParams: () => mockSearchParams,
+}));
+
+// Mock search utility
+jest.mock("@/lib/utils/search", () => ({
+  searchGameData: jest.fn(() => ({ ships: [], outfits: [] })),
+}));
 
 describe("SearchPage", () => {
-  it("should render main heading", () => {
-    render(<SearchPage searchParams={{}} />);
+  it("should render main heading", async () => {
+    const page = await SearchPage({ searchParams: Promise.resolve({}) });
+    const { container } = render(page);
 
-    const heading = screen.getByRole("heading", { level: 1 });
+    const heading = container.querySelector("h1");
     expect(heading).toBeInTheDocument();
     expect(heading).toHaveTextContent("Search");
   });
 
-  it("should render description text", () => {
-    render(<SearchPage searchParams={{}} />);
+  it("should render description text", async () => {
+    const page = await SearchPage({ searchParams: Promise.resolve({}) });
+    render(page);
 
     const description = screen.getByText(
-      /Search for ships, outfits, and other game data/i
+      /Search for ships, outfits, and other game data by name/i
     );
     expect(description).toBeInTheDocument();
   });
 
-  it("should not render search query when not provided", () => {
-    render(<SearchPage searchParams={{}} />);
+  it("should render search input when query is not provided", async () => {
+    const page = await SearchPage({ searchParams: Promise.resolve({}) });
+    render(page);
 
-    expect(screen.queryByText(/Search query:/)).not.toBeInTheDocument();
+    const input = screen.getByPlaceholderText(/Search for ships or outfits/i);
+    expect(input).toBeInTheDocument();
   });
 
-  it("should render search query when provided", () => {
-    render(
-      <SearchPage
-        searchParams={{ query: TEST_SEARCH_QUERY, type: TEST_SEARCH_TYPE }}
-      />
-    );
+  it("should render search results when query is provided", async () => {
+    const page = await SearchPage({
+      searchParams: Promise.resolve({ query: TEST_SEARCH_QUERY }),
+    });
+    render(page);
 
-    expect(
-      screen.getByText(
-        new RegExp(
-          `Search query: ${TEST_SEARCH_QUERY}.*type: ${TEST_SEARCH_TYPE}`
-        )
-      )
-    ).toBeInTheDocument();
+    const input = screen.getByPlaceholderText(/Search for ships or outfits/i);
+    expect(input).toBeInTheDocument();
+    expect(input).toHaveValue(TEST_SEARCH_QUERY);
   });
 
-  it("should use default type 'all' when not provided", () => {
-    render(<SearchPage searchParams={{ query: TEST_SEARCH_QUERY }} />);
-
-    expect(
-      screen.getByText(
-        new RegExp(`Search query: ${TEST_SEARCH_QUERY}.*type: all`)
-      )
-    ).toBeInTheDocument();
-  });
-
-  it("should use empty string for query when not provided", () => {
-    render(<SearchPage searchParams={{ type: "ships" }} />);
-
-    expect(screen.queryByText(/Search query:/)).not.toBeInTheDocument();
-  });
-
-  it("should render main element", () => {
-    const { container } = render(<SearchPage searchParams={{}} />);
+  it("should render main element", async () => {
+    const page = await SearchPage({ searchParams: Promise.resolve({}) });
+    const { container } = render(page);
 
     const main = container.querySelector("main");
     expect(main).toBeInTheDocument();

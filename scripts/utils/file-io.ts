@@ -4,6 +4,7 @@ import {
   existsSync,
   readdirSync,
   statSync,
+  renameSync,
 } from "fs";
 import { join } from "path";
 import { extractSpeciesFromPath } from "./species";
@@ -60,31 +61,42 @@ function areEqualIgnoringGeneratedAt<T>(a: T, b: T): boolean {
 /**
  * Write JSON data to a file with consistent formatting.
  * Skips writing if the file content is identical (ignoring generatedAt).
+ * If content matches and a backup file exists, restores the backup instead of writing.
  *
  * @param filePath - Path to the file to write
  * @param data - Data to write
  * @param existingFileCache - Optional cache of existing file contents to compare against
- * @returns true if file was written, false if skipped due to identical content
+ * @returns true if file was written/restored, false if skipped due to identical content
  */
 export function writeJsonFile<T>(
   filePath: string,
   data: T,
   existingFileCache?: FileContentCache
 ): boolean {
-  const formattedData = JSON.stringify(data, null, 2) + "\n";
-
   // If we have a cache, compare with existing content
-  // BUT: only skip writing if the file actually exists on disk
-  // (after backup, files are renamed to .old, so we must write even if cache matches)
-  if (existingFileCache?.has(filePath) && existsSync(filePath)) {
+  if (existingFileCache?.has(filePath)) {
     const existingData = existingFileCache.get(filePath);
     if (areEqualIgnoringGeneratedAt(data, existingData)) {
-      // Content is identical (ignoring generatedAt) AND file exists, skip writing
-      return false;
+      // Content is identical (ignoring generatedAt)
+      // Check if file exists on disk
+      if (existsSync(filePath)) {
+        // File exists and content matches, skip writing
+        return false;
+      }
+
+      // File doesn't exist (was backed up), check if backup exists
+      const backupPath = `${filePath}.old`;
+      if (existsSync(backupPath)) {
+        // Restore from backup instead of writing new file
+        // This preserves the original generatedAt timestamp
+        renameSync(backupPath, filePath);
+        return false; // File was restored, not written
+      }
     }
   }
 
-  // Write the file (either cache doesn't match, or file doesn't exist on disk)
+  // Write the file (either cache doesn't match, or no cache, or no backup to restore)
+  const formattedData = JSON.stringify(data, null, 2) + "\n";
   writeFileSync(filePath, formattedData, "utf-8");
   return true;
 }

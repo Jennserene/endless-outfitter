@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "korath",
-    "generatedAt": "2025-12-11T16:46:20.655Z",
+    "generatedAt": "2025-12-12T16:01:45.202Z",
     "itemCount": 84
   },
   "data": [
@@ -17,6 +17,7 @@
       "thumbnail": "outfit/small korath generator",
       "mass": 23,
       "outfit space": -23,
+      "slug": "generator-candle-class",
       "descriptions": [
         "This tiny generator produces a significant amount of energy using the heat produced by the radioactive decay of some particularly unstable nuclear isotopes."
       ],
@@ -35,6 +36,7 @@
       "thumbnail": "outfit/medium korath generator",
       "mass": 39,
       "outfit space": -39,
+      "slug": "generator-furnace-class",
       "descriptions": [
         "Because Korath equipment is so power-hungry, they use radiothermal generators even in their fighters and interceptors, rather than relying on fuel cells or other comparable technology."
       ],
@@ -53,6 +55,7 @@
       "thumbnail": "outfit/large korath generator",
       "mass": 71,
       "outfit space": -71,
+      "slug": "generator-inferno-class",
       "descriptions": [
         "With their typical disregard for the environmental impacts of their technology, the Korath put some rather alarming isotopes into this radiothermal generator. Its considerable energy output is offset by the heat it produces."
       ],
@@ -70,6 +73,7 @@
       "thumbnail": "outfit/plasma core",
       "mass": 54,
       "outfit space": -54,
+      "slug": "plasma-core",
       "descriptions": [
         "This compact Fusion Reactor is an ancient Korath design, and served as the mainstay of their war fleets until larger ships and more powerful weapons created a need for bigger and more powerful generators."
       ],
@@ -87,6 +91,7 @@
       "thumbnail": "outfit/double plasma core",
       "mass": 93,
       "outfit space": -93,
+      "slug": "double-plasma-core",
       "descriptions": [
         "This reactor core combines a pair of the ancient and robust Korath Plasma Cores into a single package."
       ],
@@ -104,6 +109,7 @@
       "thumbnail": "outfit/triple plasma core",
       "mass": 169,
       "outfit space": -169,
+      "slug": "triple-plasma-core",
       "descriptions": [
         "For the largest of their capital ships, the Korath designed a fusion reactor far more powerful than any comparable human technology."
       ],
@@ -121,6 +127,7 @@
       "thumbnail": "outfit/small heat shunt",
       "mass": 7,
       "outfit space": -7,
+      "slug": "small-heat-shunt",
       "descriptions": [
         "The sheer inefficiency of most Korath equipment has forced them to become exceptionally good at one thing: dealing with large amounts of waste heat."
       ],
@@ -137,6 +144,7 @@
       "thumbnail": "outfit/large heat shunt",
       "mass": 24,
       "outfit space": -24,
+      "slug": "large-heat-shunt",
       "descriptions": [
         "Without these powerful cooling systems, most Korath warships would overheat within seconds as soon as they began to fire their weapons."
       ],
@@ -153,6 +161,7 @@
       "thumbnail": "outfit/liquid sodium",
       "mass": 34,
       "outfit space": -34,
+      "slug": "liquid-sodium-cooler",
       "descriptions": [
         "This active cooling system uses a liquid sodium cooling loop to extract heat from the ship's hottest systems. A secondary system draws a moderate amount of power to continuously run the pump and maintain a minimum temperature in order to keep the sodium from freezing when the system is inactive."
       ],
@@ -173,6 +182,7 @@
       "thumbnail": "outfit/tiny systems core",
       "mass": 17,
       "outfit space": -17,
+      "slug": "systems-core-tiny",
       "descriptions": [
         "Most Korath fighter pilots dispense with Systems Cores, preferring to run larger than necessary generators and return to their mothership if they take damage. Usually, only civilian small craft operators are willing to sacrifice enough firepower to mount this shield generator, capacitor, swarm of repair microbots, and computer to control them."
       ],
@@ -195,6 +205,7 @@
       "thumbnail": "outfit/small systems core",
       "mass": 31,
       "outfit space": -31,
+      "slug": "systems-core-small",
       "descriptions": [
         "The heart of any Korath ship is the Systems Core, which houses the ship's central computer, shield generators, reserve power, and a small reservoir which stores, produces and recycles a small microbot swarm that can make minor repairs to the ship while in flight."
       ],
@@ -217,6 +228,7 @@
       "thumbnail": "outfit/medium systems core",
       "mass": 53,
       "outfit space": -53,
+      "slug": "systems-core-medium",
       "descriptions": [
         "The Systems Core houses a powerful computer, shield generators, reserve power, and a control center for repair microbots that can move across a ship's exterior and slowly repair damage to the hull. The microbot reservoir is capable of supporting a significant swarm."
       ],
@@ -239,6 +251,7 @@
       "thumbnail": "outfit/large systems core",
       "mass": 91,
       "outfit space": -91,
+      "slug": "systems-core-large",
       "descriptions": [
         "This massive bank of computers, shield generators, capacitors and repair microbot reservoirs holds everything needed to keep the very largest of Korath ships in working condition."
       ],
@@ -260,6 +273,7 @@
       "thumbnail": "outfit/korath fuel processor",
       "mass": 14,
       "outfit space": -14,
+      "slug": "fuel-processor",
       "descriptions": [
         "The Fuel Processor was developed during the latter half of the Korath Civil War, when Korath factions attempted to provide for their war effort by raiding the Hai for supplies. Their ships would often end up stranded after they had run out of fuel and were unable to escape from the Hai military fleets, prompting the creation of this hybrid fuel storage and ramscoop device. These outfits are now the main source of fuel for the remaining Korath in the galaxy."
       ],
@@ -277,6 +291,7 @@
       "thumbnail": "outfit/command center",
       "mass": 8,
       "outfit space": -24,
+      "slug": "command-center",
       "descriptions": [
         "In response to occasional raids by the robotic war machines left behind after their recent conflict, the Kor Efret have developed this minimal, spartan Command Center that can be installed in a captured robotic ship to allow a pilot to override the AI and interface with the ship's controls. The Command Center only provides a single bunk for the captain, so more bunks may be necessary if the ship has turrets or other systems that require crew."
       ],
@@ -295,6 +310,7 @@
       "thumbnail": "outfit/reasoning node",
       "mass": 1,
       "outfit space": -1,
+      "slug": "reasoning-node",
       "descriptions": [
         "This is some sort of advanced, miniature computer combined with various sensor inputs and a hyperspace communication relay. Presumably, in some way it controls the Mereti automata or allows them to more easily coordinate their actions with each other."
       ],
@@ -308,6 +324,7 @@
       "thumbnail": "outfit/control transceiver",
       "mass": 1,
       "outfit space": -1,
+      "slug": "control-transceiver",
       "descriptions": [
         "This is a miniaturized communication device, which can be connected to all the major systems of a Kor Sestor automaton, apparently as a way of controlling them remotely. The communications are encrypted and authenticated in a way that would make it nearly impossible to spoof the control signals."
       ],
@@ -323,6 +340,7 @@
       "thumbnail": "outfit/tiny korath afterburner",
       "mass": 9,
       "outfit space": -9,
+      "slug": "afterburner-asteroid-class",
       "descriptions": [
         "The smallest of afterburners is as much Fuel Processor as it is afterburner. It allows Korath small craft operators to squeeze a hyperdrive into otherwise intrasystem ships and dispense with conventional thrusters entirely.",
         "\tKorath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that may nearly melt the thruster."
@@ -348,6 +366,7 @@
       "thumbnail": "outfit/small korath afterburner",
       "mass": 19,
       "outfit space": -19,
+      "slug": "afterburner-comet-class",
       "descriptions": [
         "Adding these afterburners to an interceptor allows it to reach absurd speeds; however, the heat produced ensures that running them for any substantial period of time will require some serious cooling.",
         "\tKorath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
@@ -371,6 +390,7 @@
       "thumbnail": "outfit/medium korath afterburner",
       "mass": 32,
       "outfit space": -32,
+      "slug": "afterburner-lunar-class",
       "descriptions": [
         "Although these afterburners produce an incredible amount of thrust for their fuel usage, the prospect of installing one brings to mind many safety concerns.",
         "\tKorath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
@@ -394,6 +414,7 @@
       "thumbnail": "outfit/large korath afterburner",
       "mass": 55,
       "outfit space": -55,
+      "slug": "afterburner-planetary-class",
       "descriptions": [
         "These enormous afterburners have dedicated reaction chambers with cooling vents to keep the fuel-plasma explosion from destroying the thruster.",
         "\tKorath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
@@ -418,6 +439,7 @@
       "thumbnail": "outfit/huge korath afterburner",
       "mass": 94,
       "outfit space": -94,
+      "slug": "afterburner-stellar-class",
       "descriptions": [
         "The very largest of Korath afterburners have integrated active cooling systems, powered by the fuel-plasma explosion, in order to keep the reaction chambers from melting.",
         "\tKorath afterburners pump super-heated hyperspace fuel directly into a thruster's plasma stream, resulting in a phenomenal explosion that nearly melts the thruster."
@@ -444,6 +466,7 @@
       "thumbnail": "outfit/tiny korath engine",
       "mass": 18,
       "outfit space": -18,
+      "slug": "engine-meteor-class",
       "descriptions": [
         "Although the prevailing Korath attitude towards engine construction has always been with a focus on making things bigger, faster, and more powerful, the Exiles found it necessary to develop these engines to allow their fighters to carry larger weapons or more cargo, at the cost of some speed."
       ],
@@ -477,6 +500,7 @@
       "thumbnail": "outfit/korath bow drive",
       "mass": 18,
       "outfit space": -18,
+      "slug": "bow-drive-meteor-class",
       "descriptions": [
         "This modification of the Meteor Class engines acts as a reverser, allowing a full range of mobility for small craft when paired with more powerful base thrusters."
       ],
@@ -511,6 +535,7 @@
       "thumbnail": "outfit/tiny korath reverser",
       "mass": 14,
       "outfit space": -14,
+      "slug": "reverser-asteroid-class",
       "descriptions": [
         "The Asteroid Class reverser provides a modest amount of thrust, giving Korath captains with weapon space to spare a small edge in battle.",
         "\tThis Korath engine has been modified to be partially installed in a ship's weapon space, allowing it to push the ship in reverse."
@@ -538,6 +563,7 @@
       "thumbnail": "outfit/small korath reverser",
       "mass": 24,
       "outfit space": -24,
+      "slug": "reverser-comet-class",
       "descriptions": [
         "The Comet Class reverser is unpopular amongst Korath captains, who find it a bit weak to pair with Planetary Class engines, yet too large to be worth sacrificing weapon space.",
         "\tThis Korath engine has been modified to be partially installed in a ship's weapon space, allowing it to push the ship in reverse."
@@ -565,6 +591,7 @@
       "thumbnail": "outfit/medium korath reverser",
       "mass": 40,
       "outfit space": -40,
+      "slug": "reverser-lunar-class",
       "descriptions": [
         "Dwarfing any reversers in human space, this engine provides a considerable amount of reverse thrust for medium-sized Korath ships, where it is most commonly found.",
         "\tThis Korath engine has been modified to be partially installed in a ship's weapon space, allowing it to push the ship in reverse."
@@ -592,6 +619,7 @@
       "thumbnail": "outfit/large korath reverser",
       "mass": 68,
       "outfit space": -68,
+      "slug": "reverser-planetary-class",
       "descriptions": [
         "Being essentially a slightly altered Planetary Class engine, this reverser provides an enormous amount of reverse thrust for any ship capable of installing it.",
         "\tThis Korath engine has been modified to be partially installed in a ship's weapon space, allowing it to push the ship in reverse."
@@ -619,6 +647,7 @@
       "thumbnail": "outfit/huge korath reverser",
       "mass": 118,
       "outfit space": -118,
+      "slug": "reverser-stellar-class",
       "descriptions": [
         "Modeled on their largest engines, the Stellar Class reverser provides a reverse thrust unlike anything you've seen before.",
         "\tThis Korath engine has been modified to be partially installed in a ship's weapon space, allowing it to push the ship in reverse."
@@ -646,6 +675,7 @@
       "thumbnail": "outfit/tiny korath thruster",
       "mass": 14,
       "outfit space": -14,
+      "slug": "thruster-asteroid-class",
       "descriptions": [
         "Given its size, this tiny Korath thruster produces quite a kick. But, it also draws a considerable amount of power."
       ],
@@ -671,6 +701,7 @@
       "thumbnail": "outfit/small korath thruster",
       "mass": 24,
       "outfit space": -24,
+      "slug": "thruster-comet-class",
       "descriptions": [
         "Like most Korath technology, this thruster's power is offset by its energy requirements and heat output."
       ],
@@ -696,6 +727,7 @@
       "thumbnail": "outfit/medium korath thruster",
       "mass": 40,
       "outfit space": -40,
+      "slug": "thruster-lunar-class",
       "descriptions": [
         "The Korath have the dubious distinction of relying on propulsion systems that produce more waste heat than the weapon systems of most other species."
       ],
@@ -721,6 +753,7 @@
       "thumbnail": "outfit/large korath thruster",
       "mass": 68,
       "outfit space": -68,
+      "slug": "thruster-planetary-class",
       "descriptions": [
         "The Quarg, who do all things efficiently, view the Korath propulsion systems with particular distaste."
       ],
@@ -746,6 +779,7 @@
       "thumbnail": "outfit/huge korath thruster",
       "mass": 118,
       "outfit space": -118,
+      "slug": "thruster-stellar-class",
       "descriptions": [
         "A legend among the Korath claims that when they were first testing out their latest generation of plasma thrusters, a concerned Quarg fleet approached and volunteered to help evacuate the Korath crew from what they assumed was a dying ship. The Quarg were surprised to learn that the flames shooting out the back of the ship were in fact its intended mode of propulsion."
       ],
@@ -771,6 +805,7 @@
       "thumbnail": "outfit/tiny korath steering",
       "mass": 10,
       "outfit space": -10,
+      "slug": "steering-asteroid-class",
       "descriptions": [
         "The Korath use these steering systems only in the very smallest of their ships."
       ],
@@ -796,6 +831,7 @@
       "thumbnail": "outfit/small korath steering",
       "mass": 18,
       "outfit space": -18,
+      "slug": "steering-comet-class",
       "descriptions": [
         "This compact steering system is a classic example of Korath technology: small, powerful, and woefully inefficient."
       ],
@@ -821,6 +857,7 @@
       "thumbnail": "outfit/medium korath steering",
       "mass": 30,
       "outfit space": -30,
+      "slug": "steering-lunar-class",
       "descriptions": [
         "Korath engines can be fitted into just about any ship, but unless accompanied by some Korath cooling systems as well, their heat output will often be more than the ship can handle."
       ],
@@ -846,6 +883,7 @@
       "thumbnail": "outfit/large korath steering",
       "mass": 52,
       "outfit space": -52,
+      "slug": "steering-planetary-class",
       "descriptions": [
         "Where other species might focus on converting energy into thrust as efficiently as possible, the Korath instead strive to pack as much power as possible into the smallest area. This steering system is a classic example of their work."
       ],
@@ -871,6 +909,7 @@
       "thumbnail": "outfit/huge korath steering",
       "mass": 89,
       "outfit space": -89,
+      "slug": "steering-stellar-class",
       "descriptions": [
         "After millennia of war, the Korath have developed some truly enormous warships. These steering systems give even their largest warships a reasonable amount of agility in combat."
       ],
@@ -895,6 +934,7 @@
       "thumbnail": "outfit/tiny efreti thruster",
       "mass": 19,
       "outfit space": -19,
+      "slug": "arkrof-gp-hybrid-thruster",
       "descriptions": [
         "Efreti engineers have begun to grudgingly take inspiration from their not-entirely-welcome Quarg guardians. The incorporation of gravitational propulsion increases the thrust output for engines in this line, at the cost of even higher energy use. These are the smallest such gravitoplasma-based thrusters."
       ],
@@ -919,6 +959,7 @@
       "thumbnail": "outfit/small efreti thruster",
       "mass": 33,
       "outfit space": -33,
+      "slug": "farves-gp-hybrid-thruster",
       "descriptions": [
         "The forced retreat from research into interstellar jump drive technology has left the Efreti engineers with little else to tinker with than subluminal propulsion. These resulting thrusters are one important example of this effort. Synthesizing gravitational propulsion with more traditional plasma thrusters moderates the heat output from these engines."
       ],
@@ -943,6 +984,7 @@
       "thumbnail": "outfit/medium efreti thruster",
       "mass": 57,
       "outfit space": -57,
+      "slug": "gaktem-gp-hybrid-thruster",
       "descriptions": [
         "The design of these engines suggests Efreti physicists appear to have gone considerably further than the mathematically self-consistent, but stubbornly unfalsifiable, conjectures of String Theory. Despite the Efreti's limited resources, these thrusters allow their engines to maintain the traditional Korath emphasis on speed in a small package while keeping heat output down."
       ],
@@ -967,6 +1009,7 @@
       "thumbnail": "outfit/large efreti thruster",
       "mass": 86,
       "outfit space": -86,
+      "slug": "nelmeb-gp-hybrid-thruster",
       "descriptions": [
         "Korath physicists have, for several centuries, understood concrete aspects of the unity that underlies both quantum gravity and the forces that bind quarks and gluons together. However, as Efreti efforts are comparatively recent, this technological synthesis lags behind comparable Quarg technology.",
         "\tThese are the largest gravitoplasma thrusters that the Efreti have to offer, and as such are usually only found on their gargantuan civilian ships. Despite their size and thrusting power, the Quarg are still rather unimpressed with the inefficient nature of the design."
@@ -992,6 +1035,7 @@
       "thumbnail": "outfit/tiny efreti steering",
       "mass": 12,
       "outfit space": -12,
+      "slug": "arkrof-gp-hybrid-steering",
       "descriptions": [
         "Unlike most Korath engines, Efreti engines do not rely solely on plasma. Gravitoplasma engines combine traditional Korath plasma thrust with Quarg-inspired forays into gravitation-based propulsion. The smallest steering manages to develop a great deal of torque at the expense of higher energy costs."
       ],
@@ -1016,6 +1060,7 @@
       "thumbnail": "outfit/small efreti steering",
       "mass": 24,
       "outfit space": -24,
+      "slug": "farves-gp-hybrid-steering",
       "descriptions": [
         "An important product of Efreti engineers' ongoing effort to evolve their understanding of fundamental physics and how it can be put into practice is this compact steering system. A classic example of Korath technology, it is small, powerful, and woefully inefficient. It appears that the Quarg influence on the Efreti has not changed the underlying design philosophy of the Korath living here."
       ],
@@ -1040,6 +1085,7 @@
       "thumbnail": "outfit/medium efreti steering",
       "mass": 42,
       "outfit space": -42,
+      "slug": "gaktem-gp-hybrid-steering",
       "descriptions": [
         "In these hybrid gravitoplasma thrusters, Efreti scientists and engineers have begun to instantiate the newest, unified understandings of quantum gravity with the nuclear forces.",
         "\tUnless accompanied by some Korath power systems, this Efreti steering system's energy consumption will often be more than a ship can handle. Their main advantage when compared to other Korath engines of the same size is reduced heat production."
@@ -1065,6 +1111,7 @@
       "thumbnail": "outfit/large efreti steering",
       "mass": 67,
       "outfit space": -67,
+      "slug": "nelmeb-gp-hybrid-steering",
       "descriptions": [
         "Prompted by the grim will to trudge onwards and innovate despite being forced to abandon jump drive technology, Efreti engineers have recently begun to utilize their theoretical knowledge to incorporate gravitational propulsion into their more traditional fusion-based plasma engines.",
         "\tMore stable than one would expect from Korath engines this large, these steering thrusters were developed by the Efreti as a means of guiding their most massive ships. Their high energy usage is tempered by the fact that they are usually powered by the most massive Korath fusion reactors."
@@ -1088,6 +1135,7 @@
       "index": 4010,
       "cost": 53000,
       "thumbnail": "outfit/korath rifle",
+      "slug": "thermal-repeater-rifle",
       "descriptions": [
         "This rifle is commonplace among the Korath, predating the creation of the ship-scale Thermal Repeater by at least two centuries. As it uses superheated plasma instead of lasers, the rifle is slow to fire and can sometimes burn its user's hands if they aren't careful. It makes up for these setbacks by guaranteeing that those hit won't live long enough to fire back."
       ],
@@ -1106,6 +1154,7 @@
       "thumbnail": "outfit/microbot defense station",
       "mass": 2,
       "outfit space": -3,
+      "slug": "microbot-defense-station",
       "descriptions": [
         "This insidious trap awaits anyone foolish enough to attempt to capture Korath World-Ships. Intruders are trapped before this airlock, ahead of which a cloud of microbots programmed to break down organic matter into nutrigel is released. The resulting gel then drains into the vat below while the robots are recalled.",
         "\tMany races find this means of defense abhorrent. Citing the excruciating, confusing death experienced by its victims, the violation of taboos relating to cannibalism, and erroneous fears that the microbots could somehow \"escape,\" possession of these airlocks may result in heavy fines."
@@ -1127,6 +1176,7 @@
       "thumbnail": "outfit/grab-strike",
       "mass": 52,
       "outfit space": -52,
+      "slug": "grab-strike-turret",
       "descriptions": [
         "Korath Grab-Strike projectiles are designed to pull a target closer to the Korath ship, to keep it from escaping."
       ],
@@ -1176,6 +1226,7 @@
       "thumbnail": "outfit/shunt-strike",
       "mass": 42,
       "outfit space": -42,
+      "slug": "shunt-strike-turret",
       "descriptions": [
         "This weapon fires homing balls of microbots that pass through a target's shields and attempt to convert its hull into raw materials or useful items such as heat shunts. As Exile microbots contain safety circuits that prevent them from becoming independent of their Systems Core, they will fail after a short time, but not before wreaking havoc on the ship.",
         "\tBecause the same property that allows the microbots through a target's shields disrupts the shields of the ship firing them, it should never be used without an appropriately large Systems Core. Given adequate shield generation, however, the microbots make fantastic miners."
@@ -1232,6 +1283,7 @@
       "thumbnail": "outfit/banisher",
       "mass": 41,
       "outfit space": -41,
+      "slug": "banisher-grav-turret",
       "descriptions": [
         "The Korath like to keep their enemies close... but not too close."
       ],
@@ -1270,6 +1322,7 @@
       "thumbnail": "outfit/expeller",
       "mass": 20,
       "outfit space": -20,
+      "slug": "expeller-grav-ray",
       "descriptions": [
         "This low-power version of the Banisher is used on Korath fighters to push enemy vessels away from carriers and civilians."
       ],
@@ -1304,6 +1357,7 @@
       "thumbnail": "outfit/warder",
       "mass": 28,
       "outfit space": -28,
+      "slug": "warder-anti-missile",
       "descriptions": [
         "This anti-missile system helps defend Korath warships from long-range attacks."
       ],
@@ -1333,6 +1387,7 @@
       "thumbnail": "outfit/fire-lance",
       "mass": 22,
       "outfit space": -22,
+      "slug": "fire-lance",
       "descriptions": [
         "The Korath Fire-Lance is a medium-range beam weapon designed to be used by their fighters."
       ],
@@ -1369,6 +1424,7 @@
       "thumbnail": "outfit/blaze-pike",
       "mass": 57,
       "outfit space": -54,
+      "slug": "blaze-pike-turret",
       "descriptions": [
         "The seeming reverence the Korath have for fire appears embodied in this weapon. This pair of Fire-Lances mounted together in a turret do not merely create twin lances of fire: Rather, they begin to form a gestalt - a single, longer, hotter, and almost hypnotic column of fire."
       ],
@@ -1407,6 +1463,7 @@
       "thumbnail": "outfit/korath inferno",
       "mass": 86,
       "outfit space": -77,
+      "slug": "korath-inferno",
       "descriptions": [
         "Some Korath consider the Inferno the crowning achievement of Exile weapon design. Three Fire-Lances mounted together in precisely the right manner combine synergistically, creating a longer, more powerful beam than three would individually."
       ],
@@ -1445,6 +1502,7 @@
       "thumbnail": "outfit/repeater",
       "mass": 11,
       "outfit space": -11,
+      "slug": "thermal-repeater",
       "descriptions": [
         "This is the smallest and simplest Korath projectile weapon, designed mostly for use on fighters and drones. As with most Korath technology, it generates a large amount of heat, enough that the gun must pause briefly after every few shots to cool down."
       ],
@@ -1483,6 +1541,7 @@
       "thumbnail": "outfit/repeater turret",
       "mass": 29,
       "outfit space": -29,
+      "slug": "thermal-repeater-turret",
       "descriptions": [
         "Thermal Repeaters fire compact bolts of superheated plasma at their targets. For every one of these turrets installed on a ship, an auxiliary cooling system is typically required to cope with its heat output."
       ],
@@ -1524,6 +1583,7 @@
       "cost": 3500,
       "thumbnail": "outfit/piercer",
       "mass": 0.3,
+      "slug": "piercer-missile",
       "descriptions": [
         "This missile is fired from a Piercer Missile Launcher."
       ],
@@ -1540,6 +1600,7 @@
       "thumbnail": "outfit/korath piercer storage",
       "mass": 2.2,
       "outfit space": -7,
+      "slug": "piercer-missile-rack",
       "descriptions": [
         "The Piercer Missile Rack is used to store extra ammunition for Piercer Missile Launchers."
       ],
@@ -1557,6 +1618,7 @@
       "thumbnail": "outfit/piercer launcher",
       "mass": 18,
       "outfit space": -27,
+      "slug": "piercer-missile-launcher",
       "descriptions": [
         "Korath Piercer Missiles carry a pair of warheads. The first, a smaller one in the very tip of the missile, explodes on impact to blast a hole in the ship's shields to allow some of the subsequent, larger explosion to pierce through.",
         "\tAmmunition for this weapon can be restocked at any outfitter."
@@ -1610,6 +1672,7 @@
       "thumbnail": "outfit/detainer",
       "mass": 76,
       "outfit space": -76,
+      "slug": "korath-detainer",
       "descriptions": [
         "Although not the most damaging weapon of its size, the Korath Detainer is feared for two reasons: its exceptionally long range, and its ability to interfere with the propulsion systems of any ship it strikes. Its reputation has earned it the honor of being named for the Korath themselves."
       ],
@@ -1659,6 +1722,7 @@
       "cost": 3500,
       "thumbnail": "outfit/korath mine",
       "mass": 0.7,
+      "slug": "cluster-mine",
       "descriptions": [
         "This is ammunition for a Cluster Mine Layer. Each mine splits into eleven submunitions after it is deployed."
       ],
@@ -1675,6 +1739,7 @@
       "thumbnail": "outfit/korath mine storage",
       "mass": 2.7,
       "outfit space": -9,
+      "slug": "cluster-mine-rack",
       "descriptions": [
         "The Cluster Mine Rack is used to store extra ammunition for Cluster Mine Layers."
       ],
@@ -1692,6 +1757,7 @@
       "thumbnail": "outfit/korath minelayer",
       "mass": 36,
       "outfit space": -48,
+      "slug": "cluster-mine-layer",
       "descriptions": [
         "This launcher fires cluster munitions that split into a cloud of stationary mines that each do a considerable amount of damage if a ship crashes into them. However, if a ship hits the mine before it has a chance to deploy, the damage is considerably reduced.",
         "\tAmmunition for this weapon can be restocked at any outfitter."
@@ -1742,6 +1808,7 @@
     },
     {
       "name": "Korath Mine Submunition",
+      "slug": "korath-mine-submunition",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -1775,6 +1842,7 @@
       "thumbnail": "outfit/disruptor",
       "mass": 35,
       "outfit space": -35,
+      "slug": "shield-disruptor-turret",
       "descriptions": [
         "Shield Disruptor Turrets interfere with a ship's shields, allowing a ship's hull to be damaged even when shields are up. However, they do very little hull damage by themselves."
       ],
@@ -1813,6 +1881,7 @@
       "thumbnail": "outfit/slicer",
       "mass": 46,
       "outfit space": -46,
+      "slug": "husk-slice",
       "descriptions": [
         "This massive beam weapon is relatively ineffective against shields, but cuts through hull armor like it's made of paper."
       ],
@@ -1848,6 +1917,7 @@
       "thumbnail": "outfit/slicer turret",
       "mass": 59,
       "outfit space": -59,
+      "slug": "husk-slice-turret",
       "descriptions": [
         "This turret fires a tightly focused energy beam that is particularly effective against hull armor. When paired with a disruptor turret, it is a deadly combination."
       ],
@@ -1887,6 +1957,7 @@
       "thumbnail": "outfit/korath digger turret",
       "mass": 16,
       "outfit space": -16,
+      "slug": "digger-mining-turret",
       "descriptions": [
         "When the Korath Exiles needed a cheap mining laser for their large vessels, they re-engineered this ancient, robust design and added a turret base. The mild shield disruption effect makes it somewhat useful in combat if required."
       ],
@@ -1927,6 +1998,7 @@
       "thumbnail": "outfit/korath digger",
       "mass": 10,
       "outfit space": -10,
+      "slug": "digger-mining-beam",
       "descriptions": [
         "The gun version of the classic Korath mining laser allows a larger mothership to release a cloud of fighter-sized miners to harvest resources when working faster-moving or more dangerous asteroid fields."
       ],
@@ -1964,6 +2036,7 @@
       "thumbnail": "outfit/korath heaver",
       "mass": 46,
       "outfit space": -46,
+      "slug": "langrage-hyper-heaver",
       "descriptions": [
         "Langrage Hyper-Heavers raise the use of improvised ammunition to a fine art. This turret converts scrap metal, nearby asteroids, compressed garbage, or other debris into a high speed debris field. The exact mechanism is unclear, but the internal workings bear some similarities to hyperdrives and Banishers.",
         "\tAt close range, the heaved langrage merely forces the enemy back. As the launch field collapses and the langrage returns fully to normal space, however, it is rent into a rapidly-expanding cloud of deadly projectiles as it returns to normal space."
@@ -2004,6 +2077,7 @@
     },
     {
       "name": "Heaver Shard",
+      "slug": "heaver-shard",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -2029,6 +2103,7 @@
     },
     {
       "name": "Heaver Splinter",
+      "slug": "heaver-splinter",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -2059,6 +2134,7 @@
       "thumbnail": "outfit/firelight rack",
       "mass": 3,
       "outfit space": -6,
+      "slug": "firelight-storage-rack",
       "descriptions": [
         "This rack stores additional Firelight missiles to feed into a Firelight Bank."
       ],
@@ -2075,6 +2151,7 @@
       "cost": 7600,
       "thumbnail": "outfit/firelight",
       "mass": 0.3,
+      "slug": "firelight-missile",
       "descriptions": [
         "The reactor element inside a Firelight Missile must be kept minimally active in order to ensure it is ready for launch. Although terribly inefficient, it nonetheless produces a trickle of power that can be tapped into when properly installed."
       ],
@@ -2093,6 +2170,7 @@
       "thumbnail": "outfit/firelight bank",
       "mass": 22,
       "outfit space": -28,
+      "slug": "firelight-missile-bank",
       "descriptions": [
         "As the Firestorm Torpedo does not require full reactor shielding or safety interlocks, Korath engineers were able to create the Firelight by further scaling down the reactor element to fit in a missile casing for use on and against smaller vessels.",
         "\tRather than rely on traditional reaction engines attached to the missile for launch, this rapid-fire missile bank appears to operate on the same principles as a Banisher.",
@@ -2136,6 +2214,7 @@
     },
     {
       "name": "Firelight Turning",
+      "slug": "firelight-turning",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -2163,6 +2242,7 @@
     },
     {
       "name": "Firelight Activated",
+      "slug": "firelight-activated",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -2204,6 +2284,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 182,
       "outfit space": -212,
+      "slug": "microbot-grinder",
       "descriptions": [
         "This is a huge grinder that digests incoming material with the aid of microbots. With intake bays large enough to swallow a drone whole, wrecking claws massive enough to tear apart the hulls of heavy warships, and a seemingly omnicidal swarm of microbots ready to break down anything that falls in to its component molecules, it is a fearsome sight that any captain would be foolish to fly within reach of."
       ],
@@ -2244,6 +2325,7 @@
       "cost": 19800,
       "thumbnail": "outfit/firestorm torpedo",
       "mass": 1,
+      "slug": "firestorm-torpedo",
       "descriptions": [
         "Massive in both size and destructive capability, the Firestorm Torpedo's enormous blast radius makes it a dangerous part of larger ship arsenals, despite the lack of more recent Korath innovations. The Firestorm Torpedo is used as ammo for the Firestorm Battery."
       ],
@@ -2261,6 +2343,7 @@
       "thumbnail": "outfit/firestorm torpedo rack",
       "mass": 7,
       "outfit space": -20,
+      "slug": "firestorm-torpedo-rack",
       "descriptions": [
         "This large cage-like rack is designed to be able to house several deadly Firestorm Torpedoes."
       ],
@@ -2279,6 +2362,7 @@
       "thumbnail": "outfit/firestorm battery",
       "mass": 35,
       "outfit space": -48,
+      "slug": "firestorm-battery",
       "descriptions": [
         "Though not as refined as the newer Firelight version, this torpedo contains an augmented Korath Plasma Core reactor element completely stripped of its protective casing and safety interlocks. When activated, it generates a tremendous explosion of heat and force that pushes ships away and will even melt their hulls.",
         "\tAmmunition for this weapon can be restocked at any outfitter."

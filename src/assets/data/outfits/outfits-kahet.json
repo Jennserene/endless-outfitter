@@ -3,7 +3,7 @@
     "version": "v0.10.16",
     "schemaVersion": "1-v0.10.16",
     "species": "kahet",
-    "generatedAt": "2025-12-11T16:46:20.654Z",
+    "generatedAt": "2025-12-12T16:01:45.197Z",
     "itemCount": 26
   },
   "data": [
@@ -16,6 +16,7 @@
       "thumbnail": "outfit/unknown",
       "mass": 23,
       "outfit space": -23,
+      "slug": "aberrant-spiker",
       "descriptions": [
         "Spikes grow on the backs of many Aberrant variants, made of a seemingly random assortment of materials both metallic and mineral in nature. This device appears to allow an Aberrant to launch these spikes as an offensive weapon, but just how they are able to guide and propel themselves through space is a mystery that a cursory examination of this outfit does not reveal."
       ],
@@ -72,6 +73,7 @@
       "thumbnail": "outfit/nucleolysis beam",
       "mass": 31,
       "outfit space": -31,
+      "slug": "nucleolysis-beam",
       "descriptions": [
         "This beam weapon creates a field inside which otherwise stable atomic nuclei rapidly decay. This effect seems to be inversely proportional to the mass of the nucleus, causing isotopes like deuterium to break down at a higher rate than heavier elements. As the resultant products have a higher energy state than the original nucleus, the beam cools its target, defying conventional thermodynamics.",
         "In practice, this beam can deplete a ship's deuterium fuel while causing the very matter of its hull to decay."
@@ -112,6 +114,7 @@
       "thumbnail": "outfit/telescopic antimissile",
       "mass": 40,
       "outfit space": -40,
+      "slug": "telescopic-antimissile",
       "descriptions": [
         "Oddly enough, this antimissile system resembles an array of scanners and telescopes. Such an assortment of sensing devices was certainly not intended to be used as a weapon, but somehow enough power has been pumped through this scanner's optics to make it a potent antimissile defense.",
         "The various lenses and mirrors that make up a large telescope seem to be used to focus the emitted beam, giving this antimissile system a very long range."
@@ -142,6 +145,7 @@
       "thumbnail": "outfit/anomalous shield restorer",
       "mass": 37,
       "outfit space": -25,
+      "slug": "anomalous-shield-restorer",
       "descriptions": [
         "This emitter produces no detectable fields of any kind, but a shield springs into existence whenever any danger comes near."
       ],
@@ -162,6 +166,7 @@
       "thumbnail": "outfit/antimatter power cell",
       "mass": 34,
       "outfit space": -13,
+      "slug": "antimatter-power-cell",
       "descriptions": [
         "This strange device seems to be partially organic in nature, slowly leaking antiprotons through a constantly-regrowing spongelike structure to release energy. The amount of power produced is inconsistent with the amount of matter and antimatter annihilated, generating more energy than should be possible."
       ],
@@ -181,6 +186,7 @@
       "thumbnail": "outfit/anomalous mass",
       "mass": 2.718,
       "outfit space": -4,
+      "slug": "anomalous-mass",
       "descriptions": [
         "Found with widely varying properties in different mechanisms of an Aberration, this mass of glassy, fleshy material is characterized by the very difficulty of classifying its composition. Webs of anomalous material embedded in the mass seem not to be composed of atomic matter as the Avgi know it, but by something entirely different, which resists any attempts to probe its makeup. This is thought to enable many of the Aberrants' more baffling abilities, for lack of any other explanation."
       ],
@@ -202,6 +208,7 @@
       "thumbnail": "outfit/ka'het nullifier",
       "mass": 68,
       "outfit space": -97,
+      "slug": "kahet-nullifier",
       "descriptions": [
         "The Nullifier was one of the largest weapons the Builders ever developed, created specifically to be carried in battle by the Vareti. Although it does almost no damage to shields and hull, one shot is capable of disabling most kinds of reactors in a matter of seconds."
       ],
@@ -266,6 +273,7 @@
       "thumbnail": "outfit/ka'het ravager beam",
       "mass": 13,
       "outfit space": -18,
+      "slug": "kahet-ravager-beam",
       "descriptions": [
         "This laser beam was created by the Builders for use in asteroid mining. Unfortunately, they understood its effectiveness in combat only after it turned against them."
       ],
@@ -299,6 +307,7 @@
       "thumbnail": "outfit/ka'het ravager turret",
       "mass": 16,
       "outfit space": -22,
+      "slug": "kahet-ravager-turret",
       "descriptions": [
         "This turret-mounted version of the Ravager Beam is one of the strongest weapons the Ka'het possess."
       ],
@@ -335,6 +344,7 @@
       "thumbnail": "outfit/ka'het annihilator",
       "mass": 10,
       "outfit space": -14,
+      "slug": "kahet-annihilator",
       "descriptions": [
         "The Builders initially created the Annihilator long ago, as a countermeasure to their newly discovered shield matrix. They kept developing it for centuries, with this being its final version."
       ],
@@ -368,6 +378,7 @@
       "thumbnail": "outfit/ka'het annihilator turret",
       "mass": 25,
       "outfit space": -32,
+      "slug": "kahet-annihilator-turret",
       "descriptions": [
         "The Builders mounted two Annihilators on this turret, making it highly efficient against enemy shields."
       ],
@@ -398,6 +409,7 @@
     },
     {
       "name": "Annihilator Projectile",
+      "slug": "annihilator-projectile",
       "descriptions": [],
       "attributes": {
         "weapon": {
@@ -424,6 +436,7 @@
       "thumbnail": "outfit/ka'het emp deployer",
       "mass": 18,
       "outfit space": -26,
+      "slug": "kahet-emp-deployer",
       "descriptions": [
         "Eons ago, the Builders were attacked by alien ships which used weapons that ignored their hull and damaged their reactors. Although they never did recover any of these weapons, after years of research they managed to replicate their effects.",
         "\tAmmunition for this weapon can be restocked at any outfitter."
@@ -489,6 +502,7 @@
       "thumbnail": "outfit/ka'het mhd deployer",
       "mass": 13,
       "outfit space": -17,
+      "slug": "kahet-emergency-deployer",
       "descriptions": [
         "Most drones the Builders possessed were completely unarmed, making them very vulnerable to enemy attacks. Since installing weapons would have greatly reduced its cargo capacity, they instead decided to dissuade possible hijackers by developing these Emergency Deployers: they work by activating a series of reactions inside the ship's MHD generator and then ejecting it towards the enemy, resulting in a large scale detonation as soon as it hits something."
       ],
@@ -537,6 +551,7 @@
       "thumbnail": "outfit/ka'het support cooling",
       "mass": 6,
       "outfit space": -8,
+      "slug": "kahet-support-cooling",
       "descriptions": [
         "While the cooling on a typical ship only needs to worry about keeping the crew comfortable in certain areas, the entirety of a Ka'het ship needs to maintain a suitable temperature for the Het inside to survive."
       ],
@@ -554,6 +569,7 @@
       "thumbnail": "outfit/ka'het primary cooling",
       "mass": 11,
       "outfit space": -14,
+      "slug": "kahet-primary-cooling",
       "descriptions": [
         "This is the main cooler used by the Ka'het. Although energy intensive, it is very effective, capable of single-handedly cooling some Het."
       ],
@@ -571,6 +587,7 @@
       "thumbnail": "outfit/ka'het shield restorer",
       "mass": 14,
       "outfit space": -17,
+      "slug": "kahet-shield-restorer",
       "descriptions": [
         "The Builders never relied much on shield matrices, preferring instead to strengthen their hull. The reality of war, however, required that the Builders develop strong shield technology, leading to some Het vessels making extensive use of this module."
       ],
@@ -588,6 +605,7 @@
       "thumbnail": "outfit/ka'het grand restorer",
       "mass": 72,
       "outfit space": -86,
+      "slug": "kahet-grand-restorer",
       "descriptions": [
         "This shield generator is the apex of Ka'het shielding technology, a field that developed rapidly and out of necessity rather than gradually and perfected over long periods. Nevertheless, the Grand Restorer grants good protection for the largest Het ships, replacing the basic restorers used elsewhere.",
         "\tUnlike most generators, this restorer needs a few seconds to start working again once the ship's shields have been depleted."
@@ -607,6 +625,7 @@
       "thumbnail": "outfit/ka'het mhd generator",
       "mass": 20,
       "outfit space": -22,
+      "slug": "kahet-mhd-generator",
       "descriptions": [
         "The Builders originally created this magnetohydrodynamic generator as the Ka'mar main power source. Similarly to what happened with many Mar devices, it was later reused in the Het ships as a secondary energy generator, supplementing their integrated power systems when they proved to be unsatisfactory."
       ],
@@ -624,6 +643,7 @@
       "thumbnail": "outfit/ka'het reserve accumulator",
       "mass": 2,
       "outfit space": -3,
+      "slug": "kahet-reserve-accumulator",
       "descriptions": [
         "This tiny battery was developed for use by the Ka'mar drones as an emergency energy storage, in case their generators can't quite suffice for the high power demand of most Builder systems."
       ],
@@ -641,6 +661,7 @@
       "thumbnail": "outfit/ka'het maeri engine",
       "mass": 59,
       "outfit space": -76,
+      "slug": "maeri-engine-nacelles",
       "descriptions": [
         "The Ka'het engines are peculiar in that they continuously draw large amounts of energy, but require no additional energy to activate: while this means that less power remains available for other subsystems, it is also somewhat more efficient than most types of propulsion, and generates only a tiny amount of heat."
       ],
@@ -674,6 +695,7 @@
       "thumbnail": "outfit/ka'het sustainer engine",
       "mass": 27,
       "outfit space": -34,
+      "slug": "kahet-sustainer-nacelles",
       "descriptions": [
         "While Ka'het vessels are already equipped with proper engines, most of them use a sustainer engine in addition to give the ship enough maneuverability to be useful in combat. Following the same design as its bigger cousins, the sustainer requires no power to function at the cost of constant energy consumption."
       ],
@@ -707,6 +729,7 @@
       "thumbnail": "outfit/ka'het telis engine",
       "mass": 81,
       "outfit space": -101,
+      "slug": "telis-engine-nacelles",
       "descriptions": [
         "These nacelles used to comprise the entire engine block of a Telis'het. While their size is not impressive compared to other engines, if used in conjunction with a sustainer or two, they can be a powerful form of propulsion, combining both turning and thrusting engines in one."
       ],
@@ -739,6 +762,7 @@
       "thumbnail": "outfit/ka'het vareti engine",
       "mass": 137,
       "outfit space": -168,
+      "slug": "vareti-engine-block",
       "descriptions": [
         "This is the largest single engine the Builders ever built, made for the most massive ships they were in control of. Due to its sheer size, it isn't as modular as its smaller equivalents, but it is more efficient and powerful as a result."
       ],
@@ -771,6 +795,7 @@
       "thumbnail": "outfit/ka'het compact engine",
       "mass": 21,
       "outfit space": -26,
+      "slug": "kahet-compact-engine",
       "descriptions": [
         "This tiny engine was developed as the main propulsion of the Ka'mar drones, long before the Ka'het were created and their nacelle design standardized. Improvements over time allowed it to maintain a comparable efficiency to the larger models, although unlike those, it requires some energy to activate the engines in addition to the constant energy drain that all Builder-designed engines have."
       ],
@@ -801,6 +826,7 @@
       "category": "Hand to Hand",
       "cost": 103500,
       "thumbnail": "outfit/ka'het taser",
+      "slug": "kahet-electric-stunner",
       "descriptions": [
         "A weapon of curious design, clearly not built with human hands in mind. Its short range makes it effective only for defending against enemy boarders, using the knowledge of your ship's architecture to your advantage."
       ],

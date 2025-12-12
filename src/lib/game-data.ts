@@ -1,6 +1,9 @@
+import "server-only";
+
 import { loadShips, loadOutfits } from "@/lib/loaders/data-loader";
 import type { Ship } from "@/lib/schemas/ship";
 import type { Outfit } from "@/lib/schemas/outfit";
+import { slugify } from "@/lib/utils/slug";
 
 /**
  * SERVER-ONLY utilities for accessing game data files.
@@ -33,4 +36,28 @@ export function getShips(): Ship[] {
  */
 export function getOutfits(): Outfit[] {
   return loadOutfits();
+}
+
+/**
+ * Find a ship by its slug (URL-friendly name).
+ * SERVER-ONLY: This function can only be called from Server Components or API routes.
+ *
+ * @param slug - The slug to search for
+ * @returns The ship if found, undefined otherwise
+ */
+export function getShipBySlug(slug: string): Ship | undefined {
+  const ships = loadShips();
+  return ships.find((ship) => slugify(ship.name) === slug);
+}
+
+/**
+ * Find an outfit by its slug (URL-friendly name).
+ * SERVER-ONLY: This function can only be called from Server Components or API routes.
+ *
+ * @param slug - The slug to search for
+ * @returns The outfit if found, undefined otherwise
+ */
+export function getOutfitBySlug(slug: string): Outfit | undefined {
+  const outfits = loadOutfits();
+  return outfits.find((outfit) => slugify(outfit.name) === slug);
 }

@@ -3,7 +3,14 @@ import {
   readExistingJsonFiles,
   type FileContentCache,
 } from "@scripts/utils/file-io";
-import { writeFileSync, mkdirSync, rmSync, existsSync, readFileSync } from "fs";
+import {
+  writeFileSync,
+  mkdirSync,
+  rmSync,
+  existsSync,
+  readFileSync,
+  renameSync,
+} from "fs";
 import { join } from "path";
 import { tmpdir } from "os";
 
@@ -147,6 +154,78 @@ describe("file-io", () => {
       // Assert
       expect(result).toBe(true);
       expect(existsSync(testFilePath)).toBe(true);
+    });
+
+    it("When file does not exist but backup exists and content matches, Then should restore backup", () => {
+      // Arrange
+      const existingData = {
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-01-01T00:00:00.000Z",
+          itemCount: 5,
+        },
+        data: [{ id: 1, name: "test" }],
+      };
+      const newData = {
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-12-11T12:00:00.000Z", // Different timestamp
+          itemCount: 5,
+        },
+        data: [{ id: 1, name: "test" }],
+      };
+
+      // Write existing file and create backup (simulating backup step)
+      writeFileSync(
+        testFilePath,
+        JSON.stringify(existingData, null, 2) + "\n",
+        "utf-8"
+      );
+      const backupPath = `${testFilePath}.old`;
+      renameSync(testFilePath, backupPath);
+
+      // Create cache with existing content
+      const cache: FileContentCache = new Map();
+      cache.set(testFilePath, existingData);
+
+      // Act
+      const result = writeJsonFile(testFilePath, newData, cache);
+
+      // Assert
+      expect(result).toBe(false); // File was restored, not written
+      expect(existsSync(testFilePath)).toBe(true); // File was restored
+      expect(existsSync(backupPath)).toBe(false); // Backup was removed
+      const fileContent = JSON.parse(readFileSync(testFilePath, "utf-8"));
+      expect(fileContent.metadata.generatedAt).toBe("2024-01-01T00:00:00.000Z"); // Original timestamp preserved
+    });
+
+    it("When file does not exist and no backup exists, Then should write the file", () => {
+      // Arrange
+      const data = {
+        metadata: {
+          version: "v1.0.0",
+          schemaVersion: "1.0-v1.0.0",
+          species: "human",
+          generatedAt: "2024-12-11T12:00:00.000Z",
+          itemCount: 5,
+        },
+        data: [{ id: 1, name: "test" }],
+      };
+      const cache: FileContentCache = new Map();
+      // Cache doesn't have this file path
+
+      // Act
+      const result = writeJsonFile(testFilePath, data, cache);
+
+      // Assert
+      expect(result).toBe(true); // File was written
+      expect(existsSync(testFilePath)).toBe(true);
+      const fileContent = JSON.parse(readFileSync(testFilePath, "utf-8"));
+      expect(fileContent.metadata.generatedAt).toBe("2024-12-11T12:00:00.000Z");
     });
   });
 
