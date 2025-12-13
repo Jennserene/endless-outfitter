@@ -65,6 +65,20 @@ export class AttributesNormalizer implements Transformer {
       attributes.category = "Unknown";
     }
 
+    // Count gun ports and turret mounts from the gun and turret arrays
+    // These are positional data that get collected as arrays
+    // (Note: This is also done in ShipTransformer, but we keep it here as a fallback
+    // in case the arrays are still available at this stage)
+    if (Array.isArray(ship.gun) && attributes["gun ports"] === undefined) {
+      attributes["gun ports"] = ship.gun.length;
+    }
+    if (
+      Array.isArray(ship.turret) &&
+      attributes["turret mounts"] === undefined
+    ) {
+      attributes["turret mounts"] = ship.turret.length;
+    }
+
     return {
       ...ship,
       attributes,

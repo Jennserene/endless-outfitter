@@ -4,7 +4,7 @@ import { ShipSchema, type Ship } from "@/lib/schemas/ship";
 import { OutfitSchema, type Outfit } from "@/lib/schemas/outfit";
 import { z } from "zod";
 
-const DATA_DIR = join(process.cwd(), "src/assets/data");
+const DATA_DIR = join(process.cwd(), "public/assets/data");
 const SHIPS_DIR = join(DATA_DIR, "ships");
 const OUTFITS_DIR = join(DATA_DIR, "outfits");
 

@@ -15,6 +15,8 @@ const ShipAttributeSchema = z.object({
   "outfit space": z.number().optional(),
   "weapon capacity": z.number().optional(),
   "engine capacity": z.number().optional(),
+  "gun ports": z.number().optional(),
+  "turret mounts": z.number().optional(),
   licenses: z.array(z.string()).optional(),
   weapon: z
     .object({

@@ -62,11 +62,11 @@ export function copyImageFile(sourcePath: string, destPath: string): boolean {
 
 /**
  * Copy all image files to the assets directory.
- * Resolves image paths from game data format and copies them to src/assets/images/.
+ * Resolves image paths from game data format and copies them to public/assets/images/.
  *
  * @param imagePaths - Set of unique image paths from game data
  * @param gameRepoPath - Path to the game repository root
- * @param assetsDir - Path to the assets images directory (src/assets/images)
+ * @param assetsDir - Path to the assets images directory (public/assets/images)
  * @returns Statistics about the copy operation
  */
 export function copyImagesToAssets(

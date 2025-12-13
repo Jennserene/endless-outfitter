@@ -1,0 +1,285 @@
+---
+description: Refactoring react components
+alwaysApply: false
+---
+
+# Component Composition Patterns Guide
+
+## Overview
+
+This guide covers component composition patterns to maximize reusability, simplify maintenance, and keep components focused on a single responsibility.
+
+## Component Hierarchy Structure
+
+Components are organized in a hierarchical tree:
+
+- **Top-Level (Parent)**: Generic components that handle layout, data fetching, or state management. They accept children and provide structure.
+- **Mid-Level (Nesting)**: Components that introduce more specific logic or layout. They compose simpler components.
+- **Bottom-Level (Child/Leaf)**: Atomic, reusable components (buttons, inputs, labels) that render UI based on props.
+
+## Two Composition Strategies
+
+### Strategy 1: Explicit Nesting with `props.children`
+
+**Description**: Components expose their structure, allowing parent components to compose them explicitly using `props.children`.
+
+**Characteristics**:
+
+- Components act as generic containers
+- Structure is visible in consuming components
+- Full control over composition
+- Flexible and customizable
+
+**When to Use**:
+
+- Generic, reusable container components (Card, Modal, Layout, Wrapper)
+- Components that need to wrap arbitrary content
+- When the internal structure should be customizable
+- Building design system primitives
+
+**Example Pattern**:
+
+```tsx
+// Generic container component
+function Container({ children, className }) {
+  return <div className={className}>{children}</div>;
+}
+
+// Usage - explicit nesting
+<Container className="card">
+  <Header />
+  <Content />
+  <Footer />
+</Container>;
+```
+
+**Pros**:
+
+- Maximum flexibility
+- Transparent structure
+- Easy to customize
+- Good for design system components
+
+**Cons**:
+
+- More verbose in consuming components
+- Exposes internal structure
+- Can lead to prop drilling
+- More visible nesting in page files
+
+### Strategy 2: Internal Composition (Encapsulation)
+
+**Description**: Components internally manage their child components, hiding nesting complexity from consumers.
+
+**Characteristics**:
+
+- Components encapsulate their internal structure
+- Single, clean API for consumers
+- Nesting is hidden inside the component
+- Domain-specific or feature-specific components
+
+**When to Use**:
+
+- Domain-specific components (ShipInfoSheet, UserProfile, ProductCard)
+- Components representing complete features or UI patterns
+- When the internal structure is stable and unlikely to change
+- When you want to simplify the consuming component's code
+- Building higher-level, application-specific components
+
+**Example Pattern**:
+
+```tsx
+// Encapsulated component
+function FeatureComponent({ data, onAction }) {
+  return (
+    <Container>
+      <Header title={data.title} />
+      <Content>
+        <Details data={data} />
+        <Actions onAction={onAction} />
+      </Content>
+    </Container>
+  );
+}
+
+// Usage - simple, clean
+<FeatureComponent data={data} onAction={handleAction} />;
+```
+
+**Pros**:
+
+- Cleaner consuming code
+- Encapsulates complexity
+- Single responsibility
+- Easier maintenance (changes localized)
+- Better abstraction
+- Reduces cognitive load
+
+**Cons**:
+
+- Less flexible for customization
+- Can hide too much if overused
+- May need variants if flexibility is needed
+
+## Decision Framework
+
+### Choose Explicit Nesting (`props.children`) When:
+
+1. Building generic, reusable container components
+2. The component needs to wrap arbitrary content
+3. The internal structure should be customizable
+4. Creating design system primitives
+5. The component is a layout or structural element
+
+### Choose Internal Composition When:
+
+1. Building domain-specific or feature-specific components
+2. The component represents a complete feature or UI pattern
+3. The internal structure is stable
+4. You want to simplify consuming components
+5. The component has a clear, single purpose
+
+## Best Practices
+
+### 1. Single Responsibility Principle
+
+- Each component should have one clear purpose
+- If a component does multiple things, consider splitting it
+
+### 2. Avoid Nested Component Definitions
+
+- Never define components inside other components
+- This causes performance issues (components recreated on every render)
+- Define all components at the top level
+
+### 3. Balance Abstraction with Flexibility
+
+- Don't over-encapsulate if customization is needed
+- Don't under-encapsulate if the structure is stable
+- Consider providing variants or configuration props if needed
+
+### 4. Component Naming
+
+- Generic containers: Use descriptive names (Card, Container, Wrapper)
+- Encapsulated components: Use domain-specific names (ShipInfoSheet, UserProfile)
+
+### 5. Prop Design
+
+- Keep prop interfaces focused and minimal
+- Use TypeScript interfaces for type safety
+- Document complex props
+
+### 6. Composition Over Configuration
+
+- Prefer composing smaller components over large configuration objects
+- Use composition to build complex UIs from simple parts
+
+## Component Hierarchy Guidelines
+
+### Top-Level Components
+
+- Handle data fetching, state management, or layout
+- Accept children via `props.children`
+- Provide structure and context
+- Often use Context API to share data
+
+### Mid-Level Components
+
+- Introduce specific logic or layout
+- Compose simpler components
+- May accept both props and children
+- Bridge between top-level and bottom-level
+
+### Bottom-Level Components
+
+- Highly reusable, atomic components
+- Focus solely on rendering UI
+- Receive data via props
+- No business logic or state management
+- Examples: Button, Input, Label, Icon
+
+## Anti-Patterns to Avoid
+
+### 1. Prop Drilling
+
+- **Problem**: Passing props through many levels
+- **Solution**: Use Context API or state management library
+
+### 2. Over-Nesting
+
+- **Problem**: Too many levels of nesting in a single file
+- **Solution**: Extract components or use internal composition
+
+### 3. God Components
+
+- **Problem**: Components that do too much
+- **Solution**: Split into smaller, focused components
+
+### 4. Premature Abstraction
+
+- **Problem**: Creating abstractions before understanding the pattern
+- **Solution**: Wait for patterns to emerge, then abstract
+
+### 5. Hidden Complexity
+
+- **Problem**: Encapsulating too much, making components hard to understand
+- **Solution**: Balance encapsulation with clarity
+
+## Migration Strategy
+
+When refactoring existing code:
+
+1. **Identify the pattern**: Is this a generic container or domain-specific component?
+2. **Assess usage**: How is it currently used? Does it need flexibility?
+3. **Choose strategy**: Based on the decision framework above
+4. **Refactor incrementally**: Don't change everything at once
+5. **Test thoroughly**: Ensure behavior remains the same
+
+## Summary
+
+- **Use `props.children`** for generic, flexible container components
+- **Use internal composition** for domain-specific, feature-specific components
+- **Keep components focused** on a single responsibility
+- **Balance abstraction** with flexibility based on use case
+- **Avoid nested component definitions** for performance
+- **Organize hierarchically** from generic (top) to specific (bottom)
+
+The goal is to create a component architecture that is maintainable, reusable, and easy to understand, while keeping each component focused on a single responsibility.
+
+# Typography
+
+For any pieces of typography, ensure these are using components in src/components/ui/typography. If the needed typography component does not exist there, create a new one in shadcn style. these should generally be a single html tag, like
+
+```ts
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const spanVariants = cva("", {
+  variants: {
+    variant: {
+      default: "",
+      muted: "text-muted-foreground",
+      medium: "font-medium",
+      "small-muted": "text-xs text-muted-foreground",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+export type SpanProps = React.HTMLAttributes<HTMLSpanElement> &
+  VariantProps<typeof spanVariants>;
+
+export function Span({ children, variant, className, ...props }: SpanProps) {
+  return (
+    <span className={cn(spanVariants({ variant }), className)} {...props}>
+      {children}
+    </span>
+  );
+}
+
+export { spanVariants };
+```
+
+Do this for every piece of typography unless there is a @Shadcn component available that could be used instead, if that is available use it, otherwise install the shadcn component.

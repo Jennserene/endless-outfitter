@@ -29,6 +29,32 @@ export class ShipTransformer {
   transform(raw: unknown): unknown {
     let result = raw;
 
+    // Count gun ports and turret mounts BEFORE transformation
+    // (they get removed during final extraction)
+    if (isRecord(result)) {
+      const gunCount = Array.isArray(result.gun)
+        ? result.gun.length
+        : undefined;
+      const turretCount = Array.isArray(result.turret)
+        ? result.turret.length
+        : undefined;
+
+      // Store counts in attributes so they're preserved through transformation
+      if (gunCount !== undefined || turretCount !== undefined) {
+        // Ensure attributes object exists
+        if (!result.attributes || typeof result.attributes !== "object") {
+          result.attributes = {};
+        }
+        const attrs = result.attributes as Record<string, unknown>;
+        if (gunCount !== undefined) {
+          attrs["gun ports"] = gunCount;
+        }
+        if (turretCount !== undefined) {
+          attrs["turret mounts"] = turretCount;
+        }
+      }
+    }
+
     for (const transformer of this.transformers) {
       result = transformer.transform(result);
     }

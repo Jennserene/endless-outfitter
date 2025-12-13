@@ -29,23 +29,24 @@ jest.mock("next/link", () => {
 describe("Navigation", () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    mockUsePathname.mockReturnValue("/outfitting");
+    mockUsePathname.mockReturnValue("/outfitter");
   });
 
   it("should render navigation element", () => {
     const { container } = render(<Navigation />);
 
-    const nav = container.querySelector("nav");
-    expect(nav).toBeInTheDocument();
-    expect(nav).toHaveClass("border-b");
+    // NavigationMenu renders a div with data-slot="navigation-menu", not a nav element
+    const navMenu = container.querySelector('[data-slot="navigation-menu"]');
+    expect(navMenu).toBeInTheDocument();
+    expect(navMenu).toHaveClass("group/navigation-menu");
   });
 
-  it("should render Outfitting link", () => {
+  it("should render Outfitter link", () => {
     render(<Navigation />);
 
-    const outfittingLink = screen.getByRole("link", { name: "Outfitting" });
-    expect(outfittingLink).toBeInTheDocument();
-    expect(outfittingLink).toHaveAttribute("href", TEST_ROUTES.OUTFITTING);
+    const outfitterLink = screen.getByRole("link", { name: "Outfitter" });
+    expect(outfitterLink).toBeInTheDocument();
+    expect(outfitterLink).toHaveAttribute("href", TEST_ROUTES.OUTFITTER);
   });
 
   it("should render Search link", () => {
@@ -56,15 +57,15 @@ describe("Navigation", () => {
     expect(searchLink).toHaveAttribute("href", TEST_ROUTES.SEARCH);
   });
 
-  it("should highlight active route for outfitting", () => {
-    mockUsePathname.mockReturnValue(TEST_ROUTES.OUTFITTING);
+  it("should highlight active route for outfitter", () => {
+    mockUsePathname.mockReturnValue(TEST_ROUTES.OUTFITTER);
 
     render(<Navigation />);
 
-    const outfittingLink = screen.getByRole("link", { name: "Outfitting" });
-    expect(outfittingLink).toBeInTheDocument();
+    const outfitterLink = screen.getByRole("link", { name: "Outfitter" });
+    expect(outfitterLink).toBeInTheDocument();
     // Verify the link exists and has the correct href
-    expect(outfittingLink).toHaveAttribute("href", TEST_ROUTES.OUTFITTING);
+    expect(outfitterLink).toHaveAttribute("href", TEST_ROUTES.OUTFITTER);
   });
 
   it("should not highlight inactive route", () => {
@@ -72,9 +73,9 @@ describe("Navigation", () => {
 
     render(<Navigation />);
 
-    const outfittingLink = screen.getByRole("link", { name: "Outfitting" });
-    expect(outfittingLink).toBeInTheDocument();
+    const outfitterLink = screen.getByRole("link", { name: "Outfitter" });
+    expect(outfitterLink).toBeInTheDocument();
     // Verify the link exists even when not active
-    expect(outfittingLink).toHaveAttribute("href", TEST_ROUTES.OUTFITTING);
+    expect(outfitterLink).toHaveAttribute("href", TEST_ROUTES.OUTFITTER);
   });
 });

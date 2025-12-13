@@ -245,7 +245,7 @@ Features are self-contained modules that encapsulate all code related to a speci
 
 ```
 features/
-└── ship-outfitting/          # Feature name (kebab-case)
+└── ship-outfitter/          # Feature name (kebab-case)
     ├── components/           # Feature-specific components
     │   ├── outfit-selector.tsx
     │   └── ship-stats.tsx
@@ -267,14 +267,14 @@ features/
 ### Example Feature
 
 ```typescript
-// features/ship-outfitting/types/index.ts
+// features/ship-outfitter/types/index.ts
 export type OutfittedShip = {
   ship: Ship;
   outfits: Outfit[];
   stats: ShipStats;
 };
 
-// features/ship-outfitting/hooks/use-outfit-ship.ts
+// features/ship-outfitter/hooks/use-outfit-ship.ts
 'use client';
 
 import { useState } from 'react';
@@ -298,7 +298,7 @@ export function useOutfitShip(initialShip: Ship) {
   };
 }
 
-// features/ship-outfitting/components/outfit-selector.tsx
+// features/ship-outfitter/components/outfit-selector.tsx
 'use client';
 
 import { useOutfitShip } from '../hooks/use-outfit-ship';
@@ -745,7 +745,7 @@ components/
             └── button.test.tsx
 
 features/
-└── ship-outfitting/
+└── ship-outfitter/
     └── components/
         ├── outfit-selector.tsx
         └── __tests__/
@@ -786,7 +786,7 @@ describe('Button', () => {
 ### Testing Hooks
 
 ```typescript
-// features/ship-outfitting/hooks/__tests__/use-outfit-ship.test.ts
+// features/ship-outfitter/hooks/__tests__/use-outfit-ship.test.ts
 import { renderHook, act } from "@testing-library/react";
 import { useOutfitShip } from "../use-outfit-ship";
 
@@ -884,15 +884,15 @@ export function createMockOutfit(overrides?: Partial<Outfit>): Outfit {
 
 ## File Naming Conventions
 
-| Artifact         | Format                      | Example                                  |
-| ---------------- | --------------------------- | ---------------------------------------- |
-| Files/Folders    | kebab-case                  | `ship-outfitting`, `outfit-selector.tsx` |
-| Components       | PascalCase                  | `ShipSelector`, `OutfitList`             |
-| Hooks            | camelCase with `use` prefix | `useOutfitShip`, `useShipStats`          |
-| Utilities        | camelCase                   | `calculateStats`, `formatCurrency`       |
-| Types/Interfaces | PascalCase                  | `Ship`, `OutfitProps`                    |
-| Constants        | SCREAMING_SNAKE_CASE        | `MAX_OUTFITS`, `DEFAULT_THEME`           |
-| Context files    | kebab-case                  | `app-state`, `theme-context.tsx`         |
+| Artifact         | Format                      | Example                                 |
+| ---------------- | --------------------------- | --------------------------------------- |
+| Files/Folders    | kebab-case                  | `ship-outfitter`, `outfit-selector.tsx` |
+| Components       | PascalCase                  | `ShipSelector`, `OutfitList`            |
+| Hooks            | camelCase with `use` prefix | `useOutfitShip`, `useShipStats`         |
+| Utilities        | camelCase                   | `calculateStats`, `formatCurrency`      |
+| Types/Interfaces | PascalCase                  | `Ship`, `OutfitProps`                   |
+| Constants        | SCREAMING_SNAKE_CASE        | `MAX_OUTFITS`, `DEFAULT_THEME`          |
+| Context files    | kebab-case                  | `app-state`, `theme-context.tsx`        |
 
 ### Special File Names
 
@@ -937,9 +937,9 @@ To maintain clean architecture, enforce these rules via ESLint:
     zones: [
       // Prevent cross-feature imports
       {
-        target: './src/features/ship-outfitting',
+        target: './src/features/ship-outfitter',
         from: './src/features',
-        except: ['./ship-outfitting'],
+        except: ['./ship-outfitter'],
       },
       // Enforce unidirectional flow: features cannot import from app
       {

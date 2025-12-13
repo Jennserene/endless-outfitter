@@ -17,4 +17,4 @@ export const TEST_IMAGE_PATHS_WITH_EXT = {
 } as const;
 
 export const TEST_GAME_REPO_PATH = "/test/vendor/endless-sky";
-export const TEST_ASSETS_DIR = "/test/src/assets/images";
+export const TEST_ASSETS_DIR = "/test/public/assets/images";

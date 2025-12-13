@@ -218,7 +218,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Endless Outfitter',
-  description: 'Ship outfitting tool for Endless Sky',
+  description: 'Ship outfitter tool for Endless Sky',
 };
 
 export default function RootLayout({
@@ -665,7 +665,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Ships",
   description: "Browse all available ships",
-  keywords: ["ships", "endless sky", "outfitting"],
+  keywords: ["ships", "endless sky", "outfitter"],
   openGraph: {
     title: "Ships - Endless Outfitter",
     description: "Browse all available ships",

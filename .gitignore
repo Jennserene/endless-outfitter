@@ -51,3 +51,4 @@ next-env.d.ts
 
 # Context for local LLM development
 /llmContext
+*_PLAN.md

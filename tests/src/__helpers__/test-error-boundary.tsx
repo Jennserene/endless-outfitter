@@ -20,7 +20,7 @@ export interface ErrorBoundaryTestOptions {
   }) => ReactElement;
   /**
    * The error message prefix expected in console.error calls
-   * e.g., "Outfitting page error:" or "Search page error:"
+   * e.g., "Outfitter page error:" or "Search page error:"
    */
   errorMessagePrefix?: string;
 }

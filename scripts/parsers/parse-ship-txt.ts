@@ -127,7 +127,16 @@ export function parseShipData(content: string): unknown[] {
     if (node.key === "ship" && isString(node.value)) {
       const shipName = node.value;
       const displayName = extractDisplayName(node, shipName);
-      const shipObj = nodesToObject(node.children, []) as Record<
+      // gun and turret are positional keys that should be collected as arrays
+      const positionalKeys = [
+        "engine",
+        "gun",
+        "turret",
+        "bay",
+        "leak",
+        "explode",
+      ];
+      const shipObj = nodesToObject(node.children, positionalKeys) as Record<
         string,
         unknown
       >;

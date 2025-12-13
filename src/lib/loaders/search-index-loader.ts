@@ -7,7 +7,7 @@ import { join } from "path";
 import { z } from "zod";
 import type { SearchIndex } from "@/lib/types/search-index";
 
-const DATA_DIR = join(process.cwd(), "src/assets/data");
+const DATA_DIR = join(process.cwd(), "public/assets/data");
 const SEARCH_INDEX_PATH = join(DATA_DIR, "search-index.json");
 
 /**

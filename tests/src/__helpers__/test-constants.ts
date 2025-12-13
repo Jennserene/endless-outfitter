@@ -5,29 +5,29 @@
 
 export const TEST_ROUTES = {
   HOME: "/",
-  OUTFITTING: "/outfitting",
+  OUTFITTER: "/outfitter",
   SEARCH: "/search",
   SHIPS: "/ships",
 } as const;
 
 export const TEST_MESSAGES = {
   ERROR_GENERIC: "Something went wrong!",
-  ERROR_OUTFITTING: "Outfitting page error:",
+  ERROR_OUTFITTER: "Outfitter page error:",
   ERROR_SEARCH: "Search page error:",
   LOADING_GENERIC: "Loading...",
-  LOADING_OUTFITTING: "Loading outfitting...",
+  LOADING_OUTFITTER: "Loading outfitter...",
   LOADING_SEARCH: "Loading search...",
   NOT_FOUND_TITLE: "404",
   NOT_FOUND_MESSAGE: "Page not found",
   TRY_AGAIN: "Try again",
-  GO_TO_OUTFITTING: "Go to Outfitting",
+  GO_TO_OUTFITTER: "Go to Outfitter",
 } as const;
 
 export const TEST_METADATA = {
   ROOT_TITLE: "Endless Outfitter",
-  ROOT_DESCRIPTION: "Ship outfitting tool for Endless Sky",
-  OUTFITTING_TITLE: "Endless Outfitter - Ship Outfitting",
-  OUTFITTING_DESCRIPTION: "Modify and configure ship outfits for Endless Sky",
+  ROOT_DESCRIPTION: "Ship outfitter tool for Endless Sky",
+  OUTFITTER_TITLE: "Endless Outfitter - Ship Outfitter",
+  OUTFITTER_DESCRIPTION: "Modify and configure ship outfits for Endless Sky",
   SEARCH_TITLE: "Search - Endless Outfitter",
   SEARCH_DESCRIPTION: "Search for ships, outfits, and other game data",
 } as const;

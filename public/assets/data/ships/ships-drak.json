@@ -1,0 +1,398 @@
+{
+  "metadata": {
+    "version": "v0.10.16",
+    "schemaVersion": "1-v0.10.16",
+    "species": "drak",
+    "generatedAt": "2025-12-13T03:40:08.447Z",
+    "itemCount": 5
+  },
+  "data": [
+    {
+      "name": "Archon",
+      "sprite": "ship/archon",
+      "thumbnail": "thumbnail/archon",
+      "slug": "archon",
+      "attributes": {
+        "category": "Unclassified",
+        "cost": 1000000000,
+        "shields": 4000000,
+        "hull": 1000000,
+        "required crew": 1,
+        "bunks": 1,
+        "mass": 2150,
+        "drag": 40.5,
+        "heat dissipation": 27,
+        "fuel capacity": 800,
+        "cargo space": 0,
+        "outfit space": 1300,
+        "weapon capacity": 1125,
+        "engine capacity": 200,
+        "gun ports": 2,
+        "turret mounts": 14,
+        "weapon": {
+          "blast radius": 500,
+          "shield damage": 10000,
+          "hull damage": 5000,
+          "hit force": -10000
+        }
+      },
+      "outfits": [
+        {
+          "name": "Drak Antimatter Cannon",
+          "quantity": 1
+        },
+        {
+          "name": "Drak Antimatter Cannon (Augmented)",
+          "quantity": 1
+        },
+        {
+          "name": "Drak Anti-Missile Field",
+          "quantity": 2
+        },
+        {
+          "name": "Drak Anti-Missile Field (Augmented)",
+          "quantity": 2
+        },
+        {
+          "name": "Drak Draining Field",
+          "quantity": 1
+        },
+        {
+          "name": "Drak Draining Field (Augmented)",
+          "quantity": 1
+        },
+        {
+          "name": "Drak Distancer",
+          "quantity": 2
+        },
+        {
+          "name": "Drak Turret",
+          "quantity": 3
+        },
+        {
+          "name": "Drak Turret (Augmented)",
+          "quantity": 3
+        },
+        {
+          "name": "Hyperdrive",
+          "quantity": 1
+        },
+        {
+          "name": "Jump Drive",
+          "quantity": 1
+        }
+      ],
+      "descriptions": [
+        "The Archon's presence is chilling. The \"ship\" has an almost organic appearance, but your ship's scanners give you no discernible information on its construction. What exactly it is you do not know, but you can feel that it is powerful."
+      ]
+    },
+    {
+      "name": "Archon B",
+      "sprite": "ship/archon b",
+      "thumbnail": "thumbnail/archon",
+      "slug": "archon-b",
+      "attributes": {
+        "category": "Unclassified",
+        "cost": 1000000000,
+        "shields": 4000000,
+        "hull": 1000000,
+        "required crew": 1,
+        "bunks": 1,
+        "mass": 2150,
+        "drag": 40.5,
+        "heat dissipation": 27,
+        "fuel capacity": 800,
+        "cargo space": 0,
+        "outfit space": 1300,
+        "weapon capacity": 1125,
+        "engine capacity": 200,
+        "gun ports": 2,
+        "turret mounts": 14,
+        "weapon": {
+          "blast radius": 500,
+          "shield damage": 10000,
+          "hull damage": 5000,
+          "hit force": -10000
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Archon C",
+      "sprite": "ship/archon c",
+      "thumbnail": "thumbnail/archon",
+      "slug": "archon-c",
+      "attributes": {
+        "category": "Unclassified",
+        "cost": 1000000000,
+        "shields": 4000000,
+        "hull": 1000000,
+        "required crew": 1,
+        "bunks": 1,
+        "mass": 2150,
+        "drag": 40.5,
+        "heat dissipation": 27,
+        "fuel capacity": 800,
+        "cargo space": 0,
+        "outfit space": 1300,
+        "weapon capacity": 1125,
+        "engine capacity": 200,
+        "gun ports": 2,
+        "turret mounts": 14,
+        "weapon": {
+          "blast radius": 500,
+          "shield damage": 10000,
+          "hull damage": 5000,
+          "hit force": -10000
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Archon (Cloaked)",
+      "sprite": "ship/archon c",
+      "thumbnail": "thumbnail/archon",
+      "slug": "archon-cloaked",
+      "attributes": {
+        "category": "Unclassified",
+        "cost": 1000000000,
+        "shields": 4000000,
+        "hull": 1000000,
+        "required crew": 1,
+        "bunks": 1,
+        "mass": 2150,
+        "drag": 40.5,
+        "heat dissipation": 27,
+        "fuel capacity": 800,
+        "cargo space": 0,
+        "outfit space": 1300,
+        "weapon capacity": 1125,
+        "engine capacity": 200,
+        "gun ports": 2,
+        "turret mounts": 14,
+        "weapon": {
+          "blast radius": 500,
+          "shield damage": 10000,
+          "hull damage": 5000,
+          "hit force": -10000
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    },
+    {
+      "name": "Archon (Hyperdrive Cloaked)",
+      "sprite": "ship/archon b",
+      "thumbnail": "thumbnail/archon",
+      "slug": "archon-hyperdrive-cloaked",
+      "attributes": {
+        "category": "Unclassified",
+        "cost": 1000000000,
+        "shields": 4000000,
+        "hull": 1000000,
+        "required crew": 1,
+        "bunks": 1,
+        "mass": 2150,
+        "drag": 40.5,
+        "heat dissipation": 27,
+        "fuel capacity": 800,
+        "cargo space": 0,
+        "outfit space": 1300,
+        "weapon capacity": 1125,
+        "engine capacity": 200,
+        "gun ports": 2,
+        "turret mounts": 14,
+        "weapon": {
+          "blast radius": 500,
+          "shield damage": 10000,
+          "hull damage": 5000,
+          "hit force": -10000
+        }
+      },
+      "outfits": [
+        {
+          "name": "0",
+          "quantity": 1
+        },
+        {
+          "name": "1",
+          "quantity": 1
+        },
+        {
+          "name": "2",
+          "quantity": 1
+        },
+        {
+          "name": "3",
+          "quantity": 1
+        },
+        {
+          "name": "4",
+          "quantity": 1
+        },
+        {
+          "name": "5",
+          "quantity": 1
+        },
+        {
+          "name": "6",
+          "quantity": 1
+        },
+        {
+          "name": "7",
+          "quantity": 1
+        },
+        {
+          "name": "8",
+          "quantity": 1
+        },
+        {
+          "name": "9",
+          "quantity": 1
+        },
+        {
+          "name": "10",
+          "quantity": 1
+        }
+      ],
+      "descriptions": []
+    }
+  ]
+}

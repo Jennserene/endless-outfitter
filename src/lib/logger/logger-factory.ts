@@ -7,6 +7,7 @@ import { WinstonLogger } from "./winston-logger";
 export interface LoggerOptions {
   /**
    * Minimum log level (debug, info, warn, error)
+   * If not provided, will check LOG_LEVEL environment variable, then fall back to defaults
    */
   level?: string;
 
@@ -52,7 +53,9 @@ export function createLogger(options: LoggerOptions = {}): Logger {
   // Determine configuration
   const silent = options.silent ?? isTest;
   const level =
-    options.level ?? (isScript ? "info" : isProduction ? "warn" : "info");
+    options.level ??
+    process.env.LOG_LEVEL ??
+    (isScript ? "info" : isProduction ? "warn" : "info");
   const structured = options.structured ?? (isScript ? false : isProduction);
 
   return new WinstonLogger(level, structured, silent);

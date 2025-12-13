@@ -3,8 +3,8 @@ import { ROUTES } from "@/config/paths";
 
 /**
  * Home page.
- * Redirects to the outfitting page.
+ * Redirects to the outfitter page.
  */
 export default function HomePage() {
-  redirect(ROUTES.OUTFITTING);
+  redirect(ROUTES.OUTFITTER);
 }

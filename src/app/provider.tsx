@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { OutfitterProvider } from "@/stores/outfitter";
 
 /**
  * Global providers wrapper component.
@@ -11,7 +12,7 @@ import { ThemeProvider } from "next-themes";
 export function AppProvider({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      {children}
+      <OutfitterProvider>{children}</OutfitterProvider>
     </ThemeProvider>
   );
 }

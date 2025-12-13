@@ -1,6 +1,6 @@
 /**
  * Tests for src/app/page.tsx
- * Home page that redirects to outfitting
+ * Home page that redirects to outfitter
  */
 
 import { redirect } from "next/navigation";
@@ -17,10 +17,10 @@ describe("HomePage", () => {
     jest.clearAllMocks();
   });
 
-  it("should redirect to outfitting route", () => {
+  it("should redirect to outfitter route", () => {
     HomePage();
 
     expect(redirect).toHaveBeenCalledTimes(1);
-    expect(redirect).toHaveBeenCalledWith(TEST_ROUTES.OUTFITTING);
+    expect(redirect).toHaveBeenCalledWith(TEST_ROUTES.OUTFITTER);
   });
 });

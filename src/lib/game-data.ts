@@ -22,7 +22,7 @@ import { slugify } from "@/lib/utils/slug";
 
 /**
  * Get all ships from generated data files.
- * In production, uses pre-generated JSON files from src/assets/data/.
+ * In production, uses pre-generated JSON files from public/assets/data/.
  * In development, can optionally use submodule (fallback not implemented).
  */
 export function getShips(): Ship[] {
@@ -31,7 +31,7 @@ export function getShips(): Ship[] {
 
 /**
  * Get all outfits from generated data files.
- * In production, uses pre-generated JSON files from src/assets/data/.
+ * In production, uses pre-generated JSON files from public/assets/data/.
  * In development, can optionally use submodule (fallback not implemented).
  */
 export function getOutfits(): Outfit[] {

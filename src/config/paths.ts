@@ -4,6 +4,6 @@
  */
 export const ROUTES = {
   HOME: "/",
-  OUTFITTING: "/outfitting",
+  OUTFITTER: "/outfitter",
   SEARCH: "/search",
 } as const;

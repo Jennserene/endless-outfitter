@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppProvider } from "./provider";
-import { Navigation } from "./_components/navigation";
+import { Header } from "./_components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Endless Outfitter",
-  description: "Ship outfitting tool for Endless Sky",
+  description: "Ship outfitter tool for Endless Sky",
 };
 
 export default function RootLayout({
@@ -28,10 +28,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} mx-auto max-w-7xl px-4 sm:px-6 lg:px-8`}
+        className={`${geistSans.variable} ${geistMono.variable} mx-auto max-w-7xl min-mx-4 sm:mx-6 lg:mx-8 border-x border-border`}
       >
         <AppProvider>
-          <Navigation />
+          <Header />
           {children}
         </AppProvider>
       </body>

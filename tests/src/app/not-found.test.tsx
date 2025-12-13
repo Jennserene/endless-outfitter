@@ -32,13 +32,13 @@ describe("NotFound", () => {
     ).toBeInTheDocument();
   });
 
-  it("should render link to outfitting page", () => {
+  it("should render link to outfitter page", () => {
     render(<NotFound />);
 
     const link = screen.getByRole("link", {
-      name: TEST_MESSAGES.GO_TO_OUTFITTING,
+      name: TEST_MESSAGES.GO_TO_OUTFITTER,
     });
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", TEST_ROUTES.OUTFITTING);
+    expect(link).toHaveAttribute("href", TEST_ROUTES.OUTFITTER);
   });
 });

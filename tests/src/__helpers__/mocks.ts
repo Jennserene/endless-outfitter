@@ -13,7 +13,7 @@ export const mockRouter = {
   forward: jest.fn(),
 };
 
-export const mockPathname = "/outfitting";
+export const mockPathname = "/outfitter";
 
 export const mockSearchParams = {
   get: jest.fn(),
